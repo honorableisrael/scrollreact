@@ -1,0 +1,271 @@
+.assesment_header{
+  font-size: 1.5em;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.28;
+  letter-spacing: normal;
+  text-align: left;
+  color: #9c1258;
+  padding-left: 2rem;
+  padding-bottom: 2.2rem;
+}
+.firswidth{
+
+}
+.wrapassess{
+    display: flex;
+    justify-content: space-between;
+    border-top: 15px;
+    background-color: #fbfbfb;
+    padding: 1rem .1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.secondwidth{
+    border-radius: 34px;
+    border: solid 2px #9c1258;
+    padding: 4px 1rem;
+    background: white;
+    display: flex;
+    align-items: center;
+}
+.progressbarwrapper{
+    background-color: #fbfbfb;
+    padding: 1rem 2rem;
+    padding-bottom: 2rem;
+}
+.spacol{
+    width: 15px;
+    margin-right: 7px;
+}
+.sdsd{
+    font-size: 12px;
+    font-family: "Sailec-Thin";
+    font-stretch: normal;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-style: normal;
+    line-height: 1.72;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+.firstrowcf {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    box-shadow: 0 8px 50px 0 rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.firstrowcf2 {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    /* margin-top: 2rem; */
+    background: #fbfbfb;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.firstquestion{
+    background: #fff;
+    padding: 1rem 2rem;
+}
+.rsliderclass{
+    width: 75%;
+    margin: auto;
+    padding-top: .5rem;
+}
+.rsliderclass2{
+    width: 75%;
+    margin: auto;
+    line-height: 1.28;
+    display:flex;
+    letter-spacing: normal;
+    text-align: left;
+    color: #bcbcbc;
+    justify-content: space-between;
+}
+.range-slider--warning {
+    background: #9c1258;
+ }
+ .nxtbtn{
+    background: #9c1258;
+    color: #fff;
+    border: none;
+    padding: .5rem 3rem;
+    border-radius: 25px;
+ }
+.firstassess{
+    margin-bottom: 2rem;
+}
+.nxtbtnarea{
+    display: block;
+    text-align: center;
+    padding: 4rem 1rem 2rem 1rem;
+}
+.cherry-done{
+    width: 22%;
+}
+.awesomewrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.awesome {
+    font-size: 1.3em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-align: center;
+    color: #9c1258;
+    margin: .5rem;
+  }
+.awesome1 {
+    font-weight: 300;
+    font-stretch: normal;
+    font-family: "Sailec-Thin";
+    line-height: 1.23;
+    letter-spacing: normal;
+    text-align: center;
+    color: #707070;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+}
+.awesomebtn{
+    background: #9c1258;
+    color: #fff;
+    border: 2px solid #9c1258;
+    padding: .5rem 3rem;
+    border-radius: 25px;
+    min-width: 266px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .awesomebtnsubmit{
+    background: white;
+    border: 2px solid #9c1258;
+    color: #9c1258;
+    padding: .5rem 3rem;
+    border-radius: 25px;
+    min-width: 266px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: .4rem;
+  }
+  .p2answers{
+      width: 240px;
+      margin-left: 14px;
+  }
+  .answers{
+      width: 100%;
+      max-height: 165px;
+      min-height: 163px;
+  }
+  .questTwo {
+    font-size: 13px;
+    background: white;
+    text-align: center;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3d3c38;
+    min-height: 37px;
+}
+  .rsliderclassPol{
+    width: 75%;
+    margin: auto;
+    padding-top: .5rem;
+    display: flex;
+  }
+  
+  /* checked box starts here */
+  .checkcontainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .checkcontainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkcontainer:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .checkcontainer input:checked ~ .checkmark {
+    background-color: white;
+    border: 2px solid #9c1258;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checkcontainer input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkcontainer .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .checkwrapper{
+    display: flex;
+    justify-content: space-between;
+    flex: 2;
+    padding-left: 1rem;
+  }
+  .rsliderclass9{
+    width: 75%;
+    margin: auto;
+    line-height: 1.28;
+    display:flex;
+    letter-spacing: normal;
+    text-align: left;
+    color: #bcbcbc;
+    padding-top: 1rem;
+    justify-content: space-between;
+}
+  /* checkbox ends here */
