@@ -13,7 +13,10 @@ import AssessmentFirstPhaseComplete   from './Components/Home/Assesment/Assessme
 import AssessmentSecondPhase from './Components/Home/Assesment/AssessmentPhaseTwo';
 import AssessmentSecondPhaseComplete from './Components/Home/Assesment/AssessmentPhaseTWOcomplete';
 import AssessmentThirdPhase from './Components/Home/Assesment/AssessmentPhaseThree';
-
+import AssessmentThirdPhaseComplete from './Components/Home/Assesment/AssessmentPhaseTHREEComplete';
+import Assessmentfourthphase from './Components/Home/Assesment/Assessmentstagefour/AssessmentPhaseFour';
+import Assessmentfourthphase_1 from './Components/Home/Assesment/Assessmentstagefour/AssessmentPhaseFour_1';
+import { SelectPaymentPlan } from './Components/Home/Assesment/SelectPaymentPlan';
 
 
 const App: React.FC = () => {
@@ -33,7 +36,11 @@ const App: React.FC = () => {
               <Route exact path="/assessmentphasethree" component={AssessmentThirdPhase} /> 
               <Route exact path="/assessmentphasecomplete" component={AssessmentFirstPhaseComplete} />
               <Route exact path="/secondphasecomplete" component={AssessmentSecondPhaseComplete}/> 
+              <Route exact path="/thirdphasecomplete" component={AssessmentThirdPhaseComplete}/> 
+              <Route exact path="/assessmentphasefour" component={Assessmentfourthphase}/> 
+              <Route exact path="/assessmentphasefour1" component={Assessmentfourthphase_1}/> 
               <Route exact path="/assessmentphasetwo" component={AssessmentSecondPhase} /> 
+              <Route exact path="/paymentplan" component={SelectPaymentPlan} /> 
             </Switch>
         </BrowserRouter>
       </div>

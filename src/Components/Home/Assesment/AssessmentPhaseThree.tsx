@@ -329,7 +329,7 @@ import { Link } from 'react-router-dom';
                             </div>
                         </div>
                         <div className="nxtbtnarea">
-                            <Link to="/secondphasecomplete">
+                            <Link to="/thirdphasecomplete">
                                 <button className="nxtbtn">
                                     Next
                                 </button>

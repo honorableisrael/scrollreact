@@ -268,4 +268,107 @@
     padding-top: 1rem;
     justify-content: space-between;
 }
-  /* checkbox ends here */
+.doubled{
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: normal;
+    text-align: center;
+    color: #707070;
+}
+.creative{
+    font-size: 1.5em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.28;
+    letter-spacing: normal;
+    text-align: left;
+    color: #9c1258;
+}
+.losos{
+    padding: 1rem 1rem 1rem 4rem;
+}
+.skip{
+    font-size: 1em;
+  font-weight: 500;
+  font-stretch: normal;
+  text-transform: lowercase;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  padding-top: .3rem;
+  padding-bottom: 1rem;
+  color: #3d3c38;
+}
+.assessquestionwrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.assessquestion{
+    font-size: 1.2em;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left;
+    color: #9c1258;
+    align-self: center;
+}
+.assessrating{
+    font-size: 1.5rem;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+}
+.rightarrow{
+    font-size: 3rem;
+    color: #ffbc41;
+    cursor: pointer;
+}
+.ocenter{
+    display: flex;
+    align-items: center;
+}
+.chooseheader{
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    color: #9c1258;
+}
+a:hover{
+    text-decoration: none;
+}
+.chooseheader1{
+    font-size: 1.2em;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.38;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2c2147;
+}
+.plancost1 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #9c1258;
+}
+.plan_1 {
+  font-size: 1.2em;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.12;
+  letter-spacing: normal;
+  text-align: center;
+  color: #9c1258;
+  padding-bottom: .6rem;
+}

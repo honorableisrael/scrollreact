@@ -9,7 +9,7 @@ import Navbar from '../HomeComponents/navbar';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import RangeSlider from 'react-bootstrap-range-slider';
 import { AssessmentFirstSection } from './AssessmentComponents/AssessmentFirstSection';
-import offcharts from '../../../assets/offcharts.png';
+import nextis5 from '../../../assets/nextis5.png';
 import { Link } from 'react-router-dom';
  
 
@@ -19,27 +19,27 @@ import { Link } from 'react-router-dom';
 // team
 
 
- const AssessmentSecondPhaseComplete =()=> {
+ const AssessmentThirdPhaseComplete =()=> {
     const [ value, setValue ] = React.useState<number>(0); 
     return (
     <div>
         <Navbar/>
         <Container fluid={true}>
             <Row className="firstrowcf cftcontent">
-               <AssessmentFirstSection phase="Phase 1" nextPhase="Phase 2" time={10}/>
+               <AssessmentFirstSection phase="Phase 3" nextPhase="Phase 4" time={10}/>
                <Col md={11}>
                     <Row className="firstrowcf2 cftcontent">
                         <Col md={12} className="awesomewrap">
                             <div>
-                                <img className="cherry-done" src={offcharts} alt="cherry-done"/>
+                                <img className="cherry-done" src={nextis5} alt="cherry-done"/>
                                 <div className="awesome">
-                                    Your ratings are off the charts right now Dewunmi!
+                                    Almost there Dewunmi, just one more to go
                                 </div>
                                 <div className="awesome1">
-                                    Your almost there, take the next assessment and we have a surprise for you!
+                                    Your surprise just <span className="doubled">doubled!</span> Complete next section to access it
                                 </div>
                                 <div className="awesome2">
-                                <Link to="/assessmentphasethree"><button className="awesomebtn">Continue Assessment</button></Link> 
+                                <Link to="/assessmentphasefour"><button className="awesomebtn">Continue Assessment</button></Link> 
                                     <button className="awesomebtnsubmit">Save Progress</button>
                                 </div>
                             </div>
@@ -53,4 +53,4 @@ import { Link } from 'react-router-dom';
   )
 }
 
-export default AssessmentSecondPhaseComplete;
+export default AssessmentThirdPhaseComplete;
