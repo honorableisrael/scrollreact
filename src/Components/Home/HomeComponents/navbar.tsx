@@ -42,12 +42,12 @@ const Navbar:React.FC =()=>{
                     </div>]}  
                     items  = {[
                         <div className={showNav?"listwraper animated fadeInLeft":"listwraper"}>
-                            <div className="listwraperMob">Home</div>
-                            <div className="listwraperMob">About</div>
-                            <div className="listwraperMob">Faq</div>
+                            <div className="listwraperMob"><Link to="/">Home</Link></div>
+                            <div className="listwraperMob"><Link to="/about">About</Link></div>
+                            <div className="listwraperMob"><Link to="/faq">Faq</Link></div>
                             <div className="listwraperMob">Privacy Policy</div>
-                            <div className="listwraperMob"><div className="navmobbtn">Login</div></div>
-                            <div className="listwraperMob"><div className="navmobbtn">Test</div></div>
+                            <div className="listwraperMob"><Link to="/signin"><div className="navmobbtn">Login</div></Link></div>
+                            <div className="listwraperMob"><Link to="/signup"><div className="navmobbtn">Sign Up</div></Link></div>
                         </div>
                     ]}
                     />

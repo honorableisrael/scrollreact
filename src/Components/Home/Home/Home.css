@@ -388,9 +388,15 @@ button{
     color: #0f1a29;
     padding-bottom: 2rem;
 }
+.listwraperMob a{
+    color: white;
+}
 @media(min-width:780px){
   .nav-wrapper {
     display: flex;
+  }
+  #wrapper > div {
+    display: inline-block;
   }
   .hamburgerwrap{
     display: none;
@@ -422,12 +428,27 @@ button{
 .homebanner0{
   width: 100%;
 }
+@media(max-width:579px){
+  .firstrow {
+    padding-top: 1rem;
+    margin-left: 0%;
+  }
+  #wrapper > div{
+    display: none;
+  }
+}
 @media(max-width:779px){
   .homebanner5 {
     bottom: -1.5rem;
     left: 1rem;
   }
+  .secondoso{
+    margin-top: 1rem;
+  }
   
+  .wrap001 {
+    justify-content: center;
+}
   .hamburgerwrap{
     display: flex;
     justify-content: flex-end;
@@ -504,9 +525,6 @@ button{
   border-radius: 50%;
   margin: -59px 52px 24px 57px;
 }
-#wrapper > div {
-  display: inline-block;
-}
 .stepgood{
   width: 41.43px;
   min-width: 41.43px;
@@ -563,15 +581,18 @@ button{
 }
 .firstImg{
   max-width: 270px;
+  border-radius: 15px;
 }
 .firstImg1{
   max-width: 270px;
   height: 100%;
+  border-radius: 15px;
 }
 .secondoso{
-  max-height: 342px;
+  max-height: 413.27px;
   max-width: 270px;
   min-width: 270px;
+  margin-right: 1rem;
   text-align: center;
   border-radius: 20px;
   background-color: #f8f8f8;

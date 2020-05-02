@@ -12,18 +12,23 @@ import zino from '../../../assets/zino.png';
 import ibk from '../../../assets/ibk.png';
 import Rotimi from '../../../assets/Rotimi.png';
 import mo from '../../../assets/mo.png';
-import imglarge from '../../../assets/imglarge.png';
+import imglarge4 from '../../../assets/professional3.png';
+import imglarge1 from '../../../assets/professional1.png';
+import imglarge2 from '../../../assets/professional2.png';
+import imglarge3 from '../../../assets/professional4.png';
 //team ends
+
 
 import stepgood from '../../../assets/stepgood.png';
 import stepone from '../../../assets/steptwo.png';
 import steptwo from '../../../assets/stepthree.png';
 import RightTopImageSmall from '../../../assets/blank_image_container_small.png';
+import hilary from '../../../assets/Hilary.jpg';
 import cardecor from '../../../assets/cardecor.png';
 import TakeAssessment from '../HomeComponents/TakeAssesment/takeAssessment';
-import firstImg from '../../../assets/6.png';
-import secondImg from '../../../assets/4.jpeg';
-import thirdImg from '../../../assets/5.png';
+import firstImg from '../../../assets/take.png';
+import secondImg from '../../../assets/maintain.png';
+import thirdImg from '../../../assets/achieve.png';
 
 export const About=()=> {
   return (
@@ -44,9 +49,9 @@ export const About=()=> {
                     </Col>
                     <Col md={{span:9,offset:1}}>
                         <div className="wrap001">
-                            <div><img src={firstImg} className="firstImg" alt="firstImg"/><div className="takecharge">Take charge of their <div> work-life</div></div></div>
-                            <div className="secondoso"><img src={secondImg} className="firstImg1" alt="firstImg"/><div className="takecharge">Maintain Career Security <div>with personalized advice</div></div></div>
-                            <div className="secondoso"><img src={thirdImg} className="firstImg1" alt="firstImg"/><div className="takecharge">Achieve key professional<div> milestones through accountability </div></div></div>
+                            <div><img src={firstImg} className="firstImg" alt="firstImg"/><div className="takecharge"></div></div>
+                            <div className="secondoso"><img src={secondImg} className="firstImg1" alt="firstImg"/><div className="takecharge"></div></div>
+                            <div className="secondoso"><img src={thirdImg} className="firstImg1" alt="firstImg"/><div className="takecharge"></div></div>
                         </div>  
                         <div className="-of-life-is">
                         80% of life is spent working, so instead of trying to compartmentalizing your life it’s better 
@@ -60,14 +65,14 @@ export const About=()=> {
                         <Row>
                             <Col md={{span:4,offset:1}}>
                                 <div className="ca102">
-                                    <img src={imglarge} className="aboutimgonebg" alt="RightTopImageSmall" />
-                                    <img src={RightTopImageSmall} className="aboutimgonesmal" alt="RightTopImageSmall" />
+                                    <img src={imglarge2} className="aboutimgonebg" alt="RightTopImageSmall" />
+                                    <img src={imglarge3} className="aboutimgonesmal img-fluid" alt="RightTopImageSmall" />
                                 </div>
                             </Col>
                             <Col md={5}>
                             <div>
-                                <img src={imglarge} className="aboutimgonesmall" alt="RightTopImageSmall" />
-                                <img src={imglarge} className="aboutimgonebg ff33" alt="RightTopImageSmall" />
+                                <img src={imglarge1} className="aboutimgonesmall" alt="RightTopImageSmall" />
+                                <img src={imglarge4} className="aboutimgonebg ff33" alt="RightTopImageSmall" />
                             </div>
                             </Col>
                         </Row>
@@ -154,6 +159,20 @@ export const About=()=> {
                                 <div className="wrap11">
                                         <div className="usernameabout">
                                         Morakinyo Adejare
+                                        </div>
+                                        <div>
+                                            <img src={cardecor} className="cardecor" alt="cardecor"/>
+                                        </div>
+                                </div>
+                            </div>
+                            <div className="about-card-wrap">
+                                <div className="FounderCEO">
+                                   Fullstack Developer
+                                </div>
+                                <img src={hilary} alt="userimg" className="userimg" />
+                                <div className="wrap11">
+                                        <div className="usernameabout">
+                                            Hilary  Oba
                                         </div>
                                         <div>
                                             <img src={cardecor} className="cardecor" alt="cardecor"/>

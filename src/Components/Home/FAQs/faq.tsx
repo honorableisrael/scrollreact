@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Navbar from '../HomeComponents/navbar';
 import Footer from '../HomeComponents/footer';
-import RightTopImage from '../../../assets/blank_image_container.png';
+import RightTopImage from '../../../assets/2.png';
 import './faqs.css';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
@@ -18,15 +18,12 @@ const Faq: React.FunctionComponent = (props) => {
       <Navbar/>
            <Container fluid={true}>
                 <Row className="firstrow possition">
-                    <Col md={5} sm={{span:1,order:12}} xs={{span:1,order:12}} className="firstrowtxt">
+                    <Col md={5} sm={{span:12,order:12}} xs={{span:12,order:12}} className="firstrowtxt">
                         <div>
                            Frequently
                         </div>
                         <div className="askIn">
                             Asked Questions
-                        </div>
-                        <div className = "Clarity-is-the-solution">
-                          <input type="text" className="askus" placeholder="Ask us any question" />
                         </div>
                     </Col>
                     <Col md={{span:5}} sm={{span:12,order:1}} xs={{span:12,order:12}}>
