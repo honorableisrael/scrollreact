@@ -14,6 +14,8 @@ import { AssessmentFirstSection } from './AssessmentComponents/AssessmentFirstSe
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { API } from '../../../config';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
  
 
 
@@ -55,8 +57,11 @@ const submitForm =(e:any)=>{
     })
     .catch(error=>{
         console.log(error.response)
+        if(error && error.response && error.response.data)
+        notify(error.response.data[0].message)
     })
 }
+const notify = (message:string) => toast(message,{containerId: 'B'});
 
 return (
 <div>
@@ -279,6 +284,7 @@ return (
                             Very Much
                         </div>
                     </div>
+                    <ToastContainer enableMultiContainer containerId={'B'} toastClassName="bg-danger text-white" hideProgressBar={true} position={toast.POSITION.TOP_CENTER} />
                     <div className="nxtbtnarea">
                         <button className="nxtbtn" onClick={submitForm}>
                             Next
