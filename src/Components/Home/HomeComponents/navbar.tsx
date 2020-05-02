@@ -4,6 +4,7 @@ import SideNav from 'react-simple-sidenav';
 import { Link } from 'react-router-dom';
 import '../Home/animate.css';
 import { NavIsLoggedOut } from './isloggedout';
+import { NavIsLoggedIn } from './isloggedIn';
 
 
 const Navbar:React.FC =()=>{
@@ -62,18 +63,19 @@ const Navbar:React.FC =()=>{
                 <div className="nav-wrapper">
                     <div className="nav_title">
                         <div className="logo_clarity"><Link to="/"><img src={demoLogo} alt="clarity_logo"/></Link></div>
-                        <span className="title">
-                           <Link to="/">HOME</Link>
-                        </span>
-                        <span className="title">
-                           <Link to="/about">ABOUT</Link>
-                        </span>
-                        <span className="title">
-                            <Link to="/faq">FAQ</Link>
-                        </span>
                     </div>
                     <div className="nav_title">
+                    <span className="title">
+                           <Link to="/">HOME</Link>
+                    </span>
+                    <span className="title">
+                        <Link to="/about">ABOUT</Link>
+                    </span>
+                    <span className="title">
+                        <Link to="/faq">FAQ</Link>
+                    </span>
                         <NavIsLoggedOut/>
+                        {/* <NavIsLoggedIn/> */}
                     </div>
                 </div>
             </div>

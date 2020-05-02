@@ -118,7 +118,7 @@ import StarRatingComponent from 'react-star-rating-component';
                         </div>
                         </Col>
                         <Col md={1} className="ocenter">
-                           <Link to="/paymentplan"> <span className="rightarrow">&#8594;</span></Link>
+                           <Link to="/dashboardresult"> <span className="rightarrow">&#8594;</span></Link>
                         </Col>
                        </Row>
                     </Col>

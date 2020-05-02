@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Footer from '../../HomeComponents/footer';
 import Col from 'react-bootstrap/Col';
+import './dashboard.css';
 import CenteredHeader from '../../OnboardingChat/chatcomponents/centeredTitle';
 import ActiveUsers from '../../OnboardingChat/chatcomponents/activeuser';
 import ChatBot from '../../OnboardingChat/chatcomponents/chatBot';
@@ -11,60 +12,121 @@ import ChatBotSentMessages from '../../OnboardingChat/chatcomponents/ChatBotSent
 import UserChatScreenTitle from '../../OnboardingChat/chatcomponents/userChatScreenTitle';
 import UserSentChat from '../../OnboardingChat/chatcomponents/userSentChat';
 import SendMessageToolbar from '../../OnboardingChat/chatcomponents/sendMessageTool';
+import { Link } from 'react-router-dom';
+import leftImg from '../../../../assets/leftarrow.png';
+import seekleft from '../../../../assets/seekleft.png';
+import seekright from '../../../../assets/seekright.png';
+import { useState } from 'react';
+import '../../../Home/Home/animate.css';
 
 
 interface IAppProps {
 }
-
+interface State {
+  sideBarIsOpen:Boolean
+}
 const DashboardResults: React.FunctionComponent<IAppProps> = (props) => {
-    const [offline,setUserOnline] = React.useState(false)
-    const offlineColor = '#3cb238';
-    const onlineColor = '#7f8fa4b9';
-    const onlineTxt = '#9c1258';
-    const offlineTxt = '#fff';
-    const sampleMessage = 'Hello I’m Wana from Clarity by Yudimy and I’m going to be assisting you through this assessment process'
-    const secondSampleMessage = 'Let’s get to know each other a little. What is your first name and lastname? '
-    const userSentResponse = 'Dewunmi Jones'
-
+  const [ state,updateState ] = useState<State>({sideBarIsOpen:false})
+  const { sideBarIsOpen } = state;
+  console.log(sideBarIsOpen)
     return (
       <React.Fragment>
             <Navbar/>
               <Container fluid={true}>
-                <Row className="chatouter">
-                  <Col md={12} className="chatwrapper">
-                    <Row>
-                      <Col md={3} className="bg-white pdleft">
-                        DASHBOARD - RESULTS
-                      </Col>
-                      <Col md={8} className="x100 ">
-                          <div className="hiddenItem">.</div>
-                            <CenteredHeader name="Wana Yudimy" bgColor={offline?onlineColor:offlineColor}/>
-                          <div>
-                          <div className="three-dot"></div>
+                  <Col md={10} className="shiftcent">
+                    <div className="dashboardwrap">
+                      <div className={!sideBarIsOpen?"flexconts":"hidesidebar"}>
+                         <div className="titlearea">
+                            <span className={!sideBarIsOpen?"dashtitle":"hidesidebarlinks"}>
+                                Dashboard- 
+                              <span className="res1">
+                                Results
+                              </span> 
+                            </span>
+                          <span className="arrowcover">
+                            <img src={leftImg} onClick={()=>updateState({sideBarIsOpen:!sideBarIsOpen?true:false})} className={!sideBarIsOpen?"arrow arrowflip":"arrow"} alt="leftimg" />
+                          </span>
                         </div>
-                      </Col>
-                      <Col md={3} className="bg-white pdleft1">
-                        <ActiveUsers color={offline?offlineTxt:offlineTxt} offline bgColor={offline?offlineTxt:onlineTxt}/>  {/* we are passing three props to check the state of the app and update the color */}
-                      </Col>
-                      <Col md={8} className="chatwrap">
-                        <ChatBot name="Wana Yudimy"/>
-                        <ChatBotSentMessages message={sampleMessage} />
-                        <ChatBotSentMessages message={secondSampleMessage} />
-                        <div className="user_response_wrapper">
-                          <UserChatScreenTitle name="You"/>
-                          <UserSentChat message={userSentResponse}/>
-                          <ChatBotSentMessages message={secondSampleMessage} />
-                        </div>  
-                      </Col>
-                    </Row>
+                        <div className="titleareafirst">    
+                        </div>
+                        <div className="titlearea1">
+                          <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks"}>
+                              WHERE YOU ARE
+                          </Link>  
+                        </div>
+                        <div className="titlearea1">
+                          <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks"}>
+                              YOUR PERSONALITY TYPE
+                          </Link>
+                        </div>
+                        <div className="titlearea1">
+                          <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks"}>
+                              STRENGTHS & WEAKNESS
+                          </Link>
+                        </div>
+                        <div className="titlearea1">
+                          <Link to="/personalitytype" className={!sideBarIsOpen?"linkss active":"hidesidebarlinks"}>
+                              YOUR WORK LIFE MISSION
+                          </Link>
+                        </div>
+                        <div className="titlearea1">
+                          <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks"}>
+                              RULES FOR YOUR SUCCESS
+                          </Link>
+                        </div>
+                        <div className="titlearea1 ">
+                          <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks"}>
+                              LEADERSHIP COMPETENCIES
+                          </Link>
+                        </div>
+                        <div className="titlearea1">
+                          <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks"}>
+                              CAREER/BUSINESS EXPRESSIONS
+                          </Link>
+                        </div>
+                        <div className="titlearealast">    
+                        </div>
+                      </div>
+                      <div className="emptysecwrapper">
+                        <div className="emptysection">
+                        </div>
+                        <div className="dashcontent">
+                            YOUR PERSONALITY TYPE
+                        </div>
+                        <div className="dashcontent1">
+                            You who strongly believes the world can be a better place for everyone. You feel
+                            deeply for people and their challenges; you are always willing to help but at the
+                            same time you are very objective when listening to people’s problems or challenges.
+                            You often worry about others, and have constantly active inner mind (inner
+                            thoughts and conversations in your minds).
+                            Once you get an idea (a theory or ideology) you strongly believe would work for the
+                            greater good of people in your community you fight to make it happen even if it
+                            means influencing a policy. You are most times referred to as an advocate or public
+                            servant who has the best interest of everyone at heart. Sometimes sitting alone
+                            reading a good book is something you consider fun. You also enjoy some exciting
+                            and thrilling physical activities for fun once in a while, as well.
+                        </div>
+                        <div className="shititms">
+                          <div>
+                            <img src={seekleft} className="seekleft" alt="left"/>
+                            <span className="textlink">
+                              WHERE YOU ARE
+                            </span>
+                          </div>
+                          <div>
+                            
+                            <span className="textlink1">
+                             <Link to="/paymentplan">VIEW FULL RESULTS</Link>
+                            </span>
+                            <img src={seekright} className="seekleft" alt="right"/>
+                          </div>
+                        </div>
+                      </div>
+                      </div> 
+                      <div>
+                    </div>
                   </Col>
-                  <Col md={4} className="pdleft3">
-                  </Col>
-                  <Col md={8} className="chatwrappp">
-                  <SendMessageToolbar />
-                  </Col>  
-                </Row>
-              <Footer/>
+                <Footer/>
             </Container>
       </React.Fragment>
   );

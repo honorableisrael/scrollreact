@@ -4,7 +4,7 @@
 
 .top-layer{
     width: 100%;
-    height: 25.5px;
+    height: 10.5px;
     background-color: #9c1258;
 }
 ul{
@@ -12,13 +12,16 @@ ul{
   padding-left: 0px;
   text-align: center;
 }
+.txtheavy{
+  font-weight: 700;
+}
 .firstrow{
     padding-top: 4rem;
     padding-bottom: 4rem;
     margin-left: 7%;
 }
 .firstrowtxt{
-    font-family: "Sailec-Medium";
+    font-family: "Ubuntu";
     font-size: 2.937em;
     font-stretch: normal;
     padding-top: 5rem;
@@ -38,6 +41,10 @@ ul{
     display: flex;
     color: #150538;
     font-size: 14px;
+    font-weight: 300;
+}
+.ftweight{
+  font-weight: 500;
 }
 .nav_title1{
     display: flex;
@@ -46,6 +53,12 @@ ul{
 div >.title1{
     margin: auto;
     padding-left: 1rem;
+}
+.title1 >.title_l{
+  color: #9c1258;
+}
+.title1 >a .title_l{
+  color: #9c1258;
 }
 div >.title{
     margin: auto;
@@ -66,6 +79,9 @@ div >.title{
     padding: .4rem 1rem;
     width: 97px;
     color: #9c1258;
+}
+.title_l:hover{
+  color: inherit;
 }
 button:focus{
     outline: none;
@@ -93,10 +109,11 @@ button{
     right: 2.2rem;
 }
 .Clarity-is-the-solution {
-    font-size: 25px;
+    font-size: .6em;
     font-style: normal;
     line-height: 1.53;
-    font-family: "Sailec-Light";
+    padding-top: 1rem;
+    font-family: "Ubuntu";
     letter-spacing: normal;
     text-align: left;
     color: #150538;
@@ -147,7 +164,7 @@ button{
   }
   .Clairty-lorem {
     font-size: 14px;
-    font-family: "Sailec-Light";
+    font-family: 'ubuntu';
     /* padding-top: 1rem; */
     font-stretch: normal;
     line-height: 1.39;
@@ -220,13 +237,8 @@ button{
     border-radius: 16.2px;  
   }
   .homebanner5{
-    width: 90%;
-    height: 111%;
-    border-radius: 16.2px;
+    width: 100%;
     z-index: 2;
-    position: relative;
-    bottom: 1.5rem;
-    left: 6rem;
   }
   
   .thirdrow{
@@ -295,7 +307,7 @@ button{
     padding-left: 1rem;
     padding-right: 1rem;
     margin-bottom: 1rem;
-    font-family: "Sailec-Thin";
+    font-family: 'ubuntu';
     line-height: 1.19;
     letter-spacing: normal;
     text-align: left;
@@ -346,7 +358,7 @@ button{
     text-align: left;
 }
 .About-Us {
-    font-family: "Sailec-Light";
+    font-family: 'ubuntu';
     font-size: 14px;
     padding-top: 1rem;
     line-height: 1.19;
@@ -366,7 +378,7 @@ button{
     width: 1.875em;
 }
 .reserved{
-    font-family: "Sailec-Light";
+  font-family: 'ubuntu';
     font-size: 14px;
     padding-top: 1rem;
     margin-left: 6rem;
@@ -395,8 +407,20 @@ button{
     top: 0px;
   }
 }
+.firstassesbtn {
+  font-size: .38em;
+  letter-spacing: normal;
+  width: 200px;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #9c1258;
+  padding: .6rem .7rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  text-align: center;
+}
 .homebanner0{
-  width: 80%;
+  width: 100%;
 }
 @media(max-width:779px){
   .homebanner5 {
@@ -444,14 +468,38 @@ button{
     padding-top: 2rem;
   }
 }
+.title_ll{
+  background-color: #9c1258;
+  color: white;
+  border: none;
+  border-radius: 34px;
+  padding: .4rem .9rem;
+}
 
+.useravatar{
+  border-radius: 50%;
+  border:1px solid #f7f1f4;
+  width: 40px;
+  height:40px;
+  max-width: 40px;
+  max-height: 40px;
+}
+.useravatarwraper{
+  border-radius: 50%;
+  border:1px solid #9c1258;
+  width: 40px;
+  height:40px;
+  max-width: 40px;
+  max-height: 40px;
+  display: table;
+}
 .line-top {
   width: 120px;
   height: 60px;
   z-index: -1;
   background: transparent;
   border: none;
-  border-top: dashed 2px #b3b3b3;
+  border-top: dashed 1px #b3b3b3;
   padding: 29px 46px;
   border-radius: 50%;
   margin: -59px 52px 24px 57px;
@@ -512,4 +560,30 @@ button{
 }
 .line1active{
   transform: rotateZ(206deg);
+}
+.firstImg{
+  max-width: 270px;
+}
+.firstImg1{
+  max-width: 270px;
+  height: 100%;
+}
+.secondoso{
+  max-height: 342px;
+  max-width: 270px;
+  min-width: 270px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #f8f8f8;
+  margin-left: 5px;
+}
+.takecharge{
+    text-align: center;
+    font-weight: bolder;
+    position: relative;
+    bottom: 2.7rem;
+    line-height: 1.2;
+}
+.shiftlefff .title_t{
+  margin-left: 2rem;
 }

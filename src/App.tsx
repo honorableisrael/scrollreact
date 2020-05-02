@@ -17,6 +17,8 @@ import AssessmentThirdPhaseComplete from './Components/Home/Assesment/Assessment
 import Assessmentfourthphase from './Components/Home/Assesment/Assessmentstagefour/AssessmentPhaseFour';
 import Assessmentfourthphase_1 from './Components/Home/Assesment/Assessmentstagefour/AssessmentPhaseFour_1';
 import { SelectPaymentPlan } from './Components/Home/Assesment/SelectPaymentPlan';
+import SignUp from './Components/Home/SignUp/SignUp';
+import SignIn from './Components/Home/SignIn/SignIn';
 
 
 const App: React.FC = () => {
@@ -41,6 +43,8 @@ const App: React.FC = () => {
               <Route exact path="/assessmentphasefour1" component={Assessmentfourthphase_1}/> 
               <Route exact path="/assessmentphasetwo" component={AssessmentSecondPhase} /> 
               <Route exact path="/paymentplan" component={SelectPaymentPlan} /> 
+              <Route exact path="/signup" component={SignUp} /> 
+              <Route exact path="/signin" component={SignIn} /> 
             </Switch>
         </BrowserRouter>
       </div>

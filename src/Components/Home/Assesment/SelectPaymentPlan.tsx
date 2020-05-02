@@ -23,26 +23,25 @@ export function SelectPaymentPlan (props: IAppProps) {
             <div className="pricewraper">
                 <div className="plan_1">One Off Insights </div>
                 <div className="plancost1"><span>&#8358;</span>7500</div>
-                <div className="personality dd11">Personality</div>
-                <div className="Strengths dd11">Strengths </div>
-                <div className="Weaknesses dd11">Weaknesses </div>
+                <div className="personality dd11">Strengths & Weaknesses</div>
+                <div className="Strengths dd11">Your work life mission</div>
+                <div className="Weaknesses dd11">Rules for success</div>
                 <div className="Strongw dd11">Strong & Weak </div>
                 <div className="Leadership dd11">Leadership Competencies </div>
-                <div><button className="getstarted">Get Started</button></div>
+                <div className="Leadership dd11">Career/Business Expression </div>
+                <div><button className="getstarted1">Get Started</button></div>
             </div>
             <div className="pricewraper">
                 <div className="plan_1">Level Up  Insights</div>
                 <div className="plancost1"><span>&#8358;</span>15000</div>
-                <div className="personality dd11">Personality</div>
-                <div className="Strengths dd11">Strengths </div>
-                <div className="Weaknesses dd11">Weaknesses </div>
+                <div className="personality dd11">Strengths & Weaknesses</div>
+                <div className="Strengths dd11">Your work life mission</div>
+                <div className="Weaknesses dd11">Rules for success</div>
                 <div className="Strongw dd11">Strong & Weak </div>
                 <div className="Leadership dd11">Leadership Competencies </div>
-                <div className="Strongw dd11">Work function</div>
-                <div className="Strongw dd11">Work style</div>
-                <div className="Strongw dd11">Industry Match</div>
-                <div className="Strongw dd11">Comprehensive Talent</div>
-                <div className="">Management Insight& </div>
+                <div className="Leadership dd11">Career/Business Expression </div>
+                <div className="Strongw dd11">Access to counselling</div>
+                <div className="Strongw dd11">support all through the month</div>
                 <div>Strategy Report</div>
                 <div className="Strongw dd11"><button className="getstarted1">Get Started</button></div>
             </div>
@@ -54,10 +53,9 @@ export function SelectPaymentPlan (props: IAppProps) {
                 <div className="Weaknesses dd11">Weaknesses </div>
                 <div className="Strongw dd11">Strong & Weak </div>
                 <div className="Leadership dd11">Leadership Competencies </div>
-                <div className="Strongw dd11">Work function</div>
-                <div className="Strongw dd11">Work style</div>
-                <div className="Strongw dd11">Industry Match</div>
-                <div className="Strongw dd11">6 months Virtual coaching and career accountability for staff</div>
+                <div className="Strongw dd11">30 minutes’ strategy session with a Clarity Counsellor</div>
+                <div className="Strongw dd11">Personal Development road map</div>
+                <div className="Strongw dd11">Access to chat with a clarity counsellor for 24/7 for 30 days and keep you accountable on your development plan.</div>
                 <div className="Strongw dd11"><button className="getstarted1">Get Started</button></div>
             </div>
         </Row>  

@@ -21,9 +21,9 @@ import steptwo from '../../../assets/stepthree.png';
 import RightTopImageSmall from '../../../assets/blank_image_container_small.png';
 import cardecor from '../../../assets/cardecor.png';
 import TakeAssessment from '../HomeComponents/TakeAssesment/takeAssessment';
-import firstImg from '../../../assets/aboutimgone.png';
-import secondImg from '../../../assets/aboutimgtwo.png';
-import thirdImg from '../../../assets/aboutimgthree.png';
+import firstImg from '../../../assets/6.png';
+import secondImg from '../../../assets/4.jpeg';
+import thirdImg from '../../../assets/5.png';
 
 export const About=()=> {
   return (
@@ -33,7 +33,7 @@ export const About=()=> {
                 <Row className="firstrow">
 
                     <Col md={12} sm={{span:12}} xs={{span:12}} className="firstrowtxt firsab">
-                    <div>
+                    <div className="ftweight">
                         <div> Clarity was created so working</div>
                         <div> professionals can create a </div>
                         <div>meaningful work-life.</div>
@@ -44,9 +44,9 @@ export const About=()=> {
                     </Col>
                     <Col md={{span:9,offset:1}}>
                         <div className="wrap001">
-                            <img src={firstImg} className="firstImg" alt="firstImg"/>
-                            <img src={secondImg} className="firstImg1" alt="firstImg"/>
-                            <img src={thirdImg} className="firstImg1" alt="thirdImg"/>
+                            <div><img src={firstImg} className="firstImg" alt="firstImg"/><div className="takecharge">Take charge of their <div> work-life</div></div></div>
+                            <div className="secondoso"><img src={secondImg} className="firstImg1" alt="firstImg"/><div className="takecharge">Maintain Career Security <div>with personalized advice</div></div></div>
+                            <div className="secondoso"><img src={thirdImg} className="firstImg1" alt="firstImg"/><div className="takecharge">Achieve key professional<div> milestones through accountability </div></div></div>
                         </div>  
                         <div className="-of-life-is">
                         80% of life is spent working, so instead of trying to compartmentalizing your life it’s better 

@@ -36,7 +36,7 @@ import { Link } from 'react-router-dom';
                 <Row className="firstrowcf2 cftcontent">
                     <Col md={12}>
                         <div className="firstquestion">
-                        a. Paying attention to details is your specialty; you can spot errors from miles away
+                            a. Paying attention to details is your specialty you can spot errors from miles away
                         </div>
                         <div className="rsliderclass9">
                             <div>
@@ -44,19 +44,19 @@ import { Link } from 'react-router-dom';
                             </div>
                             <div className="checkwrapper">
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question1" />
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question1" />
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question1" />
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question1" />
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
@@ -77,19 +77,19 @@ import { Link } from 'react-router-dom';
                             </div>
                             <div className="checkwrapper">
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question2" />
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question2" />
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question2" />
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question2" />
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
@@ -110,19 +110,19 @@ import { Link } from 'react-router-dom';
                             </div>
                             <div className="checkwrapper">
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question3"/>
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question3"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question3"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question3"/>
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
@@ -143,19 +143,19 @@ import { Link } from 'react-router-dom';
                             </div>
                             <div className="checkwrapper">
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question4"/>
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question4"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question4"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question4"/>
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
@@ -176,19 +176,19 @@ import { Link } from 'react-router-dom';
                             </div>
                             <div className="checkwrapper">
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question5"/>
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question5"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question5"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question5"/>
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
@@ -209,19 +209,19 @@ import { Link } from 'react-router-dom';
                             </div>
                             <div className="checkwrapper">
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question6"/>
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question6"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question6"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question6"/>
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
@@ -242,19 +242,19 @@ import { Link } from 'react-router-dom';
                             </div>
                             <div className="checkwrapper">
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question7"/>
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question7"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question7"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question7"/>
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
@@ -275,19 +275,19 @@ import { Link } from 'react-router-dom';
                             </div>
                             <div className="checkwrapper">
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question8"/>
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question8"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question8"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question8"/>
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
@@ -308,19 +308,19 @@ import { Link } from 'react-router-dom';
                             </div>
                             <div className="checkwrapper">
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question9"/>
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question9"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question9"/>
                                     <span className="checkmark"></span>
                                 </label>
                                     <label className="checkcontainer">
-                                    <input type="checkbox" />
+                                    <input type="radio" name="question9"/>
                                     <span className="checkmark"></span>
                                 </label>
                             </div>

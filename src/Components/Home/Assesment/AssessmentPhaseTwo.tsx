@@ -30,7 +30,9 @@ import { Link } from 'react-router-dom';
 
 
  const AssessmentSecondPhase =()=> {
-    const [ value, setValue ] = React.useState<number>(0); 
+    const [ value, setValue ] = React.useState<number>(0);
+    const [ buttonIsActive,setIsactive ]:any = React.useState({FirstbuttonIsClicked:false,SecondbuttonIsClicked:false,ThirdbuttonIsClicked:false,FourthtbuttonIsClicked:false});
+    console.log(buttonIsActive) 
     return (
     <div>
         <Navbar/>
@@ -50,7 +52,9 @@ import { Link } from 'react-router-dom';
                             </div>
                             <div className="p2answers">
                                 <img src={question2} className="answers" alt="answers" />
-                                <div className="questTwo">Person watching others</div>
+                                <div className="questTwo">
+                                    Person watching others
+                                </div>
                             </div>
                         </div>
                     </Col>
@@ -63,11 +67,18 @@ import { Link } from 'react-router-dom';
                         <div className="rsliderclassPol"> 
                             <div className="p2answers">
                                 <img src={q4} className="answers" alt="answers" />
-                                <div className="questTwo">Live for the moment</div>
+                                <div className="questTwo">
+                                    Live for the moment
+                                </div>
                             </div>
                             <div className="p2answers">
                                 <img src={q5} className="answers" alt="answers" />
-                                <div className="questTwo">Eventual success no <div>matter how hard</div></div>
+                                    <div className="questTwo">
+                                        Eventual success no 
+                                    <div>
+                                        matter how hard
+                                    </div>
+                                </div>
                             </div>
                         </div>
                       </Col>
@@ -91,7 +102,7 @@ import { Link } from 'react-router-dom';
                                 <div>and work without interference.</div></div>
                             </div>
                         </div>
-                        </Col>
+                    </Col>
                 </Row>
                 <Row className="firstrowcf2 cftcontent">
                     <Col md={12}>

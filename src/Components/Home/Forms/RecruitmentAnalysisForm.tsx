@@ -55,11 +55,12 @@ export const RecruitmentAnalysisForm =()=> {
                             </Form.Text>
                         </Form.Group>
                         <Form.Group className="llsss" controlId="formBasicEmail">
-                            <Form.Label className="offserr"> <span className="questionno">5</span><span className="questionarrow">&#8594;</span> Do you have a job description prepared <span className="reqfield">*</span></Form.Label>
-                                <userContext.Provider value={{...buttonIsActive,setIsactive}}>
-                                    <CustomButton questionNumber='A' Answer="No"/>
-                                    <CustomButton_1 questionNumber='B' Answer="Yes"/>
-                                </userContext.Provider>
+                            <Form.Label className="offserr"> <span className="questionno">5</span>
+                                <span className="questionarrow">&#8594;</span> Do you have a job description prepared <span className="reqfield">*</span></Form.Label>
+                                    <userContext.Provider value={{...buttonIsActive,setIsactive}}>
+                                        <CustomButton questionNumber='A' Answer="No"/>
+                                        <CustomButton_1 questionNumber='B' Answer="Yes"/>
+                                    </userContext.Provider>
                             <Form.Text className="text-muted">
                             </Form.Text>
                         </Form.Group>

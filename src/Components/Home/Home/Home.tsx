@@ -4,8 +4,10 @@ import Navbar from '../HomeComponents/navbar';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import RightTopImage from '../../../assets/blank_image_container.png';
-import RightTopImageSmall from '../../../assets/blank_image_container_small.png';
+import RightTopImage from '../../../assets/2.png';
+import testimonial from '../../../assets/testimonial.png';
+import likegoogle from '../../../assets/1.png';
+import howitwk from '../../../assets/3.jpg';
 import one from '../../../assets/one.png';
 import two from '../../../assets/two.png';
 import three from '../../../assets/three.png';
@@ -24,12 +26,13 @@ const Home:React.FC =()=>{
            <Container fluid={true}>
                 <Row className="firstrow">
                     <Col md={5} sm={{span:12,order:1}} xs={{span:12,order:12}} className="firstrowtxt">
-                        <div>Not feeling in control</div>
-                        <div>of your life, career</div>
-                        <div>or business?</div>
+                        <div className="txtheavy">Not feeling in control</div>
+                        <div className="txtheavy">of your life, career</div>
+                        <div className="txtheavy">or business?</div>
                         <div className="Clarity-is-the-solution">
                             Clarity is the solution
                         </div>
+                        <div className="firstassesbtn">Take Assessment</div>
                     </Col>
                     <Col md={7} sm={{span:12,order:12}} xs={{span:12,order:1}}>
                         <img src={RightTopImage} className="homebanner0" alt="homebanner"/>
@@ -41,9 +44,9 @@ const Home:React.FC =()=>{
                     </Col>
                     <Col md={12} className="secondimagearea">
                        <Row>
-                           <Col md={4}>
+                           <Col md={{span:3,offset:1}}>
                                 <div>
-                                    <img src={RightTopImageSmall} className="homebanner1" alt='homebanner1'/>
+                                    <img src={likegoogle} className="homebanner1" alt='homebanner1'/>
                                 </div>
                            </Col>
                            <Col md={7}>
@@ -94,7 +97,7 @@ const Home:React.FC =()=>{
                         <Row>
                         <Col md={{span:5,offset:1}}>
                                 <div>
-                                    <img src={RightTopImage} className="homebanner3" alt='homebanner1'/>
+                                    <img src={howitwk} className="homebanner3" alt='homebanner1'/>
                                 </div>
                            </Col>
                            <Col md={4}>
@@ -117,8 +120,8 @@ const Home:React.FC =()=>{
                     </Col>
                 </Row>
                 <Row className="fourthsecrow">
-                    <Col md={6}>
-                        <img src={RightTopImage} className="homebanner5" alt='homebanner1'/>
+                    <Col md={{span:5,offset:1}}>
+                        <img src={testimonial} className="homebanner5" alt='homebanner1'/>
                     </Col>
                     <Col md={5} className="shii11">
                         <div className="I-found">
@@ -141,7 +144,7 @@ const Home:React.FC =()=>{
                     <Col md={12}>
                        <p className="Knowing-yourself">Knowing yourself is the first step to clarity.</p>
                     </Col>
-                    <TakeAssessment background="#f7931e"/>
+                    <TakeAssessment background="#9c1258"/>
                     <Col md={5}>
                         <div className="I-found">
                         </div>

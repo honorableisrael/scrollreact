@@ -41,7 +41,7 @@
 }
 .sdsd{
     font-size: 12px;
-    font-family: "Sailec-Thin";
+    font-family: 'ubuntu';
     font-stretch: normal;
     font-weight: 400;
     text-transform: capitalize;
@@ -128,7 +128,7 @@
 .awesome1 {
     font-weight: 300;
     font-stretch: normal;
-    font-family: "Sailec-Thin";
+    font-family: 'ubuntu';
     line-height: 1.23;
     letter-spacing: normal;
     text-align: center;
