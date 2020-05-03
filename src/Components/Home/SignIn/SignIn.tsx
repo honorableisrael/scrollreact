@@ -21,11 +21,13 @@ interface State {
   email:string,
   password:string,
   errorMessage:string,
+  isLoading:boolean
 }
  const SignIn:React.FunctionComponent = (props:any) => {
-  const [state,setFormState] = React.useState<State>({email:'',password:'',errorMessage:''})
-  const {email,password,errorMessage} = state
+  const [state,setFormState] = React.useState<State>({email:'',password:'',errorMessage:'',isLoading:false})
+  const {email,password,errorMessage,isLoading} = state
   const sendFormData=(e):any=>{
+    setFormState({...state,isLoading:true})
     e.preventDefault()
     const data = { 
       email, 
@@ -42,12 +44,17 @@ interface State {
       if(response.status===200){
           props.history.push('/assessmentphaseone')
       }
+      setFormState({
+        ...state,
+        isLoading:false
+      })
     })
     .catch(error=>{
       console.log(error.response)
       setFormState({
         ...state,
-        errorMessage:"Failed to Login"
+        errorMessage:"Failed to Login",
+        isLoading:false
       })
     })
   }
@@ -97,7 +104,7 @@ interface State {
                       />
                     </Form.Group>
                       <Button variant="primary" className="subbtn" type="submit">
-                       Sign In
+                        {!isLoading?"Sign In":"Signing In"}
                       </Button>
                       <div className="alreadyhave">Already have an account?<Link to="/signup"><span className="logn"> Sign Up</span></Link></div>
                       <h6 className="text-divider">
