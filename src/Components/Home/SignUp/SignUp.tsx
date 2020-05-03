@@ -24,12 +24,14 @@ interface State {
   confirmPassword:string,
   whereDidYouLearnAboutUs:string,
   errorMessage:string,
-  successMsg:boolean
+  successMsg:boolean,
+  isLoading:boolean
 }
 const SignUp:React.FunctionComponent = () => {
-  const [state,setFormState] = React.useState<State>({firstname:'',lastname:'',email:'',password:'',confirmPassword:'',whereDidYouLearnAboutUs:"",errorMessage:"",successMsg:false})
-  const {firstname,lastname,email,password,confirmPassword,whereDidYouLearnAboutUs,errorMessage,successMsg} = state
+  const [state,setFormState] = React.useState<State>({firstname:'',lastname:'',email:'',password:'',confirmPassword:'',whereDidYouLearnAboutUs:"",errorMessage:"",successMsg:false,isLoading:false})
+  const {firstname,lastname,email,password,confirmPassword,whereDidYouLearnAboutUs,errorMessage,successMsg,isLoading} = state
   const sendFormData=(e)=>{
+    setFormState({...state,isLoading:true})
     e.preventDefault()
     const data = { 
       first_name:firstname,
@@ -45,14 +47,16 @@ const SignUp:React.FunctionComponent = () => {
       console.log(response)
       setFormState({
         ...state,
-        successMsg:true
+        successMsg:true,
+        isLoading:false
       })
     })
     .catch(error=>{
       console.log(error.response)
       setFormState({
         ...state,
-        errorMessage:"Signup failed"
+        errorMessage:"Signup failed",
+        isLoading:false
       })
     })
   }
@@ -154,7 +158,7 @@ return (
                       />
                     </Form.Group>
                       <Button variant="primary" className="subbtn" type="submit">
-                       Sign Up
+                        {!isLoading?"Sign Up":"Signing Up"}
                       </Button>
                       <div className="alreadyhave">Already have an account?<Link to="/signin"><span className="logn"> Login</span></Link></div>
                       <h6 className="text-divider">
