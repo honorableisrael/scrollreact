@@ -53,7 +53,15 @@ const Home:React.FC =()=>{
                                 <div className="cards-section1">
                                     <div className="clarity-card">
                                         <div className="Ellipse-4">
-                                        <div id="wrapper"> <img src={one} className="oneimg" alt="one" /><div className="line-top"></div></div>
+                                        <div id="">
+                                        <div className="wraper22">
+                                            <div className="inner21">
+                                                One
+                                            </div>
+                                        </div>
+                                            <div className="line-top">
+                                            </div>
+                                        </div>
                                         </div>
                                         <div className="Clarity-of-Thought">
                                             Clarity of Thought
@@ -61,14 +69,32 @@ const Home:React.FC =()=>{
                                         <div className="Clairty-lorem">Clairty lorem ipsum dolor sit amet</div>
                                     </div>
                                     <div className="clarity-card">
-                                        <div className="Ellipse-4"><div id="wrapper"><img src={two} className="oneimg" alt="one" /><div className="line-top secondline"></div></div></div>
+                                        <div className="Ellipse-4">
+                                            <div id="">
+                                            <div className="wraper22">
+                                                <div className="inner21">
+                                                    Two
+                                                </div>
+                                            </div>
+                                            <div className="line-top secondline"></div>
+                                            </div>
+                                        </div>
                                         <div className="Clarity-of-Thought">
                                         Self Discovery
                                         </div>
                                         <div className="Clairty-lorem">Clairty lorem ipsum dolor sit amet</div>
                                     </div>
                                     <div className="clarity-card">
-                                        <div className="Ellipse-4"><div id="wrapper"><img src={three} className="oneimg" alt="one" /><div className="line-top"></div></div></div>
+                                        <div className="Ellipse-4">
+                                            <div id="">
+                                            <div className="wraper22">
+                                                <div className="inner21">
+                                                    Three
+                                                </div>
+                                            </div>
+                                            <div className="line-top"></div>
+                                            </div>
+                                        </div>
                                         <div className="Clarity-of-Thought">
                                             Level
                                         </div>
@@ -76,7 +102,13 @@ const Home:React.FC =()=>{
                                         <div className="Clairty-lorem">Clairty lorem ipsum dolor sit amet</div>
                                     </div>
                                     <div className="clarity-card">
-                                        <div className="Ellipse-4"><img src={four} className="oneimg" alt="one" /></div>
+                                        <div className="Ellipse-4">
+                                            <div className="wraper22">
+                                                <div className="inner21">
+                                                    Four
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div className="Clarity-of-Thought">
                                             Experience Rest of Mind
                                         </div>
