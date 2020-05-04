@@ -21,7 +21,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-// team
 interface State {
     value1:string,
     value2:string,
@@ -32,11 +31,22 @@ interface State {
     value7:string,
     value8:string,
     value9:string,
+    token:string
 }
 
 const AssessmentFirstPhase =(props:any)=> {
-const [ state, setValue ] = React.useState<State>({value1:"1",value2:"1",value3:"1",value4:"1",value5:"1",value6:"1",value7:"1",value8:"1",value9:"1" }); 
-const { value1,value2,value3,value4,value5,value6,value7,value8,value9 } = state;
+    //cdm
+    React.useEffect(():any=>{
+        const availableToken = sessionStorage.getItem('userToken')
+        const token = availableToken?JSON.parse(availableToken):props.history.push('/login')
+        setValue({...state,token})
+    },[])
+
+//component state
+const [ state, setValue ] = React.useState<State>({value1:"1",value2:"1",value3:"1",value4:"1",value5:"1",value6:"1",value7:"1",value8:"1",value9:"1",token:'' }); 
+const { value1,value2,value3,value4,value5,value6,value7,value8,value9,token} = state;
+
+//submit form
 const submitForm =(e:any)=>{
     e.preventDefault()
     const data = {
@@ -50,10 +60,12 @@ const submitForm =(e:any)=>{
         q8:value8,
     }
     console.log(data)
-    axios.post(`${API}/outofworkpersonality`,data)
+    axios.post(`${API}/outofworkpersonality`,data, { headers: { 'Authorization': `Token ${token}` } })
     .then( response => {
         console.log(response)
-        props.history.push('/assessmentphasecomplete')
+        if( response.status=== 200 ){
+            props.history.push('/assessmentphasecomplete')
+        }
     })
     .catch(error=>{
         console.log(error.response)
@@ -79,14 +91,17 @@ return (
                     <RangeSlider
                         value={value1}
                         variant="warning"
-                        max={2}
-                        min={1}
+                        max={6}
+                        min={0}
                         onChange={e => setValue({...state,value1:e.target.value})}
                         />
                     </div>
                     <div className="rsliderclass2">
                         <div>
                             Absolutely not
+                        </div>
+                        <div>
+                            Not Sure
                         </div>
                         <div>
                             Very Much
@@ -103,14 +118,17 @@ return (
                     <RangeSlider
                         value={value2}
                         variant='warning'
-                        max={2}
-                        min={1}
+                        max={6}
+                        min={0}
                         onChange={e => setValue({...state,value2:e.target.value})}
                         />
                     </div>
                     <div className="rsliderclass2">
                         <div>
                             Absolutely not
+                        </div>
+                        <div>
+                            Not Sure
                         </div>
                         <div>
                             Very Much
@@ -127,14 +145,17 @@ return (
                     <RangeSlider
                         value={value3}
                         variant="warning"
-                        max={2}
-                        min={1}
+                        max={6}
+                        min={0}
                         onChange={e => setValue({...state,value3:e.target.value})}
                         />
                     </div>
                     <div className="rsliderclass2">
                         <div>
                             Absolutely not
+                        </div>
+                        <div>
+                            Not Sure
                         </div>
                         <div>
                             Very Much
@@ -151,14 +172,17 @@ return (
                     <RangeSlider
                         value={value4}
                         variant="warning"
-                        max={2}
-                        min={1}
+                        max={6}
+                        min={0}
                         onChange={e => setValue({...state,value4:e.target.value})}
                         />
                     </div>
                     <div className="rsliderclass2">
                         <div>
                             Absolutely not
+                        </div>
+                        <div>
+                            Not Sure
                         </div>
                         <div>
                             Very Much
@@ -175,14 +199,17 @@ return (
                     <RangeSlider
                         value = {value5}
                         variant = "warning"
-                        max={2}
-                        min={1}
+                        max={6}
+                        min={0}
                         onChange = {e => setValue({...state,value5:e.target.value})}
                         />
                     </div>
                     <div className="rsliderclass2">
                         <div>
                             Absolutely not
+                        </div>
+                        <div>
+                            Not Sure
                         </div>
                         <div>
                             Very Much
@@ -199,14 +226,17 @@ return (
                     <RangeSlider
                         value={value6}
                         variant="warning"
-                        max={2}
-                        min={1}
+                        max={6}
+                        min={0}
                         onChange={e => setValue({...state,value6:e.target.value})}
                         />
                     </div>
                     <div className="rsliderclass2">
                         <div>
                             Absolutely not
+                        </div>
+                        <div>
+                            Not Sure
                         </div>
                         <div>
                             Very Much
@@ -223,14 +253,17 @@ return (
                     <RangeSlider
                         value={value7}
                         variant="warning"
-                        max={2}
-                        min={1}
+                        max={6}
+                        min={0}
                         onChange={e => setValue({...state,value7:e.target.value})}
                         />
                     </div>
                     <div className="rsliderclass2">
                         <div>
                             Absolutely not
+                        </div>
+                        <div>
+                            Not Sure
                         </div>
                         <div>
                             Very Much
@@ -257,6 +290,9 @@ return (
                             Absolutely not
                         </div>
                         <div>
+                            Not Sure
+                        </div>
+                        <div>
                             Very Much
                         </div>
                     </div>
@@ -271,14 +307,17 @@ return (
                     <RangeSlider
                         value={value9}
                         variant="warning"
-                        max={2}
-                        min={1}
+                        max={6}
+                        min={0}
                         onChange={e => setValue({...state,value9    :e.target.value})}
                         />
                     </div>
                     <div className="rsliderclass2">
                         <div>
                             Absolutely not
+                        </div>
+                        <div>
+                            Not Sure
                         </div>
                         <div>
                             Very Much

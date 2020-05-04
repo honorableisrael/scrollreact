@@ -15,7 +15,9 @@ const Navbar:React.FC =()=>{
     const onDivClicked =()=>{
         // domRef.current.style.color = 'red'
     }
-    
+    const uniqueKeygen =():number=> {
+        return Math.floor(Math.random() * 100)
+    }
     return(
         <div>
             {/* mobile ends */}
@@ -31,7 +33,7 @@ const Navbar:React.FC =()=>{
                     titleStyle     =  {{backgroundColor: '#9c1258',color:'#444444',paddingLeft:10,paddingBottom:0,paddingTop:0,fontSize:17,textAlign:'left'}}
                     itemStyle      =  {{backgroundColor:'#131313',paddingLeft:25 }}
                     itemHoverStyle =  {{backgroundColor:'inherit'}}
-                    title          = {[<div style={{display:'flex',justifyContent:'space-between',background:"#9c1258",padding:'3px 8px 15px 17px'}}>
+                    title          = {[<div key={uniqueKeygen()} style={{display:'flex',justifyContent:'space-between',background:"#9c1258",padding:'3px 8px 15px 17px'}}>
                     <div className="hamburgerwrap">
                         <div className="hamburger" onClick={()=>setShowNav({showNav:!showNav?true:false})}>
                             <div className="line1"></div>

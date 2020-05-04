@@ -42,6 +42,7 @@ interface State {
     .then(response=>{
       console.log(response)
       if(response.status===200){
+        sessionStorage.setItem('userToken', JSON.stringify(response?.data?.token));
           props.history.push('/assessmentphaseone')
       }
       setFormState({
