@@ -19,6 +19,7 @@ import Assessmentfourthphase_1 from './Components/Home/Assesment/Assessmentstage
 import { SelectPaymentPlan } from './Components/Home/Assesment/SelectPaymentPlan';
 import SignUp from './Components/Home/SignUp/SignUp';
 import SignIn from './Components/Home/SignIn/SignIn';
+import AssessmentFifthPhase from './Components/Home/Assesment/AssessmentPhaseFive';
 
 
 const App: React.FC = () => {
@@ -34,7 +35,8 @@ const App: React.FC = () => {
               <Route exact path="/clarityforteams" component={ClarityForTeams} />
               <Route exact path="/recruitmentform" component={RecruitmentAnalysisForm} />
               <Route exact path="/dashboardresult" component={DashboardResults} />
-              <Route exact path="/assessmentphaseone" component={AssessmentFirstPhase} /> 
+              <Route exact path="/assessmentphaseone" component={AssessmentFirstPhase} />
+              <Route exact path="/assessmentphasefive" component={AssessmentFifthPhase} /> 
               <Route exact path="/assessmentphasethree" component={AssessmentThirdPhase} /> 
               <Route exact path="/assessmentphasecomplete" component={AssessmentFirstPhaseComplete} />
               <Route exact path="/secondphasecomplete" component={AssessmentSecondPhaseComplete}/> 

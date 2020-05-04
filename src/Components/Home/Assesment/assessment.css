@@ -70,6 +70,7 @@
 .firstquestion{
     background: #fff;
     padding: 1rem 2rem;
+    font-weight: 400;
 }
 .rsliderclass{
     width: 75%;
@@ -388,13 +389,13 @@ a:hover{
     padding-left: 35px;
     margin-bottom: 16px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 17px;
     -webkit-user-select: none;
     user-select: none;
     align-items: center;
     color: #9c1258;
-    border-radius: 3px;
-    border: 1px solid #9c1258;
+    border-radius: 5px;
+    border: solid 1.5px #9c1258;
     padding: 3px 4px 1px 39px;
 }
 
@@ -417,14 +418,15 @@ a:hover{
   width: 20px;
   color: #9c1258;
   background-color: #fff;
-  border: 1px solid #9c1258;
+  border: solid 1.5px #9c1258;
+  border-radius: 3px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 1px;
-  margin-left: 3px;
-  margin-bottom: 1px;
+  margin-left: 5px;
+  margin-bottom: 3px;
 }
 
 /* On mouse-over, add a grey background color */
