@@ -22,7 +22,6 @@ const CustomButton: React.FunctionComponent<CustomBtnProps> = (props) => {
     return (
       <>
       {
-   
         <div className="boxgroup">
             <div className="boxwrapper" onClick={updateBtnStatus}
                 style={{background:all.FirstbuttonIsClicked?whineColor:white,color:all.FirstbuttonIsClicked?white:whineColor}}

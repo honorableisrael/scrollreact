@@ -6,33 +6,74 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Footer from '../HomeComponents/footer';
 import Navbar from '../HomeComponents/navbar';
-import ProgressBar from 'react-bootstrap/ProgressBar';
-import clock from '../../../assets/clock.png';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
-import RangeSlider from 'react-bootstrap-range-slider';
 import { AssessmentFirstSection } from './AssessmentComponents/AssessmentFirstSection';
-import ans1 from '../../../assets/ans1.png';
-import question2 from '../../../assets/question2.png';
-import q4 from '../../../assets/q4.png';
-import q5 from '../../../assets/q5.png';
-import q6 from '../../../assets/q6.png';
-import q7 from '../../../assets/q7.png';
-import q8 from '../../../assets/q8.png';
-import q9 from '../../../assets/q9.png';
 import { Link } from 'react-router-dom';
-
+import '../Forms/recruitmentform.css';
+import axios from 'axios';
+import { API } from '../../../config';
+import { ToastContainer, toast } from 'react-toastify';
  
 
 
 
 
 // team
+interface State {
+    question1:string,
+    question2:string,
+    question3:string,
+    question4:string,
+    question5:string,
+    token:string
+}
 
-
- const AssessmentSecondPhase =()=> {
+ const AssessmentSecondPhase =(props:any)=> {
     const [ value, setValue ] = React.useState<number>(0);
-    const [ buttonIsActive,setIsactive ]:any = React.useState({FirstbuttonIsClicked:false,SecondbuttonIsClicked:false,ThirdbuttonIsClicked:false,FourthtbuttonIsClicked:false});
-    console.log(buttonIsActive) 
+    const [ state,setCheckboxValue ]:any = React.useState<State>({question1:'1',question2:'1',question3:'1',question4:'1',question5:'1',token:''});
+    const {question1,question2,question3,question4,question5,token} = state
+
+   //cdm
+    React.useEffect(():any=>{
+        const availableToken = sessionStorage.getItem('userToken')
+        const token = availableToken?JSON.parse(availableToken):props.history.push('/login')
+        setCheckboxValue({...state,token})
+    },[])
+
+    //update form feild
+    const onchange = (e:any)=>{
+        setCheckboxValue({
+            ...state,
+            [e.target.name]:e.target.value
+        })
+    }
+    
+    //subform
+    const submitForm =(e:any)=>{
+        e.preventDefault()
+        const data = {
+            q9:question1,
+            q10:question2,
+            q11:question3,
+            q12:question4,
+            q13:question5,
+        }
+        console.log(data)
+        axios.post(`${API}/workpersonality`,data, { headers: { 'Authorization': `Token ${token}` } })
+        .then( response => {
+            console.log(response)
+            if( response.status=== 200 ){
+                props.history.push('/secondphasecomplete')
+            }
+        })
+        .catch(error=>{
+            console.log(error.response)
+            if(error && error.response && error.response.data)
+            notify(error.response.data[0].message)
+        })
+    }
+
+    const notify = (message:string) => toast(message,{containerId: 'B'});
     return (
     <div>
         <Navbar/>
@@ -45,18 +86,18 @@ import { Link } from 'react-router-dom';
                         <div className="firstquestion">
                             a. In a gathering of people, you are often the:
                         </div>
-                        <div className="rsliderclassPol"> 
-                            <div className="p2answers">
-                                <img src={ans1} className="answers" alt="answers" />
-                                <div className="questTwo">Mover & Shaker</div>
-                            </div>
-                            <div className="p2answers">
-                                <img src={question2} className="answers" alt="answers" />
-                                <div className="questTwo">
-                                    Person watching others
-                                </div>
-                            </div>
-                        </div>
+                        <div className="rsliderclassPol1">
+                            <label className="checkcontainer1">
+                                <input type="radio" onChange={onchange} value={1} name="question1" />
+                                <span className="checkmark1" >A</span>
+                                Mover & Shaker
+                            </label>  
+                            <label className="checkcontainer1">
+                                <input type="radio" value={2} onChange={onchange} name="question1" />
+                                <span className="checkmark1">B</span>
+                                Person watching others
+                            </label>    
+                         </div>
                     </Col>
                 </Row>
                 <Row className="firstrowcf2 cftcontent">
@@ -64,23 +105,18 @@ import { Link } from 'react-router-dom';
                         <div className="firstquestion">
                             b. Your personal moto is
                         </div>
-                        <div className="rsliderclassPol"> 
-                            <div className="p2answers">
-                                <img src={q4} className="answers" alt="answers" />
-                                <div className="questTwo">
-                                    Live for the moment
-                                </div>
-                            </div>
-                            <div className="p2answers">
-                                <img src={q5} className="answers" alt="answers" />
-                                    <div className="questTwo">
-                                        Eventual success no 
-                                    <div>
-                                        matter how hard
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div className="rsliderclassPol1">
+                            <label className="checkcontainer1">
+                                <input type="radio" value={1} onChange={onchange} name="question2" />
+                                <span className="checkmark1">A</span>
+                                    Live for the moment 
+                            </label>  
+                            <label className="checkcontainer1">
+                                <input type="radio" value={2} onChange={onchange} name="question2" />
+                                <span className="checkmark1">B</span>
+                                    Eventual success no matter how hard  
+                            </label>    
+                         </div>
                       </Col>
                 </Row>
                 <Row className="firstrowcf2 cftcontent">
@@ -88,20 +124,18 @@ import { Link } from 'react-router-dom';
                         <div className="firstquestion">
                             C. Work is a lot easier when:
                         </div>
-                        <div className="rsliderclassPol"> 
-                            <div className="p2answers">
-                                <img src={q6} className="answers" alt="answers" />
-                                <div className="questTwo">
-                                    I feel accepted by my co-workers
-                                    <div>in a friendly environment. </div>
-                                </div>
-                            </div>
-                            <div className="p2answers">
-                                <img src={q7} className="answers" alt="answers" />
-                                <div className="questTwo">I’m able to create my own rules 
-                                <div>and work without interference.</div></div>
-                            </div>
-                        </div>
+                        <div className="rsliderclassPol1">
+                            <label className="checkcontainer1">
+                                <input type="radio" value={1} onChange={onchange} name="question3" />
+                                <span className="checkmark1">A</span>
+                                    I feel accepted by my co-workers in a friendly environment. 
+                            </label>  
+                            <label className="checkcontainer1">
+                                <input type="radio" value={2} onChange={onchange} name="question3" />
+                                <span className="checkmark1">B</span>
+                                I’m able to create my own rules and work without interference. 
+                            </label>    
+                         </div>
                     </Col>
                 </Row>
                 <Row className="firstrowcf2 cftcontent">
@@ -109,30 +143,54 @@ import { Link } from 'react-router-dom';
                         <div className="firstquestion">
                             d. People think of you as: 
                         </div>
-                        <div className="rsliderclassPol"> 
-                            <div className="p2answers">
-                                <img src={q8} className="answers" alt="answers" />
-                                <div className="questTwo">Carefree, friendly and 
-                                <div>sometimes careless</div> </div>
-                            </div>
-                            <div className="p2answers">
-                                <img src={q9} className="answers" alt="answers" />
-                                <div className="questTwo">
-                                    Rigid, friendly and sometimes
-                                <div>
-                                    too uptight
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div className="nxtbtnarea">
-                            <Link to="/secondphasecomplete">
-                                <button className="nxtbtn">
-                                    Next
-                                </button>
-                            </Link>
-                        </div>
+                        <div className="rsliderclassPol1">
+                            <label className="checkcontainer1">
+                                <input type="radio" value={1} onChange={onchange} name="question4" />
+                                <span className="checkmark1">A</span>
+                                Carefree, friendly and sometimes careless 
+                            </label>  
+                            <label className="checkcontainer1">
+                                <input type="radio" value={2} onChange={onchange} name="question4" />
+                                <span className="checkmark1">B</span>
+                                Rigid, friendly and sometimes too uptight
+                            </label>    
+                         </div> 
                     </Col>
+                </Row>
+                <Row className="firstrowcf2 cftcontent">
+                    <Col md={12}>
+                        <div className="firstquestion">
+                       e. When your day ends how do you feel?
+                        </div>
+                        <div className="rsliderclassPol1">
+                            <label className="checkcontainer1">
+                                <input type="radio" value={1} onChange={onchange} name="question5" />
+                                <span className="checkmark1">A</span>
+                                    Satisfied & Happy
+                            </label>  
+                            <label className="checkcontainer1">
+                                <input type="radio" value={2} onChange={onchange} name="question5" />
+                                <span className="checkmark1">B</span>
+                                    Indifference, you followed the routine for your day 
+                            </label>
+                            <label className="checkcontainer1">
+                                <input type="radio" value={3} onChange={onchange} name="question5" />
+                                <span className="checkmark1">C</span>
+                                    Unsure and unclear you’re doing the right thing with your life. 
+                            </label> 
+                            <label className="checkcontainer1">
+                                <input type="radio" value={4} onChange={onchange} name="question5" />
+                                <span className="checkmark1">D</span>
+                                    Like you still have a lot to achieve
+                            </label>   
+                         </div>
+                    </Col>
+                    <ToastContainer enableMultiContainer containerId={'B'} toastClassName="bg-danger text-white" hideProgressBar={true} position={toast.POSITION.TOP_CENTER} />
+                    <div className="nxtbtnarea">
+                        <button className="nxtbtn" onClick={submitForm}>
+                            Next
+                        </button>
+                    </div>
                 </Row>
                </Col>
             </Row>
