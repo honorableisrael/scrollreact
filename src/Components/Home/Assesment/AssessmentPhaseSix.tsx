@@ -28,7 +28,7 @@ interface State {
     token:string
 }
 
- const AssessmentFifthPhase =(props:any)=> {
+ const AssessmentSixthPhase =(props:any)=> {
     const [ value, setValue ] = React.useState<number>(0);
     const [ state,setCheckboxValue ]:any = React.useState<State>({question1:'1',question2:'1',question3:'1',question4:'1',question5:'1',token:''});
     const {question1,question2,question3,question4,question5,token} = state
@@ -59,7 +59,7 @@ interface State {
             q13:question5,
         }
         console.log(data)
-        axios.post(`${API}/careermotivator`,data, { headers: { 'Authorization': `Token ${token}` } })
+        axios.post(`${API}/workstyle`,data, { headers: { 'Authorization': `Token ${token}` } })
         .then( response => {
             console.log(response)
             if( response.status=== 200 ){
@@ -79,12 +79,12 @@ interface State {
         <Navbar/>
         <Container fluid={true}>
             <Row className="firstrowcf cftcontent">
-               <AssessmentFirstSection  phase="Phase 5" nextPhase="Phase 6" time={13}/>
+               <AssessmentFirstSection  phase="Phase 6" nextPhase="Phase 7" time={13}/>
                <Col md={11}>
                 <Row className="firstrowcf2 cftcontent">
                     <Col md={12}>
                         <div className="firstquestion">
-                        a. In a gathering of people, you are often the:
+                        a. To you getting the job done is more important than excessively talking about it 
                         </div>
                         <div className="rsliderclassPol1">
                             <label className="checkcontainer1">
@@ -128,7 +128,7 @@ interface State {
                 <Row className="firstrowcf2 cftcontent">
                     <Col md={12}>
                         <div className="firstquestion">
-                        b. You’ve realized over time that you achieve more results when accountable to someone than alone
+                        b. You find it difficult communicating tasks you are working on till it’s complete
                         </div>
                         <div className="rsliderclassPol1">
                             <label className="checkcontainer1">
@@ -172,7 +172,7 @@ interface State {
                 <Row className="firstrowcf2 cftcontent">
                     <Col md={12}>
                         <div className="firstquestion">
-                        c. To you being part of a team is more important than working alone
+                        c. You are exceptional at generating the ideas but not handling the details.
                         </div>
                         <div className="rsliderclassPol1">
                             <label className="checkcontainer1">
@@ -216,7 +216,7 @@ interface State {
                 <Row className="firstrowcf2 cftcontent">
                     <Col md={12}>
                         <div className="firstquestion">
-                        d. A work environment with cooperative colleagues can keep you at a terrible job longer 
+                        d. To be honest you can’t help but see the big picture in every situation
                         </div>
                         <div className="rsliderclassPol1">
                             <label className="checkcontainer1">
@@ -257,49 +257,7 @@ interface State {
                          </div>
                     </Col>
                 </Row>
-                <Row className="firstrowcf2 cftcontent">
-                    <Col md={12}>
-                        <div className="firstquestion">
-                       e. When your day ends how do you feel?
-                        </div>
-                        <div className="rsliderclassPol1">
-                            <label className="checkcontainer1">
-                                <input type="radio" onChange={onchange} value={1} name="question5" />
-                                <span className="checkmark1" >A</span>
-                                Very Much
-                            </label>  
-                            <label className="checkcontainer1">
-                                <input type="radio" value={2} onChange={onchange} name="question5" />
-                                <span className="checkmark1">B</span>
-                                Yes
-                            </label>
-                            <label className="checkcontainer1">
-                                <input type="radio" onChange={onchange} value={3} name="question5" />
-                                <span className="checkmark1" >C</span>
-                                Often not always
-                            </label>  
-                            <label className="checkcontainer1">
-                                <input type="radio" value={4} onChange={onchange} name="question5" />
-                                <span className="checkmark1">D</span>
-                                I don’t even know
-                            </label>
-                            <label className="checkcontainer1">
-                                <input type="radio" onChange={onchange} value={5} name="question5" />
-                                <span className="checkmark1" >E</span>
-                                Not exactly
-                            </label>  
-                            <label className="checkcontainer1">
-                                <input type="radio" value={6} onChange={onchange} name="question5" />
-                                <span className="checkmark1">F</span>
-                                Barely
-                            </label> 
-                            <label className="checkcontainer1">
-                                <input type="radio" value={7} onChange={onchange} name="question5" />
-                                <span className="checkmark1">G</span>
-                                Absolutely not
-                            </label>    
-                         </div>
-                    </Col>
+                <Row className="firstrowcf2 cftcontent">    
                     <ToastContainer enableMultiContainer containerId={'B'} toastClassName="bg-danger text-white" hideProgressBar={true} position={toast.POSITION.TOP_CENTER} />
                     <div className="nxtbtnarea">
                         <button className="nxtbtn" onClick={submitForm}>
@@ -315,4 +273,4 @@ interface State {
   )
 }
 
-export default AssessmentFifthPhase;
+export default AssessmentSixthPhase;

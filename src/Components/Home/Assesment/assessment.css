@@ -388,13 +388,15 @@ a:hover{
     position: relative;
     padding-left: 35px;
     margin-bottom: 16px;
+    background-color: #fff;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 16px;
     -webkit-user-select: none;
     user-select: none;
     align-items: center;
-    color: #9c1258;
-    border-radius: 5px;
+    color: #3d3c38;
+    font-weight: 500;
+    border-radius: 6px;
     border: solid 1.5px #9c1258;
     padding: 3px 4px 1px 39px;
 }
@@ -425,7 +427,7 @@ a:hover{
   align-items: center;
   justify-content: center;
   margin-top: 1px;
-  margin-left: 5px;
+  margin-left: 7px;
   margin-bottom: 3px;
 }
 
