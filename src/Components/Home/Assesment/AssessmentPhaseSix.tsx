@@ -25,16 +25,21 @@ interface State {
     question3:string,
     question4:string,
     question5:string,
+    question6:string,
+    question7:string,
+    question8:string,
+    question9:string,
     token:string
 }
 
  const AssessmentSixthPhase =(props:any)=> {
     const [ value, setValue ] = React.useState<number>(0);
-    const [ state,setCheckboxValue ]:any = React.useState<State>({question1:'1',question2:'1',question3:'1',question4:'1',question5:'1',token:''});
-    const {question1,question2,question3,question4,question5,token} = state
+    const [ state,setCheckboxValue ]:any = React.useState<State>({question1:'1',question2:'1',question3:'1',question4:'1',question5:'1',question6:'1',question7:'1',question8:'1',question9:'1',token:''});
+    const {question1,question2,question3,question4,question5,question6,question7,question8,question9,token} = state
 
    //cdm
     React.useEffect(():any=>{
+        window.scrollTo(-0,-0)
         const availableToken = sessionStorage.getItem('userToken')
         const token = availableToken?JSON.parse(availableToken):props.history.push('/login')
         setCheckboxValue({...state,token})
@@ -52,27 +57,39 @@ interface State {
     const submitForm =(e:any)=>{
         e.preventDefault()
         const data = {
-            q9:question1,
-            q10:question2,
-            q11:question3,
-            q12:question4,
-            q13:question5,
+            q62:question1,
+            q63:question2,
+            q64:question3,
+            q65:question4,
+            q66:question5,
+            q67:question6,
+            q68:question8,
+            q69:question9,
         }
         console.log(data)
         axios.post(`${API}/workstyle`,data, { headers: { 'Authorization': `Token ${token}` } })
         .then( response => {
             console.log(response)
-            if( response.status=== 200 ){
-                props.history.push('/six')
-            }
+            handleSuccess(response);
         })
         .catch(error=>{
             console.log(error.response)
-            if(error && error.response && error.response.data)
-            notify(error.response.data[0].message)
+            handleErrors(error);
         })
     }
-
+    const handleSuccess = (response:any) =>{
+        if( response.status=== 200 ){
+            props.history.push('/assessmentphaseseven')
+        }
+    }
+    const handleErrors = (error:any) =>{
+        if(error && error.response && error.response.data){
+            notify(error.response.data[0].message)
+        }
+        if(error && error.response == undefined){
+            notify("Failed to process! try again later")
+        }
+    }
     const notify = (message:string) => toast(message,{containerId: 'B'});
     return (
     <div>

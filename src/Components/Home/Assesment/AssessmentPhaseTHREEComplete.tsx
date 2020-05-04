@@ -11,17 +11,18 @@ import RangeSlider from 'react-bootstrap-range-slider';
 import { AssessmentFirstSection } from './AssessmentComponents/AssessmentFirstSection';
 import nextis5 from '../../../assets/nextis5.png';
 import { Link } from 'react-router-dom';
+import '../Forms/recruitmentform.css';
+import axios from 'axios';
+import { API } from '../../../config';
+import { ToastContainer, toast } from 'react-toastify';
  
 
 
 
 
-// team
-
-
- const AssessmentThirdPhaseComplete =()=> {
-    const [ value, setValue ] = React.useState<number>(0); 
-    return (
+ const AssessmentThirdPhaseComplete =(props:any)=> {
+const [ value, setValue ] = React.useState<number>(0); 
+  return (
     <div>
         <Navbar/>
         <Container fluid={true}>

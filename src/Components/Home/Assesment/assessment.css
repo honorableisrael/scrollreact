@@ -183,14 +183,16 @@
     padding-top: .5rem;
     display: flex;
   }
-  .rsliderclassPol1{
+  .rsliderclassPol1 {
+    width: -moz-fit-content;
     width: fit-content;
     padding-top: .5rem;
     flex-direction: column;
     margin-left: 5rem;
     display: flex;
     flex-direction: column;
-  }
+    margin-top: 1rem;
+}
   
   /* checked box starts here */
   .checkcontainer {
