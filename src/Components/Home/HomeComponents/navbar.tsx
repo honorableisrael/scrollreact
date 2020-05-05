@@ -20,10 +20,10 @@ const Navbar:React.FC =()=>{
     }
     return(
         <div>
-            {/* mobile ends */}
-             <div className="Navsection " >
-                <div className="top-layer">
-                {/* mobile */}
+        {/* mobile ends */}
+            <div className="Navsection " >
+            <div className="top-layer">
+            {/* mobile */}
             <div className="lakk">
                 <SideNav
                     style={{background: showNav?'rgba(0, 0, 0, 0.7)':'inherit'}}
@@ -33,15 +33,7 @@ const Navbar:React.FC =()=>{
                     titleStyle     =  {{backgroundColor: '#9c1258',color:'#444444',paddingLeft:10,paddingBottom:0,paddingTop:0,fontSize:17,textAlign:'left'}}
                     itemStyle      =  {{backgroundColor:'#131313',paddingLeft:25 }}
                     itemHoverStyle =  {{backgroundColor:'inherit'}}
-                    title          = {[<div key={uniqueKeygen()} style={{display:'flex',justifyContent:'space-between',background:"#9c1258",padding:'3px 8px 15px 17px'}}>
-                    <div className="hamburgerwrap">
-                        <div className="hamburger" onClick={()=>setShowNav({showNav:!showNav?true:false})}>
-                            <div className="line1"></div>
-                            <div className="line2"></div>
-                            <div className="line2"></div>
-                        </div>
-                    </div>
-                    </div>]}  
+                    title          = {[<div key={uniqueKeygen()} style={{display:'flex',justifyContent:'flex-end',background:"#9c1258",padding:'0px 4px 1px 8px',color:'white',fontSize:'4rem'}}><span className={showNav?"tymes animated lightSpeedIn":"tymes"} onClick={()=>setShowNav({showNav:!showNav?true:false})}>&times;</span></div>]}   
                     items  = {[
                         <div className={showNav?"listwraper animated fadeInLeft":"listwraper"}>
                             <div className="listwraperMob"><Link to="/">Home</Link></div>
@@ -53,6 +45,8 @@ const Navbar:React.FC =()=>{
                         </div>
                     ]}
                     />
+                <div className="flexsss">
+                <img src={demoLogo} className="clarity_logo" alt="clarity_logo"/>
                     <div className="hamburgerwrap">
                         <div className="hamburger" onClick={()=>setShowNav({showNav:!showNav?true:false})}>
                             <div className="line1"></div>
@@ -60,6 +54,7 @@ const Navbar:React.FC =()=>{
                             <div className="line2"></div>
                         </div>
                     </div>
+                </div>
                 </div>
                 </div>
                 <div className="nav-wrapper">

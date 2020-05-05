@@ -5,7 +5,6 @@
 .top-layer{
     width: 100%;
     height: 10.5px;
-    background-color: #9c1258;
 }
 ul{
   list-style: none;
@@ -392,8 +391,32 @@ button{
     color: white;
 }
 @media(min-width:780px){
+  .top-layer{
+    background-color: #fff;
+  }
+  .clarity_logo{
+    display: none;
+  }
+  .tymes{
+    transform: rotateY(180deg);
+  }
+}
+@media(min-width:780px){
   .nav-wrapper {
     display: flex;
+  }
+  .hamburger{
+    padding-right: .5rem;
+  }
+  .clarity_logo{
+    padding-top: 0.2rem;
+    padding-left: .5rem;
+  }
+  .top-layer{
+    background-color: #9c1258;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
   }
   #wrapper > div {
     display: inline-block;
@@ -445,12 +468,17 @@ button{
   .secondoso{
     margin-top: 1rem;
   }
-  
-  .hamburgerwrap{
+  .flexsss{
     display: flex;
-    justify-content: flex-end;
-    padding-right: 1rem;
-    padding-top: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: .4rem;
+    padding-right: .7rem;
+  }
+  .hamburgerwrap{
+  }
+  .I-found {
+    padding: 1rem 0rem 0rem 0rem;
   }
   .top-layer {
     height: 53.5px;
@@ -550,13 +578,13 @@ button{
 } */
 .line2{
   width: 30px;
-  background: white;
+  background: #9c1258;
   height: 3px;
   margin-top: 5px;
 }
 .line1{
   width: 30px;
-  background: white;
+  background: #9c1258;
   height: 3px;
   margin-top: 0px;
 }
