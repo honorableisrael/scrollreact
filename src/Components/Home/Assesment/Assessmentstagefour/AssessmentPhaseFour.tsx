@@ -19,10 +19,15 @@ import StarRatingComponent from 'react-star-rating-component';
 // team
 
 
- const Assessmentfourthphase =()=> {
+ const Assessmentfourthphase =(props:any)=> {
     const [ value, setValue ] = React.useState<number>(0);
-    const [ {rate1,rate2,rate3,rate4,rate5,rate6,rate7,rate8}, setRateValue ] = React.useState({rate1:0,rate2:0,rate3:0,rate4:0,rate5:0,rate6:0,rate7:0,rate8:0});
-
+    const [ {rate1,rate2,rate3,rate4,rate5,rate6,rate7,rate8,token}, setRateValue ] = React.useState({rate1:0,rate2:0,rate3:0,rate4:0,rate5:0,rate6:0,rate7:0,rate8:0,token:''});
+        //cdm
+        React.useEffect(():any=>{
+            window.scrollTo(-0,-0)
+            const availableToken = sessionStorage.getItem('userToken')
+            const token = availableToken?JSON.parse(availableToken):props.history.push('/signin')
+        },[])
    const onStarClick= (nextValue, prevValue, name)=>{
        console.log(nextValue)
         setRateValue(nextValue);

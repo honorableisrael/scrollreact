@@ -78,7 +78,6 @@
     padding-top: .5rem;
 }
 .rsliderclass2{
-    width: 75%;
     margin: auto;
     line-height: 1.28;
     display:flex;
@@ -193,7 +192,40 @@
     flex-direction: column;
     margin-top: 1rem;
 }
-  
+  @media(min-width:701px){
+    .losos{
+        padding: 1rem 1rem 1rem 4rem;
+    }
+    .rsliderclass9 {
+      width: 75%;
+    }
+    .rsliderclass2{
+      width: 75%;
+    } 
+  }
+  @media(max-width:700px){
+    .rsliderclassPol1{
+      margin-left: 0rem;
+    }
+    .rsliderclass2{
+      widows: 95%;
+    }
+    .firstquestion {
+      padding: 0px;
+  }
+  .rsliderclass9{
+    width: fit-content;
+  }
+  .secondwidth {
+    padding: 4px 0.4rem;
+  }
+  .col-md-11{
+    padding: 0px;
+  }
+  .losos {
+    padding: 0rem 0rem 0rem 2px;
+  }
+}
   /* checked box starts here */
   .checkcontainer {
     display: block;
@@ -269,7 +301,6 @@
     padding-left: 1rem;
   }
   .rsliderclass9{
-    width: 75%;
     margin: auto;
     line-height: 1.28;
     display:flex;
@@ -298,9 +329,7 @@
     text-align: left;
     color: #9c1258;
 }
-.losos{
-    padding: 1rem 1rem 1rem 4rem;
-}
+
 .skip{
     font-size: 1em;
   font-weight: 500;

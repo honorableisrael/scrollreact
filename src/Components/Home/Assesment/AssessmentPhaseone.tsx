@@ -39,7 +39,7 @@ const AssessmentFirstPhase =(props:any)=> {
     React.useEffect(():any=>{
         window.scrollTo(-0,-0)
         const availableToken = sessionStorage.getItem('userToken')
-        const token = availableToken?JSON.parse(availableToken):props.history.push('/login')
+        const token = availableToken?JSON.parse(availableToken):props.history.push('/signin')
         setValue({...state,token})
     },[])
 
