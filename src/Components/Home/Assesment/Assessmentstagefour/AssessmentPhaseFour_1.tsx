@@ -32,7 +32,7 @@ import StarRatingComponent from 'react-star-rating-component';
         <Navbar/>
         <Container fluid={true}>
             <Row className="firstrowcf cftcontent">
-               <AssessmentFirstSection phase="Phase 4" nextPhase="Results" time={10}/>
+               <AssessmentFirstSection progressBar = {40} phase="Phase 4" nextPhase="Results" time={10}/>
                <Col md={11}>
                     
                </Col>

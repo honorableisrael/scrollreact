@@ -102,7 +102,7 @@ const submitForm =(e:any)=>{
         <Navbar/>
         <Container fluid={true}>
             <Row className="firstrowcf cftcontent">
-               <AssessmentFirstSection phase="Phase 3" nextPhase="Phase 4" time={15}/>
+               <AssessmentFirstSection progressBar={30} phase="Phase 3" nextPhase="Phase 4" time={15}/>
                <Col md={11}>
                 <Row className="firstrowcf2 cftcontent">
                     <Col md={12}>

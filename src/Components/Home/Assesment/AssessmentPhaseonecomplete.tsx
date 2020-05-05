@@ -26,7 +26,7 @@ import { Link } from 'react-router-dom';
         <Navbar/>
         <Container fluid={true}>
             <Row className="firstrowcf cftcontent">
-               <AssessmentFirstSection phase="Phase 1" nextPhase="Phase 2" time={10}/>
+               <AssessmentFirstSection progressBar={15} phase="Phase 1" nextPhase="Phase 2" time={10}/>
                <Col md={11}>
                     <Row className="firstrowcf2 cftcontent">
                         <Col md={12} className="awesomewrap">

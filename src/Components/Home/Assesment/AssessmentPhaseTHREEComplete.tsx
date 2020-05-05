@@ -27,7 +27,7 @@ const [ value, setValue ] = React.useState<number>(0);
         <Navbar/>
         <Container fluid={true}>
             <Row className="firstrowcf cftcontent">
-               <AssessmentFirstSection phase="Phase 3" nextPhase="Phase 4" time={10}/>
+               <AssessmentFirstSection progressBar={30} phase="Phase 3" nextPhase="Phase 4" time={10}/>
                <Col md={11}>
                     <Row className="firstrowcf2 cftcontent">
                         <Col md={12} className="awesomewrap">

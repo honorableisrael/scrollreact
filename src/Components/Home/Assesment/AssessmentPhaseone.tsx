@@ -81,7 +81,7 @@ return (
     <Navbar/>
     <Container fluid={true}>
         <Row className="firstrowcf cftcontent">
-            <AssessmentFirstSection phase="Phase 1" nextPhase="Phase 2" time={15}/>
+            <AssessmentFirstSection progressBar={10} phase="Phase 1" nextPhase="Phase 2" time={15}/>
             <Col md={11}>
             <Row className="firstrowcf2 cftcontent">
                 <Col md={12}>

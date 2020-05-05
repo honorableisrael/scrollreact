@@ -80,7 +80,7 @@ interface State {
         <Navbar/>
         <Container fluid={true}>
             <Row className="firstrowcf cftcontent">
-               <AssessmentFirstSection  phase="Phase 7" nextPhase="Finish" time={13}/>
+               <AssessmentFirstSection progressBar={90} phase="Phase 7" nextPhase="Finish" time={13}/>
                <Col md={11}>
                 <Row className="firstrowcf2 cftcontent">
                     <Col md={12}>

@@ -8,7 +8,8 @@ import '../assessment.css';
 export interface AssessmentFirstSectionProps {
     phase:string,
     nextPhase:string,
-    time:number
+    time:number,
+    progressBar:number
 }
 
 export function AssessmentFirstSection (props: AssessmentFirstSectionProps) {
@@ -40,7 +41,7 @@ export function AssessmentFirstSection (props: AssessmentFirstSectionProps) {
         </div>
         <div className="progressbarwrapper">
             <ProgressBar>
-                <ProgressBar striped variant="warning" now={25} key={1} />
+                <ProgressBar striped variant="warning" now={props.progressBar} key={1} />
                 <ProgressBar variant="warning" now={0} key={2} />
                 <ProgressBar striped variant="warning" now={0} key={3} />
             </ProgressBar> 
