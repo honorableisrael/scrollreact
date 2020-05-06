@@ -23,7 +23,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
  const Assessmentfourthphase =(props:any)=> {
     const [ value, setValue ] = React.useState<number>(0);
-    const [ {rate1,rate2,rate3,rate4,rate5,rate6,rate7,rate8,rate9,rate10,rate11,rate12,rate13,rate14,rate15,rate16,rate17,rate18,rate19,rate20,rate21,rate22,rate23,rate24,token}, setRateValue ] = React.useState({rate1:0,rate2:0,rate3:0,rate4:0,rate5:0,rate6:0,rate7:0,rate8:0,rate9:0,rate10:0,rate11:0,rate12:0,rate13:0,rate14:0,rate15:0,rate16:0,rate17:0,rate18:0,rate19:0,rate20:0,rate21:0,rate22:0,rate23:0,rate24:0,token:''});
+    const [ {rate1,rate2,rate3,rate4,rate5,rate6,rate7,rate8,rate9,rate10,rate11,rate12,rate13,rate14,rate15,rate16,rate17,rate18,rate19,rate20,rate21,rate22,rate23,rate24,token}, setRateValue ] = React.useState({rate1:1,rate2:1,rate3:1,rate4:1,rate5:1,rate6:1,rate7:1,rate8:1,rate9:1,rate10:1,rate11:1,rate12:1,rate13:1,rate14:1,rate15:1,rate16:1,rate17:1,rate18:1,rate19:1,rate20:1,rate21:1,rate22:1,rate23:1,rate24:1,token:''});
         //cdm
         React.useEffect(():any=>{
             window.scrollTo(-0,-0)
@@ -31,33 +31,72 @@ import { ToastContainer, toast } from 'react-toastify';
             const token = availableToken?JSON.parse(availableToken):props.history.push('/signin')
         },[])
    const onStarClick= (nextValue, prevValue, name)=>{
-       console.log(nextValue)
         setRateValue(nextValue);
     }
         //subform
 const submitForm =(e:any)=>{
     e.preventDefault()
-    const data = {
-        q36:rate1,
-        q36a:rate2,
-        q16:rate3,
-        q17:rate4,
-        q18:rate5,
-        q19:rate6,
-        q20:rate7,
-        q21:rate8,
-        q22:rate9,
-
+    const availableToken = sessionStorage.getItem('userToken')
+    const token = availableToken?JSON.parse(availableToken):props.history.push('/signin')
+    console.log(token)
+    const firstApiData = {
+        q36a:rate1,
+        q36b:rate2,
+        q36c:rate3,
+        q36d:rate4,
+        q36e:rate5,
+        q36f:rate6,
+        q36g:rate7,
+        q36h:rate8
     }
-    console.log(data)
-    axios.post(`${API}/naturalcompetence`,data, { headers: { 'Authorization': `Token ${token}` } })
-    .then( response => {
-        console.log(response)
-        if( response.status=== 200 ){
-            props.history.push('/thirdphasecomplete')
-        }
-    })
-    .catch(error=>{
+    const secondApiData = {
+        q37a:rate9,
+        q37b:rate10,
+        q37c:rate11,
+        q37d:rate12,
+    }
+    const thirdApiData = {
+        q38a:rate16,
+        q38b:rate17,
+        q38c:rate18,
+    }
+    const fourthApiData = {
+        q38a:rate13,
+        q38b:rate14,
+        q38c:rate15,
+    }
+    axios
+        .all([
+        axios.post(
+            `${API}/careerinterestcreative`,
+            firstApiData,
+            { headers: { 'Authorization': `Token ${token}` } }
+        ),
+        axios.post(
+            `${API}/careerinterestbuilding`,
+            secondApiData,
+            { headers: { 'Authorization': `Token ${token}` } }
+        ),
+        axios.post(
+            `${API}/careerinteresthealth`,
+            thirdApiData,
+            { headers: { 'Authorization': `Token ${token}` } }
+        ),            axios.post(
+            `${API}/careerinterestnature`,
+            fourthApiData,
+            { headers: { 'Authorization': `Token ${token}` } }
+        )
+        ])
+        .then(
+        axios.spread((firstresponse, secondresponse,thirdresponse,fourthresp) => {
+            console.log(firstresponse)
+            console.log(secondresponse)
+            console.log(thirdresponse)
+            console.log(fourthresp)
+        //  props.history.push('/assessmentphasefour1')
+        })
+        )
+        .catch((error) => {
         console.log(error.response)
         if(error && error.response && error.response.data){
             notify(error.response.data[0].message)
@@ -65,8 +104,8 @@ const submitForm =(e:any)=>{
         if(error && error.response == undefined){
             notify("Failed to process! try again later")
         }
+        });
 
-    })
 }
 
 const notify = (message:string) => toast(message,{containerId: 'B'});    
@@ -225,7 +264,7 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                         </div>
                         </Col>
                         <Col md={1} className="ocenter">
-                            <Link to="/assessmentphasefour1"><span className="rightarrow">&#8594;</span></Link>
+                            <span className="rightarrow" onClick={submitForm}>&#8594;</span>
                         </Col>
                        </Row>
                     </Col>
@@ -243,9 +282,9 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                                     </div>
                                 <div className="assessrating">
                                     <StarRatingComponent 
-                                        name="rate1" 
+                                        name="rate9" 
                                         starCount={5}
-                                        value={rate1}
+                                        value={rate9}
                                         onStarClick={onStarClick}
                                         emptyStarColor={"#444"}
                                         />
@@ -259,9 +298,9 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                                     </div>
                                 <div className="assessrating">
                                     <StarRatingComponent 
-                                        name="rate2" 
+                                        name="rate10" 
                                         starCount={5}
-                                        value={rate2}
+                                        value={rate10}
                                         onStarClick={onStarClick}
                                         emptyStarColor={"#444"}
                                         />
@@ -275,9 +314,9 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                                     </div>
                                 <div className="assessrating">
                                     <StarRatingComponent 
-                                        name="rate3" 
+                                        name="rate11" 
                                         starCount={5}
-                                        value={rate3}
+                                        value={rate11}
                                         onStarClick={onStarClick}
                                         emptyStarColor={"#444"}
                                         />
@@ -291,9 +330,9 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                                     </div>
                                 <div className="assessrating">
                                     <StarRatingComponent 
-                                        name="rate4" 
+                                        name="rate12" 
                                         starCount={5}
-                                        value={rate4}
+                                        value={rate12}
                                         onStarClick={onStarClick}
                                         emptyStarColor={"#444"}
                                         />
@@ -314,9 +353,9 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                                     </div>
                                 <div className="assessrating">
                                     <StarRatingComponent 
-                                        name="rate1" 
+                                        name="rate13" 
                                         starCount={5}
-                                        value={rate1}
+                                        value={rate13}
                                         onStarClick={onStarClick}
                                         emptyStarColor={"#444"}
                                         />
@@ -330,9 +369,9 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                                     </div>
                                 <div className="assessrating">
                                     <StarRatingComponent 
-                                        name="rate2" 
+                                        name="rate14" 
                                         starCount={5}
-                                        value={rate2}
+                                        value={rate14}
                                         onStarClick={onStarClick}
                                         emptyStarColor={"#444"}
                                         />
@@ -346,9 +385,9 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                                     </div>
                                 <div className="assessrating">
                                     <StarRatingComponent 
-                                        name="rate3" 
+                                        name="rate15" 
                                         starCount={5}
-                                        value={rate3}
+                                        value={rate15}
                                         onStarClick={onStarClick}
                                         emptyStarColor={"#444"}
                                         />
@@ -357,98 +396,60 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                             </div>
                         </div>
                         </Col>
-                    <Col md={12}>
-                       <Row>
-                            <Col md={11}>
-                                <div className="firstquestion losos">
-                                        <div className="creative">
-                                        Humanitarian
-                                        </div>
-                                    <div>
-                                        <div className="skip">
-                                        </div>
-                                        <div className="assessquestionwrap">
-                                            <div className="assessquestion">
-                                            16. Impart knowledge and guide people down the right path
-                                            </div>
-                                        <div className="assessrating">
-                                            <StarRatingComponent 
-                                                name="rate1" 
-                                                starCount={5}
-                                                value={rate1}
-                                                onStarClick={onStarClick}
-                                                emptyStarColor={"#444"}
-                                                />
-                                        </div>
-                                        </div>
+                        <Col md={11}>
+                        <div className="firstquestion losos">
+                            <div className="creative">
+                                Health
+                            </div>
+                            <div>
+                                <div className="assessquestionwrap">
+                                    <div className="assessquestion">
+                                    16. Identify and prevent a range of conditions and illnesses from occurring
                                     </div>
-                                    <div>
-                                        <div className="assessquestionwrap">
-                                            <div className="assessquestion">
-                                            17. Champion a cause that changes the lives of people positively
-                                            </div>
-                                        <div className="assessrating">
-                                            <StarRatingComponent 
-                                                name="rate2" 
-                                                starCount={5}
-                                                value={rate2}
-                                                onStarClick={onStarClick}
-                                                emptyStarColor={"#444"}
-                                                />
-                                        </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="assessquestionwrap">
-                                            <div className="assessquestion">
-                                            18. Represent the public interest of a group of people, country or nation
-                                            </div>
-                                        <div className="assessrating">
-                                            <StarRatingComponent 
-                                                name="rate3" 
-                                                starCount={5}
-                                                value={rate3}
-                                                onStarClick={onStarClick}
-                                                emptyStarColor={"#444"}
-                                                />
-                                        </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="assessquestionwrap">
-                                            <div className="assessquestion">
-                                            19. Advocate for people’s rights using the law
-                                            </div>
-                                        <div className="assessrating">
-                                            <StarRatingComponent 
-                                                name="rate4" 
-                                                starCount={5}
-                                                value={rate4}
-                                                onStarClick={onStarClick}
-                                                emptyStarColor={"#444"}
-                                                />
-                                        </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="assessquestionwrap">
-                                            <div className="assessquestion">
-                                            20. Provide physical, emotional and social support to help people live their best lives
-                                            </div>
-                                        <div className="assessrating">
-                                            <StarRatingComponent 
-                                                name="rate5" 
-                                                starCount={5}
-                                                value={rate5}
-                                                onStarClick={onStarClick}
-                                                emptyStarColor={"#444"}
-                                                />
-                                        </div>
-                                        </div>
-                                    </div>
+                                <div className="assessrating">
+                                    <StarRatingComponent 
+                                        name="rate16" 
+                                        starCount={5}
+                                        value={rate16}
+                                        onStarClick={onStarClick}
+                                        emptyStarColor={"#444"}
+                                        />
                                 </div>
-                                </Col>
-                           </Row>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="assessquestionwrap">
+                                    <div className="assessquestion">
+                                    17. Work with people to maintain a healthy lifestyle
+                                    </div>
+                                <div className="assessrating">
+                                    <StarRatingComponent 
+                                        name="rate17" 
+                                        starCount={5}
+                                        value={rate17}
+                                        onStarClick={onStarClick}
+                                        emptyStarColor={"#444"}
+                                        />
+                                </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="assessquestionwrap">
+                                    <div className="assessquestion">
+                                    18. Diagnose and treat a variety of medical issues
+                                    </div>
+                                <div className="assessrating">
+                                    <StarRatingComponent 
+                                        name="rate18" 
+                                        starCount={5}
+                                        value={rate18}
+                                        onStarClick={onStarClick}
+                                        emptyStarColor={"#444"}
+                                        />
+                                </div>
+                                </div>
+                            </div>
+                        </div>
                         </Col>
                        </Row>
                     </Col>
