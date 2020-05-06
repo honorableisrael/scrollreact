@@ -23,7 +23,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
  const Assessmentfourthphase =(props:any)=> {
     const [ value, setValue ] = React.useState<number>(0);
-    const [ {rate1,rate2,rate3,rate4,rate5,rate6,rate7,rate8,rate9,rate10,rate11,rate12,rate13,rate14,rate15,rate16,rate17,rate18,rate19,rate20,rate21,rate22,rate23,rate24,token}, setRateValue ] = React.useState({rate1:1,rate2:1,rate3:1,rate4:1,rate5:1,rate6:1,rate7:1,rate8:1,rate9:1,rate10:1,rate11:1,rate12:1,rate13:1,rate14:1,rate15:1,rate16:1,rate17:1,rate18:1,rate19:1,rate20:1,rate21:1,rate22:1,rate23:1,rate24:1,token:''});
+    const [ {rate1,rate2,rate3,rate4,rate5,rate6,rate7,rate8,rate9,rate10,rate11,rate12,rate13,rate14,rate15,rate16,rate17,rate18,rate19,rate20,rate21,rate22,rate23,rate24,token}, setRateValue ] = React.useState({rate1:"1",rate2:"1",rate3:"1",rate4:"1",rate5:"1",rate6:"1",rate7:"1",rate8:"1",rate9:"1",rate10:"1",rate11:"1",rate12:"1",rate13:"1",rate14:"1",rate15:"1",rate16:"1",rate17:"1",rate18:"1",rate19:"1",rate20:"1",rate21:"1",rate22:"1",rate23:"1",rate24:"1",token:''});
         //cdm
         React.useEffect(():any=>{
             window.scrollTo(-0,-0)
@@ -56,14 +56,15 @@ const submitForm =(e:any)=>{
         q37d:rate12,
     }
     const thirdApiData = {
-        q38a:rate16,
-        q38b:rate17,
-        q38c:rate18,
+        q38a:rate17,
+        q38b:rate18,
+        q38c:rate19,
     }
     const fourthApiData = {
-        q38a:rate13,
-        q38b:rate14,
-        q38c:rate15,
+        q39a:rate13,
+        q39b:rate14,
+        q39c:rate15,
+        q39d:rate16
     }
     axios
         .all([
@@ -81,7 +82,8 @@ const submitForm =(e:any)=>{
             `${API}/careerinteresthealth`,
             thirdApiData,
             { headers: { 'Authorization': `Token ${token}` } }
-        ),            axios.post(
+        ),            
+        axios.post(
             `${API}/careerinterestnature`,
             fourthApiData,
             { headers: { 'Authorization': `Token ${token}` } }
@@ -93,7 +95,9 @@ const submitForm =(e:any)=>{
             console.log(secondresponse)
             console.log(thirdresponse)
             console.log(fourthresp)
-        //  props.history.push('/assessmentphasefour1')
+            if(firstresponse?.status == 200 && secondresponse?.status == 200 && thirdresponse?.status == 200 && fourthresp?.status==200 ){
+                props.history.push('/assessmentphasefour1')
+            }
         })
         )
         .catch((error) => {
@@ -106,7 +110,7 @@ const submitForm =(e:any)=>{
         }
         });
 
-}
+    }
 
 const notify = (message:string) => toast(message,{containerId: 'B'});    
     return (
@@ -394,17 +398,10 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                                 </div>
                                 </div>
                             </div>
-                        </div>
-                        </Col>
-                        <Col md={11}>
-                        <div className="firstquestion losos">
-                            <div className="creative">
-                                Health
-                            </div>
                             <div>
                                 <div className="assessquestionwrap">
                                     <div className="assessquestion">
-                                    16. Identify and prevent a range of conditions and illnesses from occurring
+                                    16. Use the sun, wind, charcoal, water or fossil fuel to generate power for electricity
                                     </div>
                                 <div className="assessrating">
                                     <StarRatingComponent 
@@ -417,10 +414,17 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                                 </div>
                                 </div>
                             </div>
+                        </div>
+                        </Col>
+                        <Col md={11}>
+                        <div className="firstquestion losos">
+                            <div className="creative">
+                                Health
+                            </div>
                             <div>
                                 <div className="assessquestionwrap">
                                     <div className="assessquestion">
-                                    17. Work with people to maintain a healthy lifestyle
+                                    17. Identify and prevent a range of conditions and illnesses from occurring
                                     </div>
                                 <div className="assessrating">
                                     <StarRatingComponent 
@@ -436,7 +440,7 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                             <div>
                                 <div className="assessquestionwrap">
                                     <div className="assessquestion">
-                                    18. Diagnose and treat a variety of medical issues
+                                    18. Work with people to maintain a healthy lifestyle
                                     </div>
                                 <div className="assessrating">
                                     <StarRatingComponent 
@@ -449,8 +453,25 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                                 </div>
                                 </div>
                             </div>
+                            <div>
+                                <div className="assessquestionwrap">
+                                    <div className="assessquestion">
+                                    19. Diagnose and treat a variety of medical issues
+                                    </div>
+                                <div className="assessrating">
+                                    <StarRatingComponent 
+                                        name="rate19" 
+                                        starCount={5}
+                                        value={rate19}
+                                        onStarClick={onStarClick}
+                                        emptyStarColor={"#444"}
+                                        />
+                                </div>
+                                </div>
+                            </div>
                         </div>
                         </Col>
+                        <ToastContainer enableMultiContainer containerId={'B'} toastClassName="bg-danger text-white" hideProgressBar={true} position={toast.POSITION.TOP_CENTER} />
                        </Row>
                     </Col>
                 </Row>
