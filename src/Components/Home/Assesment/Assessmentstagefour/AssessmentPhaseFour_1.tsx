@@ -59,8 +59,8 @@ import { ToastContainer, toast } from 'react-toastify';
         q43c:rate11,
         q43d:rate12,
         q43e:rate13,
-        q42f:rate9,
-        q42g:rate10,
+        q43f:rate9,
+        q43g:rate10,
     }
     if (token){
         axios
@@ -76,7 +76,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 { headers: { 'Authorization': `Token ${token}` } }
             ),
             axios.post(
-                `${API}/careerinterestcreativesports`,
+                `${API}/careerinterestsports`,
                 thirdApiData,
                 { headers: { 'Authorization': `Token ${token}` } }
             )
