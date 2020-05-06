@@ -39,8 +39,12 @@ import { Link } from 'react-router-dom';
                                     You are a natural born leader, just a few more minutes & we'll be on our way
                                 </div>
                                 <div className="awesome2">
-                                <Link to="/assessmentphasetwo"><button className="awesomebtn">Continue Assessment</button></Link> 
-                                    <button className="awesomebtnsubmit">Save Progress</button>
+                                    <Link to="/assessmentphasetwo">
+                                        <button className="awesomebtn">Continue Assessment</button>
+                                    </Link> 
+                                    <Link to="/">
+                                        <button className="awesomebtnsubmit">Save Progress</button>
+                                    </Link>
                                 </div>
                             </div>
                         </Col> 

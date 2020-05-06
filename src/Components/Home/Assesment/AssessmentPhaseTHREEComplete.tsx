@@ -41,7 +41,7 @@ const [ value, setValue ] = React.useState<number>(0);
                                 </div>
                                 <div className="awesome2">
                                 <Link to="/assessmentphasefour"><button className="awesomebtn">Continue Assessment</button></Link> 
-                                    <button className="awesomebtnsubmit">Save Progress</button>
+                                <Link to="/"> <button className="awesomebtnsubmit">Save Progress</button></Link>
                                 </div>
                             </div>
                         </Col> 

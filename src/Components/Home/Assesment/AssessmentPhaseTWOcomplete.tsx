@@ -40,7 +40,7 @@ import { Link } from 'react-router-dom';
                                 </div>
                                 <div className="awesome2">
                                 <Link to="/assessmentphasethree"><button className="awesomebtn">Continue Assessment</button></Link> 
-                                    <button className="awesomebtnsubmit">Save Progress</button>
+                                <Link to="/"> <button className="awesomebtnsubmit">Save Progress</button></Link>
                                 </div>
                             </div>
                         </Col> 

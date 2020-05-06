@@ -297,6 +297,9 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                                     </div>
                                 </div>
                                 </Col>
+                                <Col md={1} className="ocenter">
+                                    <span className="rightarrow" onClick={submitForm}>&#8594;</span>
+                                </Col>     
                            </Row>
                         </Col>
                         <Col md={12}>
@@ -425,10 +428,7 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                            </Row>
                         </Col>
                         <ToastContainer enableMultiContainer containerId={'B'} toastClassName="bg-danger text-white" hideProgressBar={true} position={toast.POSITION.TOP_CENTER} />
-                        <Col md={1} className="ocenter">
-                             <span className="rightarrow" onClick={submitForm}>&#8594;</span>
-                        </Col>
-                       </Row>
+                        </Row>
                     </Col>
                 </Row>
         <Footer/>
