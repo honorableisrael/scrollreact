@@ -43,7 +43,8 @@ interface State {
       console.log(response)
       if(response.status===200){
         sessionStorage.setItem('userToken', JSON.stringify(response?.data?.token));
-          props.history.push('/assessmentphaseone')
+        getUserInfo(response.data.token)
+        getCurrentAssessmentPosition(response.data.token)
       }
       setFormState({
         ...state,
@@ -59,11 +60,58 @@ interface State {
       })
     })
   }
+  
+  const getCurrentAssessmentPosition=(token:string):void=>{
+    axios.get(`${API}/progress`,{ headers: { 'Authorization': `Token ${token}` } })
+    .then((response)=>{
+        console.log(response)
+        if(response.status===200 && response.data[0].next==='phase_four_sports' ||  response.data[0].next==='phase_four_business'||  response.data[0].next==='phase_four_stem'){
+           return props.history.push(`/assessmentphasefour1`)
+        }
+        if(response.status===200 && response.data[0].next==='phase_one'){
+            return props.history.push(`/assessmentphaseone`)
+        }
+        if(response.status===200 && response.data[0].next==='phase_two'){
+            return props.history.push(`/assessmentphasetwo`)
+        }
+        if(response.status===200 && response.data[0].next==='phase_three'){
+            return props.history.push(`/assessmentphasethree`)
+        }
+        if(response.status===200 && response.data[0].next==='phase_five'){
+            return props.history.push(`/assessmentphasefive`)
+        }
+        if(response.status===200 && response.data[0].next==='phase_six'){
+            return props.history.push(`/assessmentphasesix`)
+        }
+        if(response.status===200 && response.data[0].next==='phase_seven'){
+            return props.history.push(`/assessmentphaseseven`)
+        }
+        if(response.status===200 && response.data[0].next==='home'){
+            return props.history.push(`/`)
+        }
+    })
+    .catch(error=>{
+        console.log(error)
+    })
+  }
+
   const changeActionOnFormData =(e:any)=>{
     setFormState({
       ...state,
       [e.target.name]:e.target.value,
       errorMessage:""
+    })
+  }
+  const getUserInfo=(token:string):any=>{
+    axios.get(`${API}/currentuser`,{ headers: { 'Authorization': `Token ${token}` } })
+    .then((response)=>{
+        console.log(response)
+        if(response.status===200){
+            sessionStorage.setItem('user', JSON.stringify(response?.data));
+        }
+    })
+    .catch(error=>{
+        console.log(error)
     })
   }
   return (
