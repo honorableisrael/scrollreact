@@ -20,25 +20,27 @@ import { ToastContainer, toast } from 'react-toastify';
 
 // team
 
-
  const Assessmentfourthphase =(props:any)=> {
-    const [ value, setValue ] = React.useState<number>(0);
-    const [ {rate1,rate2,rate3,rate4,rate5,rate6,rate7,rate8,rate9,rate10,rate11,rate12,rate13,rate14,rate15,rate16,rate17,rate18,rate19,rate20,rate21,rate22,rate23,rate24,token}, setRateValue ] = React.useState({rate1:"1",rate2:"1",rate3:"1",rate4:"1",rate5:"1",rate6:"1",rate7:"1",rate8:"1",rate9:"1",rate10:"1",rate11:"1",rate12:"1",rate13:"1",rate14:"1",rate15:"1",rate16:"1",rate17:"1",rate18:"1",rate19:"1",rate20:"1",rate21:"1",rate22:"1",rate23:"1",rate24:"1",token:''});
-        //cdm
+    const [ state, setRateValue ] = React.useState({rate1:"1",rate2:"1",rate3:"1",rate4:"1",rate5:"1",rate6:"1",rate7:"1",rate8:"1",rate9:"1",rate10:"1",rate11:"1",rate12:"1",rate13:"1",rate14:"1",rate15:"1",rate16:"1",rate17:"1",rate18:"1",rate19:"1",rate20:"1",rate21:"1",rate22:"1",rate23:"1",rate24:"1",token:''});
+    const {rate1,rate2,rate3,rate4,rate5,rate6,rate7,rate8,rate9,rate10,rate11,rate12,rate13,rate14,rate15,rate16,rate17,rate18,rate19,rate20,rate21,rate22,rate23,rate24,token} = state 
+    //cdm
         React.useEffect(():any=>{
             window.scrollTo(-0,-0)
             const availableToken = sessionStorage.getItem('userToken')
             const token = availableToken?JSON.parse(availableToken):props.history.push('/signin')
         },[])
    const onStarClick= (nextValue, prevValue, name)=>{
-        setRateValue(nextValue);
+        setRateValue({
+            ...state,
+            [name]:nextValue.toString()
+        });
+        console.log(state)
     }
         //subform
 const submitForm =(e:any)=>{
     e.preventDefault()
     const availableToken = sessionStorage.getItem('userToken')
     const token = availableToken?JSON.parse(availableToken):props.history.push('/signin')
-    console.log(token)
     const firstApiData = {
         q36a:rate1,
         q36b:rate2,
@@ -65,7 +67,8 @@ const submitForm =(e:any)=>{
         q39b:rate14,
         q39c:rate15,
         q39d:rate16
-    }
+    }   
+    console.log(firstApiData)
     axios
         .all([
         axios.post(
@@ -267,9 +270,9 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                             </div>
                         </div>
                         </Col>
-                        <Col md={1} className="ocenter">
+                        <Col md={1} className="ocenter bighide">
                             <span className="rightarrow" onClick={submitForm}>&#8594;</span>
-                        </Col>
+                        </Col>     
                        </Row>
                     </Col>
                     <Col md={12}>
@@ -471,6 +474,9 @@ const notify = (message:string) => toast(message,{containerId: 'B'});
                             </div>
                         </div>
                         </Col>
+                        <Col md={1} className="smalldisplay">
+                            <span className="rightarrow" onClick={submitForm}>&#8594;</span>
+                        </Col>  
                         <ToastContainer enableMultiContainer containerId={'B'} toastClassName="bg-danger text-white" hideProgressBar={true} position={toast.POSITION.TOP_CENTER} />
                        </Row>
                     </Col>

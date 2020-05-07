@@ -17,10 +17,18 @@ import { Link } from 'react-router-dom';
 
 
 // team
+type User = string | null
 
 
  const AssessmentSecondPhaseComplete =()=> {
-    const [ value, setValue ] = React.useState<number>(0); 
+    const [ name,setName ] = React.useState('')
+    React.useEffect(():any=>{
+        window.scrollTo(-0,-0)
+        let user:User = sessionStorage.getItem('user')
+        const currentUser = JSON.parse(user?user:'')
+        setName(currentUser[0].first_name)
+        console.log(currentUser[0].first_name)
+    },[])
     return (
     <div>
         <Navbar/>
@@ -33,7 +41,7 @@ import { Link } from 'react-router-dom';
                             <div>
                                 <img className="cherry-done" src={offcharts} alt="cherry-done"/>
                                 <div className="awesome">
-                                    Your ratings are off the charts right now Dewunmi!
+                                    Your ratings are off the charts right now {name}!
                                 </div>
                                 <div className="awesome1">
                                     Your almost there, take the next assessment and we have a surprise for you!

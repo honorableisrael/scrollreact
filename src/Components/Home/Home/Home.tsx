@@ -16,6 +16,10 @@ import steptwo from '../../../assets/stepthree.png';
 
 
 const Home:React.FC =()=>{
+    const [ name,setName ] = React.useState('')
+    React.useEffect(():any=>{
+        window.scrollTo(-0,-0)
+    },[])
     return(
         <div>
            <Navbar/>

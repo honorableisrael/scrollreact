@@ -465,6 +465,12 @@ button{
     bottom: -1.5rem;
     left: 1rem;
   }
+  .Toastify__toast{
+    width: 69%;
+  }
+  .Toastify__toast-container {
+    text-align: -webkit-center;
+ }
   .secondoso{
     margin-top: 1rem;
   }
@@ -474,6 +480,8 @@ button{
     align-items: center;
     padding-top: .4rem;
     padding-right: .7rem;
+    background: white;
+    padding-bottom: .8rem;
   }
   .hamburgerwrap{
   }

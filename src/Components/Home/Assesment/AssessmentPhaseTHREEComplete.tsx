@@ -18,10 +18,20 @@ import { ToastContainer, toast } from 'react-toastify';
  
 
 
+type User = string | null
+
 
 
  const AssessmentThirdPhaseComplete =(props:any)=> {
-const [ value, setValue ] = React.useState<number>(0); 
+    const [ name,setName ] = React.useState('')
+    React.useEffect(():any=>{
+        window.scrollTo(-0,-0)
+        let user:User = sessionStorage.getItem('user')
+        const currentUser = JSON.parse(user?user:'')
+        setName(currentUser[0].first_name)
+        console.log(currentUser[0].first_name)
+    },[])
+
   return (
     <div>
         <Navbar/>
@@ -34,7 +44,7 @@ const [ value, setValue ] = React.useState<number>(0);
                             <div>
                                 <img className="cherry-done" src={nextis5} alt="cherry-done"/>
                                 <div className="awesome">
-                                    Almost there Dewunmi, just one more to go
+                                    Almost there {name}, just one more to go
                                 </div>
                                 <div className="awesome1">
                                     Your surprise just <span className="doubled">doubled!</span> Complete next section to access it

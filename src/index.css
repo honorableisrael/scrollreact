@@ -9,4 +9,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden; /* Hide horizontal scrollbar */
+  scroll-behavior: smooth;
+}
+html{
+  scroll-behavior: smooth;
 }

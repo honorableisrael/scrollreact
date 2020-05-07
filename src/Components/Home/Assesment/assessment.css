@@ -96,6 +96,7 @@
     padding: .5rem 3rem;
     border-radius: 25px;
  }
+ 
 .firstassess{
     margin-bottom: 2rem;
 }
@@ -202,10 +203,29 @@
     .rsliderclass2{
       width: 75%;
     } 
+    .smalldisplay{
+      display: none;
+      align-items: center;
+    }
+    
+    .ocenter{
+      display: flex;
+      align-items: center;
+  }
   }
   @media(max-width:700px){
     .rsliderclassPol1{
       margin-left: 0rem;
+    }
+   
+  .smalldisplay{
+    display: block;
+  }
+  .bighide{
+    display: none;
+  }
+    .creative{
+      padding: 1rem 0px;
     }
     .rsliderclass2{
       widows: 95%;
@@ -369,10 +389,26 @@
     color: #ffbc41;
     cursor: pointer;
 }
-.ocenter{
-    display: flex;
-    align-items: center;
+.rightarrow:hover{
+  animation:moveforward;
+  animation-duration: 6s;
+  animation-play-state: running;
 }
+@keyframes moveforward {
+  0% {
+    padding-left: 0.1rem;
+  }
+  25% {
+    padding-left: 1rem;
+  }
+  50% {
+    padding-left: 0.2rem;
+  }
+  100% {
+    padding-left: 1rem;
+  }
+}
+
 .chooseheader{
     text-transform: uppercase;
     font-size: 1.5em;

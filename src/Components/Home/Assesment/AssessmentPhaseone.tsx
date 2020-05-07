@@ -35,13 +35,61 @@ interface State {
 }
 
 const AssessmentFirstPhase =(props:any)=> {
-    //cdm
-    React.useEffect(():any=>{
-        window.scrollTo(-0,-0)
-        const availableToken = sessionStorage.getItem('userToken')
-        const token = availableToken?JSON.parse(availableToken):props.history.push('/signin')
-        setValue({...state,token})
-    },[])
+React.useEffect(():any=>{
+    window.scrollTo(-0,-0)
+    const availableToken = sessionStorage.getItem('userToken')
+    const token = availableToken?JSON.parse(availableToken):props.history.push('/signin')
+    setValue({...state,token})
+    getUserInfo(token)
+    getCurrentAssessmentPosition(token)
+},[])
+
+const getUserInfo=(token:string):any=>{
+    axios.get(`${API}/currentuser`,{ headers: { 'Authorization': `Token ${token}` } })
+    .then((response)=>{
+        console.log(response)
+        if(response.status===200){
+            sessionStorage.setItem('user', JSON.stringify(response?.data));
+        }
+    })
+    .catch(error=>{
+        console.log(error)
+    })
+}
+
+const getCurrentAssessmentPosition=(token:string):void=>{
+    axios.get(`${API}/progress`,{ headers: { 'Authorization': `Token ${token}` } })
+    .then((response)=>{
+        console.log(response)
+        if(response.status===200 && response.data[0].next==='phase_four_sports' ||  response.data[0].next==='phase_four_business'||  response.data[0].next==='phase_four_stem'){
+           return props.history.push(`/assessmentphasefour1`)
+        }
+        if(response.status===200 && response.data[0].next==='phase_one'){
+            return 
+        }
+        if(response.status===200 && response.data[0].next==='phase_two'){
+            return props.history.push(`/assessmentphasetwo`)
+        }
+        if(response.status===200 && response.data[0].next==='phase_three'){
+            return props.history.push(`/assessmentphasethree`)
+        }
+        if(response.status===200 && response.data[0].next==='phase_five'){
+            return props.history.push(`/assessmentphasefive`)
+        }
+        if(response.status===200 && response.data[0].next==='phase_six'){
+            return props.history.push(`/assessmentphasesix`)
+        }
+        if(response.status===200 && response.data[0].next==='phase_seven'){
+            return props.history.push(`/assessmentphaseseven`)
+        }
+        if(response.status===200 && response.data[0].next==='home'){
+            return props.history.push(`/`)
+        }
+    })
+    .catch(error=>{
+        console.log(error)
+    })
+}
 
 //component state
 const [ state, setValue ] = React.useState<State>({value1:"1",value2:"1",value3:"1",value4:"1",value5:"1",value6:"1",value7:"1",value8:"1",value9:"1",token:'' }); 
