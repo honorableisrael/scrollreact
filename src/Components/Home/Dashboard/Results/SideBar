@@ -1,0 +1,74 @@
+// import * as React from 'react';
+// import Col from 'react-bootstrap/Col';
+// import './dashboard.css';
+// import { Link } from 'react-router-dom';
+// import leftImg from '../../../../assets/leftarrow.png';
+// import seekleft from '../../../../assets/seekleft.png';
+// import seekright from '../../../../assets/seekright.png';
+// import { useState,useEffect } from 'react';
+// import '../../../Home/Home/animate.css';
+// import axios from 'axios';
+// import { API } from '../../../../config';
+
+// export interface IAppProps {
+// }
+
+// export default function Sidebar (props: IAppProps) {
+//   return (   
+//     <>
+//       <div className={!sideBarIsOpen?"flexconts":"hidesidebar"}>
+//         <div className="titlearea">
+//             <span className={!sideBarIsOpen?"dashtitle":"hidesidebarlinks"}>
+//                 Dashboard- 
+//                 <span className="res1">
+//                 Results
+//                 </span> 
+//             </span>
+//             <span className="arrowcover">
+//             <img src={leftImg} onClick={()=>updateState({...state,sideBarIsOpen:!sideBarIsOpen?true:false})} className={!sideBarIsOpen?"arrow arrowflip":"arrow"} alt="leftimg" />
+//             </span>
+//         </div>
+//         <div className="titleareafirst">    
+//         </div>
+//         <div className="titlearea1">
+//             <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks animated fadeInLeft"}>
+//                 Career Fitness
+//             </Link>  
+//         </div>
+//         <div className="titlearea1">
+//             <Link to="/personalitytype" className={!sideBarIsOpen?"linkss active":"hidesidebarlinks animated fadeInLeft"}>
+//                 YOUR PERSONALITY TYPE
+//             </Link>
+
+//         </div>
+//         <div className="titlearea1">
+//             <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks"}>
+//                 STRENGTHS & WEAKNESS
+//             </Link>
+//         </div>
+//         <div className="titlearea1">
+//             <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks"}>
+//                 YOUR WORK LIFE MISSION
+//             </Link>
+//         </div>
+//         <div className="titlearea1">
+//             <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks"}>
+//                 RULES FOR YOUR SUCCESS
+//             </Link>
+//         </div>
+//         <div className="titlearea1 ">
+//             <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks"}>
+//                 LEADERSHIP COMPETENCIES
+//             </Link>
+//         </div>
+//         <div className="titlearea1">
+//             <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks"}>
+//                 CAREER/BUSINESS EXPRESSIONS
+//             </Link>
+//         </div>
+//         <div className="titlearealast">    
+//         </div>
+//         </div>
+//     </>
+//   );
+// }

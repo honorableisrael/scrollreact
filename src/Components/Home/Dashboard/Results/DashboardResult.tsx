@@ -18,11 +18,15 @@ interface IAppProps {
 }
 interface State {
   sideBarIsOpen:Boolean,
-  token:string
+  token:string,
+  result:{
+    career_personality_type?:string,
+    career_fitness?:string
+  }
 }
 const DashboardResults: React.FunctionComponent<IAppProps> = (props:any) => {
-  const [ state,updateState ] = useState<State>({sideBarIsOpen:false,token:''})
-  const { sideBarIsOpen,token } = state;
+  const [ state,updateState ] = useState<State>({sideBarIsOpen:false,token:'',result:{}})
+  const { sideBarIsOpen,result } = state;
   useEffect(()=>{
     window.scrollTo(-0,-0)
     const availableToken = sessionStorage.getItem('userToken')
@@ -30,6 +34,9 @@ const DashboardResults: React.FunctionComponent<IAppProps> = (props:any) => {
     axios.get(`${API}/freedashboard`, { headers: { 'Authorization': `Token ${token}` } })
     .then(response=>{
       console.log(response)
+      if(response.status === 200){
+          updateState({...state,result:response.data[0]})
+      }
     })
     .catch(error=>{
      console.log(error.response) 
@@ -58,11 +65,11 @@ const DashboardResults: React.FunctionComponent<IAppProps> = (props:any) => {
                         </div>
                         <div className="titlearea1">
                           <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks animated fadeInLeft"}>
-                              WHERE YOU ARE
+                             Career Fitness
                           </Link>  
                         </div>
                         <div className="titlearea1">
-                          <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks animated fadeInLeft"}>
+                          <Link to="/personalitytype" className={!sideBarIsOpen?"linkss active":"hidesidebarlinks animated fadeInLeft"}>
                               YOUR PERSONALITY TYPE
                           </Link>
 
@@ -73,7 +80,7 @@ const DashboardResults: React.FunctionComponent<IAppProps> = (props:any) => {
                           </Link>
                         </div>
                         <div className="titlearea1">
-                          <Link to="/personalitytype" className={!sideBarIsOpen?"linkss active":"hidesidebarlinks"}>
+                          <Link to="/personalitytype" className={!sideBarIsOpen?"linkss":"hidesidebarlinks"}>
                               YOUR WORK LIFE MISSION
                           </Link>
                         </div>
@@ -109,23 +116,13 @@ const DashboardResults: React.FunctionComponent<IAppProps> = (props:any) => {
                           </div>
                         </div>
                         <div className="dashcontent1">
-                            You who strongly believes the world can be a better place for everyone. You feel
-                            deeply for people and their challenges; you are always willing to help but at the
-                            same time you are very objective when listening to people’s problems or challenges.
-                            You often worry about others, and have constantly active inner mind (inner
-                            thoughts and conversations in your minds).
-                            Once you get an idea (a theory or ideology) you strongly believe would work for the
-                            greater good of people in your community you fight to make it happen even if it
-                            means influencing a policy. You are most times referred to as an advocate or public
-                            servant who has the best interest of everyone at heart. Sometimes sitting alone
-                            reading a good book is something you consider fun. You also enjoy some exciting
-                            and thrilling physical activities for fun once in a while, as well.
+                           {result && result.career_personality_type?result.career_personality_type:''}
                         </div>
                         <div className="shititms">
                           <div className="ssflex">
                             <img src={seekleft} className="seekleft" alt="left"/>
                             <div className="textlink">
-                              WHERE YOU ARE
+                              Career fitness
                             </div>
                           </div>
                           <div className="ssflex">

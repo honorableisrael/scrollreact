@@ -149,10 +149,10 @@ transform: rotate(135deg);
     display: flex;
     justify-content: space-between;
 }
-.seekleft{
+.seekleft {
     cursor: pointer;
-    max-width: 46px;
-    max-height: 46px;
+    max-width: 36px;
+    max-height: 29px;
 }
 .textlink {
     font-size: 14px;

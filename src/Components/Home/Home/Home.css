@@ -479,8 +479,9 @@ button{
     justify-content: space-between;
     align-items: center;
     padding-top: .4rem;
-    padding-right: .7rem;
+    padding-right: 1rem;
     background: white;
+    padding-left: .5rem;
     padding-bottom: .8rem;
   }
   .hamburgerwrap{

@@ -20,6 +20,7 @@ const Home:React.FC =()=>{
     React.useEffect(():any=>{
         window.scrollTo(-0,-0)
     },[])
+    
     return(
         <div>
            <Navbar/>
