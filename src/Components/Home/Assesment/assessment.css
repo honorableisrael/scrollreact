@@ -330,6 +330,21 @@
     padding-top: 1rem;
     justify-content: space-between;
 }
+@media(max-width:411px){
+  .rsliderclass9 {
+    display: flex;
+    flex-wrap: wrap;
+    order: 4;
+  }
+  .agree{
+    order: 3;
+    padding-top: 1rem;
+  }
+  .disagree{
+    order: 1;
+    padding-top: 1rem;
+  }
+}
 .doubled{
     font-weight: 300;
     font-stretch: normal;

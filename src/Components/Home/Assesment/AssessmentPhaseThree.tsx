@@ -110,7 +110,7 @@ const submitForm =(e:any)=>{
                             1. Paying attention to details is your specialty you can spot errors from miles away
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -143,7 +143,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -155,9 +155,9 @@ const submitForm =(e:any)=>{
                         2.  Planning, organizing and ensuring things are properly done by everyone no matter how annoying the tasks are, is who you are 
                         </div>
                         <div className="rsliderclass9">
-                        <div>
-                                Agree
-                            </div>
+                        <div  className="agree">
+                            Agree
+                        </div>
                             <div className="checkwrapper">
                                 <label className="checkcontainer">
                                     <input type="radio" value={0} onChange={onchange} name="question2" />
@@ -188,7 +188,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -200,9 +200,9 @@ const submitForm =(e:any)=>{
                         3.  As a student you are/were likely to look for the missing links in what was being taught in class
                         </div>
                        <div className="rsliderclass9">
-                       <div>
-                                Agree
-                            </div>
+                       <div  className="agree">
+                            Agree
+                        </div>
                             <div className="checkwrapper">
                                 <label className="checkcontainer">
                                     <input type="radio" value={0} onChange={onchange} name="question3" />
@@ -233,7 +233,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -245,9 +245,9 @@ const submitForm =(e:any)=>{
                             4. You often ask the questions no one likes to ask
                         </div>
                         <div className="rsliderclass9">
-                        <div>
-                                Agree
-                            </div>
+                        <div  className="agree">
+                            Agree
+                        </div>
                             <div className="checkwrapper">
                                 <label className="checkcontainer">
                                     <input type="radio" value={0} onChange={onchange} name="question4" />
@@ -278,7 +278,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -290,7 +290,7 @@ const submitForm =(e:any)=>{
                         5. Functionality is more important than beauty to you
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -323,7 +323,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -335,7 +335,7 @@ const submitForm =(e:any)=>{
                         6. To be honest you are not really exceptional at generating creative ideas, it’s a struggle.
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -368,7 +368,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -380,7 +380,7 @@ const submitForm =(e:any)=>{
                         7.  You are quick to accommodate and help people, without judging
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -413,7 +413,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -425,7 +425,7 @@ const submitForm =(e:any)=>{
                         8. You are known for keeping your friends happy and laughing
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -458,7 +458,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -470,7 +470,7 @@ const submitForm =(e:any)=>{
                         9. You can create the ideas/ initiatives but may find it difficult pulling together the resources needed to implement
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -503,7 +503,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -515,7 +515,7 @@ const submitForm =(e:any)=>{
                         10.  You can create the ideas/ initiatives but may find it difficult pulling together the resources needed to implement
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -548,7 +548,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -561,7 +561,7 @@ const submitForm =(e:any)=>{
 
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -594,7 +594,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -607,7 +607,7 @@ const submitForm =(e:any)=>{
 
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -640,7 +640,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -652,7 +652,7 @@ const submitForm =(e:any)=>{
                         13. When it comes to work, you have a deep desire to compete 
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -685,7 +685,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -697,7 +697,7 @@ const submitForm =(e:any)=>{
                         14. You always approach work with vigor and dexterity 
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -730,7 +730,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -742,7 +742,7 @@ const submitForm =(e:any)=>{
                         15.  You disintegrate things and fix them back to satisfy your curiosity 
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -775,7 +775,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -787,7 +787,7 @@ const submitForm =(e:any)=>{
                         16. You are inquisitive about how things work
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -820,7 +820,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -832,7 +832,7 @@ const submitForm =(e:any)=>{
                            17. You find it difficult communicating your points and opinions clearly 
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -865,7 +865,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -877,7 +877,7 @@ const submitForm =(e:any)=>{
                         18. It takes a while for you to understand instructions or information shared 
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -910,7 +910,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -922,7 +922,7 @@ const submitForm =(e:any)=>{
                        19. You super proficient in navigating apps and new technology
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -955,7 +955,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -967,7 +967,7 @@ const submitForm =(e:any)=>{
                           20.  You would prefer using an app to quickly get work done than do it manually first. 
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -1000,7 +1000,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -1012,7 +1012,7 @@ const submitForm =(e:any)=>{
                            21. You keep trying new methods till you find an answer.
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -1045,7 +1045,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>
@@ -1057,7 +1057,7 @@ const submitForm =(e:any)=>{
                           22. You often follow your curiosity about a thing or subject. 
                         </div>
                         <div className="rsliderclass9">
-                            <div>
+                            <div  className="agree">
                                 Agree
                             </div>
                             <div className="checkwrapper">
@@ -1090,7 +1090,7 @@ const submitForm =(e:any)=>{
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
-                            <div>
+                            <div className="disagree">
                                Disagree
                             </div>
                         </div>

@@ -611,9 +611,10 @@ button{
 }
 .navmobbtn{
   border: 1px solid #9C1258;
-  padding: .7rem 3rem;
+  padding: 0.7rem 2rem;
   border-radius: 2.5rem;
 }
+
 .line1active{
   transform: rotateZ(206deg);
 }
