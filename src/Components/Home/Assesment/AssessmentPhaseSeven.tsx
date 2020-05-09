@@ -86,7 +86,7 @@ interface State {
         .then( response => {
             console.log(response)
             if( response.status=== 200 ){
-                props.history.push('/dashboardresult')
+                props.history.push('/dashboard/personality')
             }
         })
         .catch(error=>{
