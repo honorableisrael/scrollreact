@@ -97,6 +97,7 @@
     line-height: normal;
     letter-spacing: normal;
     color: #9c1258;
+    cursor: pointer;
 }
 .res1{
     font-weight: 400;
@@ -183,6 +184,7 @@ transform: rotate(135deg);
     letter-spacing: normal;
     transition: .1s ease-in-out;
     color: #dedddd;
+    cursor: pointer;
   }
   .linkss:hover{
       color: #9c1258;

@@ -44,7 +44,7 @@ import { ToastContainer, toast } from 'react-toastify';
     const onchange = (e:any)=>{
         setCheckboxValue({
             ...state,
-            [e.target.name]:e.target.value
+            [e.target.name]:e.target.value.toString()
         })
     }
     

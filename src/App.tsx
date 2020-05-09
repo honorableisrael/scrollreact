@@ -7,7 +7,6 @@ import Faq from './Components/Home/FAQs/faq';
 import OnboardingChat from './Components/Home/OnboardingChat/onboardingchat';
 import { ClarityForTeams } from './Components/Home/ClarityForTeams/clarityforteams';
 import { RecruitmentAnalysisForm } from './Components/Home/Forms/RecruitmentAnalysisForm';
-import DashboardResults from './Components/Home/Dashboard/Results/DashboardResult';
 import AssessmentFirstPhase   from './Components/Home/Assesment/AssessmentPhaseone';
 import AssessmentFirstPhaseComplete   from './Components/Home/Assesment/AssessmentPhaseonecomplete';
 import AssessmentSecondPhase from './Components/Home/Assesment/AssessmentPhaseTwo';
@@ -22,6 +21,8 @@ import SignIn from './Components/Home/SignIn/SignIn';
 import AssessmentFifthPhase from './Components/Home/Assesment/AssessmentPhaseFive';
 import AssessmentSixthPhase from './Components/Home/Assesment/AssessmentPhaseSix';
 import AssessmentSeventhPhase from './Components/Home/Assesment/AssessmentPhaseSeven';
+import CareerFitness from './Components/Home/Dashboard/CareerFitness';
+import PersonalityType from './Components/Home/Dashboard/PersonalityType';
 
 
 const App: React.FC = () => {
@@ -36,7 +37,8 @@ const App: React.FC = () => {
               <Route exact path="/clientchat" component={OnboardingChat} />
               <Route exact path="/clarityforteams" component={ClarityForTeams} />
               <Route exact path="/recruitmentform" component={RecruitmentAnalysisForm} />
-              <Route exact path="/dashboardresult" component={DashboardResults} />
+              <Route exact path="/dashboard/personality" component={PersonalityType} />
+              <Route exact path="/dashboard/careerfitness" component={CareerFitness} />
               <Route exact path="/assessmentphaseone" component={AssessmentFirstPhase} />
               <Route exact path="/assessmentphasefive" component={AssessmentFifthPhase} />
               <Route exact path="/assessmentphasesix" component={AssessmentSixthPhase} /> 

@@ -87,7 +87,7 @@ interface State {
             return props.history.push(`/assessmentphaseseven`)
         }
         if(response.status===200 && response.data[0].next==='home'){
-            return props.history.push(`/dashboardresult`)
+            return props.history.push(`/dashboard/personality`)
         }
     })
     .catch(error=>{
