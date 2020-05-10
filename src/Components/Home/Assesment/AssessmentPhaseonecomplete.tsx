@@ -7,61 +7,67 @@ import Col from 'react-bootstrap/Col';
 import Footer from '../HomeComponents/footer';
 import Navbar from '../HomeComponents/navbar';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
-import RangeSlider from 'react-bootstrap-range-slider';
 import { AssessmentFirstSection } from './AssessmentComponents/AssessmentFirstSection';
 import cherrydone from '../../../assets/cherry-done.png';
 import { Link } from 'react-router-dom';
- 
 
+type User = string | null;
 
-
-type User = string | null
-
-
-
- const AssessmentFirstPhaseComplete =()=> {
-    const [ name,setName ] = React.useState('')
-    React.useEffect(():any=>{
-        window.scrollTo(-0,-0)
-        let user:User = sessionStorage.getItem('user')
-        const currentUser = JSON.parse(user?user:'')
-        setName(currentUser[0].first_name)
-        console.log(currentUser[0].first_name)
-    },[])
-    return (
+const AssessmentFirstPhaseComplete = () => {
+  const [name, setName] = React.useState('');
+  React.useEffect((): any => {
+    window.scrollTo(-0, -0);
+    const user: User = sessionStorage.getItem('user');
+    const currentUser = JSON.parse(user ? user : '');
+    setName(currentUser[0].first_name);
+    console.log(currentUser[0].first_name);
+  }, []);
+  return (
     <div>
-        <Navbar/>
-        <Container fluid={true}>
-            <Row className="firstrowcf cftcontent">
-               <AssessmentFirstSection progressBar={15} phase="Phase 1" nextPhase="Phase 2" time={10}/>
-               <Col md={11}>
-                    <Row className="firstrowcf2 cftcontent">
-                        <Col md={12} className="awesomewrap">
-                            <div>
-                                <img className="cherry-done" src={cherrydone} alt="cherry-done"/>
-                                <div className="awesome">
-                                    You are awesome {name}
-                                </div>
-                                <div className="awesome1">
-                                    You are a natural born leader, just a few more minutes & we'll be on our way
-                                </div>
-                                <div className="awesome2">
-                                    <Link to="/assessmentphasetwo">
-                                        <button className="awesomebtn">Continue Assessment</button>
-                                    </Link> 
-                                    <Link to="/">
-                                        <button className="awesomebtnsubmit">Save Progress</button>
-                                    </Link>
-                                </div>
-                            </div>
-                        </Col> 
-                    </Row>
-               </Col>
+      <Navbar />
+      <Container fluid={true}>
+        <Row className='firstrowcf cftcontent'>
+          <AssessmentFirstSection
+            progressBar={15}
+            phase='Phase 1'
+            nextPhase='Phase 2'
+            time={10}
+          />
+          <Col md={11}>
+            <Row className='firstrowcf2 cftcontent'>
+              <Col md={12} className='awesomewrap'>
+                <div>
+                  <img
+                    className='cherry-done'
+                    src={cherrydone}
+                    alt='cherry-done'
+                  />
+                  <div className='awesome'>You are awesome {name}</div>
+                  <div className='awesome1'>
+                    You are a natural born leader, just a few more minutes &
+                    we'll be on our way
+                  </div>
+                  <div className='awesome2'>
+                    <Link to='/assessmentphasetwo'>
+                      <button className='awesomebtn'>
+                        Continue Assessment
+                      </button>
+                    </Link>
+                    <Link to='/'>
+                      <button className='awesomebtnsubmit'>
+                        Save Progress
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </Col>
             </Row>
-        <Footer/>
-        </Container>
+          </Col>
+        </Row>
+        <Footer />
+      </Container>
     </div>
-  )
-}
+  );
+};
 
 export default AssessmentFirstPhaseComplete;

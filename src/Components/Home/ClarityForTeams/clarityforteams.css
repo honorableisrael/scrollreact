@@ -4,6 +4,7 @@
 .xcv1{
     margin: auto;
     width:100%;
+    max-width: 491px;
 }
 .firstrowcf {
     padding-top: 4rem;
@@ -24,7 +25,7 @@
   .seccfr{
     font-size: 16px;
     font-weight: 300;
-    font-family: 'Sailec-Light';
+    /* font-family: 'Sailec-Light'; */
     font-style: normal;
     line-height: 1.5;
     letter-spacing: normal;
@@ -37,6 +38,8 @@
   }
   .oneofour{
       width: 100%;
+      max-width: 430px;
+      border-radius: 12px;
   }
   .lko11wr{
       margin-top: 2rem;
@@ -57,7 +60,7 @@
   .Byhelping{
     font-size: 16px;
     font-weight: 300;
-    font-family: 'Sailec-Light';
+    /* font-family: 'Sailec-Light'; */
     font-style: normal;
     line-height: 1.5;
     letter-spacing: normal;
@@ -65,10 +68,18 @@
     min-height: 224px;
     color: #150538;
   }
+  @media(max-width:500px){
+    .oneofour {
+      padding-top: 1rem;
+    }
+    .understand{
+      min-height: 59px;
+    }
+  }
   .Choose-the-plan{
     font-size: 1.3em;
     font-weight: 300;
-    font-family: 'Sailec-Light';
+    /* font-family: 'Sailec-Light'; */
     line-height: 1.25;
     letter-spacing: normal;
     text-align: left;

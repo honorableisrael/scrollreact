@@ -1,5 +1,6 @@
 .signupimg{
     width:100%;
+    max-width: 425px;
 }
 .mo{
     display: flex;
@@ -16,6 +17,14 @@
         margin-top: 5rem;
         margin-left: 5rem;
         margin-right: 5rem;
+    }
+}
+@media(max-width:500px){
+    .mo {
+        justify-content: center;
+    }
+    .signupimg {
+        width: 50%;
     }
 }
 .signwa{
