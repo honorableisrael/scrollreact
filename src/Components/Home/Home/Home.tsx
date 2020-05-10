@@ -13,6 +13,7 @@ import TakeAssessment from '../HomeComponents/TakeAssesment/takeAssessment';
 import stepgood from '../../../assets/stepgood.png';
 import stepone from '../../../assets/steptwo.png';
 import steptwo from '../../../assets/stepthree.png';
+import { Link } from 'react-router-dom';
 
 
 const Home:React.FC =()=>{
@@ -20,7 +21,6 @@ const Home:React.FC =()=>{
     React.useEffect(():any=>{
         window.scrollTo(-0,-0);
     },[]);
-
     return(
         <div>
            <Navbar/>
@@ -33,7 +33,11 @@ const Home:React.FC =()=>{
                         <div className='Clarity-is-the-solution'>
                             Clarity is the solution
                         </div>
-                        <div className='firstassesbtn'>Take Assessment</div>
+                        <Link to='/signin'>
+                            <div className='firstassesbtn'>
+                                Take Assessment
+                            </div>
+                        </Link>
                     </Col>
                     <Col md={7} sm={{span:12,order:12}} xs={{span:12,order:1}}>
                         <img src={RightTopImage} className='homebanner0' alt='homebanner'/>
