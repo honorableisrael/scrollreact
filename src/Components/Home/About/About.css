@@ -198,7 +198,20 @@
     }
     .firstrowtxt {
         font-size: 1.937em;
+    }
+    .We-are-w{
+        font-size: 14px;
     }    
+    .-of-life-is{
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    .howcardwrapper{
+        line-height: 1.4;
+    }
+    .takeAssesment{
+        font-size: 14px;
+    }
 }
 .ca102{
     display: flex;

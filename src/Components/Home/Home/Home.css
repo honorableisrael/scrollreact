@@ -121,7 +121,6 @@ button{
     width: 794.2px;
     height: 54.9px;
     font-size: 1.875em;
-    
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -456,8 +455,48 @@ button{
     padding-top: 1rem;
     margin-left: 0%;
   }
+  .--Marta-Vaughn {
+    margin-left: 0px;
+  }
+  .I-found{
+    margin-left: 0px;
+  }
+  .firstassesbtn{
+    font-size: 14px;
+  }
+  .Clarity-is-the-solution{
+    font-size: 17px;
+  }
   #wrapper > div{
     display: none;
+  }
+  .We-are-like {
+    font-size: 1.7em;
+  }
+  .firstrowtxt{
+    font-size: 1.7em;
+  }
+  .listwraperMob a{
+    font-size: 19px;
+  }
+  .Knowing-yourself{
+    font-size: 1.7em;
+  }
+  .TAKE-FREE-ASSESSMENT{
+    font-size: 14px;
+  }
+  .listwraper{
+    padding-top: 0px;
+  }
+  .shii11 {
+    padding-top: 0px;
+  }
+  .How-it-works{
+    font-size: 1.7em;
+    text-align: center;
+  }
+  .I-found{
+    font-size: 14px;
   }
 }
 @media(max-width:779px){
@@ -520,7 +559,7 @@ button{
     padding-left: 1rem;
   }
   .shii11{
-    padding-top: 2rem;
+    padding-top: 0rem;
   }
 }
 .title_ll{
