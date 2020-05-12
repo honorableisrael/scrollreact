@@ -27,12 +27,12 @@ interface State {
   successMsg:boolean;
   isLoading:boolean;
 }
-const SignUp:React.FunctionComponent = () => {
+const SignUp:React.FunctionComponent = (props:any) => {
   const [state,setFormState] = React.useState<State>({firstname:'',lastname:'',email:'',password:'',confirmPassword:'',whereDidYouLearnAboutUs:'',errorMessage:'',successMsg:false,isLoading:false});
   const {firstname,lastname,email,password,confirmPassword,whereDidYouLearnAboutUs,errorMessage,successMsg,isLoading} = state;
-  const sendFormData=(e)=>{
+
+  const sendFormData=()=>{
     setFormState({...state,isLoading:true});
-    e.preventDefault();
     const data = {
       first_name:firstname,
       last_name:lastname,
@@ -45,14 +45,26 @@ const SignUp:React.FunctionComponent = () => {
     axios.post<any, AxiosResponse<any>>(`${API}/accounts/signup/`,data)
     .then(response=>{
       console.log(response);
-      setFormState({
-        ...state,
-        successMsg:true,
-        isLoading:false
-      });
+      if(response.status===200){
+        setFormState({
+          ...state,
+          successMsg:true,
+          isLoading:false
+        });
+        setInterval(
+          props.history.push('/signin'),
+      5000);
+      }; 
     })
     .catch(error=>{
       console.log(error.response);
+      if (error && error.response && error.response.data){
+        setFormState({
+          ...state,
+          errorMessage:error.response.data[0].message,
+          isLoading:false
+        });
+      }
       setFormState({
         ...state,
         errorMessage:'Signup failed',
@@ -60,7 +72,45 @@ const SignUp:React.FunctionComponent = () => {
       });
     });
   };
+  const validateForm =(e)=>{
+    e.preventDefault();
+      if (firstname==''){
+        return setFormState({
+          ...state,
+          errorMessage:'Please enter your first name'
+        });
+      }
+      if (lastname==''){
+        return setFormState({
+          ...state,
+          errorMessage:'Please enter your lastname'
+        });
+      }
 
+      if (email==''){
+        return setFormState({
+          ...state,
+          errorMessage:'Please enter your email'
+        });
+      }
+
+      if (whereDidYouLearnAboutUs==''){
+        return setFormState({
+          ...state,
+          errorMessage:'Please empty field'
+        });
+      }
+
+      if(password==''){
+        return setFormState({
+          ...state,
+          errorMessage:'Please enter your password'
+        });
+      }
+      if(password && email){
+          sendFormData();
+      }
+  };
  const changeActionOnFormData =(e:any)=>{
      setFormState({...state,
       [e.target.name]:e.target.value,
@@ -68,6 +118,7 @@ const SignUp:React.FunctionComponent = () => {
       successMsg:false
     });
   };
+
 return (
         <>
            <Navbar/>
@@ -91,16 +142,16 @@ return (
                       {errorMessage}
                     </Alert>
                   }
-                  <Form onSubmit={sendFormData}>
+                  <Form onSubmit={validateForm}>
                     <Row>
                       <Col>
                         <Form.Group controlId='formBasicCheckbox'>
                           <Form.Control
-                            className='field1' 
+                            className='field1'
                             value={firstname}
                             onChange={changeActionOnFormData}
                             name='firstname'
-                            placeholder='First Name' 
+                            placeholder='First Name'
                           />
                         </Form.Group>
                       </Col>
@@ -119,17 +170,17 @@ return (
                     <Form.Group controlId='formBasicEmail'>
                       <Form.Control
                         type='email'
-                        className='field1' 
+                        className='field1'
                         value={email}
                         name = 'email'
                         onChange={changeActionOnFormData}
-                        placeholder='Email Address' 
+                        placeholder='Email Address'
                       />
                     </Form.Group>
                     <Form.Group controlId='formBasicPassword'>
                       <Form.Control
                         type='password'
-                        className='field1' 
+                        className='field1'
                         value={password}
                         name='password'
                         onChange={changeActionOnFormData}
@@ -139,16 +190,16 @@ return (
                     <Form.Group controlId='formBasicPassword'>
                       <Form.Control
                         type='password'
-                        className='field1' 
+                        className='field1'
                         value={confirmPassword}
                         name='confirmPassword'
                         onChange={changeActionOnFormData}
-                        placeholder='Confirm Password' 
+                        placeholder='Confirm Password'
                         />
                     </Form.Group>
                     <Form.Group controlId='formBasicEmail1'>
                       <Form.Control
-                        className='field1' 
+                        className='field1'
                         onChange={changeActionOnFormData}
                         value={whereDidYouLearnAboutUs}
                         name='whereDidYouLearnAboutUs'

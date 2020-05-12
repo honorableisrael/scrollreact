@@ -47,8 +47,7 @@ const AssessmentSecondPhaseComplete = () => {
                     Your ratings are off the charts right now {name}!
                   </div>
                   <div className='awesome1'>
-                    Your almost there, take the next assessment and we have a
-                    surprise for you!
+                  You are getting closer to seeing what we are seeing back here!.
                   </div>
                   <div className='awesome2'>
                     <Link to='/assessmentphasethree'>

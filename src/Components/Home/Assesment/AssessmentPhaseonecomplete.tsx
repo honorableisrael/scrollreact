@@ -44,8 +44,7 @@ const AssessmentFirstPhaseComplete = () => {
                   />
                   <div className='awesome'>You are awesome {name}</div>
                   <div className='awesome1'>
-                    You are a natural born leader, just a few more minutes &
-                    we'll be on our way
+                  You have the personality of a star! We can’t wait for you to see what we see here. 
                   </div>
                   <div className='awesome2'>
                     <Link to='/assessmentphasetwo'>

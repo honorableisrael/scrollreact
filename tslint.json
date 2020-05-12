@@ -4,6 +4,6 @@
       "prefer-const": [true, {"destructuring": "any"}],
       "semicolon": [true, "always"],
       "space-before-function-paren": [true, "never"],
-      "quotemark": [true, "single"]
+      "quotemark": [true, "double"]
     }
   }

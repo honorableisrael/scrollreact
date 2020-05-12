@@ -31,7 +31,7 @@ const Home:React.FC =()=>{
                         <div className='txtheavy'>of your life, career</div>
                         <div className='txtheavy'>or business?</div>
                         <div className='Clarity-is-the-solution'>
-                            Clarity is the solution
+                           Take the Clarity Assessment to find direction
                         </div>
                         <Link to='/signin'>
                             <div className='firstassesbtn'>
@@ -71,7 +71,7 @@ const Home:React.FC =()=>{
                                         <div className='Clarity-of-Thought'>
                                             Clarity of Thought
                                         </div>
-                                        <div className='Clairty-lorem'>Clairty lorem ipsum dolor sit amet</div>
+                                        <div className='Clairty-lorem'></div>
                                     </div>
                                     <div className='clarity-card'>
                                         <div className='Ellipse-4'>
@@ -87,7 +87,7 @@ const Home:React.FC =()=>{
                                         <div className='Clarity-of-Thought'>
                                         Self Discovery
                                         </div>
-                                        <div className='Clairty-lorem'>Clairty lorem ipsum dolor sit amet</div>
+                                        <div className='Clairty-lorem'></div>
                                     </div>
                                     <div className='clarity-card'>
                                         <div className='Ellipse-4'>
@@ -104,7 +104,7 @@ const Home:React.FC =()=>{
                                             Level
                                         </div>
                                         <div className='Clarity-of-Thought'>Up</div>
-                                        <div className='Clairty-lorem'>Clairty lorem ipsum dolor sit amet</div>
+                                        <div className='Clairty-lorem'></div>
                                     </div>
                                     <div className='clarity-card'>
                                         <div className='Ellipse-4'>
@@ -117,7 +117,7 @@ const Home:React.FC =()=>{
                                         <div className='Clarity-of-Thought'>
                                             Experience Rest of Mind
                                         </div>
-                                        <div className='Clairty-lorem'>Clairty lorem ipsum dolor sit amet</div>
+                                        <div className='Clairty-lorem'></div>
                                     </div>
                                 </div>
                            </Col>
@@ -149,7 +149,7 @@ const Home:React.FC =()=>{
                                    </div>
                                    <div className='howcardwrapper'>
                                         <div className='Assess'><img src={steptwo} className='steptwo' alt='imggood'/>Get to work</div>
-                                        {/* <div className="The-best-way">The best way to chart a way forward is to understand where you are by taking the Clarity test.</div> */}
+                                        <div className="The-best-way">With a clear personal development road map and access to expert counsel to keep you accountable you get started on acheiving your goals</div>
                                     </div>
                                 </div>
                            </Col>

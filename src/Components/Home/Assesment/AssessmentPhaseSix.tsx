@@ -102,7 +102,7 @@ const AssessmentSixthPhase = (props: any) => {
   };
   const handleSuccess = (response: any) => {
     if (response.status === 200) {
-      props.history.push("/assessmentphaseseven");
+      props.history.push("/assessmentphasesixcomplete");
     }
   };
   const handleErrors = (error: any) => {

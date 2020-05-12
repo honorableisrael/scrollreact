@@ -75,7 +75,7 @@ import { ToastContainer, toast } from 'react-toastify';
     };
     const handleSuccess = (response:any) =>{
         if( response.status=== 200 ){
-            props.history.push('/assessmentphasesix');
+            props.history.push('/assessmentphasefivecomplete');
         }
     };
     const handleErrors = (error:any) =>{

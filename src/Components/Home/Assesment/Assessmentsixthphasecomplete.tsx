@@ -8,13 +8,13 @@ import Footer from '../HomeComponents/footer';
 import Navbar from '../HomeComponents/navbar';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import { AssessmentFirstSection } from './AssessmentComponents/AssessmentFirstSection';
-import nextis5 from '../../../assets/nextis5.png';
+import offcharts from '../../../assets/offcharts.png';
 import { Link } from 'react-router-dom';
-import '../Forms/recruitmentform.css';
 
+// team
 type User = string | null;
 
-const AssessmentThirdPhaseComplete = (props: any) => {
+const AssessmentSixthPhaseComplete = () => {
   const [name, setName] = React.useState('');
   React.useEffect((): any => {
     window.scrollTo(-0, -0);
@@ -23,16 +23,15 @@ const AssessmentThirdPhaseComplete = (props: any) => {
     setName(currentUser[0].first_name);
     console.log(currentUser[0].first_name);
   }, []);
-
   return (
     <div>
       <Navbar />
       <Container fluid={true}>
         <Row className='firstrowcf cftcontent'>
           <AssessmentFirstSection
-            progressBar={30}
-            phase='Phase 3'
-            nextPhase='Phase 4'
+            progressBar={20}
+            phase='Phase 6'
+            nextPhase='Phase 7'
             time={10}
           />
           <Col md={11}>
@@ -41,16 +40,16 @@ const AssessmentThirdPhaseComplete = (props: any) => {
                 <div>
                   <img
                     className='cherry-done'
-                    src={nextis5}
+                    src={offcharts}
                     alt='cherry-done'
                   />
                   <div className='awesome'>
-                  You’re almost there {name}, a few more to go 
+                  You are the new cool for sure! Just one more to go
                   </div>
                   <div className='awesome1'>
                   </div>
                   <div className='awesome2'>
-                    <Link to='/assessmentphasefour'>
+                    <Link to='/assessmentphaseseven'>
                       <button className='awesomebtn'>
                         Continue Assessment
                       </button>
@@ -73,4 +72,4 @@ const AssessmentThirdPhaseComplete = (props: any) => {
   );
 };
 
-export default AssessmentThirdPhaseComplete;
+export default AssessmentSixthPhaseComplete;

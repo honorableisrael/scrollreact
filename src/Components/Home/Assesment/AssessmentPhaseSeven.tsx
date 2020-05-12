@@ -123,13 +123,14 @@ const AssessmentSeventhPhase = (props: any) => {
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
-          props.history.push('/dashboard/personality');
+          props.history.push('/assessmentphasesevencomplete');
         }
       })
       .catch((error) => {
         console.log(error.response);
-        if (error && error.response && error.response.data)
+        if (error && error.response && error.response.data){
           notify(error.response.data[0].message);
+        }
       });
   };
 
