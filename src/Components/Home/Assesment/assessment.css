@@ -106,7 +106,7 @@
     padding: 4rem 1rem 2rem 1rem;
 }
 .cherry-done{
-    width: 22%;
+    width: 29%;
 }
 .awesomewrap{
     display: flex;
@@ -230,6 +230,9 @@
     font-size: 3rem;
     color: #ffbc41;
     cursor: pointer;
+  }
+  .cherry-done{
+    width: 39%;
   }
   .smalldisplay{
     display: block;
