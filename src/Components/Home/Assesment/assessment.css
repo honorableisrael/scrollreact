@@ -203,6 +203,12 @@
     .rsliderclass2{
       width: 75%;
     } 
+    .rightarrow {
+      font-size: 4.5rem;
+      color: #ffbc41;
+      cursor: pointer;
+      font-weight: bolder;
+    }
     .smalldisplay{
       display: none;
       align-items: center;
@@ -220,6 +226,11 @@
    .rsliderclass2{
      font-size: 12px;
    }
+   .rightarrow{
+    font-size: 3rem;
+    color: #ffbc41;
+    cursor: pointer;
+  }
   .smalldisplay{
     display: block;
   }
@@ -401,11 +412,7 @@
     display: flex;
     align-items: center;
 }
-.rightarrow{
-    font-size: 3rem;
-    color: #ffbc41;
-    cursor: pointer;
-}
+
 .rightarrow:hover{
   animation:moveforward;
   animation-duration: 6s;

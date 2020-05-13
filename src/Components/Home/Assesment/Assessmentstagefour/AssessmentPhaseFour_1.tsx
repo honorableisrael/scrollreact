@@ -20,31 +20,34 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Assessmentfourthphase_1 = (props: any) => {
   const [state, setRateValue] = React.useState({
-    rate1: "1",
-    rate2: "1",
-    rate3: "1",
-    rate4: "1",
-    rate5: "1",
-    rate6: "1",
-    rate7: "1",
-    rate8: "1",
-    rate9: "1",
-    rate10: "1",
-    rate11: "1",
-    rate12: "1",
-    rate13: "1",
-    rate14: "1",
-    rate15: "1",
-    rate16: "1",
-    rate17: "1",
-    rate18: "1",
-    rate19: "1",
-    rate20: "1",
-    rate21: "1",
-    rate22: "1",
-    rate23: "1",
-    rate24: "1",
-    token: "",
+    rate1: ' ',
+    rate2: ' ',
+    rate3: ' ',
+    rate4: ' ',
+    rate5: ' ',
+    rate6: ' ',
+    rate7: ' ',
+    rate8: ' ',
+    rate9: ' ',
+    rate10: ' ',
+    rate11: ' ',
+    rate12: ' ',
+    rate13: ' ',
+    rate14: ' ',
+    rate15: ' ',
+    rate16: ' ',
+    rate17: ' ',
+    rate18: ' ',
+    rate19: ' ',
+    rate20: ' ',
+    rate21: ' ',
+    rate22: ' ',
+    rate23: ' ',
+    rate24: ' ',
+    rate25: ' ',
+    rate26: ' ',
+    rate27: ' ',
+    token: ' ',
   });
   const {
     rate1,
@@ -71,6 +74,9 @@ const Assessmentfourthphase_1 = (props: any) => {
     rate22,
     rate23,
     rate24,
+    rate25,
+    rate26,
+    rate27,
     token,
   } = state;
   //cdm
@@ -103,20 +109,20 @@ const Assessmentfourthphase_1 = (props: any) => {
       q41e: rate5,
     };
     const secondApiData = {
-      q42a: rate9,
-      q42b: rate10,
-      q42c: rate11,
-      q42d: rate12,
-      q42e: rate13,
+      q42a: rate16,
+      q42b: rate17,
+      q42c: rate18,
+      q42d: rate19,
+      q42e: rate20,
     };
     const thirdApiData = {
-      q43a: rate9,
-      q43b: rate10,
-      q43c: rate11,
-      q43d: rate12,
-      q43e: rate13,
-      q43f: rate9,
-      q43g: rate10,
+      q43a: rate21,
+      q43b: rate22,
+      q43c: rate23,
+      q43d: rate24,
+      q43e: rate25,
+      q43f: rate26,
+      q43g: rate27,
     };
     if (token) {
       axios
@@ -253,9 +259,9 @@ const Assessmentfourthphase_1 = (props: any) => {
                       </div>
                       <div className="assessrating">
                         <StarRatingComponent
-                          name="rate4"
+                          name="rate5"
                           starCount={5}
-                          value={rate4}
+                          value={rate5}
                           onStarClick={onStarClick}
                           emptyStarColor={"#444"}
                         />
@@ -378,9 +384,9 @@ const Assessmentfourthphase_1 = (props: any) => {
                           </div>
                           <div className="assessrating">
                             <StarRatingComponent
-                              name="rate16"
+                              name="rate21"
                               starCount={5}
-                              value={rate16}
+                              value={rate21}
                               onStarClick={onStarClick}
                               emptyStarColor={"#444"}
                             />
@@ -395,9 +401,9 @@ const Assessmentfourthphase_1 = (props: any) => {
                           </div>
                           <div className="assessrating">
                             <StarRatingComponent
-                              name="rate17"
+                              name="rate22"
                               starCount={5}
-                              value={rate17}
+                              value={rate22}
                               onStarClick={onStarClick}
                               emptyStarColor={"#444"}
                             />
@@ -412,9 +418,9 @@ const Assessmentfourthphase_1 = (props: any) => {
                           </div>
                           <div className="assessrating">
                             <StarRatingComponent
-                              name="rate18"
+                              name="rate23"
                               starCount={5}
-                              value={rate18}
+                              value={rate23}
                               onStarClick={onStarClick}
                               emptyStarColor={"#444"}
                             />
@@ -429,9 +435,9 @@ const Assessmentfourthphase_1 = (props: any) => {
                           </div>
                           <div className="assessrating">
                             <StarRatingComponent
-                              name="rate19"
+                              name="rate24"
                               starCount={5}
-                              value={rate19}
+                              value={rate24}
                               onStarClick={onStarClick}
                               emptyStarColor={"#444"}
                             />
@@ -446,9 +452,9 @@ const Assessmentfourthphase_1 = (props: any) => {
                           </div>
                           <div className="assessrating">
                             <StarRatingComponent
-                              name="rate20"
+                              name="rate25"
                               starCount={5}
-                              value={rate20}
+                              value={rate25}
                               onStarClick={onStarClick}
                               emptyStarColor={"#444"}
                             />
@@ -462,9 +468,9 @@ const Assessmentfourthphase_1 = (props: any) => {
                           </div>
                           <div className="assessrating">
                             <StarRatingComponent
-                              name="rate20"
+                              name="rate26"
                               starCount={5}
-                              value={rate20}
+                              value={rate26}
                               onStarClick={onStarClick}
                               emptyStarColor={"#444"}
                             />
@@ -479,9 +485,9 @@ const Assessmentfourthphase_1 = (props: any) => {
                           </div>
                           <div className="assessrating">
                             <StarRatingComponent
-                              name="rate20"
+                              name="rate27"
                               starCount={5}
-                              value={rate20}
+                              value={rate27}
                               onStarClick={onStarClick}
                               emptyStarColor={"#444"}
                             />

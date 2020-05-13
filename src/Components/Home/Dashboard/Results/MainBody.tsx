@@ -27,7 +27,7 @@ const getDashContext:any = React.useContext(dashboardContext)
             </span>
             <div>
             <span className="arrowcover">
-                {/* <img src={leftImg} onClick={()=>updateState({...state,sideBarIsOpen:!sideBarIsOpen?true:false})} className={!sideBarIsOpen?"arrow1 arrowflip":"arrow1"} alt="leftimg" /> */}
+                {/* <img src={leftImg} alt="leftimg" /> */}
             </span>
             </div>
         </div>

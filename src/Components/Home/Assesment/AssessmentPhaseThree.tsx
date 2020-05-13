@@ -764,8 +764,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  9. You can create the ideas/ initiatives but may find it
-                  difficult pulling together the resources needed to implement
+                  9.One of your weaknesses is difficulty to influence/ inspire people to action.
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>

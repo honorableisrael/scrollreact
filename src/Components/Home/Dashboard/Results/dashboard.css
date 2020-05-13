@@ -61,7 +61,7 @@
     margin: auto;
 }
 .arrow {
-    width: 25px;
+    width: 28px;
     cursor: pointer;
     transition: 1s ease-in-out;
 }
@@ -98,6 +98,7 @@
     letter-spacing: normal;
     color: #9c1258;
     cursor: pointer;
+    text-transform: uppercase;
 }
 .res1{
     font-weight: 400;
@@ -115,7 +116,7 @@ transform: rotate(135deg);
 }
 
 .titlearea1{
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -208,7 +209,9 @@ transform: rotate(135deg);
     }
     .arrow {
         position: relative;
-        left: 1rem;
+        right: -0.rem;
+        z-index: 7;
+        bottom: .4rem;
     }
     .emptysecwrapper{
         width: 100%;

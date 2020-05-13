@@ -185,7 +185,7 @@ const AssessmentFirstPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  c. When it comes to solving problems do you tend to be more
+                  d. When it comes to solving problems do you tend to be more
                   realistic than creative?
                 </div>
                 <div className='rsliderclass'>
@@ -209,7 +209,7 @@ const AssessmentFirstPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  d. Do you usually focus more on what is happening today than
+                  e. Do you usually focus more on what is happening today than
                   the possibilities of the future?
                 </div>
                 <div className='rsliderclass'>
@@ -233,7 +233,7 @@ const AssessmentFirstPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  e. When making decisions do you consider how the circumstances
+                  f. When making decisions do you consider how the circumstances
                   make you feel or the facts?
                 </div>
                 <div className='rsliderclass'>
@@ -257,7 +257,7 @@ const AssessmentFirstPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  f. Are you prone to putting others need ahead of yours?
+                  g. Are you prone to putting others need ahead of yours?
                 </div>
                 <div className='rsliderclass'>
                   <RangeSlider
@@ -280,14 +280,14 @@ const AssessmentFirstPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  g. Do you improvise more than you plan?
+                  h. Do you improvise more than you plan?
                 </div>
                 <div className='rsliderclass'>
                   <RangeSlider
                     value={value8}
                     variant='warning'
-                    max={2}
-                    min={1}
+                    max={6}
+                    min={0}
                     onChange={(e) =>
                       setValue({ ...state, value8: e.target.value })
                     }
@@ -303,7 +303,7 @@ const AssessmentFirstPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  h. Would rather enjoy now then complete your assignments
+                  i. Would rather enjoy now then complete your assignments
                   later?
                 </div>
                 <div className='rsliderclass'>
