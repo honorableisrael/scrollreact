@@ -97,7 +97,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                         1. You would rather have someone else make all the strategic decisions and tell you what to do
+                         a. You would rather have someone else make all the strategic decisions and tell you what to do
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -141,7 +141,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        2. You’ve realized over time that you achieve more results when accountable to someone than alone
+                        b. You’ve realized over time that you achieve more results when accountable to someone than alone
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -185,7 +185,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        3. To you being part of a team is more important than working alone
+                        c. To you being part of a team is more important than working alone
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -229,7 +229,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        4. A work environment with cooperative colleagues can keep you at a terrible job longer
+                        d. A work environment with cooperative colleagues can keep you at a terrible job longer
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -273,7 +273,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                       5. You would take a job with lower pay if it gave you the opportunity to fulfill purpose, because life is more than a pay check.
+                       e. You would take a job with lower pay if it gave you the opportunity to fulfill purpose, because life is more than a pay check.
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -317,7 +317,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                       6. You always seek opportunities to meet needs in your society, because if one of us can make it all of us can make it.
+                       f. You always seek opportunities to meet needs in your society, because if one of us can make it all of us can make it.
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -361,7 +361,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                       7. To be honest you are energized when have you real control over people and resources other than that working is a waste of time.
+                       g. To be honest you are energized when have you real control over people and resources other than that working is a waste of time.
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -405,7 +405,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        8. You find yourself pushing your point of views subtly or forcefully till the person accepts it.
+                        h. You find yourself pushing your point of views subtly or forcefully till the person accepts it.
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -449,7 +449,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        9. Pursuing a vision or ambition on an empty bank account is too risky, a steady job is better for you
+                        i. Pursuing a vision or ambition on an empty bank account is too risky, a steady job is better for you
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -493,7 +493,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        10. You would choose a job with secure working conditions and income than a growing a business with little initial income
+                        j. You would choose a job with secure working conditions and income than a growing a business with little initial income
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -537,7 +537,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        11. Respect and prestige isn’t very important to you in life
+                        k. Respect and prestige isn’t very important to you in life
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -581,7 +581,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        12. You shy away from public recognition
+                        l. You shy away from public recognition
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -625,7 +625,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        13. If your employer recognizes the value of your work you will stand by them
+                        m. If your employer recognizes the value of your work you will stand by them
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -669,7 +669,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        14. Positive feedback energizes you
+                        n. Positive feedback energizes you
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -713,7 +713,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        15. You are keen on being referred to as a thought leader in your career
+                        o. You are keen on being referred to as a thought leader in your career
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -757,7 +757,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        16. Being a master of one trade is better being master of many
+                        p. Being a master of one trade is better being master of many
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -801,7 +801,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        17. In making money, if you have just enough to meet your essential needs you are just satisfied
+                        q. In making money, if you have just enough to meet your essential needs you are just satisfied
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>
@@ -845,7 +845,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                        18. Success on a project for you isn’t necessarily tied to how much financial return you make
+                        r. Success on a project for you isn’t necessarily tied to how much financial return you make
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>

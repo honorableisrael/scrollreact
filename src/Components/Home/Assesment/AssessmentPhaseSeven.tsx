@@ -150,7 +150,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  1. I find it easy leading project team or managing businesses
+                  a. I find it easy leading project team or managing businesses
                 </div>
                 <div className='rsliderclassPol1'>
                   <label className='checkcontainer1'>
@@ -222,7 +222,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  2. I very much want to be involved in all aspects of a
+                  b. I very much want to be involved in all aspects of a
                   business
                 </div>
                 <div className='rsliderclassPol1'>
@@ -295,7 +295,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  3. It’s not easy for me to get people’s buy in on an idea/
+                  c. It’s not easy for me to get people’s buy in on an idea/
                   concept
                 </div>
                 <div className='rsliderclassPol1'>
@@ -368,7 +368,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  4. I wouldn’t really do everything in my power in getting
+                  d. I wouldn’t really do everything in my power in getting
                   someone to see my point of view
                 </div>
                 <div className='rsliderclassPol1'>
@@ -441,7 +441,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  5. Working on different projects from time to time gives me
+                  e. Working on different projects from time to time gives me
                   zest instead of routine
                 </div>
                 <div className='rsliderclassPol1'>
@@ -514,7 +514,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  6. I love a job that gives me the opportunity to disrupt
+                  f. I love a job that gives me the opportunity to disrupt
                   things
                 </div>
                 <div className='rsliderclassPol1'>
@@ -587,7 +587,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  7. Work would suck if I’m to manage a day to day routine
+                  g. Work would suck if I’m to manage a day to day routine
                 </div>
                 <div className='rsliderclassPol1'>
                   <label className='checkcontainer1'>
@@ -659,7 +659,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  8. Managing teams can be such headaches I’ll rather not be at
+                  h. Managing teams can be such headaches I’ll rather not be at
                   the centre
                 </div>
                 <div className='rsliderclassPol1'>
@@ -732,7 +732,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  9. Promoting a collaborative culture in the workplace is more
+                  i. Promoting a collaborative culture in the workplace is more
                   of what you’re about.
                 </div>
                 <div className='rsliderclassPol1'>
@@ -805,7 +805,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  10. Developing colleagues and employees potential increasing
+                  j. Developing colleagues and employees potential increasing
                   work productivity
                 </div>
                 <div className='rsliderclassPol1'>
@@ -878,7 +878,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  11. You prefer solving business issues by "running the
+                  k. You prefer solving business issues by "running the
                   numbers."
                 </div>
                 <div className='rsliderclassPol1'>
@@ -951,7 +951,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  12. You work best understanding the trajectory of an
+                  l. You work best understanding the trajectory of an
                   organization based financial analysis
                 </div>
                 <div className='rsliderclassPol1'>
@@ -1024,7 +1024,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  13. You prefer to be involved in research and strategic
+                  m. You prefer to be involved in research and strategic
                   thinking in an organization
                 </div>
                 <div className='rsliderclassPol1'>
@@ -1097,7 +1097,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  14. You are fascinated by studying industry trends and making
+                n. You are fascinated by studying industry trends and making
                   projections
                 </div>
                 <div className='rsliderclassPol1'>
@@ -1170,7 +1170,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  15. You enjoy ensuring customers’ needs are satisfied
+                  o. You enjoy ensuring customers’ needs are satisfied
                 </div>
                 <div className='rsliderclassPol1'>
                   <label className='checkcontainer1'>
@@ -1242,7 +1242,7 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  16. Providing information about products and services, take
+                  p. Providing information about products and services, take
                   orders, respond to customer complaints, and processing return
                   never wears you out.
                 </div>

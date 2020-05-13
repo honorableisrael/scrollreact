@@ -150,7 +150,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  1. Paying attention to details is your specialty you can spot
+                  a. Paying attention to details is your specialty you can spot
                   errors from miles away
                 </div>
                 <div className='rsliderclass9'>
@@ -227,7 +227,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  2. Planning, organizing and ensuring things are properly done
+                b. Planning, organizing and ensuring things are properly done
                   by everyone no matter how annoying the tasks are, is who you
                   are
                 </div>
@@ -305,7 +305,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  3. As a student you are/were likely to look for the missing
+                  c. As a student you are/were likely to look for the missing
                   links in what was being taught in class
                 </div>
                 <div className='rsliderclass9'>
@@ -382,7 +382,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  4. You often ask the questions no one likes to ask
+                  d. You often ask the questions no one likes to ask
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
@@ -458,7 +458,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  5. Functionality is more important than beauty to you
+                  e. Functionality is more important than beauty to you
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
@@ -534,7 +534,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  6. To be honest you are not really exceptional at generating
+                  f. To be honest you are not really exceptional at generating
                   creative ideas, it’s a struggle.
                 </div>
                 <div className='rsliderclass9'>
@@ -611,7 +611,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  7. You are quick to accommodate and help people, without
+                  g. You are quick to accommodate and help people, without
                   judging
                 </div>
                 <div className='rsliderclass9'>
@@ -688,7 +688,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  8. You are known for keeping your friends happy and laughing
+                  h. You are known for keeping your friends happy and laughing
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
@@ -764,7 +764,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  9.One of your weaknesses is difficulty to influence/ inspire people to action.
+                  i.One of your weaknesses is difficulty to influence/ inspire people to action.
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
@@ -840,7 +840,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  10. You can create the ideas/ initiatives but may find it
+                  j. You can create the ideas/ initiatives but may find it
                   difficult pulling together the resources needed to implement
                 </div>
                 <div className='rsliderclass9'>
@@ -917,7 +917,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  11. Negotiating with people to achieve a win-win is an
+                  k. Negotiating with people to achieve a win-win is an
                   exceptional skill you have
                 </div>
                 <div className='rsliderclass9'>
@@ -994,7 +994,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  12. You can easily network your way to get what you need from
+                  l. You can easily network your way to get what you need from
                   who you need it from.
                 </div>
                 <div className='rsliderclass9'>
@@ -1071,7 +1071,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  13. When it comes to work, you have a deep desire to compete
+                  m. When it comes to work, you have a deep desire to compete
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
@@ -1147,7 +1147,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  14. You always approach work with vigor and dexterity
+                  n. You always approach work with vigor and dexterity
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
@@ -1223,7 +1223,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  15. You disintegrate things and fix them back to satisfy your
+                  o. You disintegrate things and fix them back to satisfy your
                   curiosity
                 </div>
                 <div className='rsliderclass9'>
@@ -1300,7 +1300,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  16. You are inquisitive about how things work
+                  p. You are inquisitive about how things work
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
@@ -1376,7 +1376,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  17. You find it difficult communicating your points and
+                  q. You find it difficult communicating your points and
                   opinions clearly
                 </div>
                 <div className='rsliderclass9'>
@@ -1453,7 +1453,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  18. It takes a while for you to understand instructions or
+                  r. It takes a while for you to understand instructions or
                   information shared
                 </div>
                 <div className='rsliderclass9'>
@@ -1530,7 +1530,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  19. You super proficient in navigating apps and new technology
+                  s. You super proficient in navigating apps and new technology
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
@@ -1606,7 +1606,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  20. You would prefer using an app to quickly get work done
+                  t. You would prefer using an app to quickly get work done
                   than do it manually first.
                 </div>
                 <div className='rsliderclass9'>
@@ -1683,7 +1683,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  21. You keep trying new methods till you find an answer.
+                  u. You keep trying new methods till you find an answer.
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
@@ -1759,7 +1759,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className='firstrowcf2 cftcontent'>
               <Col md={12}>
                 <div className='firstquestion'>
-                  22. You often follow your curiosity about a thing or subject.
+                  v. You often follow your curiosity about a thing or subject.
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
