@@ -361,7 +361,7 @@ import { ToastContainer, toast } from 'react-toastify';
                 <Row className='firstrowcf2 cftcontent'>
                     <Col md={12}>
                         <div className='firstquestion'>
-                       7. To be honest you are energized when have you real control over people and resources other thanthat working is a waste of time.
+                       7. To be honest you are energized when have you real control over people and resources other than that working is a waste of time.
                         </div>
                         <div className='rsliderclassPol1'>
                             <label className='checkcontainer1'>

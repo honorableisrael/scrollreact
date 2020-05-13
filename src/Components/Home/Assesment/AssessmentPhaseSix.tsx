@@ -443,6 +443,318 @@ const AssessmentSixthPhase = (props: any) => {
               </Col>
             </Row>
             <Row className="firstrowcf2 cftcontent">
+              <Col md={12}>
+                <div className="firstquestion">
+                e. You can proceed with work based on highlights and figure out the specifics along the way
+                </div>
+                <div className="rsliderclassPol1">
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={1}
+                      name="question5"
+                    />
+                    <span className="checkmark1">A</span>
+                    Very Much
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={2}
+                      onChange={onchange}
+                      name="question5"
+                    />
+                    <span className="checkmark1">B</span>
+                    Yes
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={3}
+                      name="question5"
+                    />
+                    <span className="checkmark1">C</span>
+                    Often not always
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={4}
+                      onChange={onchange}
+                      name="question5"
+                    />
+                    <span className="checkmark1">D</span>I don’t even know
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={5}
+                      name="question5"
+                    />
+                    <span className="checkmark1">E</span>
+                    Not exactly
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={6}
+                      onChange={onchange}
+                      name="question5"
+                    />
+                    <span className="checkmark1">F</span>
+                    Barely
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={7}
+                      onChange={onchange}
+                      name="question5"
+                    />
+                    <span className="checkmark1">G</span>
+                    Absolutely not
+                  </label>
+                </div>
+              </Col>
+            </Row>
+            <Row className="firstrowcf2 cftcontent">
+              <Col md={12}>
+                <div className="firstquestion">
+                f. You typically enjoy going with the flow, experimenting and observing how things go
+                </div>
+                <div className="rsliderclassPol1">
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={1}
+                      name="question6"
+                    />
+                    <span className="checkmark1">A</span>
+                    Very Much
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={2}
+                      onChange={onchange}
+                      name="question6"
+                    />
+                    <span className="checkmark1">B</span>
+                    Yes
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={3}
+                      name="question6"
+                    />
+                    <span className="checkmark1">C</span>
+                    Often not always
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={4}
+                      onChange={onchange}
+                      name="question6"
+                    />
+                    <span className="checkmark1">D</span>I don’t even know
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={5}
+                      name="question6"
+                    />
+                    <span className="checkmark1">E</span>
+                    Not exactly
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={6}
+                      onChange={onchange}
+                      name="question6"
+                    />
+                    <span className="checkmark1">F</span>
+                    Barely
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={7}
+                      onChange={onchange}
+                      name="question6"
+                    />
+                    <span className="checkmark1">G</span>
+                    Absolutely not
+                  </label>
+                </div>
+              </Col>
+            </Row>
+            <Row className="firstrowcf2 cftcontent">
+              <Col md={12}>
+                <div className="firstquestion">
+                g. You’re the easiest to talk to in your group of friends, people share their issues easily
+                </div>
+                <div className="rsliderclassPol1">
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={1}
+                      name="question7"
+                    />
+                    <span className="checkmark1">A</span>
+                    Very Much
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={2}
+                      onChange={onchange}
+                      name="question7"
+                    />
+                    <span className="checkmark1">B</span>
+                    Yes
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={3}
+                      name="question7"
+                    />
+                    <span className="checkmark1">C</span>
+                    Often not always
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={4}
+                      onChange={onchange}
+                      name="question7"
+                    />
+                    <span className="checkmark1">D</span>I don’t even know
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={5}
+                      name="question7"
+                    />
+                    <span className="checkmark1">E</span>
+                    Not exactly
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={6}
+                      onChange={onchange}
+                      name="question7"
+                    />
+                    <span className="checkmark1">F</span>
+                    Barely
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={7}
+                      onChange={onchange}
+                      name="question7"
+                    />
+                    <span className="checkmark1">G</span>
+                    Absolutely not
+                  </label>
+                </div>
+              </Col>
+            </Row>
+            <Row className="firstrowcf2 cftcontent">
+              <Col md={12}>
+                <div className="firstquestion">
+                h. You are comfortable with others taking the lead and giving 100% support
+                </div>
+                <div className="rsliderclassPol1">
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={1}
+                      name="question8"
+                    />
+                    <span className="checkmark1">A</span>
+                    Very Much
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={2}
+                      onChange={onchange}
+                      name="question8"
+                    />
+                    <span className="checkmark1">B</span>
+                    Yes
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={3}
+                      name="question8"
+                    />
+                    <span className="checkmark1">C</span>
+                    Often not always
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={4}
+                      onChange={onchange}
+                      name="question8"
+                    />
+                    <span className="checkmark1">D</span>I don’t even know
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={5}
+                      name="question8"
+                    />
+                    <span className="checkmark1">E</span>
+                    Not exactly
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={6}
+                      onChange={onchange}
+                      name="question8"
+                    />
+                    <span className="checkmark1">F</span>
+                    Barely
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={7}
+                      onChange={onchange}
+                      name="question8"
+                    />
+                    <span className="checkmark1">G</span>
+                    Absolutely not
+                  </label>
+                </div>
+              </Col>
+            </Row>
+            <Row className="firstrowcf2 cftcontent">
               <ToastContainer
                 enableMultiContainer
                 containerId={"B"}
