@@ -445,7 +445,8 @@ const AssessmentSixthPhase = (props: any) => {
             <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
                 <div className="firstquestion">
-                e. You can proceed with work based on highlights and figure out the specifics along the way
+                  e. You can proceed with work based on highlights and figure
+                  out the specifics along the way
                 </div>
                 <div className="rsliderclassPol1">
                   <label className="checkcontainer1">
@@ -523,7 +524,8 @@ const AssessmentSixthPhase = (props: any) => {
             <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
                 <div className="firstquestion">
-                f. You typically enjoy going with the flow, experimenting and observing how things go
+                  f. You typically enjoy going with the flow, experimenting and
+                  observing how things go
                 </div>
                 <div className="rsliderclassPol1">
                   <label className="checkcontainer1">
@@ -601,7 +603,8 @@ const AssessmentSixthPhase = (props: any) => {
             <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
                 <div className="firstquestion">
-                g. You’re the easiest to talk to in your group of friends, people share their issues easily
+                  g. You’re the easiest to talk to in your group of friends,
+                  people share their issues easily
                 </div>
                 <div className="rsliderclassPol1">
                   <label className="checkcontainer1">
@@ -679,7 +682,8 @@ const AssessmentSixthPhase = (props: any) => {
             <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
                 <div className="firstquestion">
-                h. You are comfortable with others taking the lead and giving 100% support
+                  h. You are comfortable with others taking the lead and giving
+                  100% support
                 </div>
                 <div className="rsliderclassPol1">
                   <label className="checkcontainer1">

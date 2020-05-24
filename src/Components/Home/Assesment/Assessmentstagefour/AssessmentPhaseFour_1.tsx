@@ -20,34 +20,34 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Assessmentfourthphase_1 = (props: any) => {
   const [state, setRateValue] = React.useState({
-    rate1: ' ',
-    rate2: ' ',
-    rate3: ' ',
-    rate4: ' ',
-    rate5: ' ',
-    rate6: ' ',
-    rate7: ' ',
-    rate8: ' ',
-    rate9: ' ',
-    rate10: ' ',
-    rate11: ' ',
-    rate12: ' ',
-    rate13: ' ',
-    rate14: ' ',
-    rate15: ' ',
-    rate16: ' ',
-    rate17: ' ',
-    rate18: ' ',
-    rate19: ' ',
-    rate20: ' ',
-    rate21: ' ',
-    rate22: ' ',
-    rate23: ' ',
-    rate24: ' ',
-    rate25: ' ',
-    rate26: ' ',
-    rate27: ' ',
-    token: ' ',
+    rate1: " ",
+    rate2: " ",
+    rate3: " ",
+    rate4: " ",
+    rate5: " ",
+    rate6: " ",
+    rate7: " ",
+    rate8: " ",
+    rate9: " ",
+    rate10: " ",
+    rate11: " ",
+    rate12: " ",
+    rate13: " ",
+    rate14: " ",
+    rate15: " ",
+    rate16: " ",
+    rate17: " ",
+    rate18: " ",
+    rate19: " ",
+    rate20: " ",
+    rate21: " ",
+    rate22: " ",
+    rate23: " ",
+    rate24: " ",
+    rate25: " ",
+    rate26: " ",
+    rate27: " ",
+    token: " ",
   });
   const {
     rate1,
@@ -124,6 +124,13 @@ const Assessmentfourthphase_1 = (props: any) => {
       q43f: rate26,
       q43g: rate27,
     };
+    const fourthApiData = {
+      q40a: rate6,
+      q40b: rate7,
+      q40c: rate8,
+      q40d: rate9,
+      q40e: rate10,
+    };
     if (token) {
       axios
         .all([
@@ -136,17 +143,23 @@ const Assessmentfourthphase_1 = (props: any) => {
           axios.post(`${API}/careerinterestsports`, thirdApiData, {
             headers: { Authorization: `Token ${token}` },
           }),
+          axios.post(`${API}/careerinteresthumanitarian`, fourthApiData, {
+            headers: { Authorization: `Token ${token}` },
+          }),
         ])
         .then(
-          axios.spread((firstresponse, secondresponse, thirdresponse) => {
-            if (
-              firstresponse?.status == 200 &&
-              secondresponse?.status == 200 &&
-              thirdresponse?.status == 200
-            ) {
-              props.history.push("/assessmentphasefourcomplete");
+          axios.spread(
+            (firstresponse, secondresponse, thirdresponse, fourthres) => {
+              if (
+                firstresponse?.status == 200 &&
+                secondresponse?.status == 200 &&
+                thirdresponse?.status == 200 &&
+                fourthres
+              ) {
+                props.history.push("/assessmentphasefourcomplete");
+              }
             }
-          })
+          )
         )
         .catch((error) => {
           console.log(error.response);
@@ -514,6 +527,97 @@ const Assessmentfourthphase_1 = (props: any) => {
                 hideProgressBar={true}
                 position={toast.POSITION.TOP_CENTER}
               />
+            </Row>
+            <Row>
+              <Col md={11}>
+                <div className="firstquestion losos">
+                  <div className="creative">Humanitarian</div>
+                  <div>
+                    <div className="skip"></div>
+                    <div className="assessquestionwrap">
+                      <div className="assessquestion">
+                        r. Impart knowledge and guide people down the right path
+                      </div>
+                      <div className="assessrating">
+                        <StarRatingComponent
+                          name="rate6"
+                          starCount={5}
+                          value={rate6}
+                          onStarClick={onStarClick}
+                          emptyStarColor={"#444"}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="assessquestionwrap">
+                      <div className="assessquestion">
+                        s. Champion a cause that changes the lives of people
+                        positively
+                      </div>
+                      <div className="assessrating">
+                        <StarRatingComponent
+                          name="rate7"
+                          starCount={5}
+                          value={rate7}
+                          onStarClick={onStarClick}
+                          emptyStarColor={"#444"}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="assessquestionwrap">
+                      <div className="assessquestion">
+                        t. Represent the public interest of a group of people,
+                        country or nation
+                      </div>
+                      <div className="assessrating">
+                        <StarRatingComponent
+                          name="rate8"
+                          starCount={5}
+                          value={rate8}
+                          onStarClick={onStarClick}
+                          emptyStarColor={"#444"}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="assessquestionwrap">
+                      <div className="assessquestion">
+                        u. Advocate for people’s rights using the law
+                      </div>
+                      <div className="assessrating">
+                        <StarRatingComponent
+                          name="rate9"
+                          starCount={5}
+                          value={rate9}
+                          onStarClick={onStarClick}
+                          emptyStarColor={"#444"}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="assessquestionwrap">
+                      <div className="assessquestion">
+                        v. Provide physical, emotional and social support to
+                        help people live their best lives
+                      </div>
+                      <div className="assessrating">
+                        <StarRatingComponent
+                          name="rate10"
+                          starCount={5}
+                          value={rate10}
+                          onStarClick={onStarClick}
+                          emptyStarColor={"#444"}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Col>
             </Row>
           </Col>
         </Row>
