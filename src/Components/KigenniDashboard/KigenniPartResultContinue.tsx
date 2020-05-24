@@ -28,6 +28,7 @@ interface State {
   jobfunctionchartdata: any;
   averagecompetencechartdata: any;
   strongcompetencechartdata: any;
+  weakcompetencechartdata: any;
   client: any;
   successMsg: boolean;
   errorMessage: string;
@@ -40,6 +41,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
     client: [],
     careerbussines: [],
     jobfunctionchartdata: [],
+    weakcompetencechartdata: [],
     averagecompetencechartdata: [],
     strongcompetencechartdata: [],
     errorMessage: "",
@@ -67,6 +69,8 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
             jobfunctionchartdata: response?.data[0]?.job_function_fit?.graph,
             averagecompetencechartdata:
               response?.data[0]?.average_career_competences?.graph,
+            weakcompetencechartdata:
+              response?.data[0]?.weak_career_competences?.graph,
             strongcompetencechartdata:
               response?.data[0].strong_career_competences.graph,
             fullname: response.data[0].full_name,
@@ -100,6 +104,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
       careerbussines,
       jobfunctionchartdata,
       averagecompetencechartdata,
+      weakcompetencechartdata,
       strongcompetencechartdata,
       isLoading,
       width,
@@ -285,23 +290,26 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               />
             </div>
             <div className="otherinfo">
-            {client?.strong_career_competences?.fields?.map((data,index)=>(
+              {client?.strong_career_competences?.fields?.map((data, index) => (
                 <div>
-                <span className="ikls">
-                    {data.name}{" "}
-                  </span>{" "}
-                 {data.value}
+                  <span className="ikls">{data.name} </span> {data.value}
                   <br />
                 </div>
-            ))}
+              ))}
             </div>
-            <hr /> 
+            <hr />
             {/* Average Competence Starts Here */}
             <div>
-            {averagecompetencechartdata && averagecompetencechartdata.length>0 ?<div className="competence">Average Competences</div>:""}
+              {averagecompetencechartdata &&
+              averagecompetencechartdata.length > 0 ? (
+                <div className="competence">Average Competences</div>
+              ) : (
+                ""
+              )}
             </div>
             <div>
-              {averagecompetencechartdata && averagecompetencechartdata.length>0 ? (
+              {averagecompetencechartdata &&
+              averagecompetencechartdata.length > 0 ? (
                 <Chart
                   width={"100%"}
                   height={"500px"}
@@ -364,13 +372,86 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
             </div>
             <hr />
             <br />
+            {/* Average Competence Starts Here */}
+            <div>
+              {averagecompetencechartdata &&
+              averagecompetencechartdata.length > 0 ? (
+                <div className="competence">Average Competences</div>
+              ) : (
+                ""
+              )}
+            </div>
+            <div>
+              {weakcompetencechartdata &&
+              weakcompetencechartdata.length > 0 ? (
+                <Chart
+                  width={"100%"}
+                  height={"500px"}
+                  chartType="Bar"
+                  loader={<div>Loading Chart</div>}
+                  data={[
+                    ["Skills", "Score"],
+                    [
+                      weakcompetencechartdata[0]?.name,
+                      weakcompetencechartdata[0]?.value,
+                    ],
+                    [
+                      weakcompetencechartdata[1]?.name,
+                      weakcompetencechartdata[1]?.value,
+                    ],
+                    [
+                      weakcompetencechartdata[2]?.name,
+                      weakcompetencechartdata[2]?.value,
+                    ],
+                    [
+                      weakcompetencechartdata[3]?.name,
+                      weakcompetencechartdata[3]?.value,
+                    ],
+                    [
+                      weakcompetencechartdata[4]?.name,
+                      weakcompetencechartdata[4]?.value,
+                    ],
+                    [
+                      weakcompetencechartdata[5]?.name,
+                      weakcompetencechartdata[5]?.value,
+                    ],
+                    [
+                      weakcompetencechartdata[6]?.name,
+                      weakcompetencechartdata[6]?.value,
+                    ],
+                    [
+                      weakcompetencechartdata[7]?.name,
+                      weakcompetencechartdata[7]?.value,
+                    ],
+                  ]}
+                  options={{
+                    backgroundColor: "red",
+                    chart: {
+                      title: "",
+                    },
+                    colors: ["#001833"],
+                  }}
+                  rootProps={{ "data-testid": "2" }}
+                />
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="otherinfo">
+              <span className="ikls">
+                {client?.weak_career_competences?.fields?.name && ":"}{" "}
+              </span>{" "}
+              {client?.weak_career_competences?.fields?.value}
+              <br />
+            </div>
+            <hr />
+            <br />
             <div>
               <div className="competence">
                 Most Suitable Career-Business Expression
               </div>
-              {
-                client?.career_business_expression?.map((doc,index)=>(
-                  <div className="resultsec2" key={index}>
+              {client?.career_business_expression?.map((doc, index) => (
+                <div className="resultsec2" key={index}>
                   <div className="resultsec22">
                     <CirclePie
                       width={190}
@@ -399,8 +480,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                     ))}
                   </div>
                 </div>
-                ))
-              }
+              ))}
               <div className="nlodd">
                 <div className="resultsec13">
                   <div className="reskwrap13">
@@ -453,7 +533,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               <div className="competence">Your Work Style</div>
               <div>
                 <div className="kz1">
-                  {client?.work_style?.map((data, index) =>(
+                  {client?.work_style?.map((data, index) => (
                     <div className="contkflex" key={index}>
                       <div className="kz2">
                         <img src={vector1} className="kl3" alt="vector2" />
@@ -506,8 +586,12 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                       jobfunctionchartdata[5]?.value,
                     ],
                     [
-                      jobfunctionchartdata[6]?jobfunctionchartdata[6].name:0,
-                      jobfunctionchartdata[6]?jobfunctionchartdata[6].value:0,
+                      jobfunctionchartdata[6]
+                        ? jobfunctionchartdata[6].name
+                        : 0,
+                      jobfunctionchartdata[6]
+                        ? jobfunctionchartdata[6].value
+                        : 0,
                     ],
                     [
                       jobfunctionchartdata[7]?.name,
@@ -519,7 +603,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                     chart: {
                       title: "",
                     },
-                    colors: ["#001833"]
+                    colors: ["#001833"],
                   }}
                   rootProps={{ "data-testid": "2" }}
                 />
