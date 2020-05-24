@@ -10,6 +10,7 @@ import axios, { AxiosResponse } from "axios";
 import { API } from "../../../config";
 import formavatar from "../../../assets/formavatar.png";
 import formemail from "../../../assets/formemail.png";
+import { Link } from "react-router-dom";
 
 interface State {
   firstname: string;
@@ -64,7 +65,7 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
     setFormState({ ...state, isLoading: true });
     const data = {
       first_name: firstname,
-      last_name: firstname,
+      last_name: lastname,
       email,
       password,
       profession,
@@ -94,14 +95,14 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
       .catch((error) => {
         console.log(error.response);
         if (error && error.response && error.response.data) {
-        return  setFormState({
+          return setFormState({
             ...state,
             errorMessage: error.response.data[0].message,
             isLoading: false,
           });
         }
-        if (error && error.response && error.response.status===400) {
-         return setFormState({
+        if (error && error.response && error.response.status === 400) {
+          return setFormState({
             ...state,
             errorMessage: error.response.data[0].message,
             isLoading: false,
@@ -129,7 +130,7 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
       profession: e.target.value,
     });
   };
-  const getUserInfo = (token:string): any => {
+  const getUserInfo = (token: string): any => {
     axios
       .get(`${API}/currentuser`, {
         headers: { Authorization: `Token ${token}` },
@@ -158,9 +159,14 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
               {" "}
               Take the Clarity Assessment to find direction
             </div>
+            <div>
+              <Link to="/signin" className="clscc">
+                Click here to continue assessment
+              </Link>
+            </div>
           </Col>
           <Col md={4}>
-            <div className=" mjcn">Let’s get started</div>
+            <div className=" mjcn">Let’s get started </div>
             {successMsg && (
               <Alert key={1} variant="success">
                 SignUp Successful

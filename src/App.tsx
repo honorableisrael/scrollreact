@@ -30,6 +30,7 @@ import AssessmentSeventhPhaseComplete from "./Components/Home/Assesment/Assessme
 import SignUpKigenni from "./Components/Home/SignUp Kigenni/SignUpKigenni";
 import KigenniDashboard from "./Components/KigenniDashboard/KigenniDashoard";
 import KigenniFullResultPage from "./Components/KigenniDashboard/KigenniFullResultPage";
+import SignInKigenni from './Components/Home/SignIn/SignIn';
 
 const App: React.FC = () => {
   return (
@@ -136,9 +137,7 @@ const App: React.FC = () => {
             <Route exact path="/signup" component={()=>(
               <Redirect to="/signup/kigenni" />
             )} />
-            <Route exact path="/signin" component={()=>
-                <Redirect to="/signup/kigenni" />
-            } />
+            <Route exact path="/signin" component={SignInKigenni} />
             {/* Kegenni starts here */}
             <Route exact path="/signup/kigenni" component={SignUpKigenni} />
             <Route

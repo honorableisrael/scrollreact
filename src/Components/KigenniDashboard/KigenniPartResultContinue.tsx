@@ -104,7 +104,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
       isLoading,
       width,
     } = this.state;
-    console.log(averagecompetencechartdata);
+    console.log(careerbussines);
     const margin = { top: 20, right: 20, bottom: 30, left: 40 };
     const data = [
       { text: "Man", value: 500 },
@@ -225,13 +225,54 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                     client?.strong_career_competences?.graph?.[0]?.name,
                     client?.strong_career_competences?.graph?.[0]?.value,
                   ],
-                  ["Agile Work Ethic", 1000],
-                  ["Technical Mastery", 300],
-                  ["Counselling", 350],
-                  ["Admin", 350],
-                  ["Eloquence", 950],
-                  ["Technology Appreciation", 750],
-                  ["Technical Mechanical", 650],
+                  [
+                    strongcompetencechartdata[0]?.name,
+                    strongcompetencechartdata[0]?.value,
+                  ],
+                  [
+                    strongcompetencechartdata[1]?.name,
+                    strongcompetencechartdata[1]?.value,
+                  ],
+                  [
+                    strongcompetencechartdata[2]?.name,
+                    strongcompetencechartdata[2]?.value,
+                  ],
+                  [
+                    strongcompetencechartdata[3]?.name,
+                    strongcompetencechartdata[3]?.value,
+                  ],
+                  [
+                    strongcompetencechartdata[4]?.name,
+                    strongcompetencechartdata[4]?.value,
+                  ],
+                  [
+                    strongcompetencechartdata[5]?.name,
+                    strongcompetencechartdata[5]?.value,
+                  ],
+                  [
+                    strongcompetencechartdata[6]?.name,
+                    strongcompetencechartdata[6]?.value,
+                  ],
+                  [
+                    strongcompetencechartdata[7]?.name,
+                    strongcompetencechartdata[7]?.value,
+                  ],
+                  [
+                    strongcompetencechartdata[8]?.name,
+                    strongcompetencechartdata[8]?.value,
+                  ],
+                  [
+                    strongcompetencechartdata[8]?.name,
+                    strongcompetencechartdata[8]?.value,
+                  ],
+                  [
+                    strongcompetencechartdata[9]?.name,
+                    strongcompetencechartdata[9]?.value,
+                  ],
+                  [
+                    strongcompetencechartdata[10]?.name,
+                    strongcompetencechartdata[10]?.value,
+                  ],
                 ]}
                 options={{
                   backgroundColor: "red",
@@ -244,13 +285,17 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               />
             </div>
             <div className="otherinfo">
-              <span className="ikls">
-                {client?.strong_career_competences?.fields?.name}:{" "}
-              </span>{" "}
-              {client?.strong_career_competences?.fields?.value}
-              <br />
+            {client?.strong_career_competences?.fields?.map((data,index)=>(
+                <div>
+                <span className="ikls">
+                    {data.name}{" "}
+                  </span>{" "}
+                 {data.value}
+                  <br />
+                </div>
+            ))}
             </div>
-            <hr />
+            <hr /> 
             {/* Average Competence Starts Here */}
             <div>
             {averagecompetencechartdata && averagecompetencechartdata.length>0 ?<div className="competence">Average Competences</div>:""}
@@ -323,35 +368,39 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               <div className="competence">
                 Most Suitable Career-Business Expression
               </div>
-              <div className="resultsec2">
-                <div className="resultsec22">
-                  <CirclePie
-                    width={190}
-                    height={190}
-                    strokeWidth={5}
-                    labelColor={"#fff"}
-                    labelFontSize={"38px"}
-                    strokeColor={"#fff"}
-                    railColor={"#17375c77"}
-                    fillColor={"#001833"}
-                    percent={70}
-                    padding={0}
-                  />
-                </div>
-                <div className="csfitscore">
-                  <div className="csfitscore1">
-                    {this.capitalize(careerbussines?.industry)}
+              {
+                client?.career_business_expression?.map((doc,index)=>(
+                  <div className="resultsec2" key={index}>
+                  <div className="resultsec22">
+                    <CirclePie
+                      width={190}
+                      height={190}
+                      strokeWidth={5}
+                      labelColor={"#fff"}
+                      labelFontSize={"38px"}
+                      strokeColor={"#fff"}
+                      railColor={"#17375c77"}
+                      fillColor={"#001833"}
+                      percent={70}
+                      padding={0}
+                    />
                   </div>
-                  {careerbussines?.fields?.map((item, index) => (
-                    <div className="csbody" key={index}>
-                      <span className="competence1">
-                        {this.capitalize(item.name)}
-                      </span>
-                      :{this.capitalize(item.value)} <br />
+                  <div className="csfitscore">
+                    <div className="csfitscore1">
+                      {this.capitalize(doc?.industry)}
                     </div>
-                  ))}
+                    {doc?.fields?.map((item, index) => (
+                      <div className="csbody" key={index}>
+                        <span className="competence1">
+                          {this.capitalize(item.name)}
+                        </span>
+                        :{this.capitalize(item.value)} <br />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+                ))
+              }
               <div className="nlodd">
                 <div className="resultsec13">
                   <div className="reskwrap13">
@@ -404,7 +453,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               <div className="competence">Your Work Style</div>
               <div>
                 <div className="kz1">
-                  {client?.work_style?.map((data, index) => (
+                  {client?.work_style?.map((data, index) =>(
                     <div className="contkflex" key={index}>
                       <div className="kz2">
                         <img src={vector1} className="kl3" alt="vector2" />
@@ -424,7 +473,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               <hr />
               {/* Your Job Function Fit style barchart */}
               <div className="competence">Your Job Function Fit</div>
-              <div>
+              <div className="chartss">
                 <Chart
                   width={"100%"}
                   height={"500px"}
@@ -457,8 +506,8 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                       jobfunctionchartdata[5]?.value,
                     ],
                     [
-                      jobfunctionchartdata[6]?.name,
-                      jobfunctionchartdata[6]?.value,
+                      jobfunctionchartdata[6]?jobfunctionchartdata[6].name:0,
+                      jobfunctionchartdata[6]?jobfunctionchartdata[6].value:0,
                     ],
                     [
                       jobfunctionchartdata[7]?.name,
@@ -470,7 +519,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                     chart: {
                       title: "",
                     },
-                    colors: ["#001833"],
+                    colors: ["#001833"]
                   }}
                   rootProps={{ "data-testid": "2" }}
                 />

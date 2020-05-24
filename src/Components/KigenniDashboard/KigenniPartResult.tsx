@@ -79,7 +79,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
   capitalize = (s) => {
     if (typeof s !== "string") return "";
     return s.charAt(0).toUpperCase() + s.slice(1);
-  };
+  }
   render() {
     const {
       fullname,
