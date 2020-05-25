@@ -1,11 +1,7 @@
 import React from "react";
 import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
 import "./App.css";
-import Home from "./Components/Home/Home/Home";
 import { About } from "./Components/Home/About/About";
-import Faq from "./Components/Home/FAQs/faq";
-import OnboardingChat from "./Components/Home/OnboardingChat/onboardingchat";
-import { ClarityForTeams } from "./Components/Home/ClarityForTeams/clarityforteams";
 import { RecruitmentAnalysisForm } from "./Components/Home/Forms/RecruitmentAnalysisForm";
 import AssessmentFirstPhase from "./Components/Home/Assesment/AssessmentPhaseone";
 import AssessmentFirstPhaseComplete from "./Components/Home/Assesment/AssessmentPhaseonecomplete";
@@ -16,13 +12,9 @@ import AssessmentThirdPhaseComplete from "./Components/Home/Assesment/Assessment
 import Assessmentfourthphase from "./Components/Home/Assesment/Assessmentstagefour/AssessmentPhaseFour";
 import Assessmentfourthphase_1 from "./Components/Home/Assesment/Assessmentstagefour/AssessmentPhaseFour_1";
 import { SelectPaymentPlan } from "./Components/Home/Assesment/SelectPaymentPlan";
-import SignUp from "./Components/Home/SignUp/SignUp";
-import SignIn from "./Components/Home/SignIn/SignIn";
 import AssessmentFifthPhase from "./Components/Home/Assesment/AssessmentPhaseFive";
 import AssessmentSixthPhase from "./Components/Home/Assesment/AssessmentPhaseSix";
 import AssessmentSeventhPhase from "./Components/Home/Assesment/AssessmentPhaseSeven";
-import CareerFitness from "./Components/Home/Dashboard/CareerFitness";
-import PersonalityType from "./Components/Home/Dashboard/PersonalityType";
 import AssessmentFourthPhaseComplete from "./Components/Home/Assesment/AssessmentPhaseFOURCOMPLETE";
 import AssessmentFifthPhaseComplete from "./Components/Home/Assesment/Assessmentphasefivecomplete";
 import AssessmentSixthPhaseComplete from "./Components/Home/Assesment/Assessmentsixthphasecomplete";
@@ -40,9 +32,15 @@ const App: React.FC = () => {
           <Switch>
             <Route exact path="/" component={SignUpKigenni} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/faq" component={Faq} />
-            <Route exact path="/clientchat" component={OnboardingChat} />
-            <Route exact path="/clarityforteams" component={ClarityForTeams} />
+            <Route exact path="/faq" component={()=>(
+              <Redirect to="/signup/kigenni" />
+            )} />
+            <Route exact path="/clientchat" component={()=>(
+              <Redirect to="/signup/kigenni" />
+            )} />
+            <Route exact path="/clarityforteams" component={()=>(
+              <Redirect to="/signup/kigenni" />
+            )} />
             <Route
               exact
               path="/recruitmentform"
@@ -51,12 +49,16 @@ const App: React.FC = () => {
             <Route
               exact
               path="/dashboard/personality"
-              component={PersonalityType}
+              component={()=>(
+                <Redirect to="/signup/kigenni" />
+              )}
             />
             <Route
               exact
               path="/dashboard/careerfitness"
-              component={CareerFitness}
+              component={()=>(
+                <Redirect to="/signup/kigenni" />
+              )}
             />
             <Route
               exact
