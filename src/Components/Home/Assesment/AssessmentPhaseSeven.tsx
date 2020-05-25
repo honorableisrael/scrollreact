@@ -1313,7 +1313,7 @@ const AssessmentSeventhPhase = (props: any) => {
                 </div>
               </Col>
             </Row>
-            <Row className="firstrowcf2 cftcontent">
+            <Row className="firstrowcf2 cftcontent jcenter">
               <ToastContainer
                 enableMultiContainer
                 containerId={"B"}

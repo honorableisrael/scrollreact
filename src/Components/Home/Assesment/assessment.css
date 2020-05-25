@@ -13,6 +13,9 @@
 .firswidth{
 
 }
+.jcenter{
+  justify-content: center;
+}
 .wrapassess{
     display: flex;
     justify-content: space-between;
