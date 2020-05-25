@@ -159,11 +159,11 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
               {" "}
               Take the Clarity Assessment to find direction
             </div>
-            <div>
+            {/* <div>
               <Link to="/signin" className="clscc">
                 Click here to continue assessment
               </Link>
-            </div>
+            </div> */}
           </Col>
           <Col md={4}>
             <div className=" mjcn">Let’s get started </div>
