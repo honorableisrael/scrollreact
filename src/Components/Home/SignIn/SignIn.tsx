@@ -42,29 +42,34 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
     setFormState({ ...state, isLoading: true });
     const data = {
       email,
-      password2: password,
-      kigenni,
+      password,
     };
     axios
       .post<any, AxiosResponse<any>>(`${API}/accounts/loginthirdparty/`, data)
       .then((response) => {
         console.log(response);
-        if (response.status === 200) {
+        if (response?.data?.token) {
           sessionStorage.setItem(
             "userToken",
-            JSON.stringify(response?.data[0].token)
+            JSON.stringify(response?.data?.token)
           );
           setFormState({
             ...state,
             isLoading: false,
-            token: response?.data[0].token,
+            token: response?.data.token,
           });
-          getUserInfo(response?.data[0].token);
-          setInterval(props.history.push("/assessmentphaseone"), 5000);
+          getUserInfo(response?.data?.token);
+          getCurrentAssessmentPosition(response?.data?.token);
         }
       })
       .catch((error) => {
-        console.log(error.response);
+        if(error?.response?.data?.error){
+          return  setFormState({
+            ...state,
+            errorMessage: error.response.data.error,
+            isLoading: false,
+          });
+        }
         if (error && error.response && error.response.data) {
         return  setFormState({
             ...state,
@@ -93,6 +98,51 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
       [e.target.name]: e.target.value,
       errorMessage: "",
     });
+  };
+  const getCurrentAssessmentPosition = (token: string): void => {
+    axios
+      .get(`${API}/progress`, { headers: { Authorization: `Token ${token}` } })
+      .then((response) => {
+        console.log(response);
+        if (
+          (response.status === 200 &&
+            response.data[0].next === "phase_four_sports") ||
+          response.data[0].next === "phase_four_business" ||
+          response.data[0].next === "phase_four_stem"
+        ) {
+          return props.history.push(`/assessmentphasefour1`);
+        }
+        if (response.status === 200 && response.data[0].next === "phase_one") {
+          return props.history.push(`/assessmentphaseone`);
+        }
+        if (response.status === 200 && response.data[0].next === "phase_two") {
+          return props.history.push(`/assessmentphasetwo`);
+        }
+        if (
+          response.status === 200 &&
+          response.data[0].next === "phase_three"
+        ) {
+          return props.history.push(`/assessmentphasethree`);
+        }
+        if (response.status === 200 && response.data[0].next === "phase_five") {
+          return props.history.push(`/assessmentphasefive`);
+        }
+        if (response.status === 200 && response.data[0].next === "phase_six") {
+          return props.history.push(`/assessmentphasesix`);
+        }
+        if (
+          response.status === 200 &&
+          response.data[0].next === "phase_seven"
+        ) {
+          return props.history.push(`/assessmentphaseseven`);
+        }
+        if (response.status === 200 && response.data[0].next === "home") {
+          return props.history.push(`/dashboard/personality`);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   const getUserInfo = (token:string): any => {
     axios

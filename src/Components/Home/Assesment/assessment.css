@@ -10,11 +10,16 @@
   padding-left: 2rem;
   padding-bottom: 2.2rem;
 }
-.firswidth{
-
+.flipdirection{
+  flex-direction: row-reverse;
 }
 .jcenter{
   justify-content: center;
+  width: 100%;
+}
+.jcenter1{
+  justify-content: center;
+  width: 100%;
 }
 .wrapassess{
     display: flex;

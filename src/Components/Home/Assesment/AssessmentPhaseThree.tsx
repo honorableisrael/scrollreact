@@ -141,7 +141,7 @@ const AssessmentThirdPhase = (props: any) => {
       <Container fluid={true}>
         <Row className='firstrowcf cftcontent'>
           <AssessmentFirstSection
-            progressBar={30}
+            progressBar={35}
             phase='Phase 3'
             nextPhase='Phase 4'
             time={15}
@@ -155,7 +155,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -233,7 +233,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -310,7 +310,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -386,7 +386,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -616,7 +616,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -692,7 +692,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -922,7 +922,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -999,7 +999,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -1075,7 +1075,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -1151,7 +1151,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -1228,7 +1228,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -1304,7 +1304,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -1534,7 +1534,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -1611,7 +1611,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -1687,7 +1687,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -1763,7 +1763,7 @@ const AssessmentThirdPhase = (props: any) => {
                 </div>
                 <div className='rsliderclass9'>
                   <div className='agree'>Agree</div>
-                  <div className='checkwrapper'>
+                  <div className='checkwrapper flipdirection'>
                     <label className='checkcontainer'>
                       <input
                         type='radio'
@@ -1838,11 +1838,13 @@ const AssessmentThirdPhase = (props: any) => {
                 hideProgressBar={true}
                 position={toast.POSITION.TOP_CENTER}
               />
-              <div className='nxtbtnarea'>
-                <button className='nxtbtn' onClick={submitForm}>
-                  Next
-                </button>
-              </div>
+              <Row className="jcenter1">
+                <div className="nxtbtnarea">
+                  <button className="nxtbtn" onClick={submitForm}>
+                    Next
+                  </button>
+                </div>
+              </Row>
             </Row>
           </Col>
         </Row>

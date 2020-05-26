@@ -137,7 +137,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={1}
+                      value={0}
                       name="question1"
                     />
                     <span className="checkmark1">A</span>
@@ -146,7 +146,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={2}
+                      value={1}
                       onChange={onchange}
                       name="question1"
                     />
@@ -157,7 +157,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={3}
+                      value={2}
                       name="question1"
                     />
                     <span className="checkmark1">C</span>
@@ -166,7 +166,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={4}
+                      value={3}
                       onChange={onchange}
                       name="question1"
                     />
@@ -176,7 +176,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={5}
+                      value={4}
                       name="question1"
                     />
                     <span className="checkmark1">E</span>
@@ -185,7 +185,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={6}
+                      value={5}
                       onChange={onchange}
                       name="question1"
                     />
@@ -195,7 +195,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={7}
+                      value={6}
                       onChange={onchange}
                       name="question1"
                     />
@@ -216,7 +216,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={1}
+                      value={6}
                       name="question2"
                     />
                     <span className="checkmark1">A</span>
@@ -225,7 +225,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={2}
+                      value={5}
                       onChange={onchange}
                       name="question2"
                     />
@@ -236,7 +236,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={3}
+                      value={4}
                       name="question2"
                     />
                     <span className="checkmark1">C</span>
@@ -245,7 +245,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={4}
+                      value={3}
                       onChange={onchange}
                       name="question2"
                     />
@@ -255,7 +255,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={5}
+                      value={2}
                       name="question2"
                     />
                     <span className="checkmark1">E</span>
@@ -264,7 +264,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={6}
+                      value={1}
                       onChange={onchange}
                       name="question2"
                     />
@@ -274,7 +274,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={7}
+                      value={0}
                       onChange={onchange}
                       name="question2"
                     />
@@ -295,7 +295,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={1}
+                      value={6}
                       name="question3"
                     />
                     <span className="checkmark1">A</span>
@@ -304,7 +304,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={2}
+                      value={5}
                       onChange={onchange}
                       name="question3"
                     />
@@ -315,7 +315,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={3}
+                      value={4}
                       name="question3"
                     />
                     <span className="checkmark1">C</span>
@@ -324,7 +324,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={4}
+                      value={3}
                       onChange={onchange}
                       name="question3"
                     />
@@ -334,7 +334,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={5}
+                      value={2}
                       name="question3"
                     />
                     <span className="checkmark1">E</span>
@@ -343,7 +343,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={6}
+                      value={1}
                       onChange={onchange}
                       name="question3"
                     />
@@ -353,7 +353,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={7}
+                      value={0}
                       onChange={onchange}
                       name="question3"
                     />
@@ -374,7 +374,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={1}
+                      value={6}
                       name="question4"
                     />
                     <span className="checkmark1">A</span>
@@ -383,7 +383,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={2}
+                      value={5}
                       onChange={onchange}
                       name="question4"
                     />
@@ -394,7 +394,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={3}
+                      value={4}
                       name="question4"
                     />
                     <span className="checkmark1">C</span>
@@ -403,7 +403,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={4}
+                      value={3}
                       onChange={onchange}
                       name="question4"
                     />
@@ -413,7 +413,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={5}
+                      value={2}
                       name="question4"
                     />
                     <span className="checkmark1">E</span>
@@ -422,7 +422,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={6}
+                      value={1}
                       onChange={onchange}
                       name="question4"
                     />
@@ -432,7 +432,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={7}
+                      value={0}
                       onChange={onchange}
                       name="question4"
                     />
@@ -453,7 +453,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={1}
+                      value={6}
                       name="question5"
                     />
                     <span className="checkmark1">A</span>
@@ -462,7 +462,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={2}
+                      value={5}
                       onChange={onchange}
                       name="question5"
                     />
@@ -473,7 +473,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={3}
+                      value={4}
                       name="question5"
                     />
                     <span className="checkmark1">C</span>
@@ -482,7 +482,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={4}
+                      value={3}
                       onChange={onchange}
                       name="question5"
                     />
@@ -492,7 +492,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={5}
+                      value={2}
                       name="question5"
                     />
                     <span className="checkmark1">E</span>
@@ -501,7 +501,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={6}
+                      value={1}
                       onChange={onchange}
                       name="question5"
                     />
@@ -511,7 +511,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={7}
+                      value={0}
                       onChange={onchange}
                       name="question5"
                     />
@@ -532,7 +532,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={1}
+                      value={6}
                       name="question6"
                     />
                     <span className="checkmark1">A</span>
@@ -541,7 +541,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={2}
+                      value={5}
                       onChange={onchange}
                       name="question6"
                     />
@@ -552,7 +552,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={3}
+                      value={4}
                       name="question6"
                     />
                     <span className="checkmark1">C</span>
@@ -561,7 +561,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={4}
+                      value={3}
                       onChange={onchange}
                       name="question6"
                     />
@@ -571,7 +571,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={5}
+                      value={2}
                       name="question6"
                     />
                     <span className="checkmark1">E</span>
@@ -580,7 +580,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={6}
+                      value={1}
                       onChange={onchange}
                       name="question6"
                     />
@@ -590,7 +590,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={7}
+                      value={0}
                       onChange={onchange}
                       name="question6"
                     />
@@ -611,7 +611,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={1}
+                      value={6}
                       name="question7"
                     />
                     <span className="checkmark1">A</span>
@@ -620,7 +620,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={2}
+                      value={5}
                       onChange={onchange}
                       name="question7"
                     />
@@ -631,7 +631,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={3}
+                      value={4}
                       name="question7"
                     />
                     <span className="checkmark1">C</span>
@@ -640,7 +640,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={4}
+                      value={3}
                       onChange={onchange}
                       name="question7"
                     />
@@ -650,7 +650,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={5}
+                      value={2}
                       name="question7"
                     />
                     <span className="checkmark1">E</span>
@@ -659,7 +659,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={6}
+                      value={1}
                       onChange={onchange}
                       name="question7"
                     />
@@ -669,7 +669,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={7}
+                      value={0}
                       onChange={onchange}
                       name="question7"
                     />
@@ -690,7 +690,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={1}
+                      value={6}
                       name="question8"
                     />
                     <span className="checkmark1">A</span>
@@ -699,7 +699,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={2}
+                      value={5}
                       onChange={onchange}
                       name="question8"
                     />
@@ -710,7 +710,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={3}
+                      value={4}
                       name="question8"
                     />
                     <span className="checkmark1">C</span>
@@ -719,7 +719,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={4}
+                      value={3}
                       onChange={onchange}
                       name="question8"
                     />
@@ -729,7 +729,7 @@ const AssessmentSixthPhase = (props: any) => {
                     <input
                       type="radio"
                       onChange={onchange}
-                      value={5}
+                      value={2}
                       name="question8"
                     />
                     <span className="checkmark1">E</span>
@@ -738,7 +738,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={6}
+                      value={1}
                       onChange={onchange}
                       name="question8"
                     />
@@ -748,7 +748,7 @@ const AssessmentSixthPhase = (props: any) => {
                   <label className="checkcontainer1">
                     <input
                       type="radio"
-                      value={7}
+                      value={0}
                       onChange={onchange}
                       name="question8"
                     />
