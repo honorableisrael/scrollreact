@@ -572,3 +572,17 @@ a:hover{
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+@media(max-width:400px){
+  .assessquestion{
+    font-size: 1em;
+    padding-bottom: 1rem;
+  }
+  .assessrating {
+    font-size: 20px;
+    justify-content: flex-end;
+  }
+  .creative{
+    font-size: 1.3em;
+  }
+}

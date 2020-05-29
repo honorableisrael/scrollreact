@@ -1,21 +1,21 @@
-import * as React from 'react';
-import '../Home/Home.css';
-import './assessment.css';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Footer from '../HomeComponents/footer';
-import Navbar from '../HomeComponents/navbar';
-import ProgressBar from 'react-bootstrap/ProgressBar';
-import clock from '../../../assets/clock.png';
-import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
-import RangeSlider from 'react-bootstrap-range-slider';
-import { AssessmentFirstSection } from './AssessmentComponents/AssessmentFirstSection';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { API } from '../../../config';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import * as React from "react";
+import "../Home/Home.css";
+import "./assessment.css";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Footer from "../HomeComponents/footer";
+import Navbar from "../HomeComponents/navbar";
+import ProgressBar from "react-bootstrap/ProgressBar";
+import clock from "../../../assets/clock.png";
+import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css";
+import RangeSlider from "react-bootstrap-range-slider";
+import { AssessmentFirstSection } from "./AssessmentComponents/AssessmentFirstSection";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { API } from "../../../config";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface State {
   value1: string;
@@ -33,25 +33,25 @@ interface State {
 const AssessmentFirstPhase = (props: any) => {
   React.useEffect((): any => {
     window.scrollTo(-0, -0);
-    const availableToken = sessionStorage.getItem('userToken');
+    const availableToken = sessionStorage.getItem("userToken");
     const token = availableToken
       ? JSON.parse(availableToken)
-      : props.history.push('/signin');
+      : props.history.push("/signin");
     setValue({ ...state, token });
   }, []);
 
   //component state
   const [state, setValue] = React.useState<State>({
-    value1: '1',
-    value2: '1',
-    value3: '1',
-    value4: '1',
-    value5: '1',
-    value6: '1',
-    value7: '1',
-    value8: '1',
-    value9: '1',
-    token: '',
+    value1: "1",
+    value2: "1",
+    value3: "1",
+    value4: "1",
+    value5: "1",
+    value6: "1",
+    value7: "1",
+    value8: "1",
+    value9: "1",
+    token: "",
   });
   const {
     value1,
@@ -87,7 +87,7 @@ const AssessmentFirstPhase = (props: any) => {
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
-          props.history.push('/assessmentphasecomplete');
+          props.history.push("/assessmentphasecomplete");
         }
       })
       .catch((error) => {
@@ -96,30 +96,30 @@ const AssessmentFirstPhase = (props: any) => {
           notify(error.response.data[0].message);
       });
   };
-  const notify = (message: string) => toast(message, { containerId: 'B' });
+  const notify = (message: string) => toast(message, { containerId: "B" });
 
   return (
     <div>
       <Navbar />
       <Container fluid={true}>
-        <Row className='firstrowcf cftcontent'>
+        <Row className="firstrowcf cftcontent">
           <AssessmentFirstSection
             progressBar={10}
-            phase='Phase 1'
-            nextPhase='Phase 2'
+            phase="Phase 1"
+            nextPhase="Phase 2"
             time={15}
           />
           <Col md={11}>
-            <Row className='firstrowcf2 cftcontent'>
+            <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
-                <div className='firstquestion'>
+                <div className="firstquestion">
                   a. When having conversations with people do you often do most
                   of the talking?
                 </div>
-                <div className='rsliderclass'>
+                <div className="rsliderclass">
                   <RangeSlider
                     value={value1}
-                    variant='warning'
+                    variant="warning"
                     max={6}
                     min={0}
                     onChange={(e) =>
@@ -127,23 +127,23 @@ const AssessmentFirstPhase = (props: any) => {
                     }
                   />
                 </div>
-                <div className='rsliderclass2'>
+                <div className="rsliderclass2">
                   <div>Absolutely not</div>
                   <div>Not Sure</div>
                   <div>Very Much</div>
                 </div>
               </Col>
             </Row>
-            <Row className='firstrowcf2 cftcontent'>
+            <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
-                <div className='firstquestion'>
+                <div className="firstquestion">
                   b. When you’re sad do you feel better after hanging out or
                   spending time with friends?
                 </div>
-                <div className='rsliderclass'>
+                <div className="rsliderclass">
                   <RangeSlider
                     value={value2}
-                    variant='warning'
+                    variant="warning"
                     max={6}
                     min={0}
                     onChange={(e) =>
@@ -151,23 +151,23 @@ const AssessmentFirstPhase = (props: any) => {
                     }
                   />
                 </div>
-                <div className='rsliderclass2'>
+                <div className="rsliderclass2">
                   <div>Absolutely not</div>
                   <div>Not Sure</div>
                   <div>Very Much</div>
                 </div>
               </Col>
             </Row>
-            <Row className='firstrowcf2 cftcontent'>
+            <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
-                <div className='firstquestion'>
+                <div className="firstquestion">
                   c. When it comes to solving problems do you tend to be more
                   realistic than creative?
                 </div>
-                <div className='rsliderclass'>
+                <div className="rsliderclass">
                   <RangeSlider
                     value={value3}
-                    variant='warning'
+                    variant="warning"
                     max={6}
                     min={0}
                     onChange={(e) =>
@@ -175,23 +175,23 @@ const AssessmentFirstPhase = (props: any) => {
                     }
                   />
                 </div>
-                <div className='rsliderclass2'>
+                <div className="rsliderclass2">
                   <div>Absolutely not</div>
                   <div>Not Sure</div>
                   <div>Very Much</div>
                 </div>
               </Col>
             </Row>
-            <Row className='firstrowcf2 cftcontent'>
+            <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
-                <div className='firstquestion'>
-                  d. When it comes to solving problems do you tend to be more
-                  realistic than creative?
+                <div className="firstquestion">
+                  d.Do you usually focus on what is happening today than the
+                  possibilities of the future?
                 </div>
-                <div className='rsliderclass'>
+                <div className="rsliderclass">
                   <RangeSlider
                     value={value4}
-                    variant='warning'
+                    variant="warning"
                     max={6}
                     min={0}
                     onChange={(e) =>
@@ -199,23 +199,23 @@ const AssessmentFirstPhase = (props: any) => {
                     }
                   />
                 </div>
-                <div className='rsliderclass2'>
+                <div className="rsliderclass2">
                   <div>Absolutely not</div>
                   <div>Not Sure</div>
                   <div>Very Much</div>
                 </div>
               </Col>
             </Row>
-            <Row className='firstrowcf2 cftcontent'>
+            <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
-                <div className='firstquestion'>
-                  e. Do you usually focus more on what is happening today than
-                  the possibilities of the future?
+                <div className="firstquestion">
+                  e. When making decisions do you consider how the circumstances
+                  make you feel or the facts?
                 </div>
-                <div className='rsliderclass'>
+                <div className="rsliderclass">
                   <RangeSlider
                     value={value5}
-                    variant='warning'
+                    variant="warning"
                     max={6}
                     min={0}
                     onChange={(e) =>
@@ -223,23 +223,22 @@ const AssessmentFirstPhase = (props: any) => {
                     }
                   />
                 </div>
-                <div className='rsliderclass2'>
+                <div className="rsliderclass2">
                   <div>Absolutely not</div>
                   <div>Not Sure</div>
                   <div>Very Much</div>
                 </div>
               </Col>
             </Row>
-            <Row className='firstrowcf2 cftcontent'>
+            <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
-                <div className='firstquestion'>
-                  f. When making decisions do you consider how the circumstances
-                  make you feel or the facts?
+                <div className="firstquestion">
+                  f. Are you prone to putting others need ahead of yours?
                 </div>
-                <div className='rsliderclass'>
+                <div className="rsliderclass">
                   <RangeSlider
                     value={value6}
-                    variant='warning'
+                    variant="warning"
                     max={6}
                     min={0}
                     onChange={(e) =>
@@ -247,22 +246,22 @@ const AssessmentFirstPhase = (props: any) => {
                     }
                   />
                 </div>
-                <div className='rsliderclass2'>
+                <div className="rsliderclass2">
                   <div>Absolutely not</div>
                   <div>Not Sure</div>
                   <div>Very Much</div>
                 </div>
               </Col>
             </Row>
-            <Row className='firstrowcf2 cftcontent'>
+            <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
-                <div className='firstquestion'>
-                  g. Are you prone to putting others need ahead of yours?
+                <div className="firstquestion">
+                  g. Do you improvise more than you plan?
                 </div>
-                <div className='rsliderclass'>
+                <div className="rsliderclass">
                   <RangeSlider
                     value={value7}
-                    variant='warning'
+                    variant="warning"
                     max={6}
                     min={0}
                     onChange={(e) =>
@@ -270,22 +269,22 @@ const AssessmentFirstPhase = (props: any) => {
                     }
                   />
                 </div>
-                <div className='rsliderclass2'>
+                <div className="rsliderclass2">
                   <div>Absolutely not</div>
                   <div>Not Sure</div>
                   <div>Very Much</div>
                 </div>
               </Col>
             </Row>
-            <Row className='firstrowcf2 cftcontent'>
+            <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
-                <div className='firstquestion'>
-                  h. Do you improvise more than you plan?
+                <div className="firstquestion">
+                  h. Would rather enjoy now then complete your assignments ?
                 </div>
-                <div className='rsliderclass'>
+                <div className="rsliderclass">
                   <RangeSlider
                     value={value8}
-                    variant='warning'
+                    variant="warning"
                     max={6}
                     min={0}
                     onChange={(e) =>
@@ -293,44 +292,20 @@ const AssessmentFirstPhase = (props: any) => {
                     }
                   />
                 </div>
-                <div className='rsliderclass2'>
-                  <div>Absolutely not</div>
-                  <div>Not Sure</div>
-                  <div>Very Much</div>
-                </div>
-              </Col>
-            </Row>
-            <Row className='firstrowcf2 cftcontent'>
-              <Col md={12}>
-                <div className='firstquestion'>
-                  i. Would rather enjoy now then complete your assignments
-                  later?
-                </div>
-                <div className='rsliderclass'>
-                  <RangeSlider
-                    value={value9}
-                    variant='warning'
-                    max={6}
-                    min={0}
-                    onChange={(e) =>
-                      setValue({ ...state, value9: e.target.value })
-                    }
-                  />
-                </div>
-                <div className='rsliderclass2'>
+                <div className="rsliderclass2">
                   <div>Absolutely not</div>
                   <div>Not Sure</div>
                   <div>Very Much</div>
                 </div>
                 <ToastContainer
                   enableMultiContainer
-                  containerId={'B'}
-                  toastClassName='bg-danger text-white'
+                  containerId={"B"}
+                  toastClassName="bg-danger text-white"
                   hideProgressBar={true}
                   position={toast.POSITION.TOP_CENTER}
                 />
-                <div className='nxtbtnarea'>
-                  <button className='nxtbtn' onClick={submitForm}>
+                <div className="nxtbtnarea">
+                  <button className="nxtbtn" onClick={submitForm}>
                     Next
                   </button>
                 </div>

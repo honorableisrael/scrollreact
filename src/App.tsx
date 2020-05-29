@@ -23,6 +23,7 @@ import SignUpKigenni from "./Components/Home/SignUp Kigenni/SignUpKigenni";
 import KigenniDashboard from "./Components/KigenniDashboard/KigenniDashoard";
 import KigenniFullResultPage from "./Components/KigenniDashboard/KigenniFullResultPage";
 import SignInKigenni from './Components/Home/SignIn/SignIn';
+import Home from "./Components/Home/Home/Home";
 
 const App: React.FC = () => {
   return (
@@ -35,6 +36,7 @@ const App: React.FC = () => {
             <Route exact path="/faq" component={()=>(
               <Redirect to="/signup/kigenni" />
             )} />
+            <Route exact path="/home" component={Home} />
             <Route exact path="/clientchat" component={()=>(
               <Redirect to="/signup/kigenni" />
             )} />

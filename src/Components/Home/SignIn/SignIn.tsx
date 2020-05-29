@@ -7,7 +7,6 @@ import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
 import axios, { AxiosResponse } from "axios";
 import { API } from "../../../config";
-import formavatar from "../../../assets/formavatar.png";
 import formemail from "../../../assets/formemail.png";
 import { Link } from "react-router-dom";
 
@@ -86,7 +85,7 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
         }
         setFormState({
           ...state,
-          errorMessage: "Signup failed",
+          errorMessage: "Login failed",
           isLoading: false,
         });
       });
@@ -137,7 +136,7 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
           return props.history.push(`/assessmentphaseseven`);
         }
         if (response.status === 200 && response.data[0].next === "home") {
-          return props.history.push(`/dashboard/personality`);
+          return props.history.push(`/kigenni/dashboard`);
         }
       })
       .catch((error) => {

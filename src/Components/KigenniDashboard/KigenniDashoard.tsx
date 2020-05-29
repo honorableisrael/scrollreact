@@ -2,7 +2,6 @@ import * as React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Alert from "react-bootstrap/Alert";
 import "./kegennidashboard.css";
 import axios, { AxiosResponse } from "axios";
 import { API } from "../../config";
@@ -66,7 +65,7 @@ const KigenniDashboard: React.FunctionComponent = (props: any) => {
         }
         setFormState({
           ...state,
-          errorMessage: "Signup failed",
+          errorMessage: "failed to load",
           isLoading: false,
         });
       });
@@ -80,8 +79,12 @@ const KigenniDashboard: React.FunctionComponent = (props: any) => {
       successMsg: false,
     });
   };
-
-  const notify = (message: string) => toast(message, { containerId: "B" });
+  const notify = (message: string) => {
+    toast(message, { containerId: "B" });
+    setTimeout(() => {
+      props.history.push("/kigenni/fullresult");
+    }, 3000);
+  };
   return (
     <>
       <Navbar />
@@ -90,7 +93,12 @@ const KigenniDashboard: React.FunctionComponent = (props: any) => {
           <KigenniPartResult />
           <Col md={10}>
             <div className="text-center">
-              <div className="fullresult" onClick={()=>notify("You have to pay to view the complete result")}>
+              <div
+                className="fullresult"
+                onClick={() =>
+                  notify("You have to pay to view the complete result")
+                }
+              >
                 See Full Result <span>&#8594;</span>
               </div>
             </div>
