@@ -161,7 +161,7 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
             </div>
             <div>
               <Link to="/signin" className="clscc">
-                Click here to continue assessment
+                Already have an account? Sign in
               </Link>
             </div>
           </Col>
