@@ -6,10 +6,7 @@ import Alert from "react-bootstrap/Alert";
 import "./kegennidashboard.css";
 import axios, { AxiosResponse } from "axios";
 import { API } from "../../config";
-import Navbar from "../Home/HomeComponents/navbar";
-import Footer from "../Home/HomeComponents/footer";
 import firstlogo from "../../assets/image 1.png";
-import firstChart from "../../assets/Rectangle 37.png";
 import secondlogo from "../../assets/image 2.png";
 import thdlogo from "../../assets/gift.png";
 import vector1 from "../../assets/whiteicon1.png";
@@ -18,9 +15,9 @@ import notice from "../../assets/notice.png";
 import { CirclePie } from "salad-ui.chart";
 import { Chart } from "react-google-charts";
 import { useEffect, useState } from "react";
-import pinkimg from "../../assets/shielduser.png";
 import Spinner from "react-bootstrap/Spinner";
-import { render } from "@testing-library/react";
+
+
 
 interface State {
   fullname: string;
@@ -96,7 +93,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
   capitalize = (s) => {
     if (typeof s !== "string") return "";
     return s.charAt(0).toUpperCase() + s.slice(1);
-  };
+  }
   render() {
     const {
       fullname,
@@ -111,11 +108,6 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
     } = this.state;
     console.log(careerbussines);
     const margin = { top: 20, right: 20, bottom: 30, left: 40 };
-    const data = [
-      { text: "Man", value: 500 },
-      { text: "Woman", value: 300 },
-    ];
-
     console.log(client);
     return (
       <>

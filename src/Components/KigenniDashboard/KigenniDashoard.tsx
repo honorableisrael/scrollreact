@@ -22,18 +22,58 @@ import { ToastContainer, toast } from "react-toastify";
 interface State {
   successMsg: boolean;
   errorMessage: string;
+  user:any;
   isLoading: boolean;
 }
+
+declare global {
+  interface Window {
+    MonnifySDK:any;
+  }
+}
+
 const KigenniDashboard: React.FunctionComponent = (props: any) => {
   const [state, setFormState] = React.useState<State>({
     errorMessage: "",
+    user:"",
     successMsg: false,
     isLoading: false,
   });
   const { errorMessage, successMsg, isLoading } = state;
 
+  const payWithMonnify = (reference) => {
+    console.log("function is running");
+    try {
+      window.MonnifySDK.initialize({
+        amount: 5000,
+        currency: "NGN",
+        reference,
+        customerFullName: "John Doe",
+        customerEmail: "monnify@monnify.com",
+        customerMobileNumber: "08121281921",
+        apiKey: "MK_TEST_WQZNXHV9FY",
+        contractCode: "4978848198",
+        paymentDescription: "Test Pay",
+        isTestMode: true,
+        metadata: {
+          name: "Damilare",
+          age: 45,
+        },
+        onComplete: function(response) {
+          //Implement what happens when transaction is completed.
+          console.log(response);
+        },
+        onClose: function(data) {
+          //Implement what should happen when the modal is closed here
+          console.log(data);
+        },
+      });
+    } catch (error) {
+      console.log("Failed to initailize payment" + error);
+    }
+  };
+
   useEffect(() => {
-    setFormState({ ...state, isLoading: true });
     const availableToken = sessionStorage.getItem("userToken");
     const token = availableToken
       ? JSON.parse(availableToken)
@@ -44,7 +84,6 @@ const KigenniDashboard: React.FunctionComponent = (props: any) => {
         headers: { Authorization: `Token ${token}` },
       })
       .then((response) => {
-        console.log(response);
         if (response.status === 200) {
           setFormState({
             ...state,
@@ -55,7 +94,6 @@ const KigenniDashboard: React.FunctionComponent = (props: any) => {
         }
       })
       .catch((error) => {
-        console.log(error.response);
         if (error && error.response && error.response.data) {
           setFormState({
             ...state,
@@ -71,19 +109,47 @@ const KigenniDashboard: React.FunctionComponent = (props: any) => {
       });
   }, []);
 
-  const changeActionOnFormData = (e: any) => {
+  const requestForPayref = () => {
     setFormState({
       ...state,
-      [e.target.name]: e.target.value,
-      errorMessage: "",
-      successMsg: false,
+      isLoading:true
     });
+    const availableToken = sessionStorage.getItem("userToken");
+    const token = availableToken
+      ? JSON.parse(availableToken)
+      : props.history.push("/signin");
+    axios.get(`${API}/monnifypaymentreference`, {
+      headers: { Authorization: `Token ${token}` }
+    })
+    .then(response=>{
+      console.log(response);
+      setFormState({
+        ...state,
+        user:response?.data[0]?.payment_reference,
+        isLoading:false
+      });
+      setTimeout(()=>{
+        payWithMonnify(response?.data[0]?.payment_reference)
+      },1000);
+    })
+    .catch(error=>{
+      console.log(error);
+      setFormState({
+        ...state,
+        isLoading:false
+      });
+    });
+    
   };
   const notify = (message: string) => {
     toast(message, { containerId: "B" });
     setTimeout(() => {
-      props.history.push("/kigenni/fullresult");
+      props.history.push("");
     }, 3000);
+  };
+  const checkIfUserHasAccessToViewAll = () => {
+    // notify("You have to pay to view the complete result")
+    requestForPayref();
   };
   return (
     <>
@@ -95,11 +161,9 @@ const KigenniDashboard: React.FunctionComponent = (props: any) => {
             <div className="text-center">
               <div
                 className="fullresult"
-                onClick={() =>
-                  notify("You have to pay to view the complete result")
-                }
+                onClick={() => checkIfUserHasAccessToViewAll()}
               >
-                See Full Result <span>&#8594;</span>
+                {isLoading?"Processing":"See Full Result"} <span>&#8594;</span>
               </div>
             </div>
             <div className="kigennidisabled">
