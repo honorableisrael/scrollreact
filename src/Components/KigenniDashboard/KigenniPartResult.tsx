@@ -112,7 +112,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
           </div>
           <div className="kdasharea">
             <div>
-              <img src={firstlogo} className="kfirstlogo" alt="firstlogo" />
+              <img src={firstlogo} className="kfirstlogo lkl" alt="firstlogo" />
             </div>
             <div className="kprofilewrap">
               <div className="kprofile">Profile</div>

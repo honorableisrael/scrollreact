@@ -515,7 +515,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                       ))}
                     </div>
                     <div className="notice">
-                      <img src={notice} alt="notice" />
+                      <img src={notice} className="noticee" alt="notice" />
                     </div>
                   </div>
                 </div>

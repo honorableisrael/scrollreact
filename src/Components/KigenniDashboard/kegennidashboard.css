@@ -14,9 +14,10 @@
   letter-spacing: -2.4px;
   color: #001833;
 }
-.chartss text{
+.chartss text {
   font-size: 10px;
 }
+
 .kdash1 {
   font-style: normal;
   font-weight: normal;
@@ -33,6 +34,7 @@
 .kfirstlogo {
   width: 80%;
   border-radius: 6px;
+  min-width: 398px;
 }
 .kdash1 span {
   font-weight: 500;
@@ -43,6 +45,7 @@
   display: flex;
   margin-bottom: 1.2rem;
   border-radius: 6px;
+  justify-content: space-around;
 }
 .kprofile {
   font-size: 15px;
@@ -80,11 +83,11 @@
   max-height: 228px;
 }
 .reskwrap13 {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    justify-content: space-around;
-    width: 45%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: space-around;
+  width: 45%;
 }
 .resultsec3 {
   display: flex;
@@ -94,15 +97,15 @@
   border-radius: 6px;
   margin-bottom: 2rem;
 }
-.resultsec13{
-    display: flex;
-    margin-top: 1.2rem;
-    justify-content: space-between;
-    background-color: rgb(236, 236, 236);
-    border-radius: 6px;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    padding-right: 4rem;
+.resultsec13 {
+  display: flex;
+  margin-top: 1.2rem;
+  justify-content: space-between;
+  background-color: rgb(236, 236, 236);
+  border-radius: 6px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  padding-right: 4rem;
 }
 .csfitscore {
   display: flex;
@@ -116,11 +119,19 @@
 .secondlogo {
   border-radius: 6px;
 }
-@media(max-width:400px){
-    .secondlogo{
-        max-width: 100%;
-        height: auto;
-    }
+@media (max-width: 400px) {
+  .secondlogo {
+    max-width: 100%;
+    height: auto;
+  }
+  .kdasharea {
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 780px) {
+  .lkl {
+    padding-left: 8rem;
+  }
 }
 .csfitscore1 {
   font-weight: bold;
@@ -139,7 +150,7 @@
   letter-spacing: -0.3px;
   padding-right: 2rem;
   color: #001833;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 .reskwrap {
   display: flex;
@@ -240,12 +251,12 @@
   font-size: 18px;
 }
 .competence1 {
-    margin-bottom: 3rem;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-    color: #001833;
-    font-size: 16px;
-  }
+  margin-bottom: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #001833;
+  font-size: 16px;
+}
 .ikls {
   font-size: 18px;
   line-height: 35px;
@@ -255,29 +266,86 @@
   color: #001833;
 }
 
-.otherinfo{
-    font-size: 16px;
+.otherinfo {
+  font-size: 16px;
 }
-.stbly1{
-    font-weight: 700;
-    padding-bottom: 1rem;
+.stbly1 {
+  font-weight: 700;
+  padding-bottom: 1rem;
 }
-.stbly{
-    margin-bottom: 3rem;
+.stbly {
+  margin-bottom: 3rem;
 }
-.nlodd{
-    margin-top: 5rem;
+.nlodd {
+  margin-top: 5rem;
 }
-.tipswrapper{
-    background: #001833;
-    word-spacing: 1.5px;
-    line-height: 1.8;
-    color: #fff;
-    font-weight: 100;
-    padding: 2rem;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem;
+.tipswrapper {
+  background: #001833;
+  word-spacing: 1.5px;
+  line-height: 1.8;
+  color: #fff;
+  font-weight: 100;
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+  .kdasharea {
+    flex-wrap: wrap;
+  }
+  .kfirstlogo {
+    min-width: 211px;
+  }
+  .resultsec2 {
+    background: #ececec;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+  .resultsec3 {
+    flex-wrap: wrap;
+  }
+  .noticee{
+    display: none;
+  }
+  .reskwrap {
+    padding-left: 0rem;
+  }
+  .secondlogo {
+    border-radius: 6px;
+    width: 98%;
+  }
+  .kiconrow {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .csfitscore {
+    padding-left: 0rem;
+  }
+  .mncb {
+    width: 100%;
+  }
+  .kz1 {
+    display: block;
+  }
+  .contkflex {
+    width: 100%;
+  }
+  .resultsec13 {
+    flex-wrap: wrap;
+  }
+  .reskwrap13 {
+    width: 100%;
+  }
+  .kprofile{
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+  .kprofile2{
+    padding-left: 1rem;
+  }
 }
