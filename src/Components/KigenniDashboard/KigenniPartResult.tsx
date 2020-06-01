@@ -79,7 +79,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
   capitalize = (s) => {
     if (typeof s !== "string") return "";
     return s.charAt(0).toUpperCase() + s.slice(1);
-  }
+  };
   render() {
     const {
       fullname,
@@ -107,7 +107,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
             <span className="kdashheaderlight"> Clarity Report</span>
           </div>
           <div className="kdash1">
-            It seems you're presently not on the right career track.{" "}
+            {client?.career_fitness?.heading}{" "}
             <span className="kdash1light"> see details below</span>
           </div>
           <div className="kdasharea">

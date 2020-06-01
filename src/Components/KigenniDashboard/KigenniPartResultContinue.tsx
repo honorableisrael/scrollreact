@@ -17,8 +17,6 @@ import { Chart } from "react-google-charts";
 import { useEffect, useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
 
-
-
 interface State {
   fullname: string;
   careerbussines: any;
@@ -93,7 +91,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
   capitalize = (s) => {
     if (typeof s !== "string") return "";
     return s.charAt(0).toUpperCase() + s.slice(1);
-  }
+  };
   render() {
     const {
       fullname,
@@ -118,7 +116,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               <span className="kdashheaderlight"> Clarity Report</span>
             </div>
             <div className="kdash1">
-              It seems you're presently not on the right career track.{" "}
+              {client?.career_fitness?.heading}{" "}
               <span className="kdash1light"> see details below</span>
             </div>
             <div className="kdasharea">
@@ -374,8 +372,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               )}
             </div>
             <div>
-              {weakcompetencechartdata &&
-              weakcompetencechartdata.length > 0 ? (
+              {weakcompetencechartdata && weakcompetencechartdata.length > 0 ? (
                 <Chart
                   width={"100%"}
                   height={"500px"}
