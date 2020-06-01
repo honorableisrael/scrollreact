@@ -6,16 +6,16 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Footer from "../HomeComponents/footer";
 import Navbar from "../HomeComponents/navbar";
-import ProgressBar from "react-bootstrap/ProgressBar";
-import clock from "../../../assets/clock.png";
 import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css";
 import RangeSlider from "react-bootstrap-range-slider";
 import { AssessmentFirstSection } from "./AssessmentComponents/AssessmentFirstSection";
-import { Link } from "react-router-dom";
+import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import { API } from "../../../config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
 
 interface State {
   value1: string;
@@ -31,6 +31,7 @@ interface State {
 }
 
 const AssessmentFirstPhase = (props: any) => {
+  const [show, setShow] = useState(false);
   React.useEffect((): any => {
     window.scrollTo(-0, -0);
     const availableToken = sessionStorage.getItem("userToken");
@@ -38,6 +39,7 @@ const AssessmentFirstPhase = (props: any) => {
       ? JSON.parse(availableToken)
       : props.history.push("/signin");
     setValue({ ...state, token });
+    setShow(true)
   }, []);
 
   //component state
@@ -65,6 +67,8 @@ const AssessmentFirstPhase = (props: any) => {
     value9,
     token,
   } = state;
+
+  const handleClose = () => setShow(false);
 
   //submit form
   const submitForm = (e: any) => {
@@ -101,6 +105,28 @@ const AssessmentFirstPhase = (props: any) => {
   return (
     <div>
       <Navbar />
+      <Modal
+        size="sm"
+        show={show}
+        centered
+        onHide={handleClose}
+        animation={true}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Instructions</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          A fulfilling life, career or business starts with intentional
+          self-awareness, evaluating where you are to determine the right
+          direction forward. The objective of this assessment is to help you
+          kick-start this. Answer all questions relaxed and in honesty.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" className="hgjs" onClick={handleClose}>
+            Got it
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <Container fluid={true}>
         <Row className="firstrowcf cftcontent">
           <AssessmentFirstSection

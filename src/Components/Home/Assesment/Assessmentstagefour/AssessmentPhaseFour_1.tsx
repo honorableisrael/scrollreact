@@ -376,11 +376,6 @@ const Assessmentfourthphase_1 = (props: any) => {
                       </div>
                     </div>
                   </Col>
-                  <Col md={1} className="ocenter bighide">
-                    <span className="rightarrow" onClick={submitForm}>
-                      &#8594;
-                    </span>
-                  </Col>
                 </Row>
               </Col>
               <Col md={12}>
@@ -619,6 +614,11 @@ const Assessmentfourthphase_1 = (props: any) => {
                 </div>
               </Col>
             </Row>
+            <div className="nxtbtnarea">
+              <button className="nxtbtn" onClick={submitForm}>
+                Next
+              </button>
+            </div>
           </Col>
         </Row>
         <Footer />

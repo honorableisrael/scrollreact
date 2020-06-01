@@ -9,8 +9,6 @@ import Navbar from "../../HomeComponents/navbar";
 import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css";
 import RangeSlider from "react-bootstrap-range-slider";
 import { AssessmentFirstSection } from "../AssessmentComponents/AssessmentFirstSection";
-import nextis5 from "../../../assets/nextis5.png";
-import { Link } from "react-router-dom";
 import StarRatingComponent from "react-star-rating-component";
 import axios from "axios";
 import { API } from "../../../../config";
@@ -530,11 +528,6 @@ const Assessmentfourthphase = (props: any) => {
                   </div>
                 </div>
               </Col>
-              <Col md={1} className="smalldisplay">
-                <span className="rightarrow" onClick={submitForm}>
-                  &#8594;
-                </span>
-              </Col>
               <ToastContainer
                 enableMultiContainer
                 containerId={"B"}
@@ -543,6 +536,11 @@ const Assessmentfourthphase = (props: any) => {
                 position={toast.POSITION.TOP_CENTER}
               />
             </Row>
+            <div className="nxtbtnarea">
+              <button className="nxtbtn" onClick={submitForm}>
+                Next
+              </button>
+            </div>
           </Col>
         </Row>
         <Footer />

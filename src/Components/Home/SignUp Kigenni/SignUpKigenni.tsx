@@ -11,6 +11,7 @@ import { API } from "../../../config";
 import formavatar from "../../../assets/formavatar.png";
 import formemail from "../../../assets/formemail.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 interface State {
   firstname: string;
@@ -25,7 +26,7 @@ interface State {
   token: string;
 }
 const SignUpKigenni: React.FunctionComponent = (props: any) => {
-  const [state, setFormState] = React.useState<State>({
+  const [state, setFormState] = useState<State>({
     firstname: "",
     email: "",
     lastname: "",
@@ -49,6 +50,7 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
     profession,
     token,
   } = state;
+
   const professions = [
     { name: "Entrepreneur - Start-up phase" },
     { name: "Entrepreneur - Growing Business" },
@@ -89,7 +91,9 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
             token: response?.data[0].token,
           });
           getUserInfo(response?.data[0].token);
-          setInterval(props.history.push("/assessmentphaseone"), 5000);
+          setTimeout(() => {
+            props.history.push("/assessmentphaseone");
+          }, 3000);
         }
       })
       .catch((error) => {

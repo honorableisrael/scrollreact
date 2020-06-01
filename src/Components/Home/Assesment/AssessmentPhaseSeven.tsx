@@ -805,8 +805,8 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
                 <div className="firstquestion">
-                  j. Developing colleagues and employees potential increasing
-                  work productivity
+                  j. Actively developing the potential of colleague or employees
+                  to improve their work and life productivity.
                 </div>
                 <div className="rsliderclassPol1">
                   <label className="checkcontainer1">
@@ -951,8 +951,8 @@ const AssessmentSeventhPhase = (props: any) => {
             <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
                 <div className="firstquestion">
-                  l. You work best understanding the trajectory of an
-                  organization based financial analysis
+                  l. Interpreting the growth trajectory of organization based of
+                  financial analysis
                 </div>
                 <div className="rsliderclassPol1">
                   <label className="checkcontainer1">

@@ -21,6 +21,17 @@
   justify-content: center;
   width: 100%;
 }
+.modal-title{
+  font-size: 18px !important;
+  color: #2c2147;
+} 
+.modal-body{
+  font-size: 14px !important;
+  word-spacing: 1.4;
+  line-height: 1.6;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .wrapassess{
     display: flex;
     justify-content: space-between;
@@ -585,4 +596,11 @@ a:hover{
   .creative{
     font-size: 1.3em;
   }
+}
+.hgjs {
+  background: #9c1258;
+  color: #fff;
+  border: none;
+  width: 100%;
+  font-size: 14px;
 }

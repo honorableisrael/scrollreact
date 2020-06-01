@@ -31,6 +31,17 @@
   justify-content: center;
   margin-top: 4rem;
 }
+.hgjs {
+  background: #9c1258;
+  color: #fff;
+  border: none;
+  width: 100%;
+}
+.hgjs:hover{
+  background: #9c1258;
+  color: #fff;
+  border: none;
+}
 .kfirstlogo {
   width: 80%;
   border-radius: 6px;
@@ -303,13 +314,12 @@
   .resultsec2 {
     background: #ececec;
     flex-wrap: wrap;
-    justify-content: center;
     padding-top: 1rem;
   }
   .resultsec3 {
     flex-wrap: wrap;
   }
-  .noticee{
+  .noticee {
     display: none;
   }
   .reskwrap {
@@ -341,11 +351,15 @@
   .reskwrap13 {
     width: 100%;
   }
-  .kprofile{
+  .kprofile {
     padding-left: 1rem;
     padding-top: 1rem;
   }
-  .kprofile2{
+  .kprofile2 {
     padding-left: 1rem;
+  }
+  .resultsec22 {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
   }
 }
