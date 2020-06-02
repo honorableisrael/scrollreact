@@ -22,56 +22,27 @@ import { ToastContainer, toast } from "react-toastify";
 interface State {
   successMsg: boolean;
   errorMessage: string;
-  user:any;
+  user: any;
+  userInfos:any;
   isLoading: boolean;
 }
 
 declare global {
   interface Window {
-    MonnifySDK:any;
+    MonnifySDK: any;
   }
 }
 
 const KigenniDashboard: React.FunctionComponent = (props: any) => {
   const [state, setFormState] = React.useState<State>({
     errorMessage: "",
-    user:"",
+    user: "",
+    userInfos:[],
     successMsg: false,
     isLoading: false,
   });
-  const { errorMessage, successMsg, isLoading } = state;
+  const { errorMessage, successMsg,userInfos , isLoading } = state;
 
-  const payWithMonnify = (reference) => {
-    console.log("function is running");
-    try {
-      window.MonnifySDK.initialize({
-        amount: 5000,
-        currency: "NGN",
-        reference,
-        customerFullName: "John Doe",
-        customerEmail: "monnify@monnify.com",
-        customerMobileNumber: "08121281921",
-        apiKey: "MK_TEST_WQZNXHV9FY",
-        contractCode: "4978848198",
-        paymentDescription: "Test Pay",
-        isTestMode: true,
-        metadata: {
-          name: "Damilare",
-          age: 45,
-        },
-        onComplete: function(response) {
-          //Implement what happens when transaction is completed.
-          console.log(response);
-        },
-        onClose: function(data) {
-          //Implement what should happen when the modal is closed here
-          console.log(data);
-        },
-      });
-    } catch (error) {
-      console.log("Failed to initailize payment" + error);
-    }
-  };
 
   useEffect(() => {
     const availableToken = sessionStorage.getItem("userToken");
@@ -108,38 +79,89 @@ const KigenniDashboard: React.FunctionComponent = (props: any) => {
         });
       });
   }, []);
+  const payWithMonnify = (reference) => {
+    const availableUser = sessionStorage.getItem("user");
+    var user = availableUser
+    ? JSON.parse(availableUser)
+    : props.history.push("/signin");
+    try {
+      window.MonnifySDK.initialize({
+        amount: 5500,
+        currency: "NGN",
+        reference,
+        customerFullName:user[0]?.first_name + "  "+ user[0]?.last_name,
+        customerEmail: "monnify@monnify.com",
+        customerMobileNumber: "08121281921",
+        apiKey: "MK_TEST_WQZNXHV9FY",
+        contractCode: "4978848198",
+        paymentDescription: "Test Pay",
+        isTestMode: true,
+        onComplete: function(response) {
+          moveToFullResult();
+          if(response.paymentStatus=="OVERPAID"){
+             (notify("You current payment has exceeded the amount. The excess amount will be refunded within 24 hours"));
+                return setInterval(
+                    window.location.pathname = "/",
+                10000
+            );
+        }
+        if (response.paymentStatus=="PAID"){
+            // console.log(response)
+                return setInterval(
+                    window.location.pathname = "/kigenni/fullresult",
+                9000
+            );
+        }
+        if (response.paymentStatus=="PENDING"){
+            (notify("Payment Pending"));
+                return setInterval(
+                    window.location.pathname = "/",
+                9000
+            );
+        }
+        },
+        onClose: function(data) {
+          //Implement what should happen when the modal is closed here
+          console.log(data);
+        },
+      });
+    }
+    catch (error) {
+      console.log("Failed to initailize payment" + error);
+    }
+  };
 
   const requestForPayref = () => {
     setFormState({
       ...state,
-      isLoading:true
+      isLoading: true,
     });
     const availableToken = sessionStorage.getItem("userToken");
     const token = availableToken
       ? JSON.parse(availableToken)
       : props.history.push("/signin");
-    axios.get(`${API}/monnifypaymentreference`, {
-      headers: { Authorization: `Token ${token}` }
-    })
-    .then(response=>{
-      console.log(response);
-      setFormState({
-        ...state,
-        user:response?.data[0]?.payment_reference,
-        isLoading:false
+    axios
+      .get(`${API}/monnifypaymentreference`, {
+        headers: { Authorization: `Token ${token}` },
+      })
+      .then((response) => {
+        console.log(response);
+        setFormState({
+          ...state,
+          user: response?.data[0]?.payment_reference,
+          isLoading: false,
+        });
+        setTimeout(() => {
+          payWithMonnify(response?.data[0]?.payment_reference);
+        }, 1000);
+      })
+      .catch((error) => {
+        console.log(error);
+        setFormState({
+          ...state,
+          isLoading: false,
+        });
       });
-      setTimeout(()=>{
-        payWithMonnify(response?.data[0]?.payment_reference)
-      },1000);
-    })
-    .catch(error=>{
-      console.log(error);
-      setFormState({
-        ...state,
-        isLoading:false
-      });
-    });
-    
   };
   const notify = (message: string) => {
     toast(message, { containerId: "B" });
@@ -148,8 +170,10 @@ const KigenniDashboard: React.FunctionComponent = (props: any) => {
     }, 3000);
   };
   const checkIfUserHasAccessToViewAll = () => {
-    // notify("You have to pay to view the complete result")
     requestForPayref();
+  };
+  const moveToFullResult=()=>{
+    props.history.push("/kigenni/fullresult");
   };
   return (
     <>
@@ -163,7 +187,8 @@ const KigenniDashboard: React.FunctionComponent = (props: any) => {
                 className="fullresult"
                 onClick={() => checkIfUserHasAccessToViewAll()}
               >
-                {isLoading?"Processing":"See Full Result"} <span>&#8594;</span>
+                {isLoading ? "Processing" : "See Full Result"}{" "}
+                <span>&#8594;</span>
               </div>
             </div>
             <div className="kigennidisabled">

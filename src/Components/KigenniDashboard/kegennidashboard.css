@@ -45,7 +45,7 @@
 .kfirstlogo {
   width: 80%;
   border-radius: 6px;
-  min-width: 398px;
+  min-width: 380px;
 }
 .kdash1 span {
   font-weight: 500;
@@ -323,7 +323,10 @@
     display: none;
   }
   .reskwrap {
-    padding-left: 0rem;
+    padding-left: 1rem;
+  }
+  .stbly{
+    padding-left: 1rem;
   }
   .secondlogo {
     border-radius: 6px;

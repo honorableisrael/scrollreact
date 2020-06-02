@@ -9,51 +9,64 @@ import axios, { AxiosResponse } from "axios";
 import { API } from "../../../config";
 import formemail from "../../../assets/formemail.png";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 interface State {
   email: string;
+  newpassword: string;
   errorMessage: string;
-  password: string;
+  confirmpassword: string;
   isLoading: boolean;
   kigenni: boolean;
-  token: string;
+  message: string;
 }
-const SignInKigenni: React.FunctionComponent = (props: any) => {
+const ResetPassword: React.FunctionComponent = (props: any) => {
   const [state, setFormState] = React.useState<State>({
     email: "",
     errorMessage: "",
     isLoading: false,
     kigenni: true,
-    password: "",
-    token: "",
+    newpassword: "",
+    confirmpassword: "",
+    message: "",
   });
-  const { email, kigenni, errorMessage, isLoading, password, token } = state;
+  const {
+    newpassword,
+    kigenni,
+    errorMessage,
+    isLoading,
+    confirmpassword,
+    message,
+  } = state;
   const sendFormData = (e) => {
+    const token = props.match.params.token;
+    const userid = props.match.params.userid;
     e.preventDefault();
     setFormState({ ...state, isLoading: true });
     const data = {
-      email,
-      password,
+      password: newpassword,
+      confirm_password: confirmpassword,
     };
     axios
-      .post<any, AxiosResponse<any>>(`${API}/accounts/loginthirdparty/`, data)
+      .post<any, AxiosResponse<any>>(
+        `${API}/resetpassword/${userid}/${token}`,
+        data
+      )
       .then((response) => {
         console.log(response);
-        if (response?.data?.token) {
-          sessionStorage.setItem(
-            "userToken",
-            JSON.stringify(response?.data?.token)
-          );
+        if (response.status === 200) {
           setFormState({
             ...state,
             isLoading: false,
-            token: response?.data.token,
+            message: response?.data[0]?.message,
           });
-          getUserInfo(response?.data?.token);
-          getCurrentAssessmentPosition(response?.data?.token);
+          setTimeout(()=>{
+            props.history.push("/signin")
+          },3000)
         }
       })
       .catch((error) => {
+        console.log(error.response);
         if (error?.response?.data?.error) {
           return setFormState({
             ...state,
@@ -77,78 +90,22 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
         }
         setFormState({
           ...state,
-          errorMessage: "Login failed",
+          errorMessage: "Password reset failed",
           isLoading: false,
         });
       });
   };
-
+  useEffect(() => {
+    const token = props.match.params.token;
+    const userid = props.match.params.userid;
+  }, []);
   const changeActionOnFormData = (e: any) => {
     setFormState({
       ...state,
       [e.target.name]: e.target.value,
       errorMessage: "",
+      message:""
     });
-  };
-  const getCurrentAssessmentPosition = (token: string): void => {
-    axios
-      .get(`${API}/progress`, { headers: { Authorization: `Token ${token}` } })
-      .then((response) => {
-        console.log(response);
-        if (
-          (response.status === 200 &&
-            response.data[0].next === "phase_four_sports") ||
-          response.data[0].next === "phase_four_business" ||
-          response.data[0].next === "phase_four_stem"
-        ) {
-          return props.history.push(`/assessmentphasefour1`);
-        }
-        if (response.status === 200 && response.data[0].next === "phase_one") {
-          return props.history.push(`/assessmentphaseone`);
-        }
-        if (response.status === 200 && response.data[0].next === "phase_two") {
-          return props.history.push(`/assessmentphasetwo`);
-        }
-        if (
-          response.status === 200 &&
-          response.data[0].next === "phase_three"
-        ) {
-          return props.history.push(`/assessmentphasethree`);
-        }
-        if (response.status === 200 && response.data[0].next === "phase_five") {
-          return props.history.push(`/assessmentphasefive`);
-        }
-        if (response.status === 200 && response.data[0].next === "phase_six") {
-          return props.history.push(`/assessmentphasesix`);
-        }
-        if (
-          response.status === 200 &&
-          response.data[0].next === "phase_seven"
-        ) {
-          return props.history.push(`/assessmentphaseseven`);
-        }
-        if (response.status === 200 && response.data[0].next === "home") {
-          return props.history.push(`/kigenni/dashboard`);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-  const getUserInfo = (token: string): any => {
-    axios
-      .get(`${API}/currentuser`, {
-        headers: { Authorization: `Token ${token}` },
-      })
-      .then((response) => {
-        console.log(response);
-        if (response.status === 200) {
-          sessionStorage.setItem("user", JSON.stringify(response?.data));
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   };
   return (
     <>
@@ -166,30 +123,29 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
                 Not registered ? Sign Up
               </Link>
             </div>
-            <hr/>
-            <span>
-              <Link to="/forgotpassword" className="clscc">
-                Forgot Password?
-              </Link>
-            </span>
           </Col>
           <Col md={4}>
-            <div className=" mjcn">Let’s get started</div>
+            <div className=" mjcn">Reset Password</div>
             {errorMessage && (
               <Alert key={2} variant="danger">
                 {errorMessage}
+              </Alert>
+            )}
+            {message && (
+              <Alert key={2} variant="info">
+                {message}
               </Alert>
             )}
             <Form onSubmit={sendFormData}>
               <Form.Group className="bvbcm" controlId="formBasicEmail">
                 <img src={formemail} className="formavatar" alt="formavatar" />
                 <Form.Control
-                  type="email"
+                  type="password"
                   className="field3"
-                  value={email}
-                  name="email"
+                  value={newpassword}
+                  name="newpassword"
                   onChange={changeActionOnFormData}
-                  placeholder="Email Address"
+                  placeholder="Enter New Password"
                 />
               </Form.Group>
               <Form.Group className="bvbcm" controlId="formBasicEmail">
@@ -197,15 +153,15 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
                 <Form.Control
                   type="password"
                   className="field3"
-                  value={password}
-                  name="password"
+                  value={confirmpassword}
+                  name="confirmpassword"
                   onChange={changeActionOnFormData}
-                  placeholder="Password"
+                  placeholder="Confirm Password"
                 />
               </Form.Group>
               <Form.Group></Form.Group>
               <Button variant="primary" className="subbtn ncn" type="submit">
-                {!isLoading ? "Start Assessment" : "Starting ..."}
+                {!isLoading ? "Submit" : "Submitting ..."}
               </Button>
             </Form>
           </Col>
@@ -216,4 +172,4 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
   );
 };
 
-export default SignInKigenni;
+export default ResetPassword;
