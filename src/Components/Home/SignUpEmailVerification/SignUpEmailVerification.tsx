@@ -20,7 +20,7 @@ interface State {
   kigenni: boolean;
   message: string;
 }
-const ResetPassword: React.FunctionComponent = (props: any) => {
+const EmailVerification: React.FunctionComponent = (props: any) => {
   const [state, setFormState] = React.useState<State>({
     email: "",
     errorMessage: "",
@@ -38,40 +38,30 @@ const ResetPassword: React.FunctionComponent = (props: any) => {
     confirmpassword,
     message,
   } = state;
- const validateForm = (e) => {
-  e.preventDefault();
-  setFormState({ ...state, isLoading: true });
-    if (newpassword.trim() === "" && confirmpassword.trim() === "") {
-      return setFormState({
-        ...state,
-        errorMessage: "please fill the empty feild(s)",
-        isLoading: false,
+  const getUserInfo = (token: string): any => {
+    axios
+      .get(`${API}/currentuser`, {
+        headers: { Authorization: `Token ${token}` },
+      })
+      .then((response) => {
+        console.log(response);
+        if (response.status === 200) {
+          sessionStorage.setItem("user", JSON.stringify(response?.data));
+        }
+        setTimeout(() => {
+          props.history.push("/assessmentphaseone");
+        });
+      })
+      .catch((error) => {
+        console.log(error);
       });
-    }
-    if (confirmpassword !== newpassword) {
-      return  setFormState({ 
-        ...state,
-        errorMessage:"Password must be the same",
-        isLoading: false
-      });
-    }
-    else{
-      sendFormData()
-    }
- }
-  const sendFormData = () => {
+  };
+  useEffect(() => {
     const token = props.match.params.token;
     const userid = props.match.params.userid;
     setFormState({ ...state, isLoading: true });
-    const data = {
-      password: newpassword,
-      confirm_password: confirmpassword,
-    };
     axios
-      .post<any, AxiosResponse<any>>(
-        `${API}/resetpassword/${userid}/${token}`,
-        data
-      )
+      .get<any, AxiosResponse<any>>(`${API}/activate/${userid}/${token}`)
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
@@ -80,9 +70,13 @@ const ResetPassword: React.FunctionComponent = (props: any) => {
             isLoading: false,
             message: response?.data[0]?.message,
           });
-          setTimeout(()=>{
-            props.history.push("/signin")
-          },3000)
+          getUserInfo(response?.data[0]?.token);
+          if (response?.data[0]?.token) {
+            sessionStorage.setItem(
+              "userToken",
+              JSON.stringify(response?.data[0]?.token)
+            );
+          }
         }
       })
       .catch((error) => {
@@ -110,21 +104,17 @@ const ResetPassword: React.FunctionComponent = (props: any) => {
         }
         setFormState({
           ...state,
-          errorMessage: "Password reset failed",
+          errorMessage: "Verification failed",
           isLoading: false,
         });
       });
-  };
-  useEffect(() => {
-    const token = props.match.params.token;
-    const userid = props.match.params.userid;
   }, []);
   const changeActionOnFormData = (e: any) => {
     setFormState({
       ...state,
       [e.target.name]: e.target.value,
       errorMessage: "",
-      message:""
+      message: "",
     });
   };
   return (
@@ -145,7 +135,7 @@ const ResetPassword: React.FunctionComponent = (props: any) => {
             </div>
           </Col>
           <Col md={4}>
-            <div className=" mjcn">Reset Password</div>
+            <div className=" mjcn">Email Verification</div>
             {errorMessage && (
               <Alert key={2} variant="danger">
                 {errorMessage}
@@ -156,32 +146,9 @@ const ResetPassword: React.FunctionComponent = (props: any) => {
                 {message}
               </Alert>
             )}
-            <Form onSubmit={validateForm}>
-              <Form.Group className="bvbcm" controlId="formBasicEmail">
-                <img src={formemail} className="formavatar" alt="formavatar" />
-                <Form.Control
-                  type="password"
-                  className="field3"
-                  value={newpassword}
-                  name="newpassword"
-                  onChange={changeActionOnFormData}
-                  placeholder="Enter New Password"
-                />
-              </Form.Group>
-              <Form.Group className="bvbcm" controlId="formBasicEmail">
-                <img src={formemail} className="formavatar" alt="formavatar" />
-                <Form.Control
-                  type="password"
-                  className="field3"
-                  value={confirmpassword}
-                  name="confirmpassword"
-                  onChange={changeActionOnFormData}
-                  placeholder="Confirm Password"
-                />
-              </Form.Group>
-              <Form.Group></Form.Group>
+            <Form>
               <Button variant="primary" className="subbtn ncn" type="submit">
-                {!isLoading ? "Submit" : "Submitting ..."}
+                {!isLoading ? "Verify" : "Verifying ..."}
               </Button>
             </Form>
           </Col>
@@ -192,4 +159,4 @@ const ResetPassword: React.FunctionComponent = (props: any) => {
   );
 };
 
-export default ResetPassword;
+export default EmailVerification;

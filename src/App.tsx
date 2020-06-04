@@ -26,6 +26,7 @@ import SignInKigenni from "./Components/Home/SignIn/SignIn";
 import Home from "./Components/Home/Home/Home";
 import ForgotPassword from "./Components/Home/ForgotPassword/ForgotPassword";
 import ResetPassword from './Components/Home/ResetPassword/ResetPassword';
+import EmailVerification from './Components/Home/SignUpEmailVerification/SignUpEmailVerification';
 
 const App: React.FC = () => {
   return (
@@ -162,6 +163,7 @@ const App: React.FC = () => {
             />
             <Route exact path="/forgotpassword" component={ForgotPassword} />
             <Route exact path="/resetpassword/:userid/:token" component={ResetPassword} />
+            <Route exact path="/verifyemail/:userid/:token" component={EmailVerification} />
           </Switch>
         </BrowserRouter>
       </div>

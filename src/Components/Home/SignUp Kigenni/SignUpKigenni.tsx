@@ -17,7 +17,7 @@ interface State {
   firstname: string;
   email: string;
   lastname: string;
-  successMsg: boolean;
+  successMsg: string;
   errorMessage: string;
   password: string;
   isLoading: boolean;
@@ -31,7 +31,7 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
     email: "",
     lastname: "",
     errorMessage: "",
-    successMsg: false,
+    successMsg: "",
     isLoading: false,
     kigenni: true,
     password: "",
@@ -80,20 +80,21 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
-          sessionStorage.setItem(
-            "userToken",
-            JSON.stringify(response?.data[0].token)
-          );
+          // sessionStorage.setItem(
+          //   "userToken",
+          //   JSON.stringify(response?.data[0].token)
+          // );
           setFormState({
             ...state,
-            successMsg: true,
+            successMsg: response?.data[0]?.message,
             isLoading: false,
             token: response?.data[0].token,
           });
-          getUserInfo(response?.data[0].token);
-          setTimeout(() => {
-            props.history.push("/assessmentphaseone");
-          }, 3000);
+
+          // getUserInfo(response?.data[0].token);
+          // setTimeout(() => {
+          //   props.history.push("/assessmentphaseone");
+          // }, 3000);
         }
       })
       .catch((error) => {
@@ -125,7 +126,7 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
       ...state,
       [e.target.name]: e.target.value,
       errorMessage: "",
-      successMsg: false,
+      successMsg: "",
     });
   };
   const handleSelectChange = (e) => {
@@ -134,21 +135,7 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
       profession: e.target.value,
     });
   };
-  const getUserInfo = (token: string): any => {
-    axios
-      .get(`${API}/currentuser`, {
-        headers: { Authorization: `Token ${token}` },
-      })
-      .then((response) => {
-        console.log(response);
-        if (response.status === 200) {
-          sessionStorage.setItem("user", JSON.stringify(response?.data));
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+
   return (
     <>
       {/* <Navbar/> */}
@@ -171,14 +158,14 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
           </Col>
           <Col md={4}>
             <div className=" mjcn">Let’s get started </div>
-            {successMsg && (
-              <Alert key={1} variant="success">
-                SignUp Successful
-              </Alert>
-            )}
             {errorMessage && (
               <Alert key={2} variant="danger">
                 {errorMessage}
+              </Alert>
+            )}
+            {successMsg && (
+              <Alert key={2} variant="info">
+                {successMsg}
               </Alert>
             )}
             <Form onSubmit={sendFormData}>
