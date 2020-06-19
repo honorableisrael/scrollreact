@@ -83,8 +83,8 @@ const AssessmentSixthPhase = (props: any) => {
       q65: question4,
       q66: question5,
       q67: question6,
-      q68: question8,
-      q69: question9,
+      q68: question7,
+      q69: question8,
     };
     console.log(data);
     axios
@@ -132,76 +132,74 @@ const AssessmentSixthPhase = (props: any) => {
                   a. To you getting the job done is more important than
                   excessively talking about it
                 </div>
-                <div className="rsliderclassPol1">
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={0}
-                      name="question1"
-                    />
-                    <span className="checkmark1">A</span>
-                    Very Much
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={1}
-                      onChange={onchange}
-                      name="question1"
-                    />
-                    <span className="checkmark1">B</span>
-                    Yes
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={2}
-                      name="question1"
-                    />
-                    <span className="checkmark1">C</span>
-                    Often not always
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={3}
-                      onChange={onchange}
-                      name="question1"
-                    />
-                    <span className="checkmark1">D</span>I don’t even know
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={4}
-                      name="question1"
-                    />
-                    <span className="checkmark1">E</span>
-                    Not exactly
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={5}
-                      onChange={onchange}
-                      name="question1"
-                    />
-                    <span className="checkmark1">F</span>
-                    Barely
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={6}
-                      onChange={onchange}
-                      name="question1"
-                    />
-                    <span className="checkmark1">G</span>
-                    Absolutely not
-                  </label>
+                 <div className="rsliderclass9 flipdirection">
+                  <div className="agree">Agree</div>
+                  <div className="checkwrapper">
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={0}
+                        onChange={onchange}
+                        name="question1"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={1}
+                        onChange={onchange}
+                        name="question1"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={2}
+                        onChange={onchange}
+                        name="question1"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={3}
+                        onChange={onchange}
+                        name="question1"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={4}
+                        onChange={onchange}
+                        name="question1"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={5}
+                        onChange={onchange}
+                        name="question1"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={6}
+                        onChange={onchange}
+                        name="question1"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                  </div>
+                  <div className="disagree">Disagree</div>
                 </div>
               </Col>
             </Row>
@@ -211,76 +209,74 @@ const AssessmentSixthPhase = (props: any) => {
                   b. You find it difficult communicating tasks you are working
                   on till it’s complete
                 </div>
-                <div className="rsliderclassPol1">
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={6}
-                      name="question2"
-                    />
-                    <span className="checkmark1">A</span>
-                    Very Much
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={5}
-                      onChange={onchange}
-                      name="question2"
-                    />
-                    <span className="checkmark1">B</span>
-                    Yes
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={4}
-                      name="question2"
-                    />
-                    <span className="checkmark1">C</span>
-                    Often not always
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={3}
-                      onChange={onchange}
-                      name="question2"
-                    />
-                    <span className="checkmark1">D</span>I don’t even know
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={2}
-                      name="question2"
-                    />
-                    <span className="checkmark1">E</span>
-                    Not exactly
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={1}
-                      onChange={onchange}
-                      name="question2"
-                    />
-                    <span className="checkmark1">F</span>
-                    Barely
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={0}
-                      onChange={onchange}
-                      name="question2"
-                    />
-                    <span className="checkmark1">G</span>
-                    Absolutely not
-                  </label>
+                <div className="rsliderclass9 flipdirection">
+                  <div className="agree">Agree</div>
+                  <div className="checkwrapper">
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={0}
+                        onChange={onchange}
+                        name="question2"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={1}
+                        onChange={onchange}
+                        name="question2"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={2}
+                        onChange={onchange}
+                        name="question2"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={3}
+                        onChange={onchange}
+                        name="question2"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={4}
+                        onChange={onchange}
+                        name="question2"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={5}
+                        onChange={onchange}
+                        name="question2"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={6}
+                        onChange={onchange}
+                        name="question2"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                  </div>
+                  <div className="disagree">Disagree</div>
                 </div>
               </Col>
             </Row>
@@ -290,76 +286,74 @@ const AssessmentSixthPhase = (props: any) => {
                   c. You are exceptional at generating the ideas but not
                   handling the details.
                 </div>
-                <div className="rsliderclassPol1">
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={6}
-                      name="question3"
-                    />
-                    <span className="checkmark1">A</span>
-                    Very Much
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={5}
-                      onChange={onchange}
-                      name="question3"
-                    />
-                    <span className="checkmark1">B</span>
-                    Yes
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={4}
-                      name="question3"
-                    />
-                    <span className="checkmark1">C</span>
-                    Often not always
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={3}
-                      onChange={onchange}
-                      name="question3"
-                    />
-                    <span className="checkmark1">D</span>I don’t even know
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={2}
-                      name="question3"
-                    />
-                    <span className="checkmark1">E</span>
-                    Not exactly
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={1}
-                      onChange={onchange}
-                      name="question3"
-                    />
-                    <span className="checkmark1">F</span>
-                    Barely
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={0}
-                      onChange={onchange}
-                      name="question3"
-                    />
-                    <span className="checkmark1">G</span>
-                    Absolutely not
-                  </label>
+                <div className="rsliderclass9 flipdirection">
+                  <div className="agree">Agree</div>
+                  <div className="checkwrapper">
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={0}
+                        onChange={onchange}
+                        name="question3"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={1}
+                        onChange={onchange}
+                        name="question3"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={2}
+                        onChange={onchange}
+                        name="question3"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={3}
+                        onChange={onchange}
+                        name="question3"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={4}
+                        onChange={onchange}
+                        name="question3"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={5}
+                        onChange={onchange}
+                        name="question3"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={6}
+                        onChange={onchange}
+                        name="question3"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                  </div>
+                  <div className="disagree">Disagree</div>
                 </div>
               </Col>
             </Row>
@@ -369,76 +363,74 @@ const AssessmentSixthPhase = (props: any) => {
                   d. To be honest you can’t help but see the big picture in
                   every situation
                 </div>
-                <div className="rsliderclassPol1">
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={6}
-                      name="question4"
-                    />
-                    <span className="checkmark1">A</span>
-                    Very Much
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={5}
-                      onChange={onchange}
-                      name="question4"
-                    />
-                    <span className="checkmark1">B</span>
-                    Yes
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={4}
-                      name="question4"
-                    />
-                    <span className="checkmark1">C</span>
-                    Often not always
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={3}
-                      onChange={onchange}
-                      name="question4"
-                    />
-                    <span className="checkmark1">D</span>I don’t even know
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={2}
-                      name="question4"
-                    />
-                    <span className="checkmark1">E</span>
-                    Not exactly
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={1}
-                      onChange={onchange}
-                      name="question4"
-                    />
-                    <span className="checkmark1">F</span>
-                    Barely
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={0}
-                      onChange={onchange}
-                      name="question4"
-                    />
-                    <span className="checkmark1">G</span>
-                    Absolutely not
-                  </label>
+                <div className="rsliderclass9 flipdirection">
+                  <div className="agree">Agree</div>
+                  <div className="checkwrapper">
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={0}
+                        onChange={onchange}
+                        name="question4"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={1}
+                        onChange={onchange}
+                        name="question4"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={2}
+                        onChange={onchange}
+                        name="question4"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={3}
+                        onChange={onchange}
+                        name="question4"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={4}
+                        onChange={onchange}
+                        name="question4"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={5}
+                        onChange={onchange}
+                        name="question4"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={6}
+                        onChange={onchange}
+                        name="question4"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                  </div>
+                  <div className="disagree">Disagree</div>
                 </div>
               </Col>
             </Row>
@@ -448,76 +440,74 @@ const AssessmentSixthPhase = (props: any) => {
                   e. You can proceed with work based on highlights and figure
                   out the specifics along the way
                 </div>
-                <div className="rsliderclassPol1">
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={6}
-                      name="question5"
-                    />
-                    <span className="checkmark1">A</span>
-                    Very Much
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={5}
-                      onChange={onchange}
-                      name="question5"
-                    />
-                    <span className="checkmark1">B</span>
-                    Yes
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={4}
-                      name="question5"
-                    />
-                    <span className="checkmark1">C</span>
-                    Often not always
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={3}
-                      onChange={onchange}
-                      name="question5"
-                    />
-                    <span className="checkmark1">D</span>I don’t even know
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={2}
-                      name="question5"
-                    />
-                    <span className="checkmark1">E</span>
-                    Not exactly
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={1}
-                      onChange={onchange}
-                      name="question5"
-                    />
-                    <span className="checkmark1">F</span>
-                    Barely
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={0}
-                      onChange={onchange}
-                      name="question5"
-                    />
-                    <span className="checkmark1">G</span>
-                    Absolutely not
-                  </label>
+                <div className="rsliderclass9 flipdirection">
+                  <div className="agree">Agree</div>
+                  <div className="checkwrapper">
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={0}
+                        onChange={onchange}
+                        name="question5"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={1}
+                        onChange={onchange}
+                        name="question5"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={2}
+                        onChange={onchange}
+                        name="question5"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={3}
+                        onChange={onchange}
+                        name="question5"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={4}
+                        onChange={onchange}
+                        name="question5"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={5}
+                        onChange={onchange}
+                        name="question5"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={6}
+                        onChange={onchange}
+                        name="question5"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                  </div>
+                  <div className="disagree">Disagree</div>
                 </div>
               </Col>
             </Row>
@@ -527,76 +517,74 @@ const AssessmentSixthPhase = (props: any) => {
                   f. You typically enjoy going with the flow, experimenting and
                   observing how things go
                 </div>
-                <div className="rsliderclassPol1">
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={6}
-                      name="question6"
-                    />
-                    <span className="checkmark1">A</span>
-                    Very Much
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={5}
-                      onChange={onchange}
-                      name="question6"
-                    />
-                    <span className="checkmark1">B</span>
-                    Yes
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={4}
-                      name="question6"
-                    />
-                    <span className="checkmark1">C</span>
-                    Often not always
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={3}
-                      onChange={onchange}
-                      name="question6"
-                    />
-                    <span className="checkmark1">D</span>I don’t even know
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={2}
-                      name="question6"
-                    />
-                    <span className="checkmark1">E</span>
-                    Not exactly
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={1}
-                      onChange={onchange}
-                      name="question6"
-                    />
-                    <span className="checkmark1">F</span>
-                    Barely
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={0}
-                      onChange={onchange}
-                      name="question6"
-                    />
-                    <span className="checkmark1">G</span>
-                    Absolutely not
-                  </label>
+                <div className="rsliderclass9 flipdirection">
+                  <div className="agree">Agree</div>
+                  <div className="checkwrapper">
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={0}
+                        onChange={onchange}
+                        name="question6"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={1}
+                        onChange={onchange}
+                        name="question6"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={2}
+                        onChange={onchange}
+                        name="question6"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={3}
+                        onChange={onchange}
+                        name="question6"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={4}
+                        onChange={onchange}
+                        name="question6"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={5}
+                        onChange={onchange}
+                        name="question6"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={6}
+                        onChange={onchange}
+                        name="question6"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                  </div>
+                  <div className="disagree">Disagree</div>
                 </div>
               </Col>
             </Row>
@@ -606,76 +594,74 @@ const AssessmentSixthPhase = (props: any) => {
                   g. You’re the easiest to talk to in your group of friends,
                   people share their issues easily
                 </div>
-                <div className="rsliderclassPol1">
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={6}
-                      name="question7"
-                    />
-                    <span className="checkmark1">A</span>
-                    Very Much
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={5}
-                      onChange={onchange}
-                      name="question7"
-                    />
-                    <span className="checkmark1">B</span>
-                    Yes
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={4}
-                      name="question7"
-                    />
-                    <span className="checkmark1">C</span>
-                    Often not always
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={3}
-                      onChange={onchange}
-                      name="question7"
-                    />
-                    <span className="checkmark1">D</span>I don’t even know
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={2}
-                      name="question7"
-                    />
-                    <span className="checkmark1">E</span>
-                    Not exactly
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={1}
-                      onChange={onchange}
-                      name="question7"
-                    />
-                    <span className="checkmark1">F</span>
-                    Barely
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={0}
-                      onChange={onchange}
-                      name="question7"
-                    />
-                    <span className="checkmark1">G</span>
-                    Absolutely not
-                  </label>
+                <div className="rsliderclass9 flipdirection">
+                  <div className="agree">Agree</div>
+                  <div className="checkwrapper">
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={0}
+                        onChange={onchange}
+                        name="question7"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={1}
+                        onChange={onchange}
+                        name="question7"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={2}
+                        onChange={onchange}
+                        name="question7"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={3}
+                        onChange={onchange}
+                        name="question7"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={4}
+                        onChange={onchange}
+                        name="question7"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={5}
+                        onChange={onchange}
+                        name="question7"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={6}
+                        onChange={onchange}
+                        name="question7"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                  </div>
+                  <div className="disagree">Disagree</div>
                 </div>
               </Col>
             </Row>
@@ -685,76 +671,74 @@ const AssessmentSixthPhase = (props: any) => {
                   h. You are comfortable with others taking the lead and giving
                   100% support
                 </div>
-                <div className="rsliderclassPol1">
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={6}
-                      name="question8"
-                    />
-                    <span className="checkmark1">A</span>
-                    Very Much
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={5}
-                      onChange={onchange}
-                      name="question8"
-                    />
-                    <span className="checkmark1">B</span>
-                    Yes
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={4}
-                      name="question8"
-                    />
-                    <span className="checkmark1">C</span>
-                    Often not always
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={3}
-                      onChange={onchange}
-                      name="question8"
-                    />
-                    <span className="checkmark1">D</span>I don’t even know
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      onChange={onchange}
-                      value={2}
-                      name="question8"
-                    />
-                    <span className="checkmark1">E</span>
-                    Not exactly
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={1}
-                      onChange={onchange}
-                      name="question8"
-                    />
-                    <span className="checkmark1">F</span>
-                    Barely
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={0}
-                      onChange={onchange}
-                      name="question8"
-                    />
-                    <span className="checkmark1">G</span>
-                    Absolutely not
-                  </label>
+                <div className="rsliderclass9 flipdirection">
+                  <div className="agree">Agree</div>
+                  <div className="checkwrapper">
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={0}
+                        onChange={onchange}
+                        name="question8"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={1}
+                        onChange={onchange}
+                        name="question8"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={2}
+                        onChange={onchange}
+                        name="question8"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={3}
+                        onChange={onchange}
+                        name="question8"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={4}
+                        onChange={onchange}
+                        name="question8"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={5}
+                        onChange={onchange}
+                        name="question8"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                    <label className="checkcontainer">
+                      <input
+                        type="radio"
+                        value={6}
+                        onChange={onchange}
+                        name="question8"
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                  </div>
+                  <div className="disagree">Disagree</div>
                 </div>
               </Col>
             </Row>

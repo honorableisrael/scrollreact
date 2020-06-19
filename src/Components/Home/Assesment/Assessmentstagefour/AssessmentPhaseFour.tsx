@@ -321,11 +321,6 @@ const Assessmentfourthphase = (props: any) => {
                   </div>
                 </div>
               </Col>
-              <Col md={1} className="ocenter bighide">
-                <span className="rightarrow" onClick={submitForm}>
-                  &#8594;
-                </span>
-              </Col>
             </Row>
           </Col>
           <Col md={12}>

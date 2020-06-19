@@ -51,7 +51,14 @@ const ForgotPassword: React.FunctionComponent = (props: any) => {
         if (error && error.response && error.response.status === 500) {
           return setFormState({
             ...state,
-            errorMessage: error.response.data.split(" ")[0],
+            errorMessage: error?.response?.data[0]?.message,
+            isLoading: false,
+          });
+        }
+        if (error && error.response && error.response.status === 500) {
+          return setFormState({
+            ...state,
+            errorMessage: error?.response?.data?.split(" ")[0],
             isLoading: false,
           });
         }

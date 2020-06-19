@@ -206,11 +206,11 @@
     width: -moz-fit-content;
     width: fit-content;
     padding-top: .5rem;
-    flex-direction: column;
-    margin-left: 5rem;
+    margin-left: 0rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 1rem;
+    margin: auto;
 }
   @media(min-width:701px){
     .losos{
@@ -512,6 +512,7 @@ a:hover{
     border-radius: 6px;
     border: solid 1.5px #9c1258;
     padding: 3px 4px 1px 39px;
+    margin-left: .5rem;
 }
 
 /* Hide the browser's default checkbox */
@@ -603,4 +604,10 @@ a:hover{
   border: none;
   width: 100%;
   font-size: 14px;
+}
+@media(max-width:790px){
+  .rsliderclassPol1{
+    margin-left: 0rem;
+    flex-direction: column;
+  }
 }

@@ -16,6 +16,8 @@ import { CirclePie } from "salad-ui.chart";
 import { Chart } from "react-google-charts";
 import { useEffect, useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
+import Testing from "./Testing";
+import HorizontalBar from "./HorizontalBar";
 
 interface State {
   fullname: string;
@@ -116,8 +118,9 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               <span className="kdashheaderlight"> Clarity Report</span>
             </div>
             <div className="kdash1">
-              {client?.career_fitness?.heading}{" "}
-              <span className="kdash1light"> see details below</span>
+              <span className="kdash1light">
+                <a href="#seek"> see details below</a>
+              </span>
             </div>
             <div className="kdasharea">
               <div>
@@ -130,7 +133,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               </div>
             </div>
             <hr />
-            <div className="resultsec2">
+            <div className="resultsec2" id="seek">
               <div className="resultsec22">
                 <CirclePie
                   width={190}
@@ -148,6 +151,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               </div>
               <div className="csfitscore">
                 <div className="csfitscore1">Your Career Fitness Score</div>
+                <div className="vbnc1"> {client?.career_fitness?.heading} </div>
                 <div className="csbody">{client?.career_fitness?.body}</div>
               </div>
             </div>
@@ -161,13 +165,28 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                   {client?.career_personality_type?.short_description}
                 </div>
               </div>
-              <div>
-                <img src={secondlogo} className="secondlogo" alt="secondlogo" />
-              </div>
             </div>
-            <div className="resultsec3">
-              <div className="resultt">
-                {client?.career_personality_type?.full_body}
+            <div className="resultsec31">
+              <div className="col-md-6">
+                <img
+                  src={secondlogo}
+                  className="secondlogo pds"
+                  alt="secondlogo"
+                />
+              </div>
+              <div className="resultt col-md-6">
+                {client?.career_personality_type?.graph?.map((data, index) => {
+                  return (
+                    <div className="">
+                      <div className="ttp">{data.name}</div>
+                      <HorizontalBar value={data.value.value1} />
+                      <div className="btmwrap">
+                        <div>{data.value.name1}</div>
+                        <div>{data.value.name2}</div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <div>
@@ -208,76 +227,31 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
             <div>
               <div className="competence">Your Strong Competences</div>
             </div>
-            <div>
-              <Chart
-                width={"100%"}
-                height={"500px"}
-                chartType="Bar"
-                loader={<div>Loading Chart</div>}
-                data={[
-                  ["Skills", "Score"],
-                  [
-                    client?.strong_career_competences?.graph?.[0]?.name,
-                    client?.strong_career_competences?.graph?.[0]?.value,
-                  ],
-                  [
-                    strongcompetencechartdata[0]?.name,
-                    strongcompetencechartdata[0]?.value,
-                  ],
-                  [
-                    strongcompetencechartdata[1]?.name,
-                    strongcompetencechartdata[1]?.value,
-                  ],
-                  [
-                    strongcompetencechartdata[2]?.name,
-                    strongcompetencechartdata[2]?.value,
-                  ],
-                  [
-                    strongcompetencechartdata[3]?.name,
-                    strongcompetencechartdata[3]?.value,
-                  ],
-                  [
-                    strongcompetencechartdata[4]?.name,
-                    strongcompetencechartdata[4]?.value,
-                  ],
-                  [
-                    strongcompetencechartdata[5]?.name,
-                    strongcompetencechartdata[5]?.value,
-                  ],
-                  [
-                    strongcompetencechartdata[6]?.name,
-                    strongcompetencechartdata[6]?.value,
-                  ],
-                  [
-                    strongcompetencechartdata[7]?.name,
-                    strongcompetencechartdata[7]?.value,
-                  ],
-                  [
-                    strongcompetencechartdata[8]?.name,
-                    strongcompetencechartdata[8]?.value,
-                  ],
-                  [
-                    strongcompetencechartdata[8]?.name,
-                    strongcompetencechartdata[8]?.value,
-                  ],
-                  [
-                    strongcompetencechartdata[9]?.name,
-                    strongcompetencechartdata[9]?.value,
-                  ],
-                  [
-                    strongcompetencechartdata[10]?.name,
-                    strongcompetencechartdata[10]?.value,
-                  ],
-                ]}
-                options={{
-                  backgroundColor: "red",
-                  chart: {
-                    title: "",
-                  },
-                  colors: ["#001833"],
-                }}
-                rootProps={{ "data-testid": "2" }}
-              />
+            <div className="row">
+              <div className="resultt col-md-6">
+                {client?.strong_career_competences?.graph1?.map(
+                  (data, index) => {
+                    return (
+                      <div className="">
+                        <div className="ttp1">{data.name}</div>
+                        <Testing value={data.value} />
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+              <div className="resultt col-md-6">
+                {client?.strong_career_competences?.graph2?.map(
+                  (data, index) => {
+                    return (
+                      <div className="">
+                        <div className="ttp1">{data.name}</div>
+                        <Testing value={data.value} />
+                      </div>
+                    );
+                  }
+                )}
+              </div>
             </div>
             <div className="otherinfo">
               {client?.strong_career_competences?.fields?.map((data, index) => (
@@ -287,152 +261,98 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                 </div>
               ))}
             </div>
-            <hr />
+            <hr/>
             {/* Average Competence Starts Here */}
             <div>
-              {averagecompetencechartdata &&
-              averagecompetencechartdata.length > 0 ? (
+              {client?.average_career_competences &&
+              client?.average_career_competences?.graph1.length > 0 ? (
                 <div className="competence">Average Competences</div>
               ) : (
                 ""
               )}
             </div>
+            <div className="row">
+             <div className="resultt col-md-6">
+                {client?.average_career_competences?.graph1?.map(
+                  (data, index) => {
+                    return (
+                      <div className="">
+                        <div className="ttp1">{data.name}</div>
+                        <Testing value={data.value} />
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+              <div className="resultt col-md-6">
+                {client?.average_career_competences?.graph2?.map(
+                  (data, index) => {
+                    return (
+                      <div className="">
+                        <div className="ttp1">{data.name}</div>
+                        <Testing value={data.value} />
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+            </div>
+            <div className="otherinfo">
+              {client?.average_career_competences?.fields?.map(
+                (data, index) => (
+                  <div>
+                    <span className="ikls">{data.name} </span> {data.value}
+                    <br />
+                  </div>
+                )
+              )}
+            </div>
+            <hr/>
+            {/* ?akskks? */}
+            {/* Average Competence Starts Here */}
             <div>
-              {averagecompetencechartdata &&
-              averagecompetencechartdata.length > 0 ? (
-                <Chart
-                  width={"100%"}
-                  height={"500px"}
-                  chartType="Bar"
-                  loader={<div>Loading Chart</div>}
-                  data={[
-                    ["Skills", "Score"],
-                    [
-                      averagecompetencechartdata[0]?.name,
-                      averagecompetencechartdata[0]?.value,
-                    ],
-                    [
-                      averagecompetencechartdata[1]?.name,
-                      averagecompetencechartdata[1]?.value,
-                    ],
-                    [
-                      averagecompetencechartdata[2]?.name,
-                      averagecompetencechartdata[2]?.value,
-                    ],
-                    [
-                      averagecompetencechartdata[3]?.name,
-                      averagecompetencechartdata[3]?.value,
-                    ],
-                    [
-                      averagecompetencechartdata[4]?.name,
-                      averagecompetencechartdata[4]?.value,
-                    ],
-                    [
-                      averagecompetencechartdata[5]?.name,
-                      averagecompetencechartdata[5]?.value,
-                    ],
-                    [
-                      averagecompetencechartdata[6]?.name,
-                      averagecompetencechartdata[6]?.value,
-                    ],
-                    [
-                      averagecompetencechartdata[7]?.name,
-                      averagecompetencechartdata[7]?.value,
-                    ],
-                  ]}
-                  options={{
-                    backgroundColor: "red",
-                    chart: {
-                      title: "",
-                    },
-                    colors: ["#001833"],
-                  }}
-                  rootProps={{ "data-testid": "2" }}
-                />
+              {client?.weak_career_competences
+              ? (
+                <div className="competence">Weak Career Competence</div>
               ) : (
                 ""
               )}
             </div>
-            <div className="otherinfo">
-              <span className="ikls">
-                {client?.average_career_competences?.fields?.name && ":"}{" "}
-              </span>{" "}
-              {client?.average_career_competences?.fields?.value}
-              <br />
+            <div className="row"> 
+              <div className="resultt col-md-6">
+                {client?.weak_career_competences?.graph1?.map(
+                  (data, index) => {
+                    return (
+                      <div className="">
+                        <div className="ttp1">{data.name}</div>
+                        <Testing value={data.value} />
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+              <div className="resultt col-md-6">
+                {client?.weak_career_competences?.graph2?.map(
+                  (data, index) => {
+                    return (
+                      <div className="">
+                        <div className="ttp1">{data.name}</div>
+                        <Testing value={data.value} />
+                      </div>
+                    );
+                  }
+                )}
+              </div>
             </div>
-            <hr />
+            <div className="otherinfo">
+              {client?.weak_career_competences?.fields?.map((data, index) => (
+                <div>
+                  <span className="ikls">{data.name} </span> {data.value}
+                  <br />
+                </div>
+              ))}
+            </div>
             <br />
-            {/* Average Competence Starts Here */}
-            <div>
-              {averagecompetencechartdata &&
-              averagecompetencechartdata.length > 0 ? (
-                <div className="competence">Average Competences</div>
-              ) : (
-                ""
-              )}
-            </div>
-            <div>
-              {weakcompetencechartdata && weakcompetencechartdata.length > 0 ? (
-                <Chart
-                  width={"100%"}
-                  height={"500px"}
-                  chartType="Bar"
-                  loader={<div>Loading Chart</div>}
-                  data={[
-                    ["Skills", "Score"],
-                    [
-                      weakcompetencechartdata[0]?.name,
-                      weakcompetencechartdata[0]?.value,
-                    ],
-                    [
-                      weakcompetencechartdata[1]?.name,
-                      weakcompetencechartdata[1]?.value,
-                    ],
-                    [
-                      weakcompetencechartdata[2]?.name,
-                      weakcompetencechartdata[2]?.value,
-                    ],
-                    [
-                      weakcompetencechartdata[3]?.name,
-                      weakcompetencechartdata[3]?.value,
-                    ],
-                    [
-                      weakcompetencechartdata[4]?.name,
-                      weakcompetencechartdata[4]?.value,
-                    ],
-                    [
-                      weakcompetencechartdata[5]?.name,
-                      weakcompetencechartdata[5]?.value,
-                    ],
-                    [
-                      weakcompetencechartdata[6]?.name,
-                      weakcompetencechartdata[6]?.value,
-                    ],
-                    [
-                      weakcompetencechartdata[7]?.name,
-                      weakcompetencechartdata[7]?.value,
-                    ],
-                  ]}
-                  options={{
-                    backgroundColor: "red",
-                    chart: {
-                      title: "",
-                    },
-                    colors: ["#001833"],
-                  }}
-                  rootProps={{ "data-testid": "2" }}
-                />
-              ) : (
-                ""
-              )}
-            </div>
-            <div className="otherinfo">
-              <span className="ikls">
-                {client?.weak_career_competences?.fields?.name && ":"}{" "}
-              </span>{" "}
-              {client?.weak_career_competences?.fields?.value}
-              <br />
-            </div>
             <hr />
             <br />
             <div>
@@ -451,7 +371,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                       strokeColor={"#fff"}
                       railColor={"#17375c77"}
                       fillColor={"#001833"}
-                      percent={70}
+                      percent={doc?.score}
                       padding={0}
                     />
                   </div>
@@ -542,60 +462,31 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               <hr />
               {/* Your Job Function Fit style barchart */}
               <div className="competence">Your Job Function Fit</div>
-              <div className="chartss">
-                <Chart
-                  width={"100%"}
-                  height={"500px"}
-                  chartType="Bar"
-                  loader={<div>Loading Chart</div>}
-                  data={[
-                    ["Skills", "Score"],
-                    [
-                      jobfunctionchartdata[0]?.name,
-                      jobfunctionchartdata[0]?.value,
-                    ],
-                    [
-                      jobfunctionchartdata[1]?.name,
-                      jobfunctionchartdata[1]?.value,
-                    ],
-                    [
-                      jobfunctionchartdata[2]?.name,
-                      jobfunctionchartdata[2]?.value,
-                    ],
-                    [
-                      jobfunctionchartdata[3]?.name,
-                      jobfunctionchartdata[3]?.value,
-                    ],
-                    [
-                      jobfunctionchartdata[4]?.name,
-                      jobfunctionchartdata[4]?.value,
-                    ],
-                    [
-                      jobfunctionchartdata[5]?.name,
-                      jobfunctionchartdata[5]?.value,
-                    ],
-                    [
-                      jobfunctionchartdata[6]
-                        ? jobfunctionchartdata[6].name
-                        : 0,
-                      jobfunctionchartdata[6]
-                        ? jobfunctionchartdata[6].value
-                        : 0,
-                    ],
-                    [
-                      jobfunctionchartdata[7]?.name,
-                      jobfunctionchartdata[7]?.value,
-                    ],
-                  ]}
-                  options={{
-                    backgroundColor: "red",
-                    chart: {
-                      title: "",
-                    },
-                    colors: ["#001833"],
-                  }}
-                  rootProps={{ "data-testid": "2" }}
-                />
+              <div className="chartss row">
+              <div className="resultt col-md-6">
+                {client?.job_function_fit?.graph1?.map(
+                  (data, index) => {
+                    return (
+                      <div className="">
+                        <div className="ttp1">{data.name}</div>
+                        <Testing value={data.value} />
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+              <div className="resultt col-md-6">
+                {client?.job_function_fit?.graph2?.map(
+                  (data, index) => {
+                    return (
+                      <div className="">
+                        <div className="ttp1">{data.name}</div>
+                        <Testing value={data.value} />
+                      </div>
+                    );
+                  }
+                )}
+              </div>
               </div>
               <hr />
               <div className="otherinfo">

@@ -8,6 +8,14 @@ import { API } from "../../config";
 import firstlogo from "../../assets/image 1.png";
 import secondlogo from "../../assets/image 2.png";
 import { CirclePie } from "salad-ui.chart";
+// import { browserHistory } from 'react-router';
+import createHistory from "history/createBrowserHistory";
+import thdlogo from "../../assets/gift.png";
+import vector1 from "../../assets/whiteicon1.png";
+import vector2 from "../../assets/whiteicon2.png";
+import notice from "../../assets/notice.png";
+
+
 
 interface State {
   fullname: string;
@@ -40,6 +48,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
     const token = availableToken
       ? JSON.parse(availableToken)
       : window.location.assign("/signin");
+    this.checkIfUserHasMadePaymentForFullResult(token);
     const data = {};
     axios
       .get<any, AxiosResponse<any>>(`${API}/paiddashboard`, {
@@ -76,6 +85,21 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
         });
       });
   }
+  checkIfUserHasMadePaymentForFullResult = (token: string) => {
+    axios
+      .get<any, AxiosResponse<any>>(`${API}/paymentstatus`, {
+        headers: { Authorization: `Token ${token}` },
+      })
+      .then((response) => {
+        if (response?.data[0]?.message === true) {
+          //  return window.location.assign("/kigenni/fullresult")
+          // return browserHistory.push("/kigenni/fullresult");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   capitalize = (s) => {
     if (typeof s !== "string") return "";
     return s.charAt(0).toUpperCase() + s.slice(1);
@@ -107,8 +131,8 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
             <span className="kdashheaderlight"> Clarity Report</span>
           </div>
           <div className="kdash1">
-            {client?.career_fitness?.heading}{" "}
-            <span className="kdash1light"> see details below</span>
+            {/* {client?.career_fitness?.heading}{" "} */}
+            <span className="kdash1light"> <a href="#seek">see details below </a></span>
           </div>
           <div className="kdasharea">
             <div>
@@ -117,11 +141,10 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
             <div className="kprofilewrap">
               <div className="kprofile">Profile</div>
               <div className="kprofile2">{client.profile}</div>
-              {/* <div className="kprofile3">Growing Business</div> */}
             </div>
           </div>
           <hr />
-          <div className="resultsec2">
+          <div className="resultsec2" id="seek">
             <div className="resultsec22">
               <CirclePie
                 width={190}
@@ -139,6 +162,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
             </div>
             <div className="csfitscore">
               <div className="csfitscore1">Your Career Fitness Score</div>
+              <div className="vbnc1"> {client?.career_fitness?.heading} </div>
               <div className="csbody">{client?.career_fitness?.body}</div>
             </div>
           </div>
@@ -161,6 +185,53 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
               {client?.career_personality_type?.full_body}
             </div>
           </div>
+          <div className="nlodd">
+                <div className="resultsec13">
+                  <div className="reskwrap13">
+                    <div className="csfitscore1 reskheader">
+                      Your Top Career Drivers
+                    </div>
+
+                    {client?.career_drivers?.highlights?.map((data, index) => (
+                      <div className="" key={index}>
+                        <div>{data}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div>
+                    <img
+                      src={thdlogo}
+                      className="secondlogo img-fluid"
+                      alt="secondlogo"
+                    />
+                  </div>
+                </div>
+              </div>
+              {/* white background section */}
+              {client?.career_drivers?.fields?.map((data, index) => (
+                <div>
+                  <div className="stbly">
+                    <div className="stbly1">{data.heading}</div>
+                    <div>{data.body}</div>
+                  </div>
+                  <div className="tipswrapper">
+                    <div>
+                      <div className="stbly1">
+                        Tips to Harnessing This Motivator:
+                      </div>
+                      {data?.tips?.map((dataindata, index) => (
+                        <div key={index}>
+                          {index + 1}.{"  "}
+                          {dataindata}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="notice">
+                      <img src={notice} className="noticee" alt="notice" />
+                    </div>
+                  </div>
+                </div>
+              ))}
         </Col>
       </>
     );
