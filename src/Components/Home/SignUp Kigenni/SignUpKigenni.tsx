@@ -12,6 +12,9 @@ import formavatar from "../../../assets/formavatar.png";
 import formemail from "../../../assets/formemail.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Footer from "../HomeComponents/footer";
+import Navbar from "../HomeComponents/navbar";
+import demoLogo from "../../../assets/clarity.png";
 
 interface State {
   firstname: string;
@@ -72,29 +75,20 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
       password,
       profession,
       password2: password,
-      kigenni,
-      info: "Kigenni",
+      thirdparty: "saedconnect",
+      info: "Not Available",
     };
     axios
       .post<any, AxiosResponse<any>>(`${API}/accounts/signupthirdparty/`, data)
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
-          // sessionStorage.setItem(
-          //   "userToken",
-          //   JSON.stringify(response?.data[0].token)
-          // );
           setFormState({
             ...state,
             successMsg: response?.data[0]?.message,
             isLoading: false,
             token: response?.data[0].token,
           });
-
-          // getUserInfo(response?.data[0].token);
-          // setTimeout(() => {
-          //   props.history.push("/assessmentphaseone");
-          // }, 3000);
         }
       })
       .catch((error) => {
@@ -138,17 +132,19 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
 
   return (
     <>
-      {/* <Navbar/> */}
+      <Navbar />
       <Container fluid={true}>
         <Row className="kli bcbv">
           <Col md={4} className="">
-            <div className="kigenni1">clarity</div>
+            <div className="kigenni1">
+              <img src={demoLogo} className="uysh" alt="clarity_logo" />
+            </div>
             <div className="kigenni2">
-              Not feeling in control of your life, career or business?
+              Increase your career appeal with the right insight
             </div>
             <div className="kigenni3">
               {" "}
-              Take the Clarity Assessment to find direction
+              Take the Clarity assessment to discover your career advantage
             </div>
             <div>
               <Link to="/signin" className="clscc">
@@ -227,7 +223,7 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
                   className="selecss"
                   onChange={handleSelectChange}
                 >
-                  <option>Select Profession</option>
+                  <option>Select Profile</option>
                   {professions.map((x, index) => (
                     <option value={x.name} key={x.name}>
                       {x.name}
@@ -242,7 +238,7 @@ const SignUpKigenni: React.FunctionComponent = (props: any) => {
             </Form>
           </Col>
         </Row>
-        {/* <Footer/> */}
+        <Footer />
       </Container>
     </>
   );

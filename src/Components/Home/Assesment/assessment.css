@@ -208,9 +208,9 @@
     padding-top: .5rem;
     margin-left: 0rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 1rem;
-    margin: auto;
+    margin-left: .3rem;
 }
   @media(min-width:701px){
     .losos{

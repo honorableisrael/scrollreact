@@ -9,6 +9,9 @@ import axios, { AxiosResponse } from "axios";
 import { API } from "../../../config";
 import formemail from "../../../assets/formemail.png";
 import { Link } from "react-router-dom";
+import Footer from "../HomeComponents/footer";
+import Navbar from "../HomeComponents/navbar";
+import demoLogo from "../../../assets/clarity.png";
 
 interface State {
   email: string;
@@ -97,9 +100,19 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
         console.log(response);
         if (
           (response.status === 200 &&
+            response.data[0].next === "phase_four_nature") ||
+          response.data[0].next === "phase_four_health" ||
+          response.data[0].next === "phase_four_building" ||
+          response.data[0].next === "phase_four_creative"
+        ) {
+          return props.history.push(`/assessmentphasefour`);
+        }
+        if (
+          (response.status === 200 &&
             response.data[0].next === "phase_four_sports") ||
           response.data[0].next === "phase_four_business" ||
-          response.data[0].next === "phase_four_stem"
+          response.data[0].next === "phase_four_stem" ||
+          response.data[0].next === "phase_four_humanitarian"
         ) {
           return props.history.push(`/assessmentphasefour1`);
         }
@@ -128,7 +141,7 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
           return props.history.push(`/assessmentphaseseven`);
         }
         if (response.status === 200 && response.data[0].next === "home") {
-          return props.history.push(`/kigenni/dashboard`);
+          return props.history.push(`/thirdpary/dashboard`);
         }
       })
       .catch((error) => {
@@ -152,21 +165,24 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
   };
   return (
     <>
-      {/* <Navbar/> */}
+      <Navbar />
       <Container fluid={true}>
         <Row className="kli bcbv">
           <Col md={4} className="">
-            <div className="kigenni1">clarity</div>
+            <div className="kigenni1">
+              {" "}
+              <img src={demoLogo} className="uysh" alt="clarity_logo" />
+            </div>
             <div className="kigenni3">
               {" "}
               Take the Clarity Assessment to find direction
             </div>
             <div>
-              <Link to="/" className="clscc">
+              <Link to="/thirdparty/signup" className="clscc">
                 Not registered ? Sign Up
               </Link>
             </div>
-            <hr/>
+            <hr />
             <span>
               <Link to="/forgotpassword" className="clscc">
                 Forgot Password?
@@ -210,7 +226,7 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
             </Form>
           </Col>
         </Row>
-        {/* <Footer/> */}
+        <Footer />
       </Container>
     </>
   );

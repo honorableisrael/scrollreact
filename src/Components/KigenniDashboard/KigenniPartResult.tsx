@@ -14,8 +14,7 @@ import thdlogo from "../../assets/gift.png";
 import vector1 from "../../assets/whiteicon1.png";
 import vector2 from "../../assets/whiteicon2.png";
 import notice from "../../assets/notice.png";
-
-
+import HorizontalBar from "./HorizontalBar";
 
 interface State {
   fullname: string;
@@ -92,8 +91,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
       })
       .then((response) => {
         if (response?.data[0]?.message === true) {
-          //  return window.location.assign("/kigenni/fullresult")
-          // return browserHistory.push("/kigenni/fullresult");
+          return window.location.assign("/thirdpary/fullresult");
         }
       })
       .catch((error) => {
@@ -132,7 +130,10 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
           </div>
           <div className="kdash1">
             {/* {client?.career_fitness?.heading}{" "} */}
-            <span className="kdash1light"> <a href="#seek">see details below </a></span>
+            <span className="kdash1light">
+              {" "}
+              <a href="#seek">see details below </a>
+            </span>
           </div>
           <div className="kdasharea">
             <div>
@@ -167,6 +168,25 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
             </div>
           </div>
           <hr />
+          <div>
+            <div className="tipswrapper">
+              <div>
+                <div className="stbly1">
+                  {client?.career_fitness?.quick_fix?.heading}
+                </div>
+                {client?.career_fitness?.quick_fix?.body?.map((data, index) => (
+                  <div key={index}>
+                    {index + 1}.{"  "}
+                    {data}
+                  </div>
+                ))}
+              </div>
+              <div className="notice">
+                <img src={notice} className="noticee" alt="notice" />
+              </div>
+            </div>
+          </div>
+          <hr />
           <div className="resultsec3">
             <div className="reskwrap">
               <div className="csfitscore1 reskheader">
@@ -176,62 +196,77 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
                 {client?.career_personality_type?.short_description}
               </div>
             </div>
-            <div>
-              <img src={secondlogo} className="secondlogo" alt="secondlogo" />
-            </div>
           </div>
-          <div className="resultsec3">
-            <div className="resultt">
-              {client?.career_personality_type?.full_body}
+          <div className="resultsec31">
+            <div className="col-md-6">
+              <img
+                src={secondlogo}
+                className="secondlogo pds"
+                alt="secondlogo"
+              />
+            </div>
+            <div className="resultt col-md-6">
+              {client?.career_personality_type?.graph?.map((data, index) => {
+                return (
+                  <div className="">
+                    <div className="ttp">{data.name}</div>
+                    <HorizontalBar value={data.value.value1} />
+                    <div className="btmwrap">
+                      <div>{data.value.name1}</div>
+                      <div>{data.value.name2}</div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="nlodd">
-                <div className="resultsec13">
-                  <div className="reskwrap13">
-                    <div className="csfitscore1 reskheader">
-                      Your Top Career Drivers
-                    </div>
+            <div className="resultsec13">
+              <div className="reskwrap13">
+                <div className="csfitscore1 reskheader">
+                  Your Top Career Drivers
+                </div>
 
-                    {client?.career_drivers?.highlights?.map((data, index) => (
-                      <div className="" key={index}>
-                        <div>{data}</div>
-                      </div>
-                    ))}
+                {client?.career_drivers?.highlights?.map((data, index) => (
+                  <div className="" key={index}>
+                    <div>{data}</div>
                   </div>
-                  <div>
-                    <img
-                      src={thdlogo}
-                      className="secondlogo img-fluid"
-                      alt="secondlogo"
-                    />
+                ))}
+              </div>
+              <div>
+                <img
+                  src={thdlogo}
+                  className="secondlogo img-fluid"
+                  alt="secondlogo"
+                />
+              </div>
+            </div>
+          </div>
+          {/* white background section */}
+          {client?.career_drivers?.fields?.map((data, index) => (
+            <div>
+              <div className="stbly">
+                <div className="stbly1">{data.heading}</div>
+                <div>{data.body}</div>
+              </div>
+              <div className="tipswrapper">
+                <div>
+                  <div className="stbly1">
+                    Tips to Harnessing This Motivator:
                   </div>
+                  {data?.tips?.map((dataindata, index) => (
+                    <div key={index}>
+                      {index + 1}.{"  "}
+                      {dataindata}
+                    </div>
+                  ))}
+                </div>
+                <div className="notice">
+                  <img src={notice} className="noticee" alt="notice" />
                 </div>
               </div>
-              {/* white background section */}
-              {client?.career_drivers?.fields?.map((data, index) => (
-                <div>
-                  <div className="stbly">
-                    <div className="stbly1">{data.heading}</div>
-                    <div>{data.body}</div>
-                  </div>
-                  <div className="tipswrapper">
-                    <div>
-                      <div className="stbly1">
-                        Tips to Harnessing This Motivator:
-                      </div>
-                      {data?.tips?.map((dataindata, index) => (
-                        <div key={index}>
-                          {index + 1}.{"  "}
-                          {dataindata}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="notice">
-                      <img src={notice} className="noticee" alt="notice" />
-                    </div>
-                  </div>
-                </div>
-              ))}
+            </div>
+          ))}
         </Col>
       </>
     );

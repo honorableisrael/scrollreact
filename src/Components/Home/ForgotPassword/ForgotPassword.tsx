@@ -9,6 +9,8 @@ import axios, { AxiosResponse } from "axios";
 import { API } from "../../../config";
 import formemail from "../../../assets/formemail.png";
 import { Link } from "react-router-dom";
+import demoLogo from "../../../assets/clarity.png";
+import Navbar from "../HomeComponents/navbar";
 
 interface State {
   email: string;
@@ -33,6 +35,7 @@ const ForgotPassword: React.FunctionComponent = (props: any) => {
     setFormState({ ...state, isLoading: true });
     const data = {
       email,
+      domain: "saedconnect",
     };
     axios
       .post<any, AxiosResponse<any>>(`${API}/passwordresetemail`, data)
@@ -96,22 +99,24 @@ const ForgotPassword: React.FunctionComponent = (props: any) => {
       ...state,
       [e.target.name]: e.target.value,
       errorMessage: "",
-      message:"",
+      message: "",
     });
   };
   return (
     <>
-      {/* <Navbar/> */}
+      <Navbar/>
       <Container fluid={true}>
         <Row className="kli bcbv">
           <Col md={4} className="">
-            <div className="kigenni1">clarity</div>
+            <div className="kigenni1">
+              <img src={demoLogo} className="uysh" alt="clarity_logo" />
+            </div>
             <div className="kigenni3">
               {" "}
               Take the Clarity Assessment to find direction
             </div>
             <div>
-              <Link to="/" className="clscc">
+              <Link to="/thirdparty/signup" className="clscc">
                 Not registered ? Sign Up
               </Link>
             </div>

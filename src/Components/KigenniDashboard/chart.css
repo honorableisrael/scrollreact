@@ -28,6 +28,9 @@
     font-size: 14px;
     align-items: center;
 }
+.mrauto{
+    margin: auto;
+}
 .areawrapperbnone{
     display: none;
 }

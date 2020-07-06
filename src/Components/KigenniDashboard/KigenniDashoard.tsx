@@ -31,7 +31,7 @@ const KigenniDashboard: React.FunctionComponent = (props: any) => {
             <div className="text-center">
               <div className="fullresult">
                 <Link to="/paymentsummary">
-                  See Full Result <span>&#8594;</span>
+                  Access  Counselor's Review <span>&#8594;</span>
                 </Link>
               </div>
             </div>

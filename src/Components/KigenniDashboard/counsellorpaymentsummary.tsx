@@ -9,7 +9,6 @@ import { AxiosResponse } from "axios";
 import { API } from "../../config";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import Footer from "../Home/HomeComponents/footer";
 
 interface State {
   successMsg: boolean;
@@ -25,7 +24,7 @@ declare global {
   }
 }
 
-export default function PaymentSummary(props: any) {
+export default function CouncellorPaymentSummary(props: any) {
   const [state, setFormState] = React.useState<State>({
     errorMessage: "",
     user: "",
@@ -76,7 +75,7 @@ export default function PaymentSummary(props: any) {
       : props.history.push("/signin");
     try {
       window.MonnifySDK.initialize({
-        amount: 1000,
+        amount: 3500,
         currency: "NGN",
         reference,
         customerFullName: user[0]?.first_name + "  " + user[0]?.last_name,
@@ -86,7 +85,6 @@ export default function PaymentSummary(props: any) {
         contractCode: "722431733218",
         paymentDescription: "YUDIMY SERVICES LTD",
         isTestMode: false,
-        redirect: false,
         onComplete: function (response) {
           moveToFullResult();
           if (response.paymentStatus == "OVERPAID") {
@@ -107,10 +105,7 @@ export default function PaymentSummary(props: any) {
           }
           if (response.paymentStatus == "PENDING") {
             notify("Payment Pending");
-            return setInterval(
-              (window.location.pathname = "/thirdparty/pending"),
-              9000
-            );
+            return setInterval((window.location.pathname = "/"), 9000);
           }
         },
         onClose: function (data) {
@@ -171,35 +166,24 @@ export default function PaymentSummary(props: any) {
       <Navbar />
       <Container fluid={true}>
         <Row className="kli6 bcbv">
-          <Col md={8}>
+          <Col md={6}>
             <div className="payheader">
-              Get your Clarity Counselor's review on your competencies,
-              strengths, weaknesses and career match.
+              Choose the plan that’s right for you
             </div>
-          </Col>
-          <Col md={9}>
             <Row className="centerr">
-              <Col xs={10} md={4} className="centerr1">
-                <div className="prems"> Counselor's Review</div>
-                <div className="premq">
-                  You'll be getting the counselor's insights on:
+              <Col md={4} className="centerr1">
+                <div className="prems">Premium</div>
+                <div className="premq">Get access to your complete result</div>
+                <div className="comps1">
+                  <span>&#10004;</span> Complete Assement Result
                 </div>
-                <div className="comps2"><span>&#10004;</span> Your Strengths</div>
-                <div className="comps2"><span>&#10004;</span> Your Weaknesses</div>
-                <div className="comps2"><span>&#10004;</span> Your Strong Career Competencies </div>
-                <div className="comps2">
-                <span>&#10004;</span> Your Weak & Average Career Competencies
-                </div>
-                <div className="comps2"><span>&#10004;</span> Work Style</div>
-                <div className="comps2"><span>&#10004;</span> The Best Roles To Apply for</div>
                 <div className="lmi1">
-                  <div className="amut">&#8358;1,000</div>
+                  <div className="amut">&#8358;3500</div>
                   <div className="amut1">one time payment</div>
                 </div>
-                <div>
+                {/* <div>
                   <span className="amurt">&#8358;10,000</span>{" "}
-                  <span className="percentoff">90%</span>{" "}
-                </div>
+                </div> */}
                 <div
                   className="slcplan"
                   onClick={() => checkIfUserHasAccessToViewAll()}
@@ -207,33 +191,10 @@ export default function PaymentSummary(props: any) {
                   {!isLoading ? "Select Plan" : "processing..."}
                 </div>
               </Col>
-              <Col xs={10} md={4} className="centerr2">
-                <div className="prems">Starter</div>
-                <div className="premq1">
-                  Get access to your first three sections of your assessment
-                  results
-                </div>
-                <div className="comps2">
-                  <span>&#10004; </span> Career Profile
-                </div>
-                <div className="comps2">
-                  <span>&#10004; </span> Career Fitness Score
-                </div>
-                <div className="comps2">
-                  <span>&#10004; </span> Career Personality Type
-                </div>
-                <div className="lmi2">
-                  <div className="amut">FREE</div>
-                </div>
-                <div className="slcplan1">
-                  <Link to="/thirdpary/dashboard">Select Plan</Link>
-                </div>
-              </Col>
             </Row>
           </Col>
         </Row>
       </Container>
-      <Footer/>
     </div>
   );
 }

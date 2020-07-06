@@ -28,8 +28,11 @@ import ForgotPassword from "./Components/Home/ForgotPassword/ForgotPassword";
 import ResetPassword from "./Components/Home/ResetPassword/ResetPassword";
 import EmailVerification from "./Components/Home/SignUpEmailVerification/SignUpEmailVerification";
 import PaymentSummary from "./Components/KigenniDashboard/paymentsummary";
-import Testing from './Components/KigenniDashboard/Testing';
-
+import Testing from "./Components/KigenniDashboard/Testing";
+import OverPaid from "./Components/KigenniDashboard/Overpaid";
+import Pending from "./Components/KigenniDashboard/Pending";
+import CouncellorPaymentSummary from "./Components/KigenniDashboard/counsellorpaymentsummary";
+import CouncellorDates from './Components/KigenniDashboard/CouncellorDates';
 
 const App: React.FC = () => {
   return (
@@ -37,23 +40,22 @@ const App: React.FC = () => {
       <div>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={SignUpKigenni} />
+            <Route exact path="/thirdparty/signup" component={SignUpKigenni} />
             <Route exact path="/about" component={About} />
             <Route
               exact
               path="/faq"
-              component={() => <Redirect to="/signup/kigenni" />}
+              component={() => <Redirect to="/thirdparty/signup" />}
             />
-            <Route exact path="/home" component={Home} />
             <Route
               exact
               path="/clientchat"
-              component={() => <Redirect to="/signup/kigenni" />}
+              component={() => <Redirect to="/thirdparty/signup" />}
             />
             <Route
               exact
               path="/clarityforteams"
-              component={() => <Redirect to="/signup/kigenni" />}
+              component={() => <Redirect to="/thirdparty/signup" />}
             />
             <Route
               exact
@@ -63,12 +65,12 @@ const App: React.FC = () => {
             <Route
               exact
               path="/dashboard/personality"
-              component={() => <Redirect to="/signup/kigenni" />}
+              component={() => <Redirect to="/thirdparty/signup" />}
             />
             <Route
               exact
               path="/dashboard/careerfitness"
-              component={() => <Redirect to="/signup/kigenni" />}
+              component={() => <Redirect to="/signup/thirdpary" />}
             />
             <Route
               exact
@@ -115,6 +117,7 @@ const App: React.FC = () => {
               path="/assessmentphasecomplete"
               component={AssessmentFirstPhaseComplete}
             />
+            <Route exact path="/" component={Home} />
             <Route
               exact
               path="/secondphasecomplete"
@@ -149,26 +152,24 @@ const App: React.FC = () => {
             <Route
               exact
               path="/signup"
-              component={() => <Redirect to="/signup/kigenni" />}
+              component={() => <Redirect to="/signup/thirdpary" />}
             />
             <Route exact path="/signin" component={SignInKigenni} />
             {/* Kegenni starts here */}
-            <Route exact path="/signup/kigenni" component={SignUpKigenni} />
+            <Route exact path="/signup/thirdpary" component={SignUpKigenni} />
             <Route
               exact
-              path="/kigenni/dashboard"
+              path="/thirdpary/dashboard"
               component={KigenniDashboard}
             />
             <Route
               exact
-              path="/kigenni/fullresult"
+              path="/thirdpary/fullresult"
               component={KigenniFullResultPage}
             />
-            <Route
-              exact
-              path="/testing"
-              component={Testing}
-            />
+            <Route exact path="/thirdparty/overpaid" component={OverPaid} />
+            <Route exact path="/thirdparty/pending" component={Pending} />
+            <Route exact path="/testing" component={Testing} />
             <Route exact path="/paymentsummary" component={PaymentSummary} />
             <Route exact path="/forgotpassword" component={ForgotPassword} />
             <Route
@@ -180,6 +181,16 @@ const App: React.FC = () => {
               exact
               path="/verifyemail/:userid/:token"
               component={EmailVerification}
+            />
+            <Route
+              exact
+              path="/councellorfee"
+              component={CouncellorPaymentSummary}
+            />
+            <Route
+              exact
+              path="/councellordates"
+              component={CouncellorDates}
             />
           </Switch>
         </BrowserRouter>

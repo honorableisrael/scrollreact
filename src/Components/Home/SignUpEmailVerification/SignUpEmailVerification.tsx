@@ -10,6 +10,9 @@ import { API } from "../../../config";
 import formemail from "../../../assets/formemail.png";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import demoLogo from "../../../assets/clarity.png";
+import Footer from "../HomeComponents/footer";
+import Navbar from "../HomeComponents/navbar";
 
 interface State {
   email: string;
@@ -119,11 +122,13 @@ const EmailVerification: React.FunctionComponent = (props: any) => {
   };
   return (
     <>
-      {/* <Navbar/> */}
+      <Navbar/>
       <Container fluid={true}>
         <Row className="kli bcbv">
           <Col md={4} className="">
-            <div className="kigenni1">clarity</div>
+            <div className="kigenni1">
+              <img src={demoLogo} className="uysh" alt="clarity_logo" />
+            </div>
             <div className="kigenni3">
               {" "}
               Take the Clarity Assessment to find direction
@@ -153,7 +158,7 @@ const EmailVerification: React.FunctionComponent = (props: any) => {
             </Form>
           </Col>
         </Row>
-        {/* <Footer/> */}
+        <Footer/>
       </Container>
     </>
   );

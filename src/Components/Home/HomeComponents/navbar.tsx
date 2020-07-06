@@ -1,5 +1,6 @@
 import * as React from "react";
 import demoLogo from "../../../assets/clarity.png";
+import demoLogo1 from "../../../assets/saedconnect.png";
 import SideNav from "react-simple-sidenav";
 import { Link,Redirect } from "react-router-dom";
 import "../Home/animate.css";
@@ -100,17 +101,7 @@ const Navbar: React.FC = (props: any) => {
                   <div className="listwraperMob">
                     <Link to="/">Home</Link>
                   </div>
-                  <div className="listwraperMob">
-                    <Link to="/about">About</Link>
-                  </div>
-                  <div className="listwraperMob">
-                    <Link to="/clarityforteams">Services</Link>
-                  </div>
-                  <div className="listwraperMob">
-                    <Link to="/faq">Faq</Link>
-                  </div>
-                  <div className="listwraperMob">Privacy Policy</div>
-                  <div className="listwraperMob">
+                 <div className="listwraperMob">
                     <Link to="/signin">
                       <div className="navmobbtn">Login</div>
                     </Link>
@@ -126,7 +117,7 @@ const Navbar: React.FC = (props: any) => {
             <div className="flexsss">
               <Link to="/">
                 <img
-                  src={demoLogo}
+                  src={demoLogo1}
                   className="clarity_logo"
                   alt="clarity_logo"
                 />
@@ -150,12 +141,12 @@ const Navbar: React.FC = (props: any) => {
           <div className="nav_title">
             <div className="logo_clarity">
               <Link to="/">
-                <img src={demoLogo} alt="clarity_logo" />
+                <img src={demoLogo1} alt="clarity_logo" />
               </Link>
             </div>
           </div>
           <div className="nav_title">
-            <span className="title">
+            {/* <span className="title">
               <Link to="/">HOME</Link>
             </span>
             <span className="title">
@@ -163,7 +154,7 @@ const Navbar: React.FC = (props: any) => {
             </span>
             <span className="title">
               <Link to="/clarityforteams">SERVICES</Link>
-            </span>
+            </span> */}
             {!userLoggedIn ? (
               <NavIsLoggedOut />
             ) : (

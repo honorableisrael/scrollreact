@@ -61,7 +61,10 @@ const Careerbusiness: React.FunctionComponent<IAppProps> = (props: any) => {
           <div className="dashboardwrap">
             <dashboardContext.Provider value={{ ...state, updateState }}>
               <Sidebar career_fitness={true} />
-              <MainBody className={!sideBarIsOpen?"arrow1 arrowflip":"arrow1"} result={result} />
+              <MainBody
+                className={!sideBarIsOpen ? "arrow1 arrowflip" : "arrow1"}
+                result={result}
+              />
             </dashboardContext.Provider>
           </div>
           <div></div>

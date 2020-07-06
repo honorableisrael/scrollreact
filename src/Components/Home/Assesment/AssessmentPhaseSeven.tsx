@@ -152,9 +152,9 @@ const AssessmentSeventhPhase = (props: any) => {
                 <div className="firstquestion">
                   a. I find it easy leading project team or managing businesses
                 </div>
-                <div className="rsliderclass9 flipdirection">
+                <div className="rsliderclass9 ">
                   <div className="agree">Agree</div>
-                  <div className="checkwrapper">
+                  <div className="checkwrapper flipdirection">
                     <label className="checkcontainer">
                       <input
                         type="radio"
@@ -229,9 +229,9 @@ const AssessmentSeventhPhase = (props: any) => {
                   b. I very much want to be involved in all aspects of a
                   business
                 </div>
-                <div className="rsliderclass9 flipdirection">
+                <div className="rsliderclass9">
                   <div className="agree">Agree</div>
-                  <div className="checkwrapper">
+                  <div className="checkwrapper flipdirection">
                     <label className="checkcontainer">
                       <input
                         type="radio"
@@ -460,9 +460,9 @@ const AssessmentSeventhPhase = (props: any) => {
                   e. Working on different projects from time to time gives me
                   zest instead of routine
                 </div>
-                <div className="rsliderclass9 flipdirection">
+                <div className="rsliderclass9">
                   <div className="agree">Agree</div>
-                  <div className="checkwrapper">
+                  <div className="checkwrapper flipdirection">
                     <label className="checkcontainer">
                       <input
                         type="radio"
@@ -537,9 +537,9 @@ const AssessmentSeventhPhase = (props: any) => {
                   f. I love a job that gives me the opportunity to disrupt
                   things
                 </div>
-                <div className="rsliderclass9 flipdirection">
+                <div className="rsliderclass9">
                   <div className="agree">Agree</div>
-                  <div className="checkwrapper">
+                  <div className="checkwrapper flipdirection">
                     <label className="checkcontainer">
                       <input
                         type="radio"
@@ -767,9 +767,9 @@ const AssessmentSeventhPhase = (props: any) => {
                   i. Promoting a collaborative culture in the workplace is more
                   of what you’re about.
                 </div>
-                <div className="rsliderclass9 flipdirection">
+                <div className="rsliderclass9">
                   <div className="agree">Agree</div>
-                  <div className="checkwrapper">
+                  <div className="checkwrapper flipdirection">
                     <label className="checkcontainer">
                       <input
                         type="radio"
@@ -844,9 +844,9 @@ const AssessmentSeventhPhase = (props: any) => {
                   j. Actively developing the potential of colleague or employees
                   to improve their work and life productivity.
                 </div>
-                <div className="rsliderclass9 flipdirection">
+                <div className="rsliderclass9 ">
                   <div className="agree">Agree</div>
-                  <div className="checkwrapper">
+                  <div className="checkwrapper flipdirection">
                     <label className="checkcontainer">
                       <input
                         type="radio"
@@ -921,9 +921,9 @@ const AssessmentSeventhPhase = (props: any) => {
                   k. You prefer solving business issues by "running the
                   numbers."
                 </div>
-                <div className="rsliderclass9 flipdirection">
+                <div className="rsliderclass9 ">
                   <div className="agree">Agree</div>
-                  <div className="checkwrapper">
+                  <div className="checkwrapper flipdirection">
                     <label className="checkcontainer">
                       <input
                         type="radio"
@@ -998,9 +998,9 @@ const AssessmentSeventhPhase = (props: any) => {
                   l. Interpreting the growth trajectory of organization based of
                   financial analysis
                 </div>
-                <div className="rsliderclass9 flipdirection">
+                <div className="rsliderclass9 ">
                   <div className="agree">Agree</div>
-                  <div className="checkwrapper">
+                  <div className="checkwrapper flipdirection">
                     <label className="checkcontainer">
                       <input
                         type="radio"
@@ -1075,9 +1075,9 @@ const AssessmentSeventhPhase = (props: any) => {
                   m. You prefer to be involved in research and strategic
                   thinking in an organization
                 </div>
-                <div className="rsliderclass9 flipdirection">
+                <div className="rsliderclass9 ">
                   <div className="agree">Agree</div>
-                  <div className="checkwrapper">
+                  <div className="checkwrapper flipdirection">
                     <label className="checkcontainer">
                       <input
                         type="radio"
@@ -1152,9 +1152,9 @@ const AssessmentSeventhPhase = (props: any) => {
                   n. You are fascinated by studying industry trends and making
                   projections
                 </div>
-                <div className="rsliderclass9 flipdirection">
+                <div className="rsliderclass9 ">
                   <div className="agree">Agree</div>
-                  <div className="checkwrapper">
+                  <div className="checkwrapper flipdirection">
                     <label className="checkcontainer">
                       <input
                         type="radio"
@@ -1228,9 +1228,9 @@ const AssessmentSeventhPhase = (props: any) => {
                 <div className="firstquestion">
                   o. You enjoy ensuring customers’ needs are satisfied
                 </div>
-                <div className="rsliderclass9 flipdirection">
+                <div className="rsliderclass9 ">
                   <div className="agree">Agree</div>
-                  <div className="checkwrapper">
+                  <div className="checkwrapper flipdirection">
                     <label className="checkcontainer">
                       <input
                         type="radio"
@@ -1306,9 +1306,9 @@ const AssessmentSeventhPhase = (props: any) => {
                   orders, respond to customer complaints, and processing return
                   never wears you out.
                 </div>
-                <div className="rsliderclass9 flipdirection">
+                <div className="rsliderclass9 ">
                   <div className="agree">Agree</div>
-                  <div className="checkwrapper">
+                  <div className="checkwrapper flipdirection">
                     <label className="checkcontainer">
                       <input
                         type="radio"

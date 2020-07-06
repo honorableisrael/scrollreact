@@ -15,7 +15,7 @@ export function NavIsLoggedIn(props: IAppProps|any) {
         </button>
       </div>
       <div className="title1">
-        <Link to="/clarityforteams">
+        <Link to="/thirdpary/dashboard">
           <span className="useravatarwraper">
             <img src={avatar} className="useravatar" alt="avatar" />
           </span>

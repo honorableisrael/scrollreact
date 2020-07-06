@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import RightTopImage from "../../../assets/2.png";
-import testimonial from "../../../assets/testimonial.png";
+import testimonial from "../../../assets/feyin.jpg";
 import likegoogle from "../../../assets/1.png";
 import howitwk from "../../../assets/3.jpg";
 import Footer from "../HomeComponents/footer";
@@ -14,6 +14,7 @@ import stepgood from "../../../assets/stepgood.png";
 import stepone from "../../../assets/steptwo.png";
 import steptwo from "../../../assets/stepthree.png";
 import { Link } from "react-router-dom";
+import demoLogo from "../../../assets/clarity.png";
 
 const Home: React.FC = () => {
   const [name, setName] = React.useState("");
@@ -31,23 +32,30 @@ const Home: React.FC = () => {
             xs={{ span: 12, order: 12 }}
             className="firstrowtxt"
           >
-            <div className="txtheavy">Not feeling in control</div>
-            <div className="txtheavy">of your life, career</div>
-            <div className="txtheavy">or business?</div>
-            <div className="Clarity-is-the-solution">
-              Take the Clarity Assessment to find direction
+            <div className="txtheavy">
+              Match your talent to the right career path with{" "}
+              <img src={demoLogo} className="uysh" alt="clarity_logo" />
             </div>
-            <Link to="/signin">
+            <div className="Clarity-is-the-solution">
+              Take the clarity assessment to discover your strengths & define
+              your career path.
+            </div>
+            <Link to="/signup">
               <div className="firstassesbtn">Take Assessment</div>
             </Link>
           </Col>
-          <Col md={7} sm={{ span: 12, order: 12 }} xs={{ span: 12, order: 1 }}>
+          <Col
+            md={7}
+            sm={{ span: 12, order: 12 }}
+            className="kissa"
+            xs={{ span: 12, order: 1 }}
+          >
             <img src={RightTopImage} className="homebanner0" alt="homebanner" />
           </Col>
         </Row>
         <Row className="secondRow Rectangle-8">
           <Col md={12} className="We-are-like">
-            We are like Google Maps but for your life
+            Your dream career starts with a step in the right direction
           </Col>
           <Col md={12} className="secondimagearea">
             <Row>
@@ -71,7 +79,7 @@ const Home: React.FC = () => {
                         <div className="line-top"></div>
                       </div>
                     </div>
-                    <div className="Clarity-of-Thought">Clarity of Thought</div>
+                    <div className="Clarity-of-Thought">Sign Up</div>
                     <div className="Clairty-lorem"></div>
                   </div>
                   <div className="clarity-card">
@@ -83,7 +91,7 @@ const Home: React.FC = () => {
                         <div className="line-top secondline"></div>
                       </div>
                     </div>
-                    <div className="Clarity-of-Thought">Self Discovery</div>
+                    <div className="Clarity-of-Thought">Take Assessment</div>
                     <div className="Clairty-lorem"></div>
                   </div>
                   <div className="clarity-card">
@@ -95,8 +103,8 @@ const Home: React.FC = () => {
                         <div className="line-top"></div>
                       </div>
                     </div>
-                    <div className="Clarity-of-Thought">Level</div>
-                    <div className="Clarity-of-Thought">Up</div>
+                    <div className="Clarity-of-Thought">Get</div>
+                    <div className="Clarity-of-Thought">Insights</div>
                     <div className="Clairty-lorem"></div>
                   </div>
                   <div className="clarity-card">
@@ -105,11 +113,13 @@ const Home: React.FC = () => {
                         <div className="inner21">Four</div>
                       </div>
                     </div>
-                    <div className="Clarity-of-Thought">
-                      Experience Rest of Mind
-                    </div>
+                    <div className="Clarity-of-Thought">Define your path</div>
                     <div className="Clairty-lorem"></div>
                   </div>
+                </div>
+                <div className="giveaa">
+                  <div>" Discovering your path gives you a</div>
+                  <div>better chance of succeeding."</div>
                 </div>
               </Col>
             </Row>
@@ -117,7 +127,7 @@ const Home: React.FC = () => {
         </Row>
         <Row className="thirdrow">
           <Col sm={{ span: 6, offset: 6 }} md={{ span: 6, offset: 6 }}>
-            <div className="How-it-works">How it works</div>
+            <div className="How-it-works">Benefits</div>
           </Col>
           <Col md={12}>
             <Row>
@@ -133,36 +143,35 @@ const Home: React.FC = () => {
               <Col md={4}>
                 <div className="cards-section1">
                   <div className="howcardwrapper">
-                    <div className="Assess">
+                    <div className="Assess jsj">
                       <img src={stepgood} className="stepgood" alt="imggood" />
-                      Assess
+                      <div>
+                        Know the right industry to channel your job search
+                      </div>
                     </div>
                     <div className="straight_line"></div>{" "}
-                    <div className="The-best-way">
-                      The best way to chart a way forward is to understand where
-                      you are by taking the Clarity test.
+                  </div>
+                  <div className="howcardwrapper">
+                    <div className="Assess jsj">
+                      <img src={stepgood} className="steptwo" alt="imggood" />
+                      <div>
+                        Get better perspective of your skills and abilities to
+                        articulate it at interviews
+                      </div>
                     </div>
                   </div>
                   <div className="howcardwrapper">
-                    <div className="Assess">
-                      <img src={stepone} className="stepgood" alt="imggood" />
-                      Learn
-                    </div>
-                    <div className="The-best-way">
-                      Get insights on how your present personality type is
-                      influencing your career or business growth with pros and
-                      cons.
+                    <div className="Assess jsj">
+                      <img src={stepgood} className="steptwo" alt="imggood" />
+                      <div>
+                        Spot areas of competencies you still need to develop
+                      </div>
                     </div>
                   </div>
                   <div className="howcardwrapper">
-                    <div className="Assess">
-                      <img src={steptwo} className="steptwo" alt="imggood" />
-                      Get to work
-                    </div>
-                    <div className="The-best-way">
-                      With a clear personal development road map and access to
-                      expert counsel to keep you accountable you get started on
-                      acheiving your goals
+                    <div className="Assess jsj">
+                      <img src={stepgood} className="steptwo" alt="imggood" />
+                      <div>Get to understand yourself a lot better</div>
                     </div>
                   </div>
                 </div>
@@ -176,15 +185,16 @@ const Home: React.FC = () => {
           </Col>
           <Col md={5} className="shii11">
             <div className="I-found">
-              "I found clarity by Yudimy at my lowest point, confused and
-              without any sense of direction whatsoever, now I have a grip of
-              things in my life thanks to clarity. My thoughts are decluttered
-              and I know what to do.”
+              <h6>From Jobseeker to Gainfully Employed</h6>
+              "I was very unclear on how to approach my career; I wasn’t even
+              sure what path to take. Going through the career clarity and
+              assessment solution everything changed, I knew exactly how to
+              approach my career, define my job- search strategy and before my
+              NYSC passing out I got a job. Clarity gave me the confidence I
+              needed.”
             </div>
-            <div className="--Marta-Vaughn">- Marta Vaughn.</div>
-            <div className="--Marta-Vaughn">
-              <button className="readmore">READ MORE STORIES</button>
-            </div>
+            <div className="--Marta-Vaughn">- Fiyinfoluwa Olatubosun</div>
+            <div className="--Marta-Vaughn"></div>
           </Col>
         </Row>
         <Row className="fifthsecrow ">

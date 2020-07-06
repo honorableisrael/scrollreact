@@ -10,6 +10,9 @@ import { API } from "../../../config";
 import formemail from "../../../assets/formemail.png";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import Navbar from "../HomeComponents/navbar";
+import Footer from "../HomeComponents/footer";
+import demoLogo from "../../../assets/clarity.png";
 
 interface State {
   email: string;
@@ -38,9 +41,9 @@ const ResetPassword: React.FunctionComponent = (props: any) => {
     confirmpassword,
     message,
   } = state;
- const validateForm = (e) => {
-  e.preventDefault();
-  setFormState({ ...state, isLoading: true });
+  const validateForm = (e) => {
+    e.preventDefault();
+    setFormState({ ...state, isLoading: true });
     if (newpassword.trim() === "" && confirmpassword.trim() === "") {
       return setFormState({
         ...state,
@@ -49,16 +52,15 @@ const ResetPassword: React.FunctionComponent = (props: any) => {
       });
     }
     if (confirmpassword !== newpassword) {
-      return  setFormState({ 
+      return setFormState({
         ...state,
-        errorMessage:"Password must be the same",
-        isLoading: false
+        errorMessage: "Password must be the same",
+        isLoading: false,
       });
+    } else {
+      sendFormData();
     }
-    else{
-      sendFormData()
-    }
- }
+  };
   const sendFormData = () => {
     const token = props.match.params.token;
     const userid = props.match.params.userid;
@@ -80,9 +82,9 @@ const ResetPassword: React.FunctionComponent = (props: any) => {
             isLoading: false,
             message: response?.data[0]?.message,
           });
-          setTimeout(()=>{
-            props.history.push("/signin")
-          },3000)
+          setTimeout(() => {
+            props.history.push("/signin");
+          }, 3000);
         }
       })
       .catch((error) => {
@@ -124,22 +126,24 @@ const ResetPassword: React.FunctionComponent = (props: any) => {
       ...state,
       [e.target.name]: e.target.value,
       errorMessage: "",
-      message:""
+      message: "",
     });
   };
   return (
     <>
-      {/* <Navbar/> */}
+      <Navbar />
       <Container fluid={true}>
         <Row className="kli bcbv">
           <Col md={4} className="">
-            <div className="kigenni1">clarity</div>
+            <div className="kigenni1">
+              <img src={demoLogo} className="uysh" alt="clarity_logo" />
+            </div>
             <div className="kigenni3">
               {" "}
               Take the Clarity Assessment to find direction
             </div>
             <div>
-              <Link to="/" className="clscc">
+              <Link to="/thirdparty/signup" className="clscc">
                 Not registered ? Sign Up
               </Link>
             </div>
@@ -186,7 +190,7 @@ const ResetPassword: React.FunctionComponent = (props: any) => {
             </Form>
           </Col>
         </Row>
-        {/* <Footer/> */}
+        <Footer />
       </Container>
     </>
   );
