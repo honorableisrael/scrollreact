@@ -27,7 +27,7 @@ const KigenniDashboard: React.FunctionComponent = (props: any) => {
       <Container fluid={true}>
         <Row className="kli6 bcbv">
           <KigenniPartResult />
-          <Col md={10}>
+          <Col md={10} className="jksk">
             <div className="text-center">
               <div className="fullresult">
                 <Link to="/paymentsummary">

@@ -121,6 +121,9 @@ const Assessmentfourthphase = (props: any) => {
       q39d: rate16,
     };
     console.log(firstApiData);
+    console.log(secondApiData);
+    console.log(thirdApiData);
+    console.log(fourthApiData);
     axios
       .all([
         axios.post(`${API}/careerinterestcreative`, firstApiData, {

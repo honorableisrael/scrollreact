@@ -131,6 +131,10 @@ const Assessmentfourthphase_1 = (props: any) => {
       q40d: rate9,
       q40e: rate10,
     };
+    console.log(firstApiData);
+    console.log(secondApiData);
+    console.log(thirdApiData);
+    console.log(fourthApiData);
     if (token) {
       axios
         .all([

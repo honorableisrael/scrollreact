@@ -1533,7 +1533,7 @@ const AssessmentThirdPhase = (props: any) => {
             <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
                 <div className="firstquestion">
-                  s. You super proficient in navigating apps and new technology
+                  s. You are super proficient in navigating apps and new technology
                 </div>
                 <div className="rsliderclass9">
                   <div className="agree">Agree</div>

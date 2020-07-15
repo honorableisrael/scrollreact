@@ -10,26 +10,39 @@ import Navbar from "../Home/HomeComponents/navbar";
 import Footer from "../Home/HomeComponents/footer";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import write from "../../assets/write.png";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 class CouncellorDates extends React.Component<React.Props<any>> {
   state: any = {
     fullname: "",
     date: new Date(),
     availabledate: "",
+    feedbackText: "",
+    calenderTime: "",
     phone: "",
+    startDate: "",
+    endDate: "",
+    time: "",
   };
-  componentDidMount() {
+  componentWillMount() {
     this.setState({ isLoading: true });
     const availableToken = sessionStorage.getItem("userToken");
     const token = availableToken
       ? JSON.parse(availableToken)
       : window.location.assign("/signin");
     axios
-      .get<any, AxiosResponse<any>>(`${API}/paiddashboard`, {
+      .get<any, AxiosResponse<any>>(`${API}/getcurrentdate`, {
         headers: { Authorization: `Token ${token}` },
       })
       .then((response) => {
         console.log(response);
+        this.setState({
+          startDate: response.data[0].start,
+          endDate: response.data[0].stop,
+          calenderTime: response.data[0].message,
+        });
       })
       .catch((error) => {
         console.log(error.response);
@@ -47,11 +60,95 @@ class CouncellorDates extends React.Component<React.Props<any>> {
   }
   onchange = (e) => {
     this.setState({
-      feedbacktext: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
-
-  onChange = (date) => this.setState({ date });
+  selectedTimeHandler = (e) => {
+    this.setState({
+      time: e.target.value,
+    });
+  };
+  getAvailableTime = (date) => {
+    const availableToken = sessionStorage.getItem("userToken");
+    const token = availableToken
+      ? JSON.parse(availableToken)
+      : window.location.assign("/signin");
+    const data = {
+      date,
+    };
+    axios
+      .post<any, AxiosResponse<any>>(`${API}/gettime`, data)
+      .then((response) => {
+        this.setState({
+          calenderTime: response.data[0].message,
+        });
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error.response);
+        if (error && error.response && error.response.data) {
+          this.setState({
+            errorMessage: error.response.data[0].message,
+            isLoading: false,
+          });
+        }
+        this.setState({
+          errorMessage: "failed",
+          isLoading: false,
+        });
+      });
+  };
+  onChange = (date) => {
+    console.log(typeof date.toString());
+    this.getAvailableTime(date.toString());
+    this.setState({
+      date,
+    });
+  };
+  sendMessageToCounselor = () => {
+    const { date, time, phone, feedbackText } = this.state;
+    const availableToken = sessionStorage.getItem("userToken");
+    const token = availableToken
+      ? JSON.parse(availableToken)
+      : window.location.assign("/signin");
+    const data = {
+      date: date.toString(),
+      time,
+      phone,
+      user_vent: feedbackText,
+    };
+    console.log(data);
+    axios
+      .post<any, AxiosResponse<any>>(`${API}/chatwithcounsellor`, data, {
+        headers: { Authorization: `Token ${token}` },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          this.notify("Message Sent");
+          setTimeout(() => {
+            const self: any = this;
+            self.props.history.push("/");
+          }, 3000);
+        }
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error.response);
+        if (error && error.response && error.response.data) {
+          this.setState({
+            errorMessage: error.response.data[0].message,
+            isLoading: false,
+          });
+        }
+        this.setState({
+          errorMessage: "failed",
+          isLoading: false,
+        });
+      });
+  };
+  notify = (message: string) => {
+    toast(message, { containerId: "B" });
+  };
   render() {
     console.log(this.state.date);
     const {
@@ -59,9 +156,11 @@ class CouncellorDates extends React.Component<React.Props<any>> {
       phone,
       careerbussines,
       availabledate,
-      feedbacktext,
+      feedbackText,
+      startDate,
+      endDate,
+      calenderTime,
     } = this.state;
-    const startDate = new Date("2020,7,10");
     return (
       <>
         <Navbar />
@@ -70,97 +169,57 @@ class CouncellorDates extends React.Component<React.Props<any>> {
             <Col md={12} className="scheduleheader">
               Schedule a meeting
             </Col>
-            <Col md={7}>
+            <Col md={6} className="calwrapper">
               <Calendar
                 onChange={this.onChange}
                 value={this.state.date}
-                minDate={new Date()}
-                maxDate={new Date("2020,7,22")}
+                allowPartialRange={true}
+                minDate={new Date(startDate)}
+                maxDate={new Date(endDate)}
               />
             </Col>
-            <Col md={3} className="availabledatewrapper">
+            <Col md={2} className="availabledatewrapper">
               <div>
-                <div className="availabledate notop">
-                  <input
-                    type="radio"
-                    name="availabledate"
-                    value={availabledate}
-                  />
-                  {"  "}
-                  <div>09:00 am - 09:30am</div>
-                </div>
-                <div className="availabledate">
-                  <input
-                    type="radio"
-                    name="availabledate"
-                    value={availabledate}
-                  />
-                  {"  "}
-                  <div>09:00 am - 09:30am</div>
-                </div>
-                <div className="availabledate">
-                  <input
-                    type="radio"
-                    name="availabledate"
-                    value={availabledate}
-                  />
-                  {"  "}
-                  <div>09:00 am - 09:30am</div>
-                </div>
-                <div className="availabledate">
-                  <input
-                    type="radio"
-                    name="availabledate"
-                    value={availabledate}
-                  />
-                  {"  "}
-                  <div>09:00 am - 09:30am</div>
-                </div>
-                <div className="availabledate">
-                  <input
-                    type="radio"
-                    name="availabledate"
-                    value={availabledate}
-                  />
-                  {"  "}
-                  <div>09:00 am - 09:30am</div>
-                </div>
-                <div className="availabledate">
-                  <input
-                    type="radio"
-                    name="availabledate"
-                    value={availabledate}
-                  />
-                  {"  "}
-                  <div>09:00 am - 09:30am</div>
-                </div>
-                <div className="availabledate">
-                  <input
-                    type="radio"
-                    name="availabledate"
-                    value={availabledate}
-                  />
-                  {"  "}
-                  <div>09:00 am - 09:30am</div>
-                </div>
+                {calenderTime &&
+                  calenderTime.map((data) => (
+                    <div
+                      className={
+                        data.status === "available"
+                          ? "activeDate"
+                          : "availabledate"
+                      }
+                    >
+                      <input
+                        type="radio"
+                        name="availabledate"
+                        value={data.time}
+                        disabled={data.status === "available" ? false : true}
+                        onChange={this.selectedTimeHandler}
+                      />
+                      {"  "}
+                      <div>{data.time}</div>
+                    </div>
+                  ))}
               </div>
             </Col>
-            <Col md={10} className="fw2">
+            <Col md={8} className="fw2">
+              <img src={write} alt="write" className="write" />
               <textarea
                 className="form-control whatdou"
                 id=""
                 cols={30}
-                name="feedbacktext"
+                name="feedbackText"
                 onChange={this.onchange}
-                value={feedbacktext}
+                value={feedbackText}
                 placeholder="What would you like to speak about"
                 rows={10}
               ></textarea>
             </Col>
-            <Col md={10} className="fw2">
+            <Col md={8} className="fw2">
               <Row className="shex">
                 <Col md={5}>
                   <div className="enter11">Enter your phone number</div>
+                  <img src={write} alt="write" className="write" />
                   <input
                     className="form-control whatdou"
                     id=""
@@ -170,11 +229,21 @@ class CouncellorDates extends React.Component<React.Props<any>> {
                     placeholder="Phone number"
                   />
                 </Col>
-                <Col md={3} className="text-right">
-                  <div className="booksession">
+                <Col md={7} className="text-right jcenter">
+                  <div
+                    className="booksession"
+                    onClick={this.sendMessageToCounselor}
+                  >
                     Book Session <span className="text-white">&#8594;</span>
                   </div>
                 </Col>
+                <ToastContainer
+                  enableMultiContainer
+                  containerId={"B"}
+                  toastClassName="bg-info text-white"
+                  hideProgressBar={true}
+                  position={toast.POSITION.TOP_CENTER}
+                />
               </Row>
             </Col>
           </Row>

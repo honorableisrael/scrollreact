@@ -19,6 +19,7 @@ import Testing from "./Testing";
 import HorizontalBar from "./HorizontalBar";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import write from "../../assets/write.png";
 import Form from "react-bootstrap/Form";
 import Review from "../../assets/review.png";
 import Axios from "axios";
@@ -213,18 +214,18 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
       });
   };
   checkIfUserHasMadePaymentForFullResult = (token: string) => {
-    axios
-      .get<any, AxiosResponse<any>>(`${API}/paymentstatus`, {
-        headers: { Authorization: `Token ${token}` },
-      })
-      .then((response) => {
-        if (response?.data[0]?.message === false) {
-          return window.location.assign("/paymentsummary");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // axios
+    //   .get<any, AxiosResponse<any>>(`${API}/paymentstatus`, {
+    //     headers: { Authorization: `Token ${token}` },
+    //   })
+    //   .then((response) => {
+    //     if (response?.data[0]?.message === false) {
+    //       return window.location.assign("/paymentsummary");
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
   render() {
     const {
@@ -371,6 +372,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               </div>
               <hr />
               <div className="resultsec2" id="seek">
+                <div className="csfitscore2">Your Career Fitness Score</div>
                 <div className="resultsec22">
                   <CirclePie
                     width={190}
@@ -404,7 +406,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                     </div>
                     {client?.career_fitness?.quick_fix?.body?.map(
                       (data, index) => (
-                        <div key={index}>
+                        <div key={index} className="csbody liuii">
                           {index + 1}.{"  "}
                           {data}
                         </div>
@@ -419,10 +421,10 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               <hr />
               <div className="resultsec3">
                 <div className="reskwrap">
-                  <div className="csfitscore1 reskheader">
-                    Your Career Personality type
+                  <div className="csfitscore1 juki  reskheader">
+                    Career Personality type
                   </div>
-                  <div className="">
+                  <div className="career221">
                     {client?.career_personality_type?.short_description}
                   </div>
                 </div>
@@ -451,6 +453,13 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                     }
                   )}
                 </div>
+                <div className="resultsec3">
+                  <div className="reskwrap">
+                    <div className="career221">
+                      {client?.career_personality_type?.full_body}
+                    </div>
+                  </div>
+                </div>
               </div>
               <div>
                 <div className="kz1">
@@ -462,7 +471,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                     <div className="kz12">
                       <ul className="grapwrap">
                         {client?.strengths?.map((strength, index) => (
-                          <li className="grapssin" key={index}>
+                          <li className="grapssin career221" key={index}>
                             {strength}
                           </li>
                         ))}
@@ -477,7 +486,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                     <div className="kz12">
                       <ul className="grapwrap">
                         {client?.weaknesses?.map((weakness, index) => (
-                          <li className="grapssin" key={index}>
+                          <li className="grapssin career221" key={index}>
                             {weakness}
                           </li>
                         ))}
@@ -497,7 +506,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                   {client?.strong_career_competences?.graph1?.map(
                     (data, index) => {
                       return (
-                        <div className="" key={index}>
+                        <div className="tttpt" key={index}>
                           <div className="ttp1">{data.name}</div>
                           <Testing value={data.value} />
                         </div>
@@ -522,7 +531,8 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                 {client?.strong_career_competences?.fields?.map(
                   (data, index) => (
                     <div key={index}>
-                      <span className="ikls">{data.name} </span> {data.value}
+                      <span className="ikls">{data.name} </span>
+                       <span className="career221">{data.value}</span>
                       <br />
                     </div>
                   )
@@ -624,6 +634,9 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                 </div>
                 {client?.career_business_expression?.map((doc, index) => (
                   <div className="resultsec2" key={index}>
+                    <div className="csfitscore2">
+                      {this.capitalize(doc?.industry)}
+                    </div>
                     <div className="resultsec22">
                       <CirclePie
                         width={190}
@@ -639,9 +652,11 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                       />
                     </div>
                     <div className="csfitscore">
-                      <div className="csfitscore1">
-                        {this.capitalize(doc?.industry)}
-                      </div>
+                      <Row>
+                        <div className="csfitscore1">
+                          {this.capitalize(doc?.industry)}
+                        </div>
+                      </Row>
                       {doc?.fields?.map((item, index) => (
                         <div className="csbody" key={index}>
                           <span className="competence1">
@@ -686,8 +701,16 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                     </div>
                     <div className="tipswrapper">
                       <div>
+                        <div className="noticeee">
+                          <img
+                            src={notice}
+                            className="noticeee1"
+                            alt="notice1"
+                          />
+                        </div>
                         <div className="stbly1">
                           Tips to Harnessing This Motivator:
+                          <div className="underlinee"></div>
                         </div>
                         {data?.tips?.map((dataindata, index) => (
                           <div key={index}>
@@ -754,7 +777,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                   {client?.job_function_fit?.field?.map((dataindata, index) => (
                     <div key={index}>
                       <span className="ikls">{dataindata.name} </span>{" "}
-                      <div> {dataindata.value}. </div>
+                      <div className="career221"> {dataindata.value}. </div>
                       <br />
                     </div>
                   ))}
@@ -770,10 +793,23 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                 Please give your feedback &#129321; &#128524;
               </div>
             </Col>
+            <Col md={10} className="fw2">
+              <img src={write} alt="write" className="write" />
+              <textarea
+                className="form-control whatdou fba"
+                id=""
+                cols={30}
+                name="feedbackText"
+                onChange={this.onchange}
+                value={""}
+                placeholder="Counsellors recommendations"
+                rows={10}
+              ></textarea>
+            </Col>
             <Col md={10} className="fkexx">
-              {/* <Button className="retaketest">
+              <Button className="retaketest">
                 <Link to="/councellorfee">Chat with a councellor</Link>
-              </Button> */}
+              </Button>
               <Button className="retaketest" onClick={this.openWarning}>
                 Retake Assessment
               </Button>

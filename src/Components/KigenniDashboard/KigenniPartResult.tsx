@@ -146,6 +146,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
           </div>
           <hr />
           <div className="resultsec2" id="seek">
+            <div className="csfitscore2">Your Career Fitness Score</div>
             <div className="resultsec22">
               <CirclePie
                 width={190}
@@ -159,16 +160,15 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
                 percent={client?.career_fitness?.score}
                 padding={0}
               />
-              {/* <img src={firstChart} className="firstChart" alt="firstChart" /> */}
             </div>
             <div className="csfitscore">
+              <div className="divide"></div>{" "}
               <div className="csfitscore1">Your Career Fitness Score</div>
               <div className="vbnc1"> {client?.career_fitness?.heading} </div>
               <div className="csbody">{client?.career_fitness?.body}</div>
             </div>
           </div>
-          <hr />
-          <div>
+          {/* <div>
             <div className="tipswrapper">
               <div>
                 <div className="stbly1">
@@ -185,14 +185,17 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
                 <img src={notice} className="noticee" alt="notice" />
               </div>
             </div>
-          </div>
+          </div> */}
           <hr />
           <div className="resultsec3">
+            <div className="careerpersonalityheader">
+              Career Personality type
+            </div>
             <div className="reskwrap">
               <div className="csfitscore1 reskheader">
                 Your Career Personality type
               </div>
-              <div className="">
+              <div className="cptext">
                 {client?.career_personality_type?.short_description}
               </div>
             </div>
@@ -220,7 +223,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
               })}
             </div>
           </div>
-          <div className="nlodd">
+          {/* <div className="nlodd">
             <div className="resultsec13">
               <div className="reskwrap13">
                 <div className="csfitscore1 reskheader">
@@ -241,29 +244,74 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
           {/* white background section */}
-          {client?.career_drivers?.fields?.map((data, index) => (
-            <div>
-              <div className="stbly">
-                <div className="stbly1">{data.heading}</div>
-                <div>{data.body}</div>
+          {/* {client?.career_business_expression?.map((data, index) => (
+            <div className="resultsec2">
+              <div className="resultsec22">
+                <CirclePie
+                  width={190}
+                  height={190}
+                  strokeWidth={5}
+                  labelColor={"#fff"}
+                  labelFontSize={"38px"}
+                  strokeColor={"#fff"}
+                  railColor={"#17375c77"}
+                  fillColor={"#001833"}
+                  percent={client?.career_business_expression?.score}
+                  padding={0}
+                />
               </div>
-              <div className="tipswrapper">
-                <div>
-                  <div className="stbly1">
-                    Tips to Harnessing This Motivator:
+              {data?.fields?.map((nestedData, ind) => (
+                <div className="csfitscore">
+                  <div className="divide"></div>{" "}
+                  <div className="vbnc1">
+                    {" "}
+                    {client?.career_business_expression?.heading}{" "}
                   </div>
-                  {data?.tips?.map((dataindata, index) => (
-                    <div key={index}>
-                      {index + 1}.{"  "}
-                      {dataindata}
-                    </div>
-                  ))}
+                  <div className="csbody">
+                    {client?.career_business_expression?.body}
+                  </div>
                 </div>
-                <div className="notice">
-                  <img src={notice} className="noticee" alt="notice" />
-                </div>
+              ))}
+            </div>
+          ))} */}
+          <div className="leastbusexp">
+            Least Suitable Career-Business Expression
+          </div>
+          {client?.career_business_expression?.map((doc, index) => (
+            <div className="resultsec2" key={index}>
+              <div className="csfitscore2">
+                {this.capitalize(doc?.industry)}
+              </div>
+              <div className="resultsec22">
+                <CirclePie
+                  width={190}
+                  height={190}
+                  strokeWidth={5}
+                  labelColor={"#fff"}
+                  labelFontSize={"38px"}
+                  strokeColor={"#fff"}
+                  railColor={"#17375c77"}
+                  fillColor={"#001833"}
+                  percent={doc?.score}
+                  padding={0}
+                />
+              </div>
+              <div className="csfitscore">
+                <Row>
+                  <div className="csfitscore1">
+                    {this.capitalize(doc?.industry)}
+                  </div>
+                </Row>
+                {doc?.fields?.map((item, index) => (
+                  <div className="csbody" key={index}>
+                    <span className="competence1">
+                      {this.capitalize(item.name)}
+                    </span>
+                    :{this.capitalize(item.value)} <br />
+                  </div>
+                ))}
               </div>
             </div>
           ))}
