@@ -105,7 +105,7 @@ const AssessmentSecondPhase = (props: any) => {
             <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
                 <div className="firstquestion">
-                  a. In a gathering of people, you are often the:
+                  a. There are nine qualities listed below, pick only the one that best describes you:
                 </div>
                 <div className="rsliderclassPol1">
                   <label className="checkcontainer1">
@@ -116,7 +116,7 @@ const AssessmentSecondPhase = (props: any) => {
                       name="question1"
                     />
                     <span className="checkmark1">A</span>
-                    Mover & Shaker
+                    Principled
                   </label>
                   <label className="checkcontainer1">
                     <input
@@ -126,144 +126,200 @@ const AssessmentSecondPhase = (props: any) => {
                       name="question1"
                     />
                     <span className="checkmark1">B</span>
-                    Person watching others
-                  </label>
-                </div>
-              </Col>
-            </Row>
-            <Row className="firstrowcf2 cftcontent">
-              <Col md={12}>
-                <div className="firstquestion">b. Your personal moto is</div>
-                <div className="rsliderclassPol1">
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={1}
-                      onChange={onchange}
-                      name="question2"
-                    />
-                    <span className="checkmark1">A</span>
-                    Live for the moment
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={2}
-                      onChange={onchange}
-                      name="question2"
-                    />
-                    <span className="checkmark1">B</span>
-                    Eventual success no matter how hard
-                  </label>
-                </div>
-              </Col>
-            </Row>
-            <Row className="firstrowcf2 cftcontent">
-              <Col md={12}>
-                <div className="firstquestion">
-                  C. Work is a lot easier when:
-                </div>
-                <div className="rsliderclassPol1">
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={1}
-                      onChange={onchange}
-                      name="question3"
-                    />
-                    <span className="checkmark1">A</span>I feel accepted by my
-                    co-workers in a friendly environment.
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={2}
-                      onChange={onchange}
-                      name="question3"
-                    />
-                    <span className="checkmark1">B</span>
-                    I’m able to create my own rules and work without
-                    interference.
-                  </label>
-                </div>
-              </Col>
-            </Row>
-            <Row className="firstrowcf2 cftcontent">
-              <Col md={12}>
-                <div className="firstquestion">d. People think of you as:</div>
-                <div className="rsliderclassPol1">
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={1}
-                      onChange={onchange}
-                      name="question4"
-                    />
-                    <span className="checkmark1">A</span>
-                    Carefree, friendly and sometimes careless
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={2}
-                      onChange={onchange}
-                      name="question4"
-                    />
-                    <span className="checkmark1">B</span>
-                    Rigid, friendly and sometimes too uptight
-                  </label>
-                </div>
-              </Col>
-            </Row>
-            <Row className="firstrowcf2 cftcontent">
-              <Col md={12}>
-                <div className="firstquestion">
-                  e. When your day ends how do you feel?
-                </div>
-                <div className="rsliderclassPol1">
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={1}
-                      onChange={onchange}
-                      name="question5"
-                    />
-                    <span className="checkmark1">A</span>
-                    Satisfied & Happy
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={2}
-                      onChange={onchange}
-                      name="question5"
-                    />
-                    <span className="checkmark1">B</span>
-                    Indifference, you followed the routine for your day
+                    Supportive
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={3}
                       onChange={onchange}
-                      name="question5"
+                      name="question1"
                     />
                     <span className="checkmark1">C</span>
-                    Unsure and unclear you’re doing the right thing with your
-                    life.
+                    Competitive
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={3}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Idealistic
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={4}
                       onChange={onchange}
-                      name="question5"
+                      name="question1"
                     />
-                    <span className="checkmark1">D</span>
-                    Like you still have a lot to achieve
+                    <span className="checkmark1">C</span>
+                    Innovative
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={5}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Responsible
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={6}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Creative
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={7}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Assertive
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={8}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Flexible
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={9}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Competitive
                   </label>
                 </div>
               </Col>
+            </Row>
+            <Row className="firstrowcf2 cftcontent">
+            <Col md={12}>
+                <div className="firstquestion">
+                  a. There are nine qualities listed below, pick only the one that best describes you:
+                </div>
+                <div className="rsliderclassPol1">
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      onChange={onchange}
+                      value={1}
+                      name="question1"
+                    />
+                    <span className="checkmark1">A</span>
+                    Principled
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={2}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">B</span>
+                    Supportive
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={3}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Competitive
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={3}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Idealistic
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={4}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Innovative
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={5}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Responsible
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={6}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Creative
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={7}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Assertive
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={8}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Flexible
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={9}
+                      onChange={onchange}
+                      name="question1"
+                    />
+                    <span className="checkmark1">C</span>
+                    Competitive
+                  </label>
+                </div>
+              </Col>
+            </Row>
               <ToastContainer
                 enableMultiContainer
                 containerId={"B"}
@@ -278,7 +334,6 @@ const AssessmentSecondPhase = (props: any) => {
                   </button>
                 </div>
               </Row>
-            </Row>
           </Col>
         </Row>
         <Footer />

@@ -542,6 +542,9 @@
   }
 }
 @media (min-width: 501px) {
+  .juki{
+    display: none;
+  }
   .noticeee {
     display: none;
   }
