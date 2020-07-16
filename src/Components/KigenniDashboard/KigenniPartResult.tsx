@@ -90,6 +90,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
         headers: { Authorization: `Token ${token}` },
       })
       .then((response) => {
+        console.log(response)
         if (response?.data[0]?.message === true) {
           return window.location.assign("/thirdpary/fullresult");
         }
@@ -168,24 +169,6 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
               <div className="csbody">{client?.career_fitness?.body}</div>
             </div>
           </div>
-          {/* <div>
-            <div className="tipswrapper">
-              <div>
-                <div className="stbly1">
-                  {client?.career_fitness?.quick_fix?.heading}
-                </div>
-                {client?.career_fitness?.quick_fix?.body?.map((data, index) => (
-                  <div key={index}>
-                    {index + 1}.{"  "}
-                    {data}
-                  </div>
-                ))}
-              </div>
-              <div className="notice">
-                <img src={notice} className="noticee" alt="notice" />
-              </div>
-            </div>
-          </div> */}
           <hr />
           <div className="resultsec3">
             <div className="careerpersonalityheader">

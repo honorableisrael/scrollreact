@@ -8,6 +8,7 @@ import axios from "axios";
 import { AxiosResponse } from "axios";
 import { API } from "../../config";
 import { toast } from "react-toastify";
+import checkcircle from "../../assets/checkcircle.png";
 import { Link } from "react-router-dom";
 
 interface State {
@@ -187,6 +188,103 @@ export default function CouncellorPaymentSummary(props: any) {
                 <div
                   className="slcplan"
                   onClick={() => checkIfUserHasAccessToViewAll()}
+                >
+                  {!isLoading ? "Select Plan" : "processing..."}
+                </div>
+              </Col>
+              <Col xs={10} md={3} className="centerr1">
+                <div className="planinsight">Premium</div>
+                <div className="oneoff">(One-off Plan)</div>
+                <div className="percentoff">
+                  Now <b>&nbsp; 65%&nbsp;</b> OFF!
+                </div>{" "}
+                <div className="duration"></div>
+                <div className="prems">
+                  {" "}
+                  An all-round competence audit report on
+                </div>
+                <div className="comps2">
+                  <span>
+                    <img
+                      src={checkcircle}
+                      className="checkcircle"
+                      alt="checkcircle"
+                    />
+                  </span>{" "}
+                  The Most suitable career and business industry match
+                </div>
+                <div className="comps2">
+                  <span>
+                    <img
+                      src={checkcircle}
+                      className="checkcircle"
+                      alt="checkcircle"
+                    />
+                  </span>{" "}
+                  The best job roles to work in
+                </div>
+                <div className="comps2">
+                  <span>
+                    <img
+                      src={checkcircle}
+                      className="checkcircle"
+                      alt="checkcircle"
+                    />
+                  </span>{" "}
+                  Strong career competencies{" "}
+                </div>
+                <div className="comps2">
+                  <span>
+                    <img
+                      src={checkcircle}
+                      className="checkcircle"
+                      alt="checkcircle"
+                    />
+                  </span>{" "}
+                  Average Career competencies
+                </div>
+                <div className="comps2">
+                  <span>
+                    <img
+                      src={checkcircle}
+                      className="checkcircle"
+                      alt="checkcircle"
+                    />
+                  </span>{" "}
+                  Weak Career competencies
+                </div>
+                <div className="comps2">
+                  <span>
+                    <img
+                      src={checkcircle}
+                      className="checkcircle"
+                      alt="checkcircle"
+                    />
+                  </span>{" "}
+                  Work style
+                </div>
+                <div className="comps2">
+                  <span>
+                    <img
+                      src={checkcircle}
+                      className="checkcircle"
+                      alt="checkcircle"
+                    />
+                  </span>{" "}
+                  Top Career drivers’ & how to harness it
+                </div>
+                <div className="lmi1">
+                  <div className="amut">&#8358;3,500</div>
+                  <div className="amut1">one time payment</div>
+                </div>
+                <div>
+                  {/* <span className="amurt">&#8358;10,000</span>{" "} */}
+                </div>
+                <div
+                  className="slcplan"
+                  onClick={() =>
+                    checkIfUserHasAccessToViewAll()
+                  }
                 >
                   {!isLoading ? "Select Plan" : "processing..."}
                 </div>

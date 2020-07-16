@@ -6,6 +6,7 @@
   letter-spacing: -2.4px;
   color: #001833;
   padding-bottom: 0.1rem;
+  padding-top: 2rem;
 }
 .kdashheaderlight {
   font-weight: 400;
@@ -16,6 +17,14 @@
 }
 .chartss text {
   font-size: 10px;
+}
+.jcenter1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.additional {
+  margin-bottom: 1rem;
 }
 
 .kdash1 {
@@ -722,15 +731,16 @@ a:hover {
   }
 }
 .retaketest {
-  background: #32335a;
-  border-radius: 1rem;
+  background: #9c1258;
+  border-radius: 8px;
   color: #fff;
-  border: 1px solid #32335a;
+  border: 1px solid #9c1258;
+  margin-right: 1rem;
 }
 .retaketest:hover {
-  background: #32335a;
+  background: #9c1258;
   color: #fff;
-  border: 1px solid #32335a;
+  border: 1px solid #9c1258;
 }
 .retaketest1 {
   background: #9c1258;
@@ -1142,14 +1152,53 @@ abbr[title] {
   box-shadow: 4px 12px 30px rgba(24, 33, 77, 0.25);
 }
 @media (max-width: 600px) {
-  .centerpurple{
+  .centerpurple {
     margin-bottom: 1rem;
   }
   .centerpurple,
   .centerblue {
     margin-right: 0px;
   }
-  .centerr1{
+  .centerr1 {
     margin-bottom: 2rem;
+  }
+}
+.coonfused {
+  font-size: 26px;
+  line-height: 41px;
+  text-align: center;
+  letter-spacing: -0.5px;
+  color: #001833;
+}
+.retaketest2 {
+  background: #fff;
+  border-radius: 8px;
+  color: #9c1258;
+  border: 1px solid #9c1258;
+  margin-right: 1rem;
+  border: 1px solid #9c1258;
+  border-color: #9c1258 !important;
+  width: 195px;
+}
+.retaketest2:hover {
+  background: #fff;
+  border-radius: 8px;
+  color: #9c1258;
+  border: 1px solid #9c1258;
+  border-color: #9c1258 !important;
+}
+.pool {
+  font-size: 19px;
+  line-height: 28px;
+  text-align: center;
+  letter-spacing: -0.5px;
+  color: #001833;
+}
+@media (max-width: 500px) {
+  .check11 {
+    display: contents;
+  }
+  .retaketest2{
+    margin-top: .4rem;
   }
 }

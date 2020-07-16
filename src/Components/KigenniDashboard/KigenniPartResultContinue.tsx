@@ -20,6 +20,7 @@ import HorizontalBar from "./HorizontalBar";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import write from "../../assets/write.png";
+import additionalinformation from "../../assets/additionalinformation.png";
 import Form from "react-bootstrap/Form";
 import Review from "../../assets/review.png";
 import Axios from "axios";
@@ -532,7 +533,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                   (data, index) => (
                     <div key={index}>
                       <span className="ikls">{data.name} </span>
-                       <span className="career221">{data.value}</span>
+                      <span className="career221">{data.value}</span>
                       <br />
                     </div>
                   )
@@ -806,13 +807,21 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                 rows={10}
               ></textarea>
             </Col>
-            <Col md={10} className="fkexx">
-              <Button className="retaketest">
-                <Link to="/councellorfee">Chat with a councellor</Link>
-              </Button>
-              <Button className="retaketest" onClick={this.openWarning}>
-                Retake Assessment
-              </Button>
+            <Col md={8} className="jcenter1">
+              <div className="coonfused">Still Confused ???</div>
+              <div className="pool">Let our pool of experienced counsellors guide you to better maximise your results </div>
+              <div className="additional">
+                {" "}
+                <img src={additionalinformation} alt="" />
+              </div>
+              <div className="check11">
+                <Button className="retaketest">
+                  <Link to="/paymentsummary">Speak with a councellor</Link>
+                </Button>
+                <Button className="retaketest2" onClick={this.openWarning}>
+                  Retake Assessment
+                </Button>
+              </div>
             </Col>
             <Modal show={showWarning} onHide={this.CloseWarning}>
               <Modal.Body>
