@@ -91,7 +91,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
       })
       .then((response) => {
         console.log(response)
-        if (response?.data[0]?.message === true) {
+        if (response?.data[0]?.direction_plan || response?.data[0]?.growth_plan || response?.data[0]?.insight_plan === true) {
           return window.location.assign("/thirdpary/fullresult");
         }
       })

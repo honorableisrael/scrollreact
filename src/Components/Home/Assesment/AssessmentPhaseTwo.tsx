@@ -16,32 +16,21 @@ import { ToastContainer, toast } from "react-toastify";
 
 // team
 interface State {
-  question1: string;
-  question2: string;
-  question3: string;
-  question4: string;
-  question5: string;
+  question9: string;
+  question10: string;
+  question13: string;
   token: string;
 }
 
 const AssessmentSecondPhase = (props: any) => {
   const [value, setValue] = React.useState<number>(0);
   const [state, setCheckboxValue]: any = React.useState<State>({
-    question1: "1",
-    question2: "1",
-    question3: "1",
-    question4: "1",
-    question5: "1",
+    question9: "1",
+    question10: "1",
+    question13: "1",
     token: "",
   });
-  const {
-    question1,
-    question2,
-    question3,
-    question4,
-    question5,
-    token,
-  } = state;
+  const { question9, question10, question13, token } = state;
 
   //cdm
   React.useEffect((): any => {
@@ -65,11 +54,9 @@ const AssessmentSecondPhase = (props: any) => {
   const submitForm = (e: any) => {
     e.preventDefault();
     const data = {
-      q9: question1,
-      q10: question2,
-      q11: question3,
-      q12: question4,
-      q13: question5,
+      q9: question9,
+      q10: question10,
+      q13: question13,
     };
     console.log(data);
     axios
@@ -105,7 +92,8 @@ const AssessmentSecondPhase = (props: any) => {
             <Row className="firstrowcf2 cftcontent">
               <Col md={12}>
                 <div className="firstquestion">
-                  a. There are nine qualities listed below, pick only the one that best describes you:
+                  a. There are nine qualities listed below, pick only the one
+                  that best describes you:
                 </div>
                 <div className="rsliderclassPol1">
                   <label className="checkcontainer1">
@@ -113,7 +101,7 @@ const AssessmentSecondPhase = (props: any) => {
                       type="radio"
                       onChange={onchange}
                       value={1}
-                      name="question1"
+                      name="question9"
                     />
                     <span className="checkmark1">A</span>
                     Principled
@@ -123,7 +111,7 @@ const AssessmentSecondPhase = (props: any) => {
                       type="radio"
                       value={2}
                       onChange={onchange}
-                      name="question1"
+                      name="question9"
                     />
                     <span className="checkmark1">B</span>
                     Supportive
@@ -133,88 +121,79 @@ const AssessmentSecondPhase = (props: any) => {
                       type="radio"
                       value={3}
                       onChange={onchange}
-                      name="question1"
+                      name="question9"
                     />
                     <span className="checkmark1">C</span>
                     Competitive
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={3}
-                      onChange={onchange}
-                      name="question1"
-                    />
-                    <span className="checkmark1">C</span>
-                    Idealistic
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={4}
                       onChange={onchange}
-                      name="question1"
+                      name="question9"
                     />
-                    <span className="checkmark1">C</span>
-                    Innovative
+                    <span className="checkmark1">D</span>
+                    Idealistic
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={5}
                       onChange={onchange}
-                      name="question1"
+                      name="question9"
                     />
-                    <span className="checkmark1">C</span>
-                    Responsible
+                    <span className="checkmark1">E</span>
+                    Innovative
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={6}
                       onChange={onchange}
-                      name="question1"
+                      name="question9"
                     />
-                    <span className="checkmark1">C</span>
-                    Creative
+                    <span className="checkmark1">F</span>
+                    Responsible
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={7}
                       onChange={onchange}
-                      name="question1"
+                      name="question9"
                     />
-                    <span className="checkmark1">C</span>
-                    Assertive
+                    <span className="checkmark1">G</span>
+                    Creative
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={8}
                       onChange={onchange}
-                      name="question1"
+                      name="question9"
                     />
-                    <span className="checkmark1">C</span>
-                    Flexible
+                    <span className="checkmark1">H</span>
+                    Assertive
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={9}
                       onChange={onchange}
-                      name="question1"
+                      name="question9"
                     />
-                    <span className="checkmark1">C</span>
-                    Competitive
+                    <span className="checkmark1">I</span>
+                    Flexible
                   </label>
                 </div>
               </Col>
             </Row>
             <Row className="firstrowcf2 cftcontent">
-            <Col md={12}>
+              <Col md={12}>
                 <div className="firstquestion">
-                  a. There are nine qualities listed below, pick only the one that best describes you:
+                  b.Out of the nine traits mentioned below pick the one that
+                  best describes you
                 </div>
                 <div className="rsliderclassPol1">
                   <label className="checkcontainer1">
@@ -222,118 +201,151 @@ const AssessmentSecondPhase = (props: any) => {
                       type="radio"
                       onChange={onchange}
                       value={1}
-                      name="question1"
+                      name="question10"
                     />
-                    <span className="checkmark1">A</span>
-                    Principled
+                    <span className="checkmark1">A</span>I am a perfectionist
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={2}
                       onChange={onchange}
-                      name="question1"
+                      name="question10"
                     />
-                    <span className="checkmark1">B</span>
-                    Supportive
+                    <span className="checkmark1">B</span>I like to please people
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={3}
                       onChange={onchange}
-                      name="question1"
+                      name="question10"
                     />
-                    <span className="checkmark1">C</span>
-                    Competitive
-                  </label>
-                  <label className="checkcontainer1">
-                    <input
-                      type="radio"
-                      value={3}
-                      onChange={onchange}
-                      name="question1"
-                    />
-                    <span className="checkmark1">C</span>
-                    Idealistic
+                    <span className="checkmark1">C</span>I care about what
+                    people think of me
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={4}
                       onChange={onchange}
-                      name="question1"
+                      name="question10"
                     />
-                    <span className="checkmark1">C</span>
-                    Innovative
+                    <span className="checkmark1">D</span>I don’t take nonsense
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={5}
                       onChange={onchange}
-                      name="question1"
+                      name="question10"
                     />
-                    <span className="checkmark1">C</span>
-                    Responsible
+                    <span className="checkmark1">E</span>I am a private person
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={6}
                       onChange={onchange}
-                      name="question1"
+                      name="question10"
                     />
-                    <span className="checkmark1">C</span>
-                    Creative
+                    <span className="checkmark1">F</span>I get worried easily
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={7}
                       onChange={onchange}
-                      name="question1"
+                      name="question10"
                     />
-                    <span className="checkmark1">C</span>
-                    Assertive
+                    <span className="checkmark1">G</span>I live life the way I
+                    want
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={8}
                       onChange={onchange}
-                      name="question1"
+                      name="question10"
                     />
-                    <span className="checkmark1">C</span>
-                    Flexible
+                    <span className="checkmark1">H</span>I can be aggressive
                   </label>
                   <label className="checkcontainer1">
                     <input
                       type="radio"
                       value={9}
                       onChange={onchange}
-                      name="question1"
+                      name="question10"
                     />
-                    <span className="checkmark1">C</span>
-                    Competitive
+                    <span className="checkmark1">I</span>I get stressed easily
                   </label>
                 </div>
               </Col>
             </Row>
-              <ToastContainer
-                enableMultiContainer
-                containerId={"B"}
-                toastClassName="bg-danger text-white"
-                hideProgressBar={true}
-                position={toast.POSITION.TOP_CENTER}
-              />
-              <Row className="jcenter1">
-                <div className="nxtbtnarea">
-                  <button className="nxtbtn" onClick={submitForm}>
-                    Next
-                  </button>
+            <Row className="firstrowcf2 cftcontent">
+              <Col md={12}>
+                <div className="firstquestion">
+                  c. When your day ends how do you feel?
                 </div>
-              </Row>
+                <div className="rsliderclassPol1">
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={1}
+                      onChange={onchange}
+                      name="question13"
+                    />
+                    <span className="checkmark1">A</span>
+                    Satisfied & Happy
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={2}
+                      onChange={onchange}
+                      name="question13"
+                    />
+                    <span className="checkmark1">B</span>
+                    Indifference, you followed the routine for your day
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={3}
+                      onChange={onchange}
+                      name="question13"
+                    />
+                    <span className="checkmark1">C</span>
+                    Unsure and unclear you’re doing the right thing with your
+                    life.
+                  </label>
+                  <label className="checkcontainer1">
+                    <input
+                      type="radio"
+                      value={4}
+                      onChange={onchange}
+                      name="question13"
+                    />
+                    <span className="checkmark1">D</span>
+                    Like you still have a lot to achieve
+                  </label>
+                </div>
+              </Col>
+            </Row>
+            <ToastContainer
+              enableMultiContainer
+              containerId={"B"}
+              toastClassName="bg-danger text-white"
+              hideProgressBar={true}
+              position={toast.POSITION.TOP_CENTER}
+            />
+            <Row className="jcenter1">
+              <div className="nxtbtnarea">
+                <button className="nxtbtn" onClick={submitForm}>
+                  Next
+                </button>
+              </div>
+            </Row>
           </Col>
         </Row>
         <Footer />
