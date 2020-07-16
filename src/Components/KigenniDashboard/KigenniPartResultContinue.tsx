@@ -576,7 +576,8 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                 {client?.average_career_competences?.fields?.map(
                   (data, index) => (
                     <div key={index}>
-                      <span className="ikls">{data.name} </span> {data.value}
+                      <span className="ikls">{data.name} </span>
+                      <div className="career221">{data.value}</div>
                       <br />
                     </div>
                   )
@@ -621,7 +622,8 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               <div className="otherinfo">
                 {client?.weak_career_competences?.fields?.map((data, index) => (
                   <div key={index}>
-                    <span className="ikls">{data.name} </span> {data.value}
+                    <span className="ikls">{data.name} </span>
+                    <div className="career221">{data.value}</div>
                     <br />
                   </div>
                 ))}
@@ -675,7 +677,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                       <div className="csfitscore1 reskheader">
                         Your Top Career Drivers
                       </div>
-
+                      <div className="csfitscore1 juki  reskheader">Your Top Career Drivers</div>
                       {client?.career_drivers?.highlights?.map(
                         (data, index) => (
                           <div className="" key={index}>
@@ -698,7 +700,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                   <div>
                     <div className="stbly">
                       <div className="stbly1">{data.heading}</div>
-                      <div>{data.body}</div>
+                      <div className="career221">{data.body}</div>
                     </div>
                     <div className="tipswrapper">
                       <div>
@@ -740,7 +742,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                         <div className="kz12">
                           <ul className="grapwrap">
                             {data.value.map((dataindata, index) => (
-                              <li className="grapssin">{dataindata}</li>
+                              <li className="grapssin career221">{dataindata}</li>
                             ))}
                           </ul>
                         </div>
@@ -809,7 +811,10 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
             </Col>
             <Col md={8} className="jcenter1">
               <div className="coonfused">Still Confused ???</div>
-              <div className="pool">Let our pool of experienced counsellors guide you to better maximise your results </div>
+              <div className="pool">
+                Let our pool of experienced counsellors guide you to better
+                maximise your results{" "}
+              </div>
               <div className="additional">
                 {" "}
                 <img src={additionalinformation} alt="" />
