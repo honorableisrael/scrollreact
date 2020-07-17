@@ -76,7 +76,7 @@ export default function CouncellorPaymentSummary(props: any) {
       : props.history.push("/signin");
     try {
       window.MonnifySDK.initialize({
-        amount: 3500,
+        amount: 7000,
         currency: "NGN",
         reference,
         customerFullName: user[0]?.first_name + "  " + user[0]?.last_name,
@@ -172,36 +172,16 @@ export default function CouncellorPaymentSummary(props: any) {
               Choose the plan that’s right for you
             </div>
             <Row className="centerr">
-              <Col md={4} className="centerr1">
-                <div className="prems">Premium</div>
-                <div className="premq">Get access to your complete result</div>
-                <div className="comps1">
-                  <span>&#10004;</span> Complete Assement Result
-                </div>
-                <div className="lmi1">
-                  <div className="amut">&#8358;3500</div>
-                  <div className="amut1">one time payment</div>
-                </div>
-                {/* <div>
-                  <span className="amurt">&#8358;10,000</span>{" "}
-                </div> */}
-                <div
-                  className="slcplan"
-                  onClick={() => checkIfUserHasAccessToViewAll()}
-                >
-                  {!isLoading ? "Select Plan" : "processing..."}
-                </div>
-              </Col>
-              <Col xs={10} md={3} className="centerr1">
+              <Col xs={10} md={5} className="centerr1 chag11">
                 <div className="planinsight">Premium</div>
                 <div className="oneoff">(One-off Plan)</div>
-                <div className="percentoff">
-                  Now <b>&nbsp; 65%&nbsp;</b> OFF!
+                <div className="percentoff chage">
+                  Now <b>&nbsp; 50% &nbsp;</b> OFF!
                 </div>{" "}
                 <div className="duration"></div>
                 <div className="prems">
                   {" "}
-                  An all-round competence audit report on
+                  Book a counselling session with a Counsellor
                 </div>
                 <div className="comps2">
                   <span>
@@ -211,7 +191,7 @@ export default function CouncellorPaymentSummary(props: any) {
                       alt="checkcircle"
                     />
                   </span>{" "}
-                  The Most suitable career and business industry match
+                  Chat with a counsellor for 30mins
                 </div>
                 <div className="comps2">
                   <span>
@@ -221,7 +201,7 @@ export default function CouncellorPaymentSummary(props: any) {
                       alt="checkcircle"
                     />
                   </span>{" "}
-                  The best job roles to work in
+                  Get counsellors recommendations
                 </div>
                 <div className="comps2">
                   <span>
@@ -231,50 +211,10 @@ export default function CouncellorPaymentSummary(props: any) {
                       alt="checkcircle"
                     />
                   </span>{" "}
-                  Strong career competencies{" "}
-                </div>
-                <div className="comps2">
-                  <span>
-                    <img
-                      src={checkcircle}
-                      className="checkcircle"
-                      alt="checkcircle"
-                    />
-                  </span>{" "}
-                  Average Career competencies
-                </div>
-                <div className="comps2">
-                  <span>
-                    <img
-                      src={checkcircle}
-                      className="checkcircle"
-                      alt="checkcircle"
-                    />
-                  </span>{" "}
-                  Weak Career competencies
-                </div>
-                <div className="comps2">
-                  <span>
-                    <img
-                      src={checkcircle}
-                      className="checkcircle"
-                      alt="checkcircle"
-                    />
-                  </span>{" "}
-                  Work style
-                </div>
-                <div className="comps2">
-                  <span>
-                    <img
-                      src={checkcircle}
-                      className="checkcircle"
-                      alt="checkcircle"
-                    />
-                  </span>{" "}
-                  Top Career drivers’ & how to harness it
+                  Get actionable plans{" "}
                 </div>
                 <div className="lmi1">
-                  <div className="amut">&#8358;3,500</div>
+                  <div className="amut">&#8358; 7,000</div>
                   <div className="amut1">one time payment</div>
                 </div>
                 <div>
@@ -282,9 +222,7 @@ export default function CouncellorPaymentSummary(props: any) {
                 </div>
                 <div
                   className="slcplan"
-                  onClick={() =>
-                    checkIfUserHasAccessToViewAll()
-                  }
+                  onClick={() => checkIfUserHasAccessToViewAll()}
                 >
                   {!isLoading ? "Select Plan" : "processing..."}
                 </div>

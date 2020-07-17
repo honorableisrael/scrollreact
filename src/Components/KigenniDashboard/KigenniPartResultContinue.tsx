@@ -821,7 +821,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               </div>
               <div className="check11">
                 <Button className="retaketest">
-                  <Link to="/paymentsummary">Speak with a councellor</Link>
+                  <Link to="/councellorfee">Speak with a councellor</Link>
                 </Button>
                 <Button className="retaketest2" onClick={this.openWarning}>
                   Retake Assessment
