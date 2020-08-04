@@ -84,7 +84,7 @@ export default function CouncellorPaymentSummary(props: any) {
         customerMobileNumber: "",
         apiKey: "MK_PROD_NNSGXTY6LF",
         contractCode: "722431733218",
-        paymentDescription: "YUDIMY SERVICES LTD",
+        paymentDescription: "Book Session",
         isTestMode: false,
         onComplete: function (response) {
           moveToFullResult();
@@ -173,7 +173,7 @@ export default function CouncellorPaymentSummary(props: any) {
             </div>
             <Row className="centerr">
               <Col xs={10} md={5} className="centerr1 chag11">
-                <div className="planinsight">Premium</div>
+                <div className="planinsight">Book Session</div>
                 <div className="oneoff">(One-off Plan)</div>
                 <div className="percentoff chage">
                   Now <b>&nbsp; 50% &nbsp;</b> OFF!
@@ -214,7 +214,7 @@ export default function CouncellorPaymentSummary(props: any) {
                   Get actionable plans{" "}
                 </div>
                 <div className="lmi1">
-                  <div className="amut">&#8358; 7,000</div>
+                  <div className="amut">&#8358;7,000</div>
                   <div className="amut1">one time payment</div>
                 </div>
                 <div>

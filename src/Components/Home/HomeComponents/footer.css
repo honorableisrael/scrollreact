@@ -1,65 +1,65 @@
 a.linksss {
-color: #0f1a29;
+  color: #0f1a29;
 }
-a.linksss:visited{
-color: #0f1a29;
+a.linksss:visited {
+  color: #0f1a29;
 }
-a.linksss:active{
-color: #0f1a29;
+a.linksss:active {
+  color: #0f1a29;
 }
-.jsmc{
+.jsmc {
+  display: flex;
+  padding-top: 3rem;
+  justify-content: space-between;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 50px 0 rgba(0, 0, 0, 0.006);
+}
+.nysc {
+  width: 100px;
+}
+@media (min-width: 766px) {
+  .jsmc {
     display: flex;
-    padding-top: 3rem;
     justify-content: space-between;
-    margin-top: 4rem;
-    flex-wrap: wrap;
-    box-shadow: 0 8px 50px 0 rgba(0, 0, 0, 0.006);
+    padding-right: 3rem;
+  }
+  .textleft {
+    text-align: left;
+  }
 }
-.nysc{
-    width: 100px;
+.cclas {
+  width: 35px;
 }
-@media(min-width:766px){
-    .jsmc{
-        display: flex;
-        justify-content: space-between;
-        padding-right: 3rem;
-    }
-    .textleft{
-        text-align: left;
-    }
+.yudimynysc {
+  width: 100px;
 }
-.cclas{
-    width: 35px;
+.powerdby {
+  padding-top: 1rem;
+  text-align: center;
 }
-.yudimynysc{
-    width: 100px;
+.style11 {
+  border-right: 2px solid gray;
+  display: inline-block;
+  padding: 0.2rem;
 }
-.powerdby{
-    padding-top: 1rem;
-    text-align: center;
+.yudimynysc1 {
+  width: 140px;
 }
-.style11{
-    border-right: 2px solid gray;
-    display: inline-block;
-    padding: .2rem;
+.ncb {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2.4rem;
+  justify-content: center;
 }
-.yudimynysc1{
-    width: 140px;
-}
-.ncb{
-    display: flex;
-    flex-direction: column;
-    padding-left: 2.4rem;
-    justify-content: center;
-}
-.yudims{
-    margin-left: 0rem;
-    padding-left: 0px;
-    margin-top: 1rem;
-    text-align: center;
-    margin: auto;
-    padding-top: 2rem;
-    color: #150538;
-    line-height: 1.8;
-    word-spacing: 1.8px;
+.yudims {
+  margin-left: 0rem;
+  padding-left: 0px;
+  margin-top: 1rem;
+  text-align: center;
+  margin: auto;
+  padding-top: 2rem;
+  color: #150538;
+  line-height: 1.8;
+  word-spacing: 1.8px;
 }

@@ -15,8 +15,13 @@ body {
 @media(max-width:700px){
   body{
     font-size: 14px;
+    overflow-x: hidden;
   }
 }
-html{
+body{
   scroll-behavior: smooth;
+  letter-spacing: normal;
+}
+.container-fluid{
+  overflow-x: hidden;
 }

@@ -225,15 +225,6 @@ const Navbar: React.FC = (props: any) => {
             </div>
           </div>
           <div className="nav_title">
-            {/* <span className="title">
-              <Link to="/">HOME</Link>
-            </span>
-            <span className="title">
-              <Link to="/about">ABOUT</Link>
-            </span>
-            <span className="title">
-              <Link to="/clarityforteams">SERVICES</Link>
-            </span> */}
             {!userLoggedIn ? (
               <NavIsLoggedOut />
             ) : (

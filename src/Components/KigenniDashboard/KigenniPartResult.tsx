@@ -15,6 +15,8 @@ import vector1 from "../../assets/whiteicon1.png";
 import vector2 from "../../assets/whiteicon2.png";
 import notice from "../../assets/notice.png";
 import HorizontalBar from "./HorizontalBar";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 interface State {
   fullname: string;
@@ -27,6 +29,7 @@ interface State {
   errorMessage: string;
   isLoading: boolean;
   width: number;
+  showWarning: boolean;
 }
 class KigenniPartResult extends React.Component<React.Props<any>> {
   state: State = {
@@ -39,6 +42,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
     errorMessage: "",
     successMsg: false,
     isLoading: false,
+    showWarning: false,
     width: 100,
   };
   componentDidMount() {
@@ -90,8 +94,12 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
         headers: { Authorization: `Token ${token}` },
       })
       .then((response) => {
-        console.log(response)
-        if (response?.data[0]?.direction_plan || response?.data[0]?.growth_plan || response?.data[0]?.insight_plan === true) {
+        console.log(response);
+        if (
+          response?.data[0]?.direction_plan ||
+          response?.data[0]?.growth_plan ||
+          response?.data[0]?.insight_plan === true
+        ) {
           return window.location.assign("/thirdpary/fullresult");
         }
       })
@@ -103,6 +111,57 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
     if (typeof s !== "string") return "";
     return s.charAt(0).toUpperCase() + s.slice(1);
   };
+  submitRetakeAssessment = (e) => {
+    e.preventDefault();
+    const availableToken = sessionStorage.getItem("userToken");
+    const token = availableToken ? JSON.parse(availableToken) : "";
+    const data = {};
+    axios
+      .get<any, AxiosResponse<any>>(`${API}/retakeassessment`, {
+        headers: { Authorization: `Token ${token}` },
+      })
+      .then((res) => {
+        console.log(res.data);
+        window.location.assign("/assessmentphaseone");
+      })
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+        }
+      });
+  };
+  handleChatCheck = () => {
+    this.setState({ isLoading: true });
+    const availableToken = sessionStorage.getItem("userToken");
+    const token = availableToken
+      ? JSON.parse(availableToken)
+      : window.location.assign("/signin");
+    axios
+      .get<any, AxiosResponse<any>>(`${API}/paymentstatus`, {
+        headers: { Authorization: `Token ${token}` },
+      })
+      .then((response) => {
+        if (response?.data[0]?.direction_plan === true) {
+          return window.location.assign("/councellordates");
+        }
+        if (response?.data[0]?.direction_plan === false) {
+          return window.location.assign("/councellorfee");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  CloseWarning = () => {
+    this.setState({
+      showWarning: false,
+    });
+  };
+  openWarning = () => {
+    this.setState({
+      showWarning: true,
+    });
+  };
   render() {
     const {
       fullname,
@@ -112,6 +171,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
       averagecompetencechartdata,
       strongcompetencechartdata,
       isLoading,
+      showWarning,
       width,
     } = this.state;
     console.log(averagecompetencechartdata);
@@ -198,6 +258,7 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
                     <div className="ttp">{data.name}</div>
                     <HorizontalBar value={data.value.value1} />
                     <div className="btmwrap">
+                      {" "}
                       <div>{data.value.name1}</div>
                       <div>{data.value.name2}</div>
                     </div>
@@ -206,99 +267,43 @@ class KigenniPartResult extends React.Component<React.Props<any>> {
               })}
             </div>
           </div>
-          {/* <div className="nlodd">
-            <div className="resultsec13">
-              <div className="reskwrap13">
-                <div className="csfitscore1 reskheader">
-                  Your Top Career Drivers
-                </div>
-
-                {client?.career_drivers?.highlights?.map((data, index) => (
-                  <div className="" key={index}>
-                    <div>{data}</div>
-                  </div>
-                ))}
-              </div>
-              <div>
-                <img
-                  src={thdlogo}
-                  className="secondlogo img-fluid"
-                  alt="secondlogo"
-                />
+          <div className="resultsec3">
+            <div className="reskwrap">
+              <div className="career221">
+                {client?.career_personality_type?.full_body}
               </div>
             </div>
-          </div> */}
-          {/* white background section */}
-          {/* {client?.career_business_expression?.map((data, index) => (
-            <div className="resultsec2">
-              <div className="resultsec22">
-                <CirclePie
-                  width={190}
-                  height={190}
-                  strokeWidth={5}
-                  labelColor={"#fff"}
-                  labelFontSize={"38px"}
-                  strokeColor={"#fff"}
-                  railColor={"#17375c77"}
-                  fillColor={"#001833"}
-                  percent={client?.career_business_expression?.score}
-                  padding={0}
-                />
-              </div>
-              {data?.fields?.map((nestedData, ind) => (
-                <div className="csfitscore">
-                  <div className="divide"></div>{" "}
-                  <div className="vbnc1">
-                    {" "}
-                    {client?.career_business_expression?.heading}{" "}
-                  </div>
-                  <div className="csbody">
-                    {client?.career_business_expression?.body}
-                  </div>
-                </div>
-              ))}
-            </div>
-          ))} */}
-          <div className="leastbusexp">
-            Least Suitable Career-Business Expression
           </div>
-          {client?.career_business_expression?.map((doc, index) => (
-            <div className="resultsec2" key={index}>
-              <div className="csfitscore2">
-                {this.capitalize(doc?.industry)}
-              </div>
-              <div className="resultsec22">
-                <CirclePie
-                  width={190}
-                  height={190}
-                  strokeWidth={5}
-                  labelColor={"#fff"}
-                  labelFontSize={"38px"}
-                  strokeColor={"#fff"}
-                  railColor={"#17375c77"}
-                  fillColor={"#001833"}
-                  percent={doc?.score}
-                  padding={0}
-                />
-              </div>
-              <div className="csfitscore">
-                <Row>
-                  <div className="csfitscore1">
-                    {this.capitalize(doc?.industry)}
-                  </div>
-                </Row>
-                {doc?.fields?.map((item, index) => (
-                  <div className="csbody" key={index}>
-                    <span className="competence1">
-                      {this.capitalize(item.name)}
-                    </span>
-                    :{this.capitalize(item.value)} <br />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
         </Col>
+        <Col md={10}>
+          <div className="check11">
+            <Button className="retaketest2 lds1" onClick={this.openWarning}>
+              Retake Assessment
+            </Button>
+          </div>
+        </Col>
+        <Modal show={showWarning} onHide={this.CloseWarning}>
+          <Modal.Body>
+            Please note that retaking the assessment would require you to make
+            payment to view the result
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              className="btnws"
+              variant="secondary"
+              onClick={this.CloseWarning}
+            >
+              Back
+            </Button>
+            <Button
+              variant="danger"
+              className="btnws"
+              onClick={this.submitRetakeAssessment}
+            >
+              Continue
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </>
     );
   }

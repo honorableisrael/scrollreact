@@ -34,19 +34,45 @@ const AssessmentSeventhPhaseComplete = () => {
             nextPhase="Results"
             time={10}
           />
-          <Col md={11}>
+          <Col md={7}>
             <Row className="firstrowcf2 cftcontent">
               <Col md={12} className="awesomewrap">
                 <div>
-                  <img
+                  {/* <img
                     className="cherry-done"
                     src={offcharts}
                     alt="cherry-done"
-                  />
-                  <div className="awesome">My oh my!! You did it!</div>
+                  /> */}
+                  <div className="awesome">
+                    {" "}
+                    Yay! You did it The free result you're about to see will
+                    impact your life in three quick dimensions.{" "}It’s going to show you
+                  </div>
                   <div className="awesome1">
-                    We were rooting for you the whole time, it’s time to see
-                    your report
+                    If you are on the right career track
+                    or not and to what degree that is.
+                  </div>
+                  <div className="awesome1">
+                    {" "}
+                    Your unique career mission and advantage.
+                  </div>
+                  <div className="awesome1">
+                    You will also get to see career paths you should never
+                    embark on. Your least suitable career paths.{" "}
+                  </div>
+                  <div className="awesome1">
+                    And guess what? You also get a bonus to immediately chat
+                    with a counsellor about your career dilemma at a 50%
+                    discount. It's our first time gift to you, for taking this
+                    bold step.
+                  </div>
+                  <div className="awesome1">
+                    Click get result to view your free evaluation report right
+                    now
+                  </div>
+                  <div className="awesome1">
+                    {" "}
+                    See you on the other side.
                   </div>
                   <div className="awesome2">
                     <Link to="/thirdpary/dashboard">

@@ -89,7 +89,6 @@ export default function PaymentSummary(props: any) {
         isTestMode: false,
         redirect: false,
         onComplete: function (response) {
-          moveToFullResult();
           if (response.paymentStatus === "OVERPAID") {
             notify(
               "You current payment has exceeded the amount. The excess amount will be refunded within 24 hours"
@@ -103,7 +102,7 @@ export default function PaymentSummary(props: any) {
             // console.log(response)
             return setInterval(
               (window.location.pathname = "/thirdpary/fullresult"),
-              9000
+              1000
             );
           }
           if (response.paymentStatus == "PENDING") {
@@ -113,9 +112,12 @@ export default function PaymentSummary(props: any) {
               9000
             );
           }
-        },
+        },  
         onClose: function (data) {
-          console.log(data);
+          return setInterval(
+            (window.location.pathname = "/thirdpary/dashboard"),
+            9000
+          );
         },
       });
     } catch (error) {

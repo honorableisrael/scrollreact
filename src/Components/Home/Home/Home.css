@@ -437,6 +437,7 @@ button {
   .top-layer {
     background-color: #fff;
   }
+
   .clarity_logo {
     display: none;
   }
@@ -587,7 +588,7 @@ button {
   .top-layer {
     height: 53.5px;
   }
-  .top-layermobile{
+  .top-layermobile {
     height: 9px;
     background-color: #9c1258;
     display: flex;
@@ -795,12 +796,12 @@ button {
     width: 89px;
   }
   .flexsss {
-    background: #FBFBFB;
+    background: #fbfbfb;
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
 }
-.cards-section1{
+.cards-section1 {
   margin-right: 1rem;
 }
 .kissa {
@@ -822,11 +823,16 @@ button {
   word-spacing: 5px;
 }
 
-@media(max-width:400px){
-  .giveaa{
+@media (max-width: 400px) {
+  .giveaa {
     word-spacing: -1px;
   }
 }
-.saedlogo{
+.saedlogo {
   width: 200px;
+}
+@media (min-width: 900px) {
+  .hamburger {
+    display: none;
+  }
 }

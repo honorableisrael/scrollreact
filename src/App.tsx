@@ -32,7 +32,15 @@ import Testing from "./Components/KigenniDashboard/Testing";
 import OverPaid from "./Components/KigenniDashboard/Overpaid";
 import Pending from "./Components/KigenniDashboard/Pending";
 import CouncellorPaymentSummary from "./Components/KigenniDashboard/counsellorpaymentsummary";
-import CouncellorDates from './Components/KigenniDashboard/CouncellorDates';
+import CouncellorDates from "./Components/KigenniDashboard/CouncellorDates";
+import NewDashboard from "./Components/KigenniDashboard/NewDashboard";
+import NewDashboardJobOpportunities from "./Components/KigenniDashboard/NewDashboardJobOpportunities";
+import ProfileBuilder from "./Components/KigenniDashboard/ProfileBuilder";
+import NewDashboardSupport from "./Components/KigenniDashboard/NewDashboardSupport";
+import NewDashboardSettings from "./Components/KigenniDashboard/DashboardSettings";
+import NewDashboardChat from "./Components/KigenniDashboard/NewDashboardChat";
+import CounsellorsRecommendation from "./Components/KigenniDashboard/NewCouncellorsRecommendation";
+import NewDashboardSubsriptionPlan from "./Components/KigenniDashboard/NewDashboardSubsciptionPlan";
 
 const App: React.FC = () => {
   return (
@@ -46,6 +54,13 @@ const App: React.FC = () => {
               exact
               path="/faq"
               component={() => <Redirect to="/thirdparty/signup" />}
+            />
+            <Route exact path="/overview" component={NewDashboard} />
+            <Route exact path="/profilebuilder" component={ProfileBuilder} />
+            <Route
+              exact
+              path="/jobopportunities"
+              component={NewDashboardJobOpportunities}
             />
             <Route
               exact
@@ -164,6 +179,27 @@ const App: React.FC = () => {
             />
             <Route
               exact
+              path="/counsellorsrecommendation"
+              component={CounsellorsRecommendation}
+            />
+            <Route
+              exact
+              path="/dashboardsubsriptionplan"
+              component={NewDashboardSubsriptionPlan}
+            />
+            <Route
+              exact
+              path="/dashboardsettings"
+              component={NewDashboardSettings}
+            />
+            <Route exact path="/councellorchat" component={NewDashboardChat} />
+            <Route
+              exact
+              path="/dashboardsupport"
+              component={NewDashboardSupport}
+            />
+            <Route
+              exact
               path="/thirdpary/fullresult"
               component={KigenniFullResultPage}
             />
@@ -187,11 +223,8 @@ const App: React.FC = () => {
               path="/councellorfee"
               component={CouncellorPaymentSummary}
             />
-            <Route
-              exact
-              path="/councellordates"
-              component={CouncellorDates}
-            />
+
+            <Route exact path="/councellordates" component={CouncellorDates} />
           </Switch>
         </BrowserRouter>
       </div>

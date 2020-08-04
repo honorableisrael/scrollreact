@@ -215,19 +215,42 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
       });
   };
   checkIfUserHasMadePaymentForFullResult = (token: string) => {
-    // axios
-    //   .get<any, AxiosResponse<any>>(`${API}/paymentstatus`, {
-    //     headers: { Authorization: `Token ${token}` },
-    //   })
-    //   .then((response) => {
-    //     if (response?.data[0]?.message === false) {
-    //       return window.location.assign("/paymentsummary");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    axios
+      .get<any, AxiosResponse<any>>(`${API}/paymentstatus`, {
+        headers: { Authorization: `Token ${token}` },
+      })
+      .then((response) => {
+        if (!response?.data[0]?.direction_plan && !response?.data[0]?.growth_plan && !response?.data[0]?.insight_plan) {
+          return window.location.assign("/thirdpary/dashboard");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+  handleChatCheck =()=>{
+    this.setState({ isLoading: true });
+    const availableToken = sessionStorage.getItem("userToken");
+    const token = availableToken
+      ? JSON.parse(availableToken)
+      : window.location.assign("/signin");
+    axios
+    .get<any, AxiosResponse<any>>(`${API}/paymentstatus`, {
+      headers: { Authorization: `Token ${token}` },
+    })
+    .then((response) => {
+      if (response?.data[0]?.direction_plan===true) {
+        return window.location.assign("/councellordates");
+      }
+      if (response?.data[0]?.direction_plan===false) {
+        return window.location.assign("/councellorfee");
+      }
+  
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
   render() {
     const {
       fullname,
@@ -820,8 +843,8 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                 <img src={additionalinformation} alt="" />
               </div>
               <div className="check11">
-                <Button className="retaketest">
-                  <Link to="/councellorfee">Speak with a councellor</Link>
+                <Button className="retaketest" onClick={this.handleChatCheck}>
+                   Speak with a counsellor
                 </Button>
                 <Button className="retaketest2" onClick={this.openWarning}>
                   Retake Assessment
