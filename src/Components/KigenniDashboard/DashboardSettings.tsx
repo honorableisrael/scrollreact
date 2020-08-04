@@ -183,7 +183,7 @@ class NewDashboardSettings extends React.Component {
                             name="first_name"
                             value={first_name}
                             onChange={this.handleChange}
-                            className="form-control jobr"
+                            className="form-control jobr subhyt"
                             placeholder=""
                           ></textarea>
                         </Col>
@@ -193,7 +193,7 @@ class NewDashboardSettings extends React.Component {
                             name="last_name"
                             value={last_name}
                             onChange={this.handleChange}
-                            className="form-control jobr"
+                            className="form-control jobr subhyt"
                             placeholder=""
                           ></textarea>
                         </Col>
@@ -205,7 +205,7 @@ class NewDashboardSettings extends React.Component {
                             name="address"
                             value={address}
                             onChange={this.handleChange}
-                            className="form-control jobr"
+                            className="form-control jobr subhyt"
                             placeholder=""
                           ></textarea>
                         </Col>
@@ -217,7 +217,7 @@ class NewDashboardSettings extends React.Component {
                             name="email"
                             value={email}
                             onChange={this.handleChange}
-                            className="form-control jobr"
+                            className="form-control jobr subhyt"
                             placeholder=""
                           />
                         </Col>
@@ -227,7 +227,7 @@ class NewDashboardSettings extends React.Component {
                             name="phone"
                             value={phone}
                             onChange={this.handleChange}
-                            className="form-control jobr"
+                            className="form-control jobr subhyt"
                             placeholder=""
                           />
                         </Col>
@@ -239,7 +239,7 @@ class NewDashboardSettings extends React.Component {
                             name="job_description"
                             value={job_description}
                             onChange={this.handleChange}
-                            className="form-control jobr"
+                            className="form-control jobr subhyt"
                             placeholder=""
                           ></textarea>
                         </Col>
@@ -249,7 +249,7 @@ class NewDashboardSettings extends React.Component {
                             name="website_link"
                             value={website_link}
                             onChange={this.handleChange}
-                            className="form-control jobr"
+                            className="form-control jobr subhyt"
                             placeholder=""
                           ></textarea>
                         </Col>

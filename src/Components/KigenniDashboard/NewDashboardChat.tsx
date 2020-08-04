@@ -56,6 +56,7 @@ class NewDashboardChat extends React.Component {
         console.log(response);
         this.setState({
           user: response.data,
+          message:""
         });
       })
       .catch((error) => {
