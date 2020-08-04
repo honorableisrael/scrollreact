@@ -246,7 +246,7 @@ class NewDashboardJobOpportunities extends React.Component {
                             name="present_job"
                             value={present_job}
                             onChange={this.handleChange}
-                            className="form-control jobr"
+                            className="form-control jobr subhyt"
                             placeholder="Provide a description of what defines you and your process"
                           ></textarea>
                         </Col>
@@ -256,7 +256,7 @@ class NewDashboardJobOpportunities extends React.Component {
                           </div>
                           <Form.Control
                             as="select"
-                            className="fmc jobr"
+                            className="fmc jobr subhyt"
                             name="present_industry"
                             value={present_industry}
                             onChange={this.handleChange}
@@ -280,7 +280,7 @@ class NewDashboardJobOpportunities extends React.Component {
                             name="industry_interest"
                             value={industry_interest}
                             onChange={this.handleChange}
-                            className="form-control jobr"
+                            className="form-control jobr subhyt"
                             placeholder="provide a description of what defines you and your process"
                           />
                         </Col>
@@ -290,7 +290,7 @@ class NewDashboardJobOpportunities extends React.Component {
                             name="social_media"
                             value={social_media}
                             onChange={this.handleChange}
-                            className="form-control jobr"
+                            className="form-control jobr subhyt"
                             placeholder="provide a description of what defines you and your process"
                           />
                         </Col>
@@ -300,7 +300,7 @@ class NewDashboardJobOpportunities extends React.Component {
                           <div className="whatdoudo">Present Work Status </div>
                           <Form.Control
                             as="select"
-                            className="fmc jobr"
+                            className="fmc jobr subhyt"
                             value={work_status}
                             name="work_status"
                             onChange={this.handleChange}
@@ -320,7 +320,7 @@ class NewDashboardJobOpportunities extends React.Component {
                             name="opportunities_open_to"
                             value={opportunities_open_to}
                             onChange={this.handleChange}
-                            className="form-control jobr"
+                            className="form-control jobr subhyt"
                             placeholder="provide a description of what defines you and your process"
                           ></textarea>
                         </Col>
@@ -332,7 +332,7 @@ class NewDashboardJobOpportunities extends React.Component {
                             type="date"
                             value={dob}
                             name="dob"
-                            className="fmc jobr"
+                            className="fmc jobr subhyt"
                             onChange={this.handleChange}
                           ></Form.Control>
                         </Col>

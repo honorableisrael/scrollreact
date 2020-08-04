@@ -75,7 +75,7 @@ const AssessmentSeventhPhaseComplete = () => {
                     See you on the other side.
                   </div>
                   <div className="awesome2">
-                    <Link to="/thirdpary/dashboard">
+                    <Link to="/overview">
                       <button className="awesomebtn">Get Results</button>
                     </Link>
                     <Link to="/">

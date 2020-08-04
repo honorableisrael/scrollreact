@@ -113,7 +113,7 @@ class NewDashboardSupport extends React.Component {
                           <div className="Complain">Issue category </div>
                           <Form.Control
                             as="select"
-                            className="fmc jobr"
+                            className="fmc jobr subhyt"
                             name="issue"
                             value={issue}
                             onChange={this.handleChange}
@@ -137,7 +137,7 @@ class NewDashboardSupport extends React.Component {
                             name="complain"
                             value={complain}
                             onChange={this.handleChange}
-                            className="form-control jobr"
+                            className="form-control jobr subhyt"
                             placeholder=""
                           />
                         </Col>

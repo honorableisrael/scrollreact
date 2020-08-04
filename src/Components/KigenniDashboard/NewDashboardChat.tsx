@@ -9,7 +9,8 @@ import Axios, { AxiosResponse } from "axios";
 import { API } from "../../config";
 import DashboardUsernameheader from "./DashboardUsernameheader";
 import DashboardNav from "./DashboardNavBar";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class NewDashboardChat extends React.Component {
   state: any = {
@@ -33,14 +34,22 @@ class NewDashboardChat extends React.Component {
     })
       .then((res) => {
         console.log(res.data);
+        this.setState({
+          message: "",
+        });
         this.componentDidMount();
       })
       .catch((err) => {
         if (err) {
-          console.log(err);
+          console.log(err.response);
+          this.notify(err?.response?.data[0].message);
+          this.setState({
+            message: "",
+          });
         }
       });
   };
+  notify = (message: string) => toast(message, { containerId: "B" });
   componentDidMount() {
     this.setState({ isLoading: true });
     const availableToken = sessionStorage.getItem("userToken");
@@ -56,7 +65,7 @@ class NewDashboardChat extends React.Component {
         console.log(response);
         this.setState({
           user: response.data,
-          message:""
+          message: "",
         });
       })
       .catch((error) => {
@@ -89,9 +98,9 @@ class NewDashboardChat extends React.Component {
     return (
       <>
         <Container fluid={true} className="contann122">
-          <DashboardNav  chat={true} />
+          <DashboardNav chat={true} />
           <Row>
-            <SideBarNewDashboard chat={true}/>
+            <SideBarNewDashboard chat={true} />
             <Col md={10} sm={12} className="prm">
               <div className="navdash">
                 <div className="overview ovf">Chat with a counsellor</div>
@@ -169,6 +178,13 @@ class NewDashboardChat extends React.Component {
               </Row>
             </Col>
           </Row>
+          <ToastContainer
+            enableMultiContainer
+            containerId={"B"}
+            toastClassName="bg-info text-white"
+            hideProgressBar={true}
+            position={toast.POSITION.TOP_CENTER}
+          />
         </Container>
       </>
     );

@@ -141,7 +141,7 @@ const SignInKigenni: React.FunctionComponent = (props: any) => {
           return props.history.push(`/assessmentphaseseven`);
         }
         if (response.status === 200 && response.data[0].next === "home") {
-          return props.history.push(`/thirdpary/dashboard`);
+          return props.history.push(`/overview`);
         }
       })
       .catch((error) => {
