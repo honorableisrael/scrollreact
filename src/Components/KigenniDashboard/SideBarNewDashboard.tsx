@@ -8,11 +8,44 @@ import support from "../../assets/support.png";
 import overview from "../../assets/overview.png";
 import "../Home/Home/Home.css";
 import { Link } from "react-router-dom";
+import Axios, { AxiosResponse } from "axios";
+import { API } from "../../config";
 
 const SideBarNewDashboard = (props: any) => {
   const [hidemobile, sethidemobile] = React.useState(false);
   const changeHideStatus = () => {
     sethidemobile(hidemobile ? false : true);
+  };
+  const checkIfUserHasMadePaymentForFullResult = () => {
+    const availableToken = sessionStorage.getItem("userToken");
+    const token = availableToken
+      ? JSON.parse(availableToken)
+      : window.location.assign("/signin");
+    Axios
+      .get<any, AxiosResponse<any>>(`${API}/paymentstatus`, {
+        headers: { Authorization: `Token ${token}` },
+      })
+      .then((response) => {
+        console.log(response);
+        console.log(props);
+        if (
+          response?.data[0]?.direction_plan ||
+          response?.data[0]?.growth_plan ||
+          response?.data[0]?.insight_plan === true
+        ) {
+          return window.location.assign("/thirdpary/fullresult");
+        }
+        if (
+          response?.data[0]?.direction_plan &&
+          response?.data[0]?.growth_plan &&
+          response?.data[0]?.insight_plan === false
+        ) {
+          return window.location.assign("/paymentsummary");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <>
@@ -27,7 +60,7 @@ const SideBarNewDashboard = (props: any) => {
               Overview
             </Link>
           </div>
-          <div className={props.insight ? "activegb" : "gbn"}>
+          <div onClick={checkIfUserHasMadePaymentForFullResult} className={props.insight ? "activegb" : "gbn"}>
             {" "}
             <img src={sideimage} className="sideimage" alt="sideimage" />
             Career Insight

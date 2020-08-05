@@ -88,7 +88,27 @@ class CounsellorsRecommendation extends React.Component {
     if (typeof s !== "string") return "";
     return s.charAt(0).toUpperCase() + s.slice(1);
   };
-
+  handleChatCheck = () => {
+    this.setState({ isLoading: true });
+    const availableToken = sessionStorage.getItem("userToken");
+    const token = availableToken
+      ? JSON.parse(availableToken)
+      : window.location.assign("/signin");
+    Axios.get<any, AxiosResponse<any>>(`${API}/paymentstatus`, {
+      headers: { Authorization: `Token ${token}` },
+    })
+      .then((response) => {
+        if (response?.data[0]?.direction_plan === true) {
+          return window.location.assign("/councellordates");
+        }
+        if (response?.data[0]?.direction_plan === false) {
+          return window.location.assign("/councellorfee");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   render() {
     const { fullname, message, isLoading, width, counsellor } = this.state;
     return (
@@ -116,7 +136,7 @@ class CounsellorsRecommendation extends React.Component {
                       }
                     />
                     <div className="">
-                      <Button className="retaketest">
+                      <Button className="retaketest" onClick={this.handleChatCheck}>
                         Speak with a counsellor
                       </Button>
                     </div>

@@ -1442,6 +1442,7 @@ textarea.form-control.jobr {
   color: #a5a5a5;
   line-height: 41px;
   padding-left: 1rem;
+  cursor: pointer;
 }
 .gbn > a {
   cursor: pointer;
@@ -1834,25 +1835,32 @@ textarea.form-control.jobr {
   line-height: normal;
   padding-top: 0.7rem;
 }
-.deleee{
+.deleee {
   text-align: right;
 }
-.fa-trash{
+.fa-trash {
   color: #9c1258;
   font-weight: 600;
   cursor: pointer;
 }
-.experience{
-  border: .1px solid #a0a09656;
+.experience {
+  border: 0.1px solid #a0a09656;
   border-left: none;
   border-right: none;
   border-bottom: none;
   border-radius: 1rem;
 }
-.plusnew12,.subhyt12 {
+.plusnew12,
+.subhyt12 {
   background-color: #eee;
-  cursor:not-allowed;
+  cursor: not-allowed;
 }
-.uii11{
+.uii11 {
   font-size: 14px;
+}
+.bcash {
+  font-size: 16px;
+  letter-spacing: normal;
+  color: #9c1258;
+  line-height: normal;
 }

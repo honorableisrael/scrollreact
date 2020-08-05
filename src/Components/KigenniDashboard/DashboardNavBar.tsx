@@ -1,5 +1,5 @@
 import * as React from "react";
-import Axios from "axios";
+import Axios, { AxiosResponse } from "axios";
 import { API } from "../../config";
 import SideNav from "react-simple-sidenav";
 import Row from "react-bootstrap/Row";
@@ -30,6 +30,37 @@ const DashboardNav = (props: any) => {
       })
       .catch((err) => {
         console.log(err);
+      });
+  };
+  const checkIfUserHasMadePaymentForFullResult = () => {
+    const availableToken = sessionStorage.getItem("userToken");
+    const token = availableToken
+      ? JSON.parse(availableToken)
+      : window.location.assign("/signin");
+    Axios
+      .get<any, AxiosResponse<any>>(`${API}/paymentstatus`, {
+        headers: { Authorization: `Token ${token}` },
+      })
+      .then((response) => {
+        console.log(response);
+        console.log(props);
+        if (
+          response?.data[0]?.direction_plan ||
+          response?.data[0]?.growth_plan ||
+          response?.data[0]?.insight_plan === true
+        ) {
+          return window.location.assign("/thirdpary/fullresult");
+        }
+        if (
+          response?.data[0]?.direction_plan &&
+          response?.data[0]?.growth_plan &&
+          response?.data[0]?.insight_plan === false
+        ) {
+          return window.location.assign("/paymentsummary");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
   return (
@@ -80,7 +111,7 @@ const DashboardNav = (props: any) => {
                   Overview
                 </Link>
               </div>
-              <div className={props.insight ? "activegb" : "gbn"}>
+              <div onClick={checkIfUserHasMadePaymentForFullResult} className={props.insight ? "activegb" : "gbn"}>
                 {" "}
                 <img src={sideimage} className="sideimage" alt="sideimage" />
                 Career Insight

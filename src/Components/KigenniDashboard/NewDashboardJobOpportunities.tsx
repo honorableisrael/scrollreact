@@ -276,13 +276,22 @@ class NewDashboardJobOpportunities extends React.Component {
                           <div className="whatdoudo">
                             What industries are you presently interested in{" "}
                           </div>
-                          <textarea
+                
+                           <Form.Control
+                            as="select"
+                            className="fmc jobr subhyt"
                             name="industry_interest"
                             value={industry_interest}
                             onChange={this.handleChange}
-                            className="form-control jobr subhyt"
-                            placeholder="provide a description of what defines you and your process"
-                          />
+                            placeholder="Select Industry"
+                          >
+                            <option></option>
+                            {IndustryList.map((data, i) => (
+                              <option className="uii11" value={data.name} key={i}>
+                                {data.name}
+                              </option>
+                            ))}
+                          </Form.Control>
                         </Col>
                         <Col md={6}>
                           <div className="whatdoudo">Social Media Handle </div>
@@ -291,7 +300,6 @@ class NewDashboardJobOpportunities extends React.Component {
                             value={social_media}
                             onChange={this.handleChange}
                             className="form-control jobr subhyt"
-                            placeholder="provide a description of what defines you and your process"
                           />
                         </Col>
                       </Row>
@@ -321,7 +329,6 @@ class NewDashboardJobOpportunities extends React.Component {
                             value={opportunities_open_to}
                             onChange={this.handleChange}
                             className="form-control jobr subhyt"
-                            placeholder="provide a description of what defines you and your process"
                           ></textarea>
                         </Col>
                       </Row>

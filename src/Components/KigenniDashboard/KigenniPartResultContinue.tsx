@@ -220,7 +220,11 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
         headers: { Authorization: `Token ${token}` },
       })
       .then((response) => {
-        if (!response?.data[0]?.direction_plan && !response?.data[0]?.growth_plan && !response?.data[0]?.insight_plan) {
+        if (
+          !response?.data[0]?.direction_plan &&
+          !response?.data[0]?.growth_plan &&
+          !response?.data[0]?.insight_plan
+        ) {
           return window.location.assign("/thirdpary/dashboard");
         }
       })
@@ -228,29 +232,28 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
         console.log(error);
       });
   };
-  handleChatCheck =()=>{
+  handleChatCheck = () => {
     this.setState({ isLoading: true });
     const availableToken = sessionStorage.getItem("userToken");
     const token = availableToken
       ? JSON.parse(availableToken)
       : window.location.assign("/signin");
     axios
-    .get<any, AxiosResponse<any>>(`${API}/paymentstatus`, {
-      headers: { Authorization: `Token ${token}` },
-    })
-    .then((response) => {
-      if (response?.data[0]?.direction_plan===true) {
-        return window.location.assign("/councellordates");
-      }
-      if (response?.data[0]?.direction_plan===false) {
-        return window.location.assign("/councellorfee");
-      }
-  
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  }
+      .get<any, AxiosResponse<any>>(`${API}/paymentstatus`, {
+        headers: { Authorization: `Token ${token}` },
+      })
+      .then((response) => {
+        if (response?.data[0]?.direction_plan === true) {
+          return window.location.assign("/councellordates");
+        }
+        if (response?.data[0]?.direction_plan === false) {
+          return window.location.assign("/councellorfee");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   render() {
     const {
       fullname,
@@ -376,6 +379,9 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
             </Modal>
             <Col md={10} className="">
               <div className="kdashheader">
+                <div className="bcash">
+                  <Link to="/overview">&#x2190;Back</Link>
+                </div>
                 {fullname ? fullname : ""}{" "}
                 <span className="kdashheaderlight"> Clarity Report</span>
               </div>
@@ -700,7 +706,9 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                       <div className="csfitscore1 reskheader">
                         Your Top Career Drivers
                       </div>
-                      <div className="csfitscore1 juki  reskheader">Your Top Career Drivers</div>
+                      <div className="csfitscore1 juki  reskheader">
+                        Your Top Career Drivers
+                      </div>
                       {client?.career_drivers?.highlights?.map(
                         (data, index) => (
                           <div className="" key={index}>
@@ -765,7 +773,9 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
                         <div className="kz12">
                           <ul className="grapwrap">
                             {data.value.map((dataindata, index) => (
-                              <li className="grapssin career221">{dataindata}</li>
+                              <li className="grapssin career221">
+                                {dataindata}
+                              </li>
                             ))}
                           </ul>
                         </div>
@@ -844,7 +854,7 @@ class KigenniRemainingResult extends React.Component<React.Props<any>> {
               </div>
               <div className="check11">
                 <Button className="retaketest" onClick={this.handleChatCheck}>
-                   Speak with a counsellor
+                  Speak with a counsellor
                 </Button>
                 <Button className="retaketest2" onClick={this.openWarning}>
                   Retake Assessment
