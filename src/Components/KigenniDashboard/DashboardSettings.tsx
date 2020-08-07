@@ -10,6 +10,8 @@ import { API } from "../../config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import DashboardNav from "./DashboardNavBar";
+import DashboardLargeScreenNav from "./DashboardLargeScreenNav";
+
 
 class NewDashboardSettings extends React.Component {
   state: any = {
@@ -145,14 +147,7 @@ class NewDashboardSettings extends React.Component {
           <Row>
             <SideBarNewDashboard settings={true} />
             <Col md={10} sm={12} className="prm">
-              <div className="navdash">
-                <div className="overview ovf">Settings</div>
-                <div className="prm111">
-                  <span>
-                    <img src={avatar} className="avatar11" alt="avatar" />
-                  </span>
-                </div>
-              </div>
+              <DashboardLargeScreenNav title="Settings"/>
               <Row>
                 <Col md={11} className="kisls">
                   <div className="kdashheader uidd11">
@@ -167,10 +162,7 @@ class NewDashboardSettings extends React.Component {
                           />
                         </div>
                       </div>
-                      <div className="picic">
-                        <input type="file" name="image" />
-                      </div>
-                    </div>
+                     </div>
                     <div></div>
                   </div>
                   <Row>

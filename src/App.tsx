@@ -41,6 +41,7 @@ import NewDashboardSettings from "./Components/KigenniDashboard/DashboardSetting
 import NewDashboardChat from "./Components/KigenniDashboard/NewDashboardChat";
 import CounsellorsRecommendation from "./Components/KigenniDashboard/NewCouncellorsRecommendation";
 import NewDashboardSubsriptionPlan from "./Components/KigenniDashboard/NewDashboardSubsciptionPlan";
+import CouncellorBookings from './Components/KigenniDashboard/CouncellorBookings';
 
 const App: React.FC = () => {
   return (
@@ -223,7 +224,7 @@ const App: React.FC = () => {
               path="/councellorfee"
               component={CouncellorPaymentSummary}
             />
-
+            <Route exact path="/meetings" component={CouncellorBookings} />
             <Route exact path="/councellordates" component={CouncellorDates} />
           </Switch>
         </BrowserRouter>

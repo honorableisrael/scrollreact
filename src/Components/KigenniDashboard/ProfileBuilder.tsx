@@ -29,7 +29,7 @@ class ProfileBuilder extends React.Component {
     education: [],
     socials: [],
     strongcompetencechartdata: [],
-    expirationStatus: "",
+    expirationStatus: false,
     errorMessage: "",
     certificateName: "",
     industry: "",
@@ -77,7 +77,7 @@ class ProfileBuilder extends React.Component {
     }
     this.setState({
       skills: [...this.state.skills, ...skillz].reverse(),
-      skill:"",
+      skill: "",
     });
   };
   addNewEducation = () => {
@@ -111,7 +111,7 @@ class ProfileBuilder extends React.Component {
         does_not_expire: this.state.expirationStatus,
       },
     ];
-    const [ 
+    const [
       {
         certificate_name,
         institution,
@@ -301,6 +301,12 @@ class ProfileBuilder extends React.Component {
     });
     console.log(this.state.mycurrentwork);
   };
+  onchange1 = (e: any) => {
+    this.setState({
+      expirationStatus: this.state.expirationStatus ? false : true,
+    });
+    console.log(this.state.expirationStatus);
+  };
   deleteExperience = (id) => {
     const Experiences = this.state.experiences;
     Experiences.splice(id, 1);
@@ -387,7 +393,7 @@ class ProfileBuilder extends React.Component {
     return (
       <>
         <Container fluid={true} className="contann122">
-          <DashboardNav builder={true}  />
+          <DashboardNav builder={true} />
           <Row>
             <SideBarNewDashboard builder={true} />
             <Col md={10} sm={12} className="prm">
@@ -443,7 +449,7 @@ class ProfileBuilder extends React.Component {
                                 onClick={this.addExperience}
                                 title="Add entry"
                               >
-                                +
+                                <span className="addone">Add entry +</span>
                               </div>
                             </div>
                           </div>
@@ -644,7 +650,7 @@ class ProfileBuilder extends React.Component {
                                 onClick={this.addNewEducation}
                                 title="Add entry"
                               >
-                                +
+                                <span className="addone">Add entry +</span>
                               </div>
                             </div>
                           </div>
@@ -756,7 +762,7 @@ class ProfileBuilder extends React.Component {
                                 onClick={this.addNewSkill}
                                 title="Add entry"
                               >
-                                +
+                                <span className="addone">Add entry +</span>
                               </div>
                             </div>
                           </div>
@@ -801,7 +807,7 @@ class ProfileBuilder extends React.Component {
                                 onClick={this.addNewCertification}
                                 title="Add entry"
                               >
-                                +
+                                <span className="addone">Add entry +</span>
                               </div>
                             </div>
                           </div>
@@ -846,7 +852,7 @@ class ProfileBuilder extends React.Component {
                                     <input
                                       type="checkbox"
                                       value={expirationStatus}
-                                      onChange={this.onchange}
+                                      onChange={this.onchange1}
                                       id="expirationStatus"
                                     />
                                     <span className="checkmark"></span>
@@ -864,6 +870,7 @@ class ProfileBuilder extends React.Component {
                                 value={valid_till}
                                 id="valid_till"
                                 className="fmc jobr subhyt"
+                                disabled={expirationStatus ? true : false}
                                 onChange={this.handleChange}
                                 onKeyPress={(e) => {
                                   console.log(e);
@@ -969,7 +976,7 @@ class ProfileBuilder extends React.Component {
                             onClick={this.addNewReferences}
                             title="Add entry"
                           >
-                            +
+                            <span className="addone">Add entry +</span>
                           </div>
                         </div>
                       </div>

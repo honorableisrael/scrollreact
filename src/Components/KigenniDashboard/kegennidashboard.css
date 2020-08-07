@@ -1864,3 +1864,124 @@ textarea.form-control.jobr {
   color: #9c1258;
   line-height: normal;
 }
+
+.wrapc1 {
+  display: flex;
+  color: #979797;
+  justify-content: space-between;
+  font-size: 14px;
+  font-size: 500;
+  margin-top: 2rem;
+  padding: 0.1rem 3rem;
+  margin-bottom: 1rem;
+}
+.cname {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  display: flex;
+  align-items: flex-start;
+  color: #18214d;
+  display: flex;
+  flex-direction: column;
+}
+.cdate {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  display: flex;
+  align-items: flex-end;
+  color: #18214d;
+}
+.ctime {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  display: flex;
+  align-items: flex-end;
+  color: #18214d;
+}
+.wrapc2 {
+  display: flex;
+  color: #979797;
+  justify-content: space-between;
+  font-size: 14px;
+  font-size: 500;
+  margin-top: 0.2rem;
+  align-items: center;
+  background: #fefefe;
+  box-shadow: 0px 2px 6px rgba(24, 33, 77, 0.25);
+  border-radius: 8px;
+  padding: 2rem 3rem;
+  margin-bottom: 0.4rem;
+}
+.cname1,
+.cdate1,
+.ctime1,
+.cname,
+.cdate,
+.ctime {
+  flex: 1;
+  text-align: left;
+}
+.cstatus1,
+.cstatus2 {
+  width: 120px;
+  text-align: left;
+}
+.cstatus2 {
+  justify-content: center;
+}
+.cemail1 {
+  line-height: 21px;
+  display: flex;
+  align-items: flex-end;
+  color: #b8bfd3;
+  font-size: 12px;
+}
+.cstatus {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  display: flex;
+  align-items: flex-end;
+  color: #1bb978;
+  background: #b9f4bc;
+  border-radius: 8px;
+  padding: 0.1rem 0.4rem;
+  justify-content: center;
+}
+.pending {
+  text-align: center;
+  color: #ff0000;
+  background: #fce4e4;
+  border-radius: 8px;
+}
+.dspl {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  display: flex;
+  align-items: flex-end;
+  font-size: 14px;
+  color: #979797;
+  padding-top: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.leftimg {
+  width: 30px;
+  margin-right: 1rem;
+}
+.rightimg{
+  width: 30px;
+}
+.addone{
+  color: #3965ff;
+  font-size: 12px;
+  display:flex;
+  align-items: center;
+}
