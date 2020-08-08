@@ -1976,12 +1976,22 @@ textarea.form-control.jobr {
   width: 30px;
   margin-right: 1rem;
 }
-.rightimg{
+.rightimg {
   width: 30px;
 }
-.addone{
+.addone {
   color: #3965ff;
   font-size: 12px;
-  display:flex;
+  display: flex;
   align-items: center;
+}
+.wrarr {
+  border: 1px solid;
+  padding: 0.4rem 1.3rem;
+  border-radius: 19px;
+}
+.rtt {
+  justify-content: flex-start;
+  padding-left: 1px;
+  padding-top: .5rem;
 }

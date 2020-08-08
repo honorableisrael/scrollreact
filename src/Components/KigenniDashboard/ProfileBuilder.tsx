@@ -449,7 +449,7 @@ class ProfileBuilder extends React.Component {
                                 onClick={this.addExperience}
                                 title="Add entry"
                               >
-                                <span className="addone">Add entry +</span>
+                                <span className="addone"> +</span>
                               </div>
                             </div>
                           </div>
@@ -536,6 +536,13 @@ class ProfileBuilder extends React.Component {
                               />
                             </Col>
                           </Row>
+                          <div
+                            className="plusnew rtt"
+                            onClick={this.addExperience}
+                            title="Add entry"
+                          >
+                            <span className="addone wrarr">Save</span>
+                          </div>
                         </Col>
                         {experiences.map((data, index) => (
                           <Col
@@ -650,7 +657,7 @@ class ProfileBuilder extends React.Component {
                                 onClick={this.addNewEducation}
                                 title="Add entry"
                               >
-                                <span className="addone">Add entry +</span>
+                                <span className="addone">+</span>
                               </div>
                             </div>
                           </div>
@@ -697,6 +704,13 @@ class ProfileBuilder extends React.Component {
                               ></Form.Control>
                             </Col>
                           </Row>
+                          <div
+                            className="plusnew rtt"
+                            onClick={this.addNewEducation}
+                            title="Add entry"
+                          >
+                            <span className="addone wrarr">Save</span>
+                          </div>
                         </Col>
                         {education.map((data, index) => (
                           <Col md={12}>
@@ -762,7 +776,7 @@ class ProfileBuilder extends React.Component {
                                 onClick={this.addNewSkill}
                                 title="Add entry"
                               >
-                                <span className="addone">Add entry +</span>
+                                <span className="addone"> +</span>
                               </div>
                             </div>
                           </div>
@@ -807,7 +821,7 @@ class ProfileBuilder extends React.Component {
                                 onClick={this.addNewCertification}
                                 title="Add entry"
                               >
-                                <span className="addone">Add entry +</span>
+                                <span className="addone">+</span>
                               </div>
                             </div>
                           </div>
@@ -881,6 +895,13 @@ class ProfileBuilder extends React.Component {
                               ></Form.Control>
                             </Col>
                           </Row>
+                          <div
+                            className="plusnew rtt"
+                            onClick={this.addNewCertification}
+                            title="Add entry"
+                          >
+                            <span className="addone wrarr">Save</span>
+                          </div>
                         </Col>
                         {certifications.map((data, index) => (
                           <Col md={12}>
@@ -976,7 +997,7 @@ class ProfileBuilder extends React.Component {
                             onClick={this.addNewReferences}
                             title="Add entry"
                           >
-                            <span className="addone">Add entry +</span>
+                            <span className="addone">+</span>
                           </div>
                         </div>
                       </div>
@@ -1046,6 +1067,13 @@ class ProfileBuilder extends React.Component {
                           />
                         </Col>
                       </Row>
+                      <div
+                        className="plusnew rtt"
+                        onClick={this.addNewReferences}
+                        title="Add entry"
+                      >
+                        <span className="addone wrarr">Save</span>
+                      </div>
                     </Col>
                     {references.map((data, index) => (
                       <Col md={12}>
@@ -1184,7 +1212,7 @@ class ProfileBuilder extends React.Component {
                   <Row>
                     <Col md={12} className="printcv">
                       <div className="savebtn" onClick={this.submitForm}>
-                        Save
+                        Submit
                       </div>
                       <div className="print">Print</div>
                     </Col>
