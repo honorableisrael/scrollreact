@@ -9,28 +9,36 @@ class Home extends React.Component {
   state = {
     todos: [],
     visible: 10,
+    pageNo: 0,
   };
   componentDidMount() {
     const self: any = this;
-    Axios.get(`https://jsonplaceholder.typicode.com/posts`)
+    self.fetchMore(this.state.pageNo);
+    window.addEventListener("scroll", self.onScrollE);
+  }
+  fetchMore = (no) => {
+    Axios.get(
+      `https://jsonplaceholder.typicode.com/posts?_page=${this.state.pageNo}`
+    )
       .then((res) => {
         console.log(res);
         this.setState({
-          todos: res.data,
+          todos:[...this.state.todos,...res.data] ,
         });
       })
       .catch((err) => {
         console.log(err);
       });
-    window.addEventListener("scroll", self.onScrollE);
-  }
-
+  };
   onScrollE = (ev) => {
     const self: any = this;
     console.log(window.innerHeight);
     console.log(window.scrollY);
     console.log(document.body.offsetHeight);
-    if (window.innerHeight + window.scrollY === (document.body.offsetHeight+window.scrollY)) {
+    if (
+      window.innerHeight + window.scrollY ===
+      document.body.offsetHeight + window.scrollY
+    ) {
       //User is currently at the bottom of the page
       self.addNewItem();
     }
@@ -39,9 +47,10 @@ class Home extends React.Component {
     console.log("running");
     this.setState((prev: any) => {
       return {
-        visible: prev.visible + 5,
+        pageNo: prev.pageNo + 1,
       };
     });
+    this.fetchMore(this.state.pageNo);
   };
   render() {
     const { todos, visible } = this.state;
@@ -49,7 +58,7 @@ class Home extends React.Component {
     return (
       <>
         <div className="container">
-          {todos.slice(0, visible).map((data: any, i) => (
+          {todos.map((data: any, i) => (
             <div className="card" key={i}>
               <img
                 src="https://lh3.googleusercontent.com/ytP9VP86DItizVX2YNA-xTYzV09IS7rh4WexVp7eilIcfHmm74B7odbcwD5DTXmL0PF42i2wnRKSFPBHlmSjCblWHDCD2oD1oaM1CGFcSd48VBKJfsCi4bS170PKxGwji8CPmehwPw=w200-h247-no"
