@@ -24,9 +24,6 @@ class Home extends React.Component {
       });
     window.addEventListener("scroll", self.onScrollE);
   }
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.onScrollE);
-  }
 
   onScrollE = (ev) => {
     const self: any = this;
